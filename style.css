@@ -579,3 +579,6 @@ body[data-bank] .stat,body[data-bank] .mode b{color:inherit}
 .sw{display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:none;font:inherit;font-size:.8rem;font-weight:700;color:var(--ink);cursor:pointer;padding:0}
 .sw i{display:block;width:44px;height:44px;border-radius:50%;background:var(--c);border:3px solid #1a1a1a;box-shadow:2px 2px 0 #1a1a1a}
 .sw.on i{box-shadow:0 0 0 3px var(--surface),0 0 0 6px #1a1a1a}
+
+/* wrong-answer color stays red regardless of theme */
+:root,body[data-bank],body[data-bank="gsat"],body[data-bank="material"]{--bad:#E5270E;--bad-soft:#FFE0DA}
