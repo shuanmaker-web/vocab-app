@@ -394,6 +394,7 @@ function renderProgress() {
   app.innerHTML = html;
 }
 
+const APP_VERSION = 'v70';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
@@ -419,7 +420,7 @@ function renderSettings() {
     <p>學測詞彙等級:大學入學考試中心《高中英文參考詞彙表》(111 學年度起適用)。著作權屬財團法人大學入學考試中心基金會所有,僅供非營利目的使用。</p>
     <p>中文釋義(若有):ECDICT(MIT License),經轉換為繁體中文。例句(若有):<a href="https://tatoeba.org" target="_blank" rel="noopener">Tatoeba</a>(CC BY 2.0 FR)或自編。</p>
     <p>複習排程:<a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">ts-fsrs</a>(MIT)。</p>
-  </section></div>`;
+  </section><p class="small muted" style="text-align:center">Vocaboo ${APP_VERSION}</p></div>`;
   const num = (id, key) => $(id).addEventListener('change', async e => { s[key] = Math.max(0, +e.target.value || 0); await saveSettings(); });
   num('#s-new', 'newPerDay'); num('#s-size', 'sessionSize'); num('#s-goal', 'dailyGoal');
   $('#s-preset').addEventListener('change', async e => { const x = EXAM_PRESETS[+e.target.value]; if (!x) return $('#s-ename').focus(); s.examName = x.name; s.examDate = x.date; await saveSettings(); renderSettings(); if (!x.date) $('#s-exam').focus(); });
