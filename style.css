@@ -392,8 +392,10 @@ button.card.bank.enter:active{transform:translate(2px,2px);box-shadow:2px 2px 0 
 .duo-img .hit{position:absolute;background:transparent;border:0;padding:0;cursor:pointer;border-radius:45% 45% 20% 20%;-webkit-tap-highlight-color:transparent}
 .duo-img .hit:active{background:rgba(255,255,255,.22)}
 .duo-img .hit:focus-visible{outline:3px solid #1a1a1a}
-.hit-gsat{left:4.5%;top:13%;width:48%;height:78%}
-.hit-material{left:49%;top:22%;width:47%;height:70%}
+.hit-gsat{left:4%;top:8%;width:50%;height:84%}
+.hit-material{left:50%;top:26%;width:47%;height:68%}
+.land-logo{display:block;width:min(78%,340px);height:auto;margin:clamp(16px,8vh,80px) auto 0;user-select:none;-webkit-user-drag:none}
+.land .duo-img{margin-top:clamp(24px,6vh,60px)}
 
 html[data-view="landing"],html[data-view="landing"] body{background:var(--page) !important}
 

@@ -315,7 +315,8 @@ function renderLanding() {
   app.innerHTML = `${iosHint()}
     <div class="land">
       <div class="land-top"><div class="row" style="gap:8px">${examLine()}</div></div>
-      <div class="duo-img"><img src="icons/landing.png" alt="學測單字表、字彙王 Level 3-5" draggable="false"><button class="hit hit-gsat" data-enter="gsat" aria-label="學測單字表"></button><button class="hit hit-material" data-enter="material" aria-label="字彙王 Level 3-5"></button></div>
+      <img class="land-logo" src="icons/logo.png" alt="Vocaboo" draggable="false">
+      <div class="duo-img"><img src="icons/landing-duo.png" alt="學測單字表、字彙王 Level 3-5" draggable="false"><button class="hit hit-gsat" data-enter="gsat" aria-label="學測單字表"></button><button class="hit hit-material" data-enter="material" aria-label="字彙王 Level 3-5"></button></div>
       ${store.volatile ? '<p class="small" style="color:#fff"><b>⚠ 此瀏覽器無法儲存資料,關閉後進度會消失</b></p>' : ''}
     </div>`;
 }
