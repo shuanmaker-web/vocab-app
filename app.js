@@ -79,7 +79,7 @@ const store = (() => {
 /* ---------- state ---------- */
 const S = {
   settings: { ...DEFAULTS }, daily: {}, cards: new Map(), words: { gsat: [], material: [] },
-  tab: 'home', session: null, fsrs: null, questions: [], qstats: new Map(), pview: 'main', wrongType: 'all', punit: null,
+  tab: 'home', bank: (() => { try { const b = localStorage.getItem('bank'); return b === 'material' ? 'material' : 'gsat'; } catch { return 'gsat'; } })(), session: null, fsrs: null, questions: [], qstats: new Map(), pview: 'main', wrongType: 'all', punit: null,
 };
 const wordById = {}, qById = {};
 const cardId = (bank, wid, type) => `${bank}:${wid}:${type}`;
@@ -225,15 +225,25 @@ function checkSpelling(input, w) {
 
 /* ---------- views ---------- */
 const app = $('#app');
-function setTab(t) { if (t === 'landing') { S.bank = null; S.tab = 'home'; } else S.tab = t; S.pview = 'main'; document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t)); render(); }
+function setTab(t) { S.tab = t; S.pview = 'main'; document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t)); render(); }
+function renderBankSwitch() {
+  $('#bankswitch').innerHTML = Object.keys(BANKS).map(k => `<button role="tab" class="${S.bank === k ? 'on' : ''}" aria-selected="${S.bank === k}" data-bank="${k}">${esc(BANKS[k].name)}</button>`).join('');
+}
+function setBank(b) {
+  if (!BANKS[b] || b === S.bank) return;
+  S.bank = b; try { localStorage.setItem('bank', b); } catch { }
+  if (b !== 'material' && S.tab === 'practice') S.tab = 'home';
+  S.pview = 'main';
+  document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x.dataset.tab === S.tab));
+  render();
+}
 function render() {
   document.body.classList.toggle('in-session', !!S.session);
-  document.body.classList.toggle('landing', !S.bank && !S.session);
-  document.body.dataset.bank = S.bank || '';
-  document.documentElement.dataset.view = S.bank || 'landing';
+  document.body.dataset.bank = S.bank;
+  document.documentElement.dataset.view = S.bank;
   const pt = document.querySelector('#tabs [data-tab="practice"]'); if (pt) pt.hidden = S.bank !== 'material';
+  renderBankSwitch();
   if (S.session) return renderSession();
-  if (!S.bank) { renderLanding(); window.scrollTo(0, 0); return; }
   ({ home: renderHome, practice: renderPractice, progress: renderProgress, settings: renderSettings }[S.tab])();
   window.scrollTo(0, 0);
 }
@@ -297,15 +307,6 @@ const FACES = {
 function circleBtn(bank) {
   const info = BANKS[bank];
   return `<button class="circle c-${bank}" data-enter="${bank}" aria-label="${info.name}">${FACES[bank]}<span class="cn">${(([h, ...r]) => esc(h) + (r.length ? '<br><span class="nw">' + esc(r.join(' ')) + '</span>' : ''))(info.name.split(' '))}</span></button>`;
-}
-function renderLanding() {
-  const st = streak();
-  app.innerHTML = `${iosHint()}
-    <div class="land">
-      <div class="land-top"><div class="row" style="gap:8px">${examLine()}</div></div>
-      <div class="duo-img"><img src="icons/landing.png" alt="學測單字表、字彙王 Level 3-5" draggable="false"><button class="hit hit-gsat" data-enter="gsat" aria-label="學測單字表"></button><button class="hit hit-material" data-enter="material" aria-label="字彙王 Level 3-5"></button></div>
-      ${store.volatile ? '<p class="small" style="color:#fff"><b>⚠ 此瀏覽器無法儲存資料,關閉後進度會消失</b></p>' : ''}
-    </div>`;
 }
 function renderHome() {
   const st = streak(), today = S.daily[dayKey()]?.reviews || 0;
@@ -650,7 +651,7 @@ async function exClick(t, s) {
 /* ---------- events ---------- */
 document.addEventListener('click', async e => {
   const t = e.target.closest('button'); if (!t) return;
-  if (t.dataset.enter) { S.bank = t.dataset.enter; S.tab = 'home'; S.pview = 'main'; document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === 'home')); return render(); }
+  if (t.dataset.bank) return setBank(t.dataset.bank);
   if (t.dataset.tab) return setTab(t.dataset.tab);
   if (t.dataset.pgunit) { S.tab = 'practice'; S.punit = +t.dataset.pgunit; S.pview = 'unit'; S.wrongType = 'all'; document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === 'practice')); return render(); }
   if (t.dataset.xunit) { S.punit = +t.dataset.xunit; S.pview = 'unit'; S.wrongType = 'all'; return render(); }
