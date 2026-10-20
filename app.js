@@ -384,14 +384,14 @@ function renderProgress() {
   app.innerHTML = html;
 }
 
-const THEMES = { orange: ['橘', '#FF5700'], blue: ['藍', '#2F5BFF'], purple: ['紫', '#7B3FF2'], pink: ['粉', '#FF4F9A'], teal: ['青', '#0097B2'] };
+const THEMES = { orange: ['橘', '#FF5700'], blue: ['藍', '#3D8BFF'], purple: ['紫', '#9B6BFF'], pink: ['粉', '#FF4F9A'], teal: ['青', '#12B8CC'] };
 const BRAND = '#FF5700';
 function applyTheme() {
   const c = S.bank ? (THEMES[S.settings.theme] || THEMES.orange)[1] : BRAND;
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v78';
+const APP_VERSION = 'v79';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
