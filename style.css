@@ -513,3 +513,11 @@ body #tabs button .ti{background:var(--page);position:relative;z-index:1;transit
 body #tabs button span{display:none!important}
 body #tabs button.on::before{content:"";position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-46px 0 0 -30px;border-radius:50%;background:var(--surface);border:3px solid #1a1a1a;box-shadow:0 0 0 3px #1a1a1a,3px 4px 0 3px #1a1a1a;z-index:0}
 body #tabs button.on .ti{background:var(--page);transform:translateY(-16px) scale(1.25)}
+
+/* ===== v3 tweaks ===== */
+body #tabs button.on::before{box-sizing:border-box;background:var(--page);box-shadow:3px 4px 0 #1a1a1a}
+body #tabs button.on .ti{background:#1a1a1a}
+#bankswitch .bs-track,body[data-bank] #bankswitch .bs-track{background:#1a1a1a}
+#bankswitch{padding:calc(20px + env(safe-area-inset-top)) 16px 20px}
+#bankswitch button{color:#fff}
+#bankswitch button.on{flex:1.35;margin:-11px 0;padding:19px 6px;font-size:1.2rem;font-weight:800;background:var(--page);color:#1a1a1a;box-shadow:none;border:3px solid #1a1a1a}
