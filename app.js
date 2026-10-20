@@ -331,7 +331,7 @@ function renderHome() {
   app.innerHTML = `${iosHint()}
     <div class="hero"><h1>${BANKS[S.bank].name}</h1>${examCal()}</div>
     <div class="stack">${bankCard(S.bank)}
-    <p class="small muted">今天已練習 ${today} 題(每天 ${S.settings.dailyGoal} 題算一天;每週有 2 次自動保護)${store.volatile ? '<br><b style="color:var(--bad)">⚠ 此瀏覽器無法儲存資料,關閉後進度會消失</b>' : ''}</p></div>`;
+    <p class="today-n">今天已練習 ${today} 題${store.volatile ? '<br><b style="color:var(--bad)">⚠ 此瀏覽器無法儲存資料,關閉後進度會消失</b>' : ''}</p></div>`;
   const uf = $('#u-from'), ut = $('#u-to');
   if (uf && ut) { const h = async () => { let a = +uf.value, b = +ut.value; if (a > b) [a, b] = [b, a]; S.settings.unitFrom = a; S.settings.unitTo = b; await saveSettings(); render(); }; uf.onchange = h; ut.onchange = h; }
 }
@@ -394,7 +394,7 @@ function renderProgress() {
   app.innerHTML = html;
 }
 
-const APP_VERSION = 'v71';
+const APP_VERSION = 'v72';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
