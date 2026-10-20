@@ -395,7 +395,7 @@ button.card.bank.enter:active{transform:translate(2px,2px);box-shadow:2px 2px 0 
 .hit-gsat{left:4.5%;top:13%;width:48%;height:78%}
 .hit-material{left:49%;top:22%;width:47%;height:70%}
 
-html[data-view="landing"],html[data-view="landing"] body{background:#ffd200 !important}
+html[data-view="landing"],html[data-view="landing"] body{background:var(--page) !important}
 
 .land-top{display:flex;justify-content:flex-end;width:100%}
 .land-top .row{margin-left:auto}
@@ -422,3 +422,4 @@ body #tabs button:active{transform:scale(.92)}
 #bankswitch button{flex:1;border:0;background:transparent;color:#fff;font:inherit;font-weight:700;font-size:.95rem;padding:10px 8px;border-radius:999px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 #bankswitch button.on{background:#fff;color:var(--page);box-shadow:0 1px 4px rgba(0,0,0,.2)}
 body.in-session #bankswitch{display:none}
+body.landing #bankswitch{display:none}
