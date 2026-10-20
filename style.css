@@ -419,8 +419,8 @@ body #tabs button.on .ti{background:#ffd200}
 body #tabs button:active{transform:scale(.92)}
 
 /* ---- top bank switch (segmented control) ---- */
-#bankswitch{display:flex;gap:4px;padding:4px;margin:calc(12px + env(safe-area-inset-top)) auto 0;width:calc(100% - 32px);max-width:488px;
-  background:rgba(0,0,0,.18);border-radius:999px;position:sticky;top:calc(8px + env(safe-area-inset-top));z-index:20}
+#bankswitch{position:sticky;top:0;z-index:20;background:var(--page);padding:calc(10px + env(safe-area-inset-top)) 16px 10px}
+#bankswitch .bs-track{display:flex;gap:4px;padding:4px;margin:0 auto;max-width:488px;background:#C94400;border-radius:999px}
 #bankswitch button{flex:1;border:0;background:transparent;color:#fff;font:inherit;font-weight:700;font-size:.95rem;padding:10px 8px;border-radius:999px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 #bankswitch button.on{background:#fff;color:var(--page);box-shadow:0 1px 4px rgba(0,0,0,.2)}
 body.in-session #bankswitch{display:none}

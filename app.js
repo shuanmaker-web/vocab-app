@@ -227,7 +227,7 @@ function checkSpelling(input, w) {
 const app = $('#app');
 function setTab(t) { S.tab = t; S.pview = 'main'; document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t)); render(); }
 function renderBankSwitch() {
-  $('#bankswitch').innerHTML = Object.keys(BANKS).map(k => `<button role="tab" class="${S.bank === k ? 'on' : ''}" aria-selected="${S.bank === k}" data-bank="${k}">${esc(BANKS[k].name)}</button>`).join('');
+  $('#bankswitch').innerHTML = '<div class="bs-track">' + Object.keys(BANKS).map(k => `<button role="tab" class="${S.bank === k ? 'on' : ''}" aria-selected="${S.bank === k}" data-bank="${k}">${esc(BANKS[k].name)}</button>`).join('') + '</div>';
 }
 function setBank(b) {
   if (!BANKS[b] || b === S.bank) return;
