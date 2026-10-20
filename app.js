@@ -501,7 +501,8 @@ function renderMcq(head, w) {
   let body = `<div class="card q">${q.reverse ? `<div class="muted small">哪一個英文單字的意思是</div><div class="zh">${esc(w.zh)}</div><div class="pos">${esc(w.pos || '')}</div>` : `<div class="word">${esc(w.w)}</div><div class="pos">${esc(w.pos || '')}</div><div style="margin-top:10px">${speakBtn(w)}</div>`}</div>`;
   body += `<div class="opts">${q.opts.map((o, i) => {
     let cls = ''; if (q.picked !== null) cls = o.id === w.id ? 'ok' : i === q.picked ? 'no' : '';
-    return `<button class="opt ${cls}" data-pick="${i}" ${q.picked !== null ? 'disabled' : ''}>${esc(q.reverse ? o.w : o.zh)}</button>`;
+    const hit = q.picked === i && o.id === w.id;
+    return `<button class="opt ${cls}${hit ? ' picked' : ''}" data-pick="${i}" ${q.picked !== null ? 'disabled' : ''}><span>${esc(q.reverse ? o.w : o.zh)}</span>${hit ? '<b class="opt-tag">✓ 正確</b>' : ''}</button>`;
   }).join('')}</div>`;
   if (q.picked !== null) body += `<div class="card" style="margin-top:12px"><b>${esc(w.w)}</b> ${esc(w.pos || '')} — ${esc(w.zh)}${exBlock(w)}</div><button class="btn block" style="margin-top:12px" data-act="next">下一題</button>`;
   app.innerHTML = head + body;
@@ -625,7 +626,8 @@ function renderEx() {
   } else {
     body += `<div class="opts ${q.type === 'match' ? 'bank' : ''}">${c.opts.map((o, i) => {
       const lab = s.retest ? '' : `(${'ABCDEF'[i]}) `; let cls = ''; if (done) cls = o === q.ans ? 'ok' : i === c.picked ? 'no' : '';
-      return `<button class="opt ${cls}" data-xpick="${i}" ${done ? 'disabled' : ''}>${lab}${esc(o)}</button>`;
+      const hit = done && i === c.picked && o === q.ans;
+      return `<button class="opt ${cls}${hit ? ' picked' : ''}" data-xpick="${i}" ${done ? 'disabled' : ''}><span>${lab}${esc(o)}</span>${hit ? '<b class="opt-tag">✓ 正確</b>' : ''}</button>`;
     }).join('')}</div>`;
     if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div>`;
   }
