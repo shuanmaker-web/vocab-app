@@ -476,3 +476,7 @@ body[data-bank] .btn.ghost{background:var(--page);color:#fff}
 body[data-bank] .mode b,body[data-bank] .mode span{color:#fff}
 body[data-bank] .mode:disabled{opacity:.55}
 body[data-bank] .chip.on{background:var(--yellow);color:#1a1a1a;border-color:#1a1a1a}
+
+/* ===== one orange everywhere (same as the home page) ===== */
+:root{--red:#FF5700;--orange:#FF5700;--accent:#FF5700;--accent-soft:#FFE3D3}
+body[data-bank]{--accent:#FF5700;--accent-soft:#FFE3D3;--accent-ink:#fff}
