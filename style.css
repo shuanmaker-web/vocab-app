@@ -425,3 +425,28 @@ body #tabs button:active{transform:scale(.92)}
 #bankswitch button.on{background:#fff;color:var(--page);box-shadow:0 1px 4px rgba(0,0,0,.2)}
 body.in-session #bankswitch{display:none}
 body.landing #bankswitch{display:none}
+
+/* ===== Sub pages (everything except the home page): darker-beige page, lighter-beige squares, orange tab bar ===== */
+:root{--page-sub:#F3F5EB}
+html[data-view="gsat"],html[data-view="gsat"] body,
+html[data-view="material"],html[data-view="material"] body{background:var(--page-sub)!important}
+body[data-bank] .stat,
+body[data-bank] .tile:not(.good):not(.part):not(.bad),
+body[data-bank] .chip:not(.on){background:var(--surface)}
+body[data-bank] .stat{border:var(--bk)}
+body[data-bank] #bankswitch{background:var(--page-sub)}
+body[data-bank] #bankswitch .bs-track{background:var(--page)}
+
+/* tab bar: solid orange pill */
+body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+body #tabs{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));max-width:616px;height:64px;padding:0 10px;
+  background:var(--page);border-radius:999px;justify-content:space-around;gap:0}
+body #tabs::before{display:none}
+body #tabs button{flex:1;min-height:48px;padding:0}
+body #tabs button .ti{width:36px;height:36px;filter:none}
+body #tabs button span{bottom:calc(100% + 6px);color:#1a1a1a;text-shadow:none}
+body #tabs{height:68px}
+body #tabs button{flex-direction:column;gap:1px}
+body #tabs button .ti{width:30px;height:30px}
+body #tabs button span{position:static;transform:none;margin:0;bottom:auto;display:block!important;visibility:hidden;font-size:.62rem;line-height:1;color:#fff;height:.62rem}
+body #tabs button.on span{visibility:visible;color:#ffd200}
