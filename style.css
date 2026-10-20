@@ -484,3 +484,15 @@ body[data-bank]{--accent:#FF5700;--accent-soft:#FFE3D3;--accent-ink:#fff}
 /* error / warning colors use the same orange; text inputs match the other fields */
 :root,body[data-bank]{--bad:#FF5700;--bad-soft:#FFE3D3;--warn:#FF5700}
 input[type=text],input[type=search]{max-width:150px;min-width:0;border:2.5px solid #1a1a1a;border-radius:14px;background:var(--surface);font:inherit;padding:8px 10px;color:var(--ink)}
+
+/* ===== compact multiple-choice question so the answer card fits on screen ===== */
+body.in-session{padding-bottom:16px}
+.topbar{margin-bottom:10px}
+.card.q{padding:10px 16px 12px}
+.card.q .word{font-size:2rem;line-height:1.15}
+.card.q .pos{margin-top:0;font-size:.9rem}
+.card.q > div[style]{margin-top:4px!important}
+.card.q .icon-btn{width:34px;height:34px;font-size:.9rem}
+.card.q .zh{margin-top:4px;font-size:1.35rem}
+.opts{gap:8px;margin-top:10px}
+.opt{padding:11px 14px}
