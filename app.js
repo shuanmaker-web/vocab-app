@@ -238,7 +238,10 @@ function render() {
 
 const starPts = (n, ro, ri) => Array.from({ length: n * 2 }, (_, i) => { const r = i % 2 ? ri : ro, a = -Math.PI / 2 + i * Math.PI / n; return (12 + r * Math.cos(a)).toFixed(2) + ',' + (12.4 + r * Math.sin(a)).toFixed(2); }).join(' ');
 const STAR5 = starPts(5, 11, 4.8), STAR8 = starPts(8, 11.5, 6.6);
-const starCell = (k, n, cls, lv) => `<i class="${cls}" title="${k}${n == null ? '' : ': ' + n}"${lv == null ? '' : ` data-l="${lv}"`}><svg viewBox="0 0 24 24" aria-hidden="true">${cls.includes('exday') ? `<polygon points="${STAR8}" stroke-linejoin="round"/>` : `<circle class="c" cx="12" cy="12" r="9.5"/>${cls.includes('today') ? '<circle class="dot" cx="12" cy="12" r="3.8"/>' : ''}`}</svg></i>`;
+const starCell = (k, n, cls, lv) => {
+  const shape = cls.includes('exday') ? `<polygon points="${STAR8}" stroke-linejoin="round"/>` : lv > 0 ? `<polygon class="st" points="${STAR5}" stroke-linejoin="round"/>` : '<circle class="c" cx="12" cy="12" r="9.5"/>';
+  return `<i class="${cls}" title="${k}${n == null ? '' : ': ' + n}"${lv == null ? '' : ` data-l="${lv}"`}><svg viewBox="0 0 24 24" aria-hidden="true">${shape}${cls.includes('today') ? '<circle class="dot" cx="12" cy="12.6" r="3.4"/>' : ''}</svg></i>`;
+};
 function examLine() {
   const e = S.settings.examDate; if (!e) return '';
   const days = Math.ceil((new Date(e + 'T00:00:00') - new Date()) / DAY); if (days < 0) return '';
@@ -379,7 +382,7 @@ function renderProgress() {
   app.innerHTML = html;
 }
 
-const APP_VERSION = 'v74';
+const APP_VERSION = 'v75';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;

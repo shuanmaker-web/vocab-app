@@ -554,3 +554,8 @@ body:not([data-bank]) #tabs,body:not([data-bank]) #bankswitch{display:none}
 .opt-tag{color:var(--good);font-weight:800;white-space:nowrap;font-size:.95rem}
 body[data-bank] .btn.ghost.danger-btn,.btn.ghost.danger-btn{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
 .today-n{font-weight:800;font-size:1rem;color:var(--ink);margin:6px 2px}
+
+/* marked days are stars; unmarked days stay dotted circles */
+:is(.heat,.star-legend) i polygon.st{stroke-linejoin:round}
+:is(.heat,.star-legend) i[data-l="1"] polygon.st{fill:#FFE3D3;stroke:var(--page);stroke-width:1.6}
+:is(.heat,.star-legend) i[data-l="2"] polygon.st{fill:var(--page);stroke:#1a1a1a;stroke-width:1.6}
