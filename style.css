@@ -537,3 +537,13 @@ body[data-bank] .chip.on{background:var(--page);color:#1a1a1a;border-color:#1a1a
 /* ===== top switch: thicker active outline, bigger font, same overall size ===== */
 #bankswitch button{font-size:1.1rem;padding:7px 6px}
 #bankswitch button.on{font-size:1.32rem;padding:15px 6px;border-width:5px;margin:-11px 0}
+
+/* ===== bottom tab labels: orange, same style whether active or not ===== */
+body #tabs{height:68px}
+body #tabs button{flex-direction:column;justify-content:flex-end;gap:2px;padding:0 0 6px}
+body #tabs button .ti{width:28px;height:28px;margin-bottom:0}
+body #tabs button span,body #tabs button.on span{display:block!important;visibility:visible!important;position:static;transform:none;margin:0;height:auto;font-size:.68rem;font-weight:800;line-height:1.1;color:var(--page)!important;text-shadow:none;white-space:nowrap}
+body #tabs button.on .ti{transform:translateY(-12px) scale(1.2)}
+body #tabs button.on::before{margin:-52px 0 0 -30px;top:50%}
+body #tabs button.on .ti{transform:translateY(-22px) scale(1.2)}
+body #tabs button.on::before{margin:-62px 0 0 -30px}
