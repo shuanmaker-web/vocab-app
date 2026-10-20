@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>學測單字</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5ead6">
+<meta name="description" content="學測英文單字:字卡、選擇題、拼字練習">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="學測單字">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" aria-live="polite"></div>
+<nav id="tabs" aria-label="主選單">
+  <button data-tab="landing" aria-label="首頁"><i class="ti" style="--ic:url(icons/tab0.png)" aria-hidden="true"></i><span>首頁</span></button>
+  <button data-tab="home" class="on" aria-label="單字學習"><i class="ti" style="--ic:url(icons/tab1.png)" aria-hidden="true"></i><span>單字學習</span></button>
+  <button data-tab="practice" aria-label="練習題本"><i class="ti" style="--ic:url(icons/tab2.png)" aria-hidden="true"></i><span>練習題本</span></button>
+  <button data-tab="progress" aria-label="進度"><i class="ti" style="--ic:url(icons/tab3.png)" aria-hidden="true"></i><span>進度</span></button>
+  <button data-tab="settings" aria-label="設定"><i class="ti" style="--ic:url(icons/tab4.png)" aria-hidden="true"></i><span>設定</span></button>
+</nav>
+<script src="lib/ts-fsrs.umd.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

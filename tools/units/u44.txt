@@ -1,0 +1,23 @@
+U|44
+F|1|It was n______e of you to return that bag full of money to the police station.|noble|adj.|高尚的
+F|2|The villagers f______d to higher ground when they realized the river was rising dangerously fast.|fled|v.|逃離|flee
+F|3|During the French Revolution, the king of France was o______wn by his people.|overthrown|v.|推翻|overthrow
+F|4|You should organize your thoughts before you start to act because the problem needs to be solved in a s______c way.|systematic|adj.|有系統的
+F|5|The doctor t______ed herself for many years with the thought that she could have saved the life of that patient.|tortured|v.|折磨|torture
+M|6|The family possesses ______ supplies to live through one harsh winter.|gracious|memorable|coarse|adequate|D|adequate|adj.|足夠的
+M|7|The ______ between the two groups resulted in the loss of many people's lives.|clash|paw|glimpse|spark|A|clash|n.|衝突
+M|8|After the fight, the winning knight let his opponent leave with his ______, and this kind act won him great respect.|argument|nonsense|evaluation|dignity|D|dignity|n.|尊嚴
+M|9|The little boy claimed that he had had only a quick ______ of the other boy's test paper.|battery|penalty|quarrel|glimpse|D|glimpse|n.|一瞥
+M|10|It is nearly impossible for a kid to ______ 200 new words in one night.|telegraph|memorize|insert|evaluate|B|memorize|v.|記住;背誦
+K|11-15|repetition;bandage;revolution;embarrassment;fireplace;cliff
+B|11|Before the car went over the ______, the driver jumped out of it.|F|n.|懸崖
+B|12|In winter, my grandfather likes to sit calmly by the ______, smoke a cigar, and read a book.|E|n.|壁爐
+B|13|The song's chorus relies on catchy ______, which makes it easy for listeners to remember.|A|n.|重複
+B|14|To Betty's ______, she waved at someone who turned out to be a complete stranger.|D|n.|尷尬
+B|15|The Industrial ______, which led to modern civilization, was an important period in human history.|C|n.|革命
+K|16-20|terror;relevant;translation;tickles;memorial;spark
+B|16|The cute baby girl laughs every time her father ______ her feet.|D|v.|搔癢|tickle
+B|17|Some comments were removed because they were not ______ to the main discussion.|B|adj.|相關的
+B|18|You can start a fire by rubbing two pieces of dry wood together until you produce a ______.|F|n.|火花
+B|19|Most people there prefer to leave the country rather than live in ______ due to the war.|A|n.|恐怖;恐懼
+B|20|Is there a Chinese ______ of this novel? I really want to read it, but I don't understand Japanese.|C|n.|翻譯

@@ -1,0 +1,23 @@
+U|23
+F|1|The firefighter was awarded a medal for his b______y. He had gone into a burning house and rescued a baby.|bravery|n.|勇敢
+F|2|Little Johnny d______es all vegetables. He refuses to eat any of them.|dislikes|v.|不喜歡|dislike
+F|3|The weather in Los Angeles is dry and warm in the summer, with only o______l showers.|occasional|adj.|偶爾的
+F|4|The store clerk remained patient even when a c______r complained loudly about the service.|customer|n.|顧客
+F|5|Many citizens expressed their concerns about how the g______t was handling environmental issues.|government|n.|政府
+M|6|It is easy to spoil a relationship, but it is very difficult to ______ one.|tease|scrub|mend|hug|C|mend|v.|修補;修復
+M|7|Our company provides the best possible service to our ______, and that is why many of them have been with us for many years.|lords|beads|clients|feathers|C|client|n.|客戶
+M|8|The tired worker took a break and went out to smoke a ______.|timber|feather|cigarette|lollipop|C|cigarette|n.|香菸
+M|9|On the table in the middle of the dining room is a ______ holding several red roses.|pine|vase|mop|hell|B|vase|n.|花瓶
+M|10|Mr. Lee took his children to the ______ on Sunday. They especially liked the clown and the magic tricks that he performed.|occasion|tobacco|circus|lifetime|C|circus|n.|馬戲團
+K|11-15|beast;monk;lighthouse;enjoyable;occasion;brass
+B|11|The weekend hike was so ______ that the couple planned to visit the same place again next month.|D|adj.|愉快的
+B|12|The ______ is highly respected in this village, and many people go to him for life advice.|B|n.|僧侶;和尚
+B|13|The ______ shone its light out to sea, guiding ships away from danger.|C|n.|燈塔
+B|14|The hunter followed the trail of the ______ and finally killed it.|A|n.|野獸
+B|15|The earrings look expensive, but they are actually made of ______.|F|n.|黃銅
+K|16-20|hugged;lifetime;hell;governed;unacceptable;feathers
+B|16|One way to distinguish between male and female birds is to look at their ______. Often males have colorful ones while females don't.|F|n.|羽毛|feather
+B|17|The elderly woman was presented with an award for a(n) ______ of helping the poor.|B|n.|一生;終身
+B|18|John found it ______ that people kept spreading rumors without checking the facts first.|E|adj.|無法接受的
+B|19|There is no way for people to know for sure whether heaven and ______ exist or where they are.|C|n.|地獄
+B|20|The mayor has ______ his city well, and many citizens support him loyally.|D|v.|治理;統治|govern

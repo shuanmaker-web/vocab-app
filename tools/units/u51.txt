@@ -1,0 +1,23 @@
+U|51
+F|1|The government have made many new laws to prevent d______n in the workplace, whether it is based on gender, age, or religion.|discrimination|n.|歧視
+F|2|Tom was asked to e______e on his argument so the class could understand his reasoning more clearly.|elaborate|v.|詳盡闡述
+F|3|It takes Mr. Wang two hours to c______e between his house and office, and sometimes even longer if the traffic is heavy.|commute|v.|通勤
+F|4|Drinking water that is c______ed by heavy metals may lead to serious health problems, such as skin diseases, infertility, or even cancer.|contaminated|adj.|汙染的|contaminate
+F|5|Ted is a successful a______t who has designed many skyscrapers and famous buildings that now stand in big cities around the world.|architect|n.|建築師
+M|6|Hawaii is a popular tourist ______. In particular, many newlyweds like to go there for their honeymoon.|consumption|destination|execution|conviction|B|destination|n.|目的地
+M|7|Wendy has decided to ______ her study room into a second bedroom so that there will be a place for her parents to sleep when they visit her.|depict|conceal|convert|exceed|C|convert|v.|改裝
+M|8|Vegetables are rich in vitamins and ______. You should eat more vegetables to maintain a healthy diet.|fiber|distinction|extension|architecture|A|fiber|n.|纖維
+M|9|The ______ part of the house looks ancient, but the inside of the building has been remodeled, so everything is new and comfortable.|corporate|distinctive|excessive|external|D|external|adj.|外部的
+M|10|When you sign any legal ______, be sure to read everything carefully to protect your rights.|conversion|commuter|executive|document|D|document|n.|文件
+K|11-15|accord;contagious;contemporary;cognitive;distinctive;executive
+B|11|The artist used bold shapes and colors, giving his paintings a(n) ______ style that viewers would never forget.|E|adj.|獨特的
+B|12|Vivian prefers classical music to ______ music; she simply can't stand rock and pop music.|C|adj.|當代的
+B|13|______ positions require not only experience but also strong communication and problem-solving skills.|F|adj.|經營管理的;有權執行決策的
+B|14|The disease is highly ______. In order to stop it from spreading, the government is urging people to get vaccinated.|B|adj.|(疾病)傳染的
+B|15|Jason is an honorable businessperson; everything he does is in ______ with the law, and he never cheats his clients.|A|n.|(與……)一致
+K|16-20|altered;characterized;capability;corporate;extensive;conformed
+B|16|Protecting public resources should be treated as a(n) ______ responsibility in every community.|D|adj.|全體的
+B|17|Leo did ______ research on the features and prices of different cars before he finally bought one.|E|adj.|廣泛的
+B|18|We ______ our travel plans at the last minute because a big typhoon is coming. We will just stay at the hotel and do some shopping.|A|v.|改變|alter
+B|19|Roger's parents always believed that he had the ______ to achieve great success in music, and sure enough, he is now a world-renowned pianist.|C|n.|能力
+B|20|The director's movies are ______ by a dark sense of humor and surprising plot twists.|B|v.|具有……的特徵|characterize

@@ -1,0 +1,23 @@
+U|31
+F|1|The star is so close to the earth that it is visible to the n______d eye.|naked|adj.|裸的;無遮蔽的
+F|2|Be careful when you use s______rs. Watch your fingers!|scissors|n.|剪刀
+F|3|A man suddenly r______hed into the classroom and started yelling at one of our classmates.|rushed|v.|衝|rush
+F|4|When cooking chicken in a pot, make sure to leave the lid slightly open in order to let the s______m out.|steam|n.|蒸氣
+F|5|O______p of personal property is a basic right that all people should have.|ownership|n.|所有權
+M|6|The little bird almost fell out of its ______. Fortunately, its mother caught it at the last second.|crab|pile|dawn|nest|D|nest|n.|鳥巢
+M|7|At the port, a(n) ______ lifted a huge, heavy container and moved it onto the ship.|ox|log|crane|moth|C|crane|n.|起重機
+M|8|Someone broke into the company's ______ yesterday and stole some important information.|volleyball|rectangle|pigeon|database|D|database|n.|資料庫
+M|9|The volunteers worked from ______ to dusk, clearing garbage and delivering supplies after the powerful typhoon struck the country.|dawn|bull|straw|moth|A|dawn|n.|黎明
+M|10|After the main course came the delicate ______—strawberry cheesecake.|dessert|parrot|napkin|loser|A|dessert|n.|甜點
+K|11-15|parrot;neat;blew;monster;coughed;log
+B|11|At noon, the workers sat on a huge ______ and had lunch.|F|n.|原木
+B|12|The travel show introduced the famous ______ in the lake, attracting tourists curious about strange animals and unexplained legends.|D|n.|怪物
+B|13|Johnny always keeps his house ______ and tidy.|B|adj.|整潔的
+B|14|After choking on the spicy pepper, David ______ up small bits of food while trying to catch his breath again.|E|v.|咳嗽|cough
+B|15|The ______ is a tropical bird that can copy the human voice and other sounds.|A|n.|鸚鵡
+K|16-20|bare;pitched;underwear;omitted;piled;underlying
+B|16|Before turning in his answer card, the student checked it again to see if he had ______ any questions.|D|v.|遺漏;省略|omit
+B|17|Most people only focus on the main plot of movies. Personally, I find it more interesting to analyze their ______ themes.|F|adj.|潛在的;根本的
+B|18|After you wash your ______, make sure to dry it out completely.|C|n.|內衣
+B|19|After class, the students ______ their homework books neatly on the teacher's desk.|E|v.|堆放|pile
+B|20|The player ______ the ball with incredible speed, impressing every spectator.|B|v.|投(球)|pitch

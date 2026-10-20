@@ -1,0 +1,23 @@
+U|20
+F|1|It is illegal to d______p any kind of trash or waste into rivers in our country.|dump|v.|傾倒;丟棄
+F|2|The current mayor is very confident that he will win the e______n again.|election|n.|選舉
+F|3|My mother always treats us with patience and kindness, and she seldom loses her t______r.|temper|n.|脾氣
+F|4|A lack of exercise and bad eating habits may w______n your body and lead to health problems.|weaken|v.|使變弱
+F|5|We should be t______l for what we have and try not to waste anything.|thankful|adj.|感謝的
+M|6|Bob hasn't cleaned his desk for a long time, so it is covered in ______.|bush|yolk|chest|dust|D|dust|n.|灰塵
+M|7|Most of the products manufactured in this factory are for ______. Only a small percentage are for domestic use.|cherry|shovel|export|tide|C|export|n.|出口
+M|8|For their tenth wedding anniversary, the Wangs plan to ______ at a very fancy restaurant.|sigh|buzz|elect|dine|D|dine|v.|用餐
+M|9|The lifeguard's loud ______ immediately caught the swimmers' attention and stopped them from going too far.|whistle|zipper|cupboard|bushfire|A|whistle|n.|哨子;口哨
+M|10|Miranda ______ and shook her head. She didn't know how to deal with the problem.|buzzed|sighed|dipped|exported|B|sigh|v.|嘆氣
+K|11-15|tailor;buzzing;tent;zone;dip;dusting
+B|11|There was a fly ______ around our heads all morning.|B|v.|發出嗡嗡聲|buzz
+B|12|To make French toast, you must first ______ the toast in a mixture of eggs and milk and then fry it.|E|v.|浸;蘸
+B|13|My grandfather doesn't wear any store-bought clothes. Instead, he has a ______ make all his clothes for him.|A|n.|裁縫師
+B|14|We have pitched our ______ next to the lake.|C|n.|帳篷
+B|15|Sandra decided to step out of her comfort ______ and participate in a public speech contest.|D|n.|區域;地帶
+K|16-20|shepherd;wisdom;cheeks;dirty;shiny;thumbs
+B|16|The director gave the team the ______ up after seeing how well they handled the presentation.|F|n.|大拇指|thumb
+B|17|Every day, the ______ leads his flock of sheep to the top of the hill in the morning.|A|n.|牧羊人
+B|18|Whenever Lucy sees the boy she likes, her ______ turn red with shyness.|C|n.|臉頰|cheek
+B|19|It is the maid's job to wipe the floor until it is clean and ______.|E|adj.|閃亮的
+B|20|With age comes ______, but only for those willing to learn from their mistakes.|B|n.|智慧

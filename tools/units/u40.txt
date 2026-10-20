@@ -1,0 +1,23 @@
+U|40
+F|1|Michael's company had a p______s year. They earned a lot of money.|prosperous|adj.|繁榮的;興旺的
+F|2|Ben was extremely disappointed when he received the r______n letter from his dream university.|rejection|n.|拒絕
+F|3|The bag is made of g______e leather, so it is a bit more expensive than the other ones.|genuine|adj.|真正的;純正的
+F|4|Jean s______es to improve her writing skills by reading widely and practicing daily, even when feeling tired.|strives|v.|努力;奮鬥|strive
+F|5|Decisions made in i______e can cause serious harm, especially when people refuse to learn basic facts.|ignorance|n.|無知
+M|6|When the fire alarm rings, everyone has to leave the building and ______ in the playground.|assemble|isolate|frustrate|dominate|A|assemble|v.|集合;組裝
+M|7|The company surveyed the customers to collect their ______ on the new product.|intuition|frustration|maximum|feedback|D|feedback|n.|意見回饋
+M|8|You could include more ______ in your presentation to make it easier for people to understand the meaning of the data.|assemblies|choruses|funerals|diagrams|D|diagram|n.|圖表;圖解
+M|9|Many teenagers are ______ to social media platforms, checking their phones even during important conversations.|addicted|exhausted|generous|brutal|A|addicted|adj.|上癮的
+M|10|Adam can ______ an apple in half with his bare hands.|dread|crash|grieve|split|D|split|v.|劈開;分裂
+K|11-15|dew;injected;maximum;grieved;psychology;furious
+B|11|When the sun rose in the east, the ______ vanished from the tree leaves.|A|n.|露水
+B|12|After the school shooting, the entire community ______ for the ten students who had died.|D|v.|悲痛;哀悼|grieve
+B|13|Tim wants to study ______ at university because he is interested in the human mind.|E|n.|心理學
+B|14|This elevator can carry a(n) ______ load of 2,000 kilograms.|C|adj.|最大的;最高的
+B|15|Mrs. Norris is ______ with her son for breaking her favorite vase.|F|adj.|狂怒的
+K|16-20|instinct;imposing;claws;dread;rhythm;crushing
+B|16|Teachers should avoid ______ personal opinions on students and encourage creative thought instead.|B|v.|強加|impose
+B|17|Danny has a very good sense of ______; that is why he is so good at playing the drums.|E|n.|節奏
+B|18|Whenever Ron thinks of the final exam, his heart fills with ______.|D|n.|恐懼;憂慮
+B|19|My cat has long ______. I have to be careful when I play with her, or else I might get scratched.|C|n.|爪子|claw
+B|20|It is a natural human ______ to want to pursue happiness and avoid pain.|A|n.|本能

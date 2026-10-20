@@ -1,0 +1,23 @@
+U|55
+F|1|The c______y is so famous that almost everyone knows who she is.|celebrity|n.|名人
+F|2|The woman was o______med with grief when she learned that her husband had died in the accident.|overwhelmed|v.|使不知所措;淹沒|overwhelm
+F|3|I am sorry that I won't be able to come to the meeting. I have a p______r engagement.|prior|adj.|先前的
+F|4|The smartphone company claims that they have achieved a technological b______h by dramatically reducing the weight of their phones.|breakthrough|n.|突破
+F|5|The house does not have enough s______e space, so Peter is unable to store all his belongings.|storage|n.|儲存;儲藏
+M|6|In recent years, scientists have observed a(n) ______ change in the temperature on Earth; in other words, it is obviously getting warmer.|administrative|horizontal|noticeable|structural|C|noticeable|adj.|明顯的
+M|7|The speaker was talking so softly that the audience members had to ______ their ears to hear her.|suspend|mock|scheme|strain|D|strain|v.|竭力;使緊張
+M|8|Andy has a severe ______ to peanuts. He starts to cough and itch if he goes near any.|allergy|mortality|particle|spectator|A|allergy|n.|過敏
+M|9|The report shows that the building company failed to take safety ______ when setting up the construction site. That's what led to the tragic accident.|arenas|components|precautions|segments|C|precaution|n.|預防措施
+M|10|Ken did not tell others about his marriage because he likes to keep a low ______.|administrator|profile|pulse|warrior|B|profile|n.|形象;輪廓(keep a low profile:保持低調)
+K|11-15|bodyguard;patented;indispensable;reversed;recommends;straightforward
+B|11|We cannot start the meeting until William arrives; he is a(n) ______ member of our team.|C|adj.|不可或缺的
+B|12|It can be hard to deliver bad news to someone; in fact, the best way to do it is to be honest and ______.|F|adj.|直接了當的
+B|13|Once Ian ______ the software, he felt relieved that his idea was legally protected.|B|v.|取得專利|patent
+B|14|The doctor ______ that my grandfather stop drinking alcohol to avoid worsening his heart disease.|E|v.|建議;推薦|recommend
+B|15|The driver carefully ______ her vehicle out of the narrow lane to avoid hitting the fence behind her.|D|v.|倒車;使反轉|reverse
+K|16-20|spectacular;sturdy;strapped;administration;preyed;depression
+B|16|I have used this desk for more than twenty years without a glitch. It is a very ______ piece of furniture.|B|adj.|堅固的;結實的
+B|17|Tina has a lot of experience in business ______; she is good at managing people and organizing work schedules.|D|n.|管理;行政
+B|18|The documentary showed how stronger animals ______ upon weaker ones to survive in the wild.|E|v.|捕食|prey
+B|19|During the economic ______, many factories closed, leaving thousands of workers without a stable income.|F|n.|不景氣;蕭條
+B|20|Before the plane takes off, the flight attendants will walk around the cabin to make sure that everyone is ______ in.|C|adj.|被繫緊的;繫上安全帶的|strap

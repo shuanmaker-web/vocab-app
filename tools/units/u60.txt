@@ -1,0 +1,23 @@
+U|60
+F|1|This news report u______es the importance and the methods of controlling this disease.|underlines|v.|強調|underline
+F|2|Alice makes a big d______n to charity every year because she believes in doing good deeds.|donation|n.|捐款;捐贈
+F|3|The construction stopped due to a shortage of building materials, but it soon r______d when new supplies arrived.|resumed|v.|重新開始;恢復|resume
+F|4|I have always dreamed of having a honeymoon on a beautiful and e______c island.|exotic|adj.|異國風味的
+F|5|After the wonderful performance, there was a big round of a______e from the audience.|applause|n.|掌聲
+M|6|The use of nuclear power has always been a(n) ______ topic. People who advocate it regard it as the most powerful energy source, while those who reject it think it creates toxic waste.|alcoholic|controversial|considerate|poetic|B|controversial|adj.|有爭議的
+M|7|There is a high ______ that the current mayor will be elected for a second term. He has many loyal supporters.|boundary|expertise|likelihood|prescription|C|likelihood|n.|可能性
+M|8|Several talented athletes ______ against one another for the final spot on the national swimming team.|contended|donated|notified|plunged|A|contend|v.|競爭;爭奪
+M|9|The salesperson said if we fill out a product satisfaction ______, we will receive a free gift.|controversy|offering|questionnaire|skeleton|C|questionnaire|n.|問卷
+M|10|Matthew ______ his best friend on the back to congratulate him on winning the tennis game.|gripped|shed|thrilled|slapped|D|slap|v.|拍;摑
+K|11-15|boxes;résumé;contemplates;donor;incorporate;hence
+B|11|The scientist often stares into the night sky and ______ the existence of life beyond Earth.|C|v.|沉思;思考|contemplate
+B|12|Fiona got a big pay raise; ______, she threw a celebration party.|F|adv.|因此
+B|13|Sadie updated her ______ to highlight her volunteer experience before applying for the internship program.|B|n.|履歷表
+B|14|This novelist tends to ______ elements of adventure and mystery into her works, which has led to some film adaptations of her novels.|E|v.|納入;結合
+B|15|Danny ______ every weekend at a gym to improve his strength and relieve academic stress.|A|v.|打拳擊|box
+K|16-20|thigh;whereas;consecutive;midst;prescribes;bounds
+B|16|Karen enjoys spending the weekends quietly at home, ______ her husband loves going outdoors.|B|conj.|然而;但是
+B|17|Luke's generosity knows no ______ as he continues to devote time and resources to various community projects.|F|n.|界限;範圍|bound
+B|18|The athlete had pulled a muscle in his ______ last week, so he had no choice but to drop out of the competition.|A|n.|大腿
+B|19|This is the fourth ______ day that I have worked late. I must get some rest tomorrow.|C|adj.|連續的
+B|20|Wendy apologized for not picking up the phone while she was in the ______ of writing an important email.|D|n.|正當中;中間

@@ -1,0 +1,23 @@
+U|58
+F|1|Tim a______ed that he had made a huge mistake by lying to his parents about his grades.|acknowledged|v.|承認|acknowledge
+F|2|The statue of Cupid looks like a c______y baby boy with a pair of wings.|chubby|adj.|圓胖的
+F|3|After Alex was injured in the accident, he lost all s______ns in his limbs and thus couldn't feel a bite on his arm.|sensations|n.|感覺|sensation
+F|4|The famous director's latest film is widely considered to be a m______e. It has won the praise of both critics and the public.|masterpiece|n.|傑作
+F|5|Our school's football team worked very hard to q______y for the district finals. We're all very proud that they made it.|qualify|v.|取得資格
+M|6|The new software program is ______ with the old laptops, so the school has to upgrade its equipment.|biological|incompatible|parallel|sacred|B|incompatible|adj.|不相容的
+M|7|Linda finds herself in a ______: She can't decide whether to go to her friend's birthday party or the concert.|circuit|dilemma|patrol|variation|B|dilemma|n.|兩難
+M|8|The athlete ______ a minor injury during practice but recovered quickly after resting for a few days.|diminished|sustained|evolved|tackled|B|sustain|v.|遭受;承受;維持
+M|9|Ted is ______ about tennis. Whenever he has free time, he watches live tennis games or reads reviews of his favorite players.|descriptive|legitimate|passionate|sustainable|C|passionate|adj.|熱衷的;熱情的
+M|10|The mining crew stepped away as the rock wall was ______ open, and a narrow tunnel hidden behind it was revealed.|attributed|adored|blasted|terrified|C|blast|v.|炸開;爆破
+K|11-15|partly;blur;comedian;obscure;saint;flexibility
+B|11|What Penny told you is only ______ true. She did not tell you the entire story.|A|adv.|部分地
+B|12|The famous actor started as a standup ______. He was so funny that a director asked him to be in a film that turned out to be a huge success.|C|n.|喜劇演員
+B|13|I like to find nice little shops and restaurants in ______ corners of the city. That way, I can enjoy them all by myself.|D|adj.|不起眼的;隱蔽的
+B|14|Mike doesn't like to completely fill up his schedule; instead, he likes to maintain some ______.|F|n.|彈性
+B|15|The child kept moving while we were taking the photo, so he was just a(n) ______ in the picture.|B|n.|模糊不清的形狀
+K|16-20|salon;immune;commodity;destructive;ragged;radical
+B|16|The computer chip is an important ______ in the international market. It is an essential part of many products.|C|n.|商品;日用品
+B|17|Nuclear energy can provide power for people's everyday lives, but it can also be used in ______ weapons.|D|adj.|破壞性的
+B|18|It is not easy to discuss politics with people who hold ______ views. They seldom accept others' opinions rationally.|F|adj.|激進的
+B|19|Doctors recommend certain vaccines to strengthen the ______ system against dangerous diseases.|B|adj.|免疫的
+B|20|David has been wearing that shirt for more than ten years; it is now in a(n) ______ condition.|E|adj.|破爛的

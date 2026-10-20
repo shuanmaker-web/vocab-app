@@ -1,0 +1,23 @@
+U|59
+F|1|Dora is studying for an exam tomorrow, so her family is keeping quiet so as not to d______t her.|distract|v.|使分心
+F|2|The scientist is an a______e of renewable energy and frequently speaks at public events to promote its benefits.|advocate|n.|提倡者;擁護者
+F|3|Jason has disappeared; no one knows his w______s.|whereabouts|n.|下落;行蹤
+F|4|I believe that everyone should be treated equally, r______s of their race, gender, or religion.|regardless|adv.|不顧;不管
+F|5|Taiwan's real estate business b______med during the second half of the 1980s, when the economy was prosperous.|boomed|v.|景氣興旺;暴漲|boom
+M|6|The rejection letter ______ Eason's dream of studying abroad, so he felt disappointed but determined to try again.|pleaded|conceived|disconnected|shattered|D|shatter|v.|粉碎;使破滅
+M|7|Mindy said that the cake I had made was the best cake she had ever eaten, but I think that was a(n) ______.|domain|exaggeration|pedestrian|sensitivity|B|exaggeration|n.|誇大;誇張
+M|8|Let me set a ______ on my smartphone, or else I might forget about our appointment.|competence|pillar|reminder|therapy|C|reminder|n.|提醒(事項)
+M|9|The audience watched the violin performance in ______. The musician played fantastically.|awe|fluid|pier|theft|A|awe|n.|敬畏;驚嘆
+M|10|The mayor's dedication to maintaining the wellbeing of his citizens is ______ of our respect.|bound|nasty|grim|worthy|D|worthy|adj.|值得的
+K|11-15|boost;aisle;competent;estate;habitat;odds
+B|11|Tina is a(n) ______ worker. Her supervisor has no problem with letting her take charge of cases independently.|C|adj.|能幹的;稱職的
+B|12|The wild parrot's natural ______ is the rainforest.|E|n.|棲息地
+B|13|Against all ______, the group won the competition despite its limited resources.|F|n.|可能性;勝算(against all odds:儘管困難重重)
+B|14|The author went on a tour to ______ the sales of her latest novel.|A|v.|提升;促進
+B|15|"The product that you are looking for is in ______ eight," the supermarket clerk said.|B|n.|走道;通道
+K|16-20|sequence;compliments;pleaded;therapist;impulse;vending
+B|16|Before heading to class, Julie bought a bottle of water from the ______ machine.|F|adj.|自動販賣的
+B|17|The man admitted to his crime and ______ with the judge for a lighter sentence.|C|v.|懇求;請求|plead
+B|18|Sam ______ his wife on her cooking and good looks every day. That is his secret to maintaining a happy marriage.|B|v.|稱讚|compliment
+B|19|My physical ______ said that I must fix my posture if I want to get rid of my backache for good.|D|n.|治療師
+B|20|When Mandy saw the clear running water in the stream, she had a sudden ______ to dip her feet into it.|E|n.|衝動

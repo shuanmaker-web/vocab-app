@@ -1,0 +1,23 @@
+U|30
+F|1|That simple, long dress shows off her s______r figure.|slender|adj.|苗條的
+F|2|There are so many books in the b______e that it seems to be sagging under the weight.|bookcase|n.|書櫃
+F|3|I always keep a f______t in my backpack when I go camping because it can get really dark outdoors at night.|flashlight|n.|手電筒
+F|4|My mother is a very experienced and s______l driver. For example, she can park a car in the smallest of spaces.|skillful|adj.|技術嫻熟的
+F|5|The apple was so j______y that liquid burst out from it when I bit into it.|juicy|adj.|多汁的
+M|6|The team came up against a ______ wall after their project was rejected three times, despite carefully rewriting it each round.|jazz|brick|silk|hum|B|brick|n.|磚頭(come up against a brick wall:碰壁)
+M|7|A flash of ______ lit up the night sky, and a few seconds later, we heard the sound of thunder.|koala|lightning|bowling|cotton|B|lightning|n.|閃電
+M|8|You should heat the ______ to 200 degrees before putting the pie inside.|oven|cotton|leopard|squirrel|A|oven|n.|烤箱
+M|9|"Do you think Ted will arrive on time?" "I wouldn't ______ on it, since he's late to almost every meeting we've ever had."|bind|hum|sink|bet|D|bet|v.|打賭
+M|10|Oscar loves ______ music and often goes to live concerts to see his favorite bands play.|loaf|brick|shrimp|jazz|D|jazz|n.|爵士樂
+K|11-15|bowling;bloody;spinach;steal;overseas;sink
+B|11|Ellen's son hates ______. However, it is a very healthy vegetable, so Ellen still makes him eat it.|C|n.|菠菜
+B|12|The backpack was an absolute ______ because it cost half the usual price and still looked brand-new.|D|n.|便宜貨;很划算的東西
+B|13|Someone hit William in the face, and he got a(n) ______ nose.|B|adj.|流血的;血淋淋的
+B|14|My father goes ______ with his friends every weekend. It's his favorite indoor leisure activity.|A|n.|保齡球
+B|15|Michael was a(n) ______ student at Cambridge, and he didn't go back to his country after he graduated.|E|adj.|海外的;國外的
+K|16-20|kindergarten;bittersweet;bind;lemonade;loaf;bet
+B|16|To Ginny, graduation felt ______ because she was excited for new opportunities but sad to leave her closest friends behind.|B|adj.|又苦又甜的;苦樂參半的
+B|17|The little boy is going to his first day of ______ tomorrow.|A|n.|幼稚園
+B|18|I ______ that the home team will win the basketball game.|F|v.|打賭|bet
+B|19|Our class will sell iced ______ in the school fair.|D|n.|檸檬汁
+B|20|The cook took a ______ of brown bread and cut it into five pieces.|E|n.|(麵包)一條

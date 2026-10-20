@@ -1,0 +1,23 @@
+U|39
+F|1|The document g______ed that the diamond was real and of the highest quality.|guaranteed|v.|保證|guarantee
+F|2|This board game requires a m______m of four players, but if more people want to join, there can be as many as ten.|minimum|n.|最小量;最低限度
+F|3|During the long hike, Alice's dog proved a loyal c______n, staying alert and close by her side on the narrow trails.|companion|n.|同伴
+F|4|So far, scientists have not found a definite e______n for how the universe was created.|explanation|n.|解釋;說明
+F|5|Rabbits are easy to b______d because they can produce babies in a period of only thirty days.|breed|v.|繁殖;飼養
+M|6|The color red is often ______ with war, energy, and danger.|criticized|interfered|motivated|associated|D|associate|v.|聯想;使有關聯
+M|7|The tired family ______ themselves to taking a slower route home, accepting that the main road would remain blocked for hours.|prompted|resigned|explained|attached|B|resign|v.|使順從(resign oneself to)
+M|8|The new electric car has the most ______ battery of all time.|critical|fluent|durable|grateful|C|durable|adj.|耐用的
+M|9|After a month of silence, the United Nations finally decided to ______ in the country's civil war.|maintain|interfere|retain|dismiss|B|interfere|v.|干預;干涉
+M|10|In order to be successful, you need to have high ______. Otherwise, you will give up easily.|motivation|outcome|retirement|dynasty|A|motivation|n.|動機;動力
+K|11-15|fundamentals;monitor;moderate;renewable;assured;prompted
+B|11|Even experienced musicians revisit the ______ to improve rhythm, accuracy, and overall performance quality.|A|n.|基本原理;基礎|fundamental
+B|12|Solar panels are becoming popular because they provide ______ power without producing harmful pollution.|D|adj.|可再生的
+B|13|The guard is watching the ______ very closely so that no strangers can pass without being noticed.|B|n.|監視器;螢幕
+B|14|Drinking ______ amounts of coffee—about two cups a day—is more likely to benefit your health than harm it.|C|adj.|適度的;中等的
+B|15|Max's interest in historic buildings ______ him to read many history books.|F|v.|促使;驅使|prompt
+K|16-20|conference;ethnic;dismissed;harsh;restore;critics
+B|16|Before the people could ______ their quake-stricken village, a fierce typhoon hit it.|E|v.|修復;恢復
+B|17|Jeremy's mother is quite ______ with him. For example, she often scolds him if his performance doesn't meet her expectations.|D|adj.|嚴厲的
+B|18|Since the movie came out, it has received many favorable reviews from both ______ and viewers.|F|n.|評論家|critic
+B|19|Scholars of various nationalities are participating in this international ______.|A|n.|會議;研討會
+B|20|Since the professor had a meeting to attend, he ______ the class earlier this morning.|C|v.|解散;讓…離開|dismiss

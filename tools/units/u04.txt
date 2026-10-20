@@ -1,0 +1,23 @@
+U|4
+F|1|The scandal completely destroyed the mayor's reputation and ended his political c______r.|career|n.|職涯;事業
+F|2|Last year, Albert took the o______y to travel abroad with his uncle.|opportunity|n.|機會
+F|3|My dog loves it when I rub his ears gently. He always licks my hand to r______d me not to stop.|remind|v.|提醒
+F|4|Dr. Lin's medical ______ (practical) serves both local residents and patients from nearby towns.|practice|n.|診所;執業
+F|5|After years in the cold north, Jean dreamed of retiring to the ______ (tropical) to enjoy the warm sunshine and gentle sea breezes.|tropics|n.|熱帶地區
+M|6|When Victor teaches English, he always entertains his students with ______ stories.|trendy|practical|steady|vivid|D|vivid|adj.|生動的
+M|7|The two men ______ business cards before sitting down to negotiate the contract.|responded|concealed|exchanged|signaled|C|exchange|v.|交換
+M|8|It was ______ of Oscar to leave the campfire burning because it could easily spread and cause a forest fire.|specific|temporary|irresponsible|previous|C|irresponsible|adj.|不負責任的
+M|9|The teacher ______ her students that they were not allowed to use their smartphones in class.|warned|rated|stripped|concealed|A|warn|v.|警告
+M|10|Albert Einstein was a famous physicist from the 20th century who developed the ______ of relativity.|signal|theory|emergency|decade|B|theory|n.|理論
+K|11-15|capture;specific;steady;decay;rate;statue
+B|11|Without ______ facts or examples, the article is not successful in proving its point.|B|adj.|具體的;特定的
+B|12|The ______ of Liberty is a major tourist attraction. Few go to New York City without visiting it.|F|n.|雕像
+B|13|The policemen tried to ______ the robber but failed.|A|v.|捕獲;捕捉
+B|14|Large numbers of refugees from the Middle East found their way into Western Europe in the hope of finding safe living conditions and ______ employment.|C|adj.|穩定的
+B|15|At 9.2%, the unemployment ______ has risen to its highest point in history.|E|n.|比率;速度
+K|16-20|savings;signal;previous;temporary;emergency;staff
+B|16|Today's teenagers are quite different from teens in ______ decades.|C|adj.|先前的
+B|17|The hospital had to ______ the wards with extra nurses after the sudden outbreak of flu cases.|F|v.|配置人員
+B|18|Many people work ______ jobs until they decide what kind of jobs they really want.|D|adj.|暫時的
+B|19|The firefighter stays calm whenever he faces a(n) ______ situation.|E|n.|緊急情況
+B|20|The father's long-term disease led the family to spend all of their ______.|A|n.|存款;積蓄

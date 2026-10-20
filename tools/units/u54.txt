@@ -1,0 +1,23 @@
+U|54
+F|1|Drowsy driving is as dangerous as drunk driving. If you experience f______e, you should stop to rest.|fatigue|n.|疲勞
+F|2|The i______s people make up almost three percent of Taiwan's population, and they can be divided into sixteen different tribes.|indigenous|adj.|原住民族的;當地的
+F|3|To prove her argument, the speaker c______ed government reports and studies published by scholars.|cited|v.|引用|cite
+F|4|The couple are not afraid of displaying their a______n for each other in public; they often hold hands or even kiss each other on the cheeks.|affection|n.|喜愛
+F|5|Jim asked his students some questions to make sure they c______ded what had been taught.|comprehended|v.|理解|comprehend
+M|6|People prepare a diamond ring when proposing marriage as it is a symbol of ______ love.|beneficial|communist|eternal|hostile|C|eternal|adj.|永恆的
+M|7|Our car is really old, and its ______ costs us a lot of money; maybe it's time for us to buy a new one.|comprehension|curriculum|interference|maintenance|D|maintenance|n.|維修;維護
+M|8|Ted ______ his classmate Anne into sharing homework answers, even though she felt uncomfortable doing so.|bullied|convicted|embraced|excluded|A|bully|v.|脅迫
+M|9|The school library offers ______ resources, including books, journals, and an online database.|abundant|agricultural|compassionate|cautious|A|abundant|adj.|豐富的
+M|10|The doctor ______ against eating too much sugar, especially for people with higher health risks.|compromised|fascinated|entitled|cautioned|D|caution|v.|告誡;提醒
+K|11-15|accessible;bid;cuisine;carbon;exclusive;journalist
+B|11|The ______ prepared a lot of questions for the interview, but the government official answered only a few of them.|F|n.|記者
+B|12|The organization decided to make a(n) ______ of $4 million for the large piece of land.|B|n.|競標
+B|13|Among all types of traditional Taiwanese ______, stinky tofu is my favorite.|C|n.|佳餚
+B|14|The villagers widened the road to make their village more ______. They hope that more tourists will come to visit in the future.|A|adj.|可到達的
+B|15|The company has ______ rights to import this brand's products. They are the only company that can sell these products in the country.|E|adj.|獨有的
+K|16-20|adolescent;compromise;compassion;dialect;convict;hostile
+B|16|The boy showed great ______ for the lonely old lady; he sat and chatted with her for a long time.|C|n.|同情
+B|17|Elephants are usually very gentle animals; however, a mother elephant may become ______ toward anyone who goes near her baby.|F|adj.|有敵意的
+B|18|Ignoring traffic signals can ______ the safety of both drivers and pedestrians.|B|v.|危害
+B|19|Parents may become upset with their ______ kids because teenagers can sometimes be stubborn and emotional.|A|adj.|青春期的
+B|20|The two men come from the same region and speak a(n) ______ which few people understand.|D|n.|方言

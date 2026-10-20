@@ -1,0 +1,23 @@
+U|28
+F|1|You should not run or do exercise on a full s______h because this can make you feel sick or throw up.|stomach|n.|胃;肚子
+F|2|Jimmy was injured in a car accident and had to get s______hes on his head.|stitches|n.|縫線|stitch
+F|3|On weekends, I like to sleep late and then go out for a delicious b______h with my friends.|brunch|n.|早午餐
+F|4|Ms. Chen is a very s______e teacher. She always listens to our explanations and never judges us.|sensible|adj.|明理的;通情達理的
+F|5|Ben bought a new video game c______r because the old one kept disconnecting.|controller|n.|控制器;遊戲搖桿
+M|6|The ______ ran away and hid out in an empty apartment, but later he was found and arrested by the police.|avenue|bundle|criminal|vacancy|C|criminal|n.|罪犯
+M|7|Ruby enjoys eating at ______ restaurants because she likes to try lots of different types of food.|cooker|buffet|scarf|troop|B|buffet|n.|自助餐
+M|8|Sue felt that her efforts went down the ______ when her group ignored every suggestion she had made for the project.|drain|bulb|closet|hen|A|drain|n.|排水管;(go down the drain:白費)
+M|9|I've been working on my computer for five hours, so my neck and shoulders are very ______.|tricky|stiff|vacant|criminal|B|stiff|adj.|僵硬的
+M|10|The farmer was ______ on the arm by a bee while watering the vegetable garden.|whipped|delayed|roasted|stung|D|sting|v.|刺;螫
+K|11-15|avenue;criminals;concert;bulb;scarf;vacancies
+B|11|Scientists from different countries worked in ______ to track the disease and share information that might speed up finding a cure.|C|n.|一致;協力(in concert)
+B|12|We need to change the light ______ in our bathroom. It keeps blinking.|D|n.|燈泡
+B|13|Vicky called the hotel to book a room for tonight, but there were no ______.|F|n.|空房|vacancy
+B|14|My grandmother is knitting a beautiful ______ for me as a Christmas present.|E|n.|圍巾
+B|15|There are tall trees on both sides of the ______.|A|n.|大道;林蔭大道
+K|16-20|tugged;tricky;cables;stirring;closets;vacant
+B|16|There were no ______ seats on the bus, so we had to stand for the whole journey.|F|adj.|空著的
+B|17|My sister ______ at my sleeve, so I turned around to see what was wrong.|A|v.|用力拉;拖|tug
+B|18|You need to keep ______ the soup while it cooks, or else the bottom may burn.|D|v.|攪拌|stir
+B|19|The students asked many ______ questions, so the teacher had to spend a lot of time answering them.|B|adj.|棘手的;狡猾的
+B|20|Some workers were digging up the road to lay ______, which caused a traffic jam for three hours.|C|n.|電纜|cable

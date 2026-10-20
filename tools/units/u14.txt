@@ -1,0 +1,23 @@
+U|14
+F|1|The police i______ted the scene of the murder carefully and interviewed several witnesses.|inspected|v.|檢查;視察|inspect
+F|2|On weekends, I like to go to the c______a to watch a movie.|cinema|n.|電影院
+F|3|The basketball team beat every other team and won the c______p in the end.|championship|n.|冠軍賽;錦標賽
+F|4|Thank you for the ______ (invite) to your party.|invitation|n.|邀請
+F|5|I forgot to put the soup in the refrigerator, and now it is ______ (rot).|rotten|adj.|腐爛的
+M|6|Everyone cheered as the ______ walked on stage to receive a gold medal for his outstanding performance.|holder|inspector|champion|robber|C|champion|n.|冠軍
+M|7|Nowadays, many essential goods and services can be purchased online with ______ payment.|romantic|mathematical|electronic|democratic|C|electronic|adj.|電子的
+M|8|Kathy is not allowed to use the kitchen anymore because she always makes a terrible ______ when she cooks.|mess|chill|haste|rust|A|mess|n.|髒亂;一團糟
+M|9|The lady lost her ______ on the MRT. Luckily, someone handed it in at the police station, and all her money was still inside.|chill|bull|purse|gang|C|purse|n.|錢包
+M|10|The winter is fast approaching. It is ______ in the house at night, and the days are getting shorter.|hasty|messy|chilly|rusty|C|chilly|adj.|寒冷的
+K|11-15|robbed;hopeful;relieve;beam;mathematics;mosquitoes
+B|11|______ helps students develop logical thinking and problem-solving skills that are useful in many careers.|E|n.|數學
+B|12|There were several ______ in my room last night, and I didn't sleep well because they kept buzzing around my head.|F|n.|蚊子|mosquito
+B|13|Years of war in the country ______ many children of their chance to receive proper education.|A|v.|搶奪;剝奪|rob
+B|14|I got a headache, so I took some medicine to ______ the pain.|C|v.|緩解;減輕
+B|15|The job interview went well, and Daniel was ______ that he would finally get the position he wanted.|B|adj.|抱持希望的
+K|16-20|hasty;rust;suburban;democracy;oral;robbery
+B|16|Most people in Taiwan believe in the value of ______ and exercise their right to vote.|D|n.|民主
+B|17|The man was sentenced to five years in prison for ______ and assault.|F|n.|搶劫
+B|18|The old bike has been left outdoors for so long that it is now covered in ______.|B|n.|鏽
+B|19|Life in ______ towns is often slower and more peaceful than that in busy city centers.|C|adj.|郊區的
+B|20|We have a(n) ______ exam tomorrow. We will have to answer all the questions in English.|E|adj.|口頭的;口試的

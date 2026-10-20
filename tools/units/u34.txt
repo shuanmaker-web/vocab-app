@@ -1,0 +1,23 @@
+U|34
+F|1|Monica has been suffering from headaches for a while, and lately, she simply cannot e______e the pain anymore.|endure|v.|忍受
+F|2|This popular video has been watched by millions of Internet users, and many of them have left c______ts under it, too.|comments|n.|留言;評論|comment
+F|3|The US c______es more oil than any other country. On average, an American uses up seven liters of oil per day.|consumes|v.|消耗;消費|consume
+F|4|The artist gets a lot of i______n from ballet dancers. They bring her endless ideas to create her works.|inspiration|n.|靈感
+F|5|The restaurant serves a c______n of American and Asian foods because the chef admires both types of cuisine and wants to bring them together.|combination|n.|結合;組合
+M|6|There are more than three hundred butterfly ______ found in Taiwan. That is why Taiwan is sometimes called the "Kingdom of Butterflies."|aspects|species|contents|disasters|B|species|n.|物種
+M|7|Our geography teacher is taking us to observe the unique rock ______ on the east coast of Taiwan.|circumstances|predictions|households|formations|D|formation|n.|地層;構造
+M|8|The messages that this video clip is trying to ______ are that we should seize every moment and should also treasure the people around us.|equip|inspire|convey|predict|C|convey|v.|傳達
+M|9|Real happiness often ______ in appreciating small moments, like shared meals or quiet walks with friends.|suspects|entertains|contributes|consists|D|consist|v.|在於;由…組成
+M|10|Unable to afford the expensive concert tickets, Lily ______ herself with watching the live broadcast online and reading fan discussions afterward.|sited|interpreted|inspected|contented|D|content|v.|使滿足
+K|11-15|status;nowadays;contribution;ruined;disguise;moreover
+B|11|The detective attended the festival in ______, hoping to observe the subject without revealing his identity.|E|n.|偽裝;喬裝
+B|12|The Internet allows people ______ to be far more connected to the rest of the world than in the past.|B|adv.|現今;現在
+B|13|Einstein was awarded the Nobel Prize for his ______ to physics.|C|n.|貢獻
+B|14|This car has comfortable seats and a lot of storage space. ______, it is quite fuel-efficient.|F|adv.|此外
+B|15|I accidentally spilled red wine on my white shirt, and now it is completely ______.|D|adj.|毀壞的|ruin
+K|16-20|launch;precise;spiritual;consumers;enormous;fragile
+B|16|Engineers worked tirelessly to ensure that they could ______ the rocket on schedule, despite several technical challenges.|A|v.|發射;發動
+B|17|Many ______ are willing to wait in long lines to buy the latest electronics products.|D|n.|消費者|consumer
+B|18|Mr. and Mrs. Lin have five children, so they spend a(n) ______ amount of money on food every month.|E|adj.|龐大的
+B|19|Please be careful when you handle that artwork, because it is very ______.|F|adj.|易碎的;脆弱的
+B|20|The teacher gave clear and ______ instructions, and the students all completed their homework accordingly.|B|adj.|精確的

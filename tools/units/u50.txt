@@ -1,0 +1,23 @@
+U|50
+F|1|Sense and Sensibility, written by Jane Austen, is a classic of English l______e.|literature|n.|文學
+F|2|The coach demanded strict o______e to team rules in order to ensure everyone stayed safe and cooperative.|obedience|n.|服從
+F|3|After a long search, the rescue team finally found the w______k of the plane.|wreck|n.|殘骸
+F|4|The boss was impressed by Tina's p______n and thought that she had explained her ideas very clearly.|presentation|n.|報告
+F|5|When I eat pudding, I like to s______e some chocolate chips on it to give it more flavor.|sprinkle|v.|撒;灑
+M|6|The engineer fixed a ______ problem in the car that had caused loud noises during driving.|remarkable|mountainous|philosophical|mechanical|D|mechanical|adj.|機械的
+M|7|The pilots of the jet are equipped with ______ in case they have to jump out of the plane.|diplomats|mechanics|parachutes|syllables|C|parachute|n.|降落傘
+M|8|Traffic ______ include going above the speed limit and parking in a no-parking zone.|lobsters|regulations|ministers|violations|D|violation|n.|違反
+M|9|The government is going to make stricter rules ______ the use of chemicals in food.|regulating|violating|participating|murmuring|A|regulate|v.|規範;約束
+M|10|It was not until Emily Dickinson died that she became famous in the ______ field.|remarkable|literary|muddy|pregnant|B|literary|adj.|文學的
+K|11-15|shifted;pregnant;logic;remark;mechanic;loyalty
+B|11|If someone makes an offensive ______ about you, you should speak up against it, or the person may do it again.|D|n.|言論
+B|12|I just don't understand the ______ behind May's decision. She wants to buy a membership for the sports club, but she doesn't like to exercise at all.|C|n.|邏輯
+B|13|The region has ______ from farming to technology-based industries over the past decade.|A|v.|轉移|shift
+B|14|Before buying the second-hand car, John asked a ______ to check whether it was in good condition.|E|n.|技工
+B|15|Jane's ______ to her friends made her stand by them even during difficult times.|F|n.|忠誠
+K|16-20|registration;remarkable;protein;revised;muddy;violated
+B|16|Leave those ______ boots outside! I just mopped the floor.|E|adj.|泥濘的
+B|17|The writer ______ his article, as many people had complained about the racist comments in the original version.|D|v.|修改|revise
+B|18|The company ______ the law by selling customers' personal information to other companies.|F|v.|違反|violate
+B|19|Anyone who wants to sign up for evening classes at the community college has to fill in this ______ form.|A|n.|登記;註冊
+B|20|It was a ______ achievement for the young singer to win an American Music Award.|B|adj.|傑出的

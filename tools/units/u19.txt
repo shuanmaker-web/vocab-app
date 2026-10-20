@@ -1,0 +1,23 @@
+U|19
+F|1|As the UK's a______r, Mr. Pierce works in the US, representing his country there.|ambassador|n.|大使
+F|2|Be sure to carry your p______t with you at all times when you are traveling abroad.|passport|n.|護照
+F|3|The boy didn't like to wash his hair because he hated the feeling of s______o getting in his eyes.|shampoo|n.|洗髮精
+F|4|It was a g______s victory for the badminton player to win an Olympic medal.|glorious|adj.|光榮的
+F|5|For Mrs. Brown, the worst part of the divorce was the s______n from her beloved son.|separation|n.|分離
+M|6|Cotton is the main ______ material used in the production of many types of clothing.|icy|dim|further|raw|D|raw|adj.|未加工的;原始的
+M|7|The train ______ from Taipei to Kaohsiung is more than NT$800.|fare|hay|pint|dime|A|fare|n.|車資
+M|8|The ______ was re-elected two years ago, so he has now governed this city for six years.|nickel|berry|mayor|glory|C|mayor|n.|市長
+M|9|A tip for packing for a business trip is to keep your ______ light and small. That way, it's much easier to carry, and you can take it aboard the plane.|elbow|quarter|luggage|meadow|C|luggage|n.|行李
+M|10|Young children are only allowed to swim in that small pool, which is very ______.|joyful|inner|farther|shallow|D|shallow|adj.|淺的
+K|11-15|knitted;paused;dim;meadow;elbow;penny
+B|11|This park is a popular place for families because it contains a big ______ where they can have picnics and fly kites.|D|n.|草地
+B|12|Yesterday, I met a rude woman who pushed me aside with her ______ and didn't apologize.|E|n.|手肘
+B|13|Charles ______ for a moment and rubbed his eyes. He had been reading for too long.|B|v.|暫停;停頓|pause
+B|14|The charitable organization reminds people that even a single ______ can help make a difference.|F|n.|一分錢;便士
+B|15|The light over my seat is so ______ that I can barely read the book.|C|adj.|昏暗的
+K|16-20|junk;owe;chat;peel;pills;glance
+B|16|My brother's room is filled with ______. He never throws anything away; he just piles unwanted objects up on the floor.|A|n.|廢物;舊雜物
+B|17|"I'd love to have a(n) ______ with you after class about your essay ideas," the professor said.|C|n.|聊天;閒談
+B|18|Doctors usually don't give young children medicine in the form of ______ because they may not be able to swallow them.|E|n.|藥丸|pill
+B|19|After you ______ an orange, you can keep the skin and make soap with it.|D|v.|剝皮;削皮
+B|20|Lucy is said to ______ Tom an apology because she spread a rumor about him without checking the facts first.|B|v.|欠;應給予

@@ -1,0 +1,23 @@
+U|29
+F|1|Chinese people traditionally eat d______gs on Chinese New Year's Eve because they symbolize wealth.|dumplings|n.|水餃;餃子|dumpling
+F|2|When Mary's grandfather fainted, she called an a______e to take him to the hospital.|ambulance|n.|救護車
+F|3|The Smiths have a huge house, so they have hired a h______r to help take care of it.|housekeeper|n.|管家
+F|4|Henry became very f______d of gardening after discovering how relaxing it felt to watch his plants grow each week.|fond|adj.|喜愛的
+F|5|It is very important to remain t______l with your partner in a relationship.|truthful|adj.|誠實的
+M|6|It is a ______ that Allen survived the horrible car accident and didn't suffer any major injuries.|miracle|lottery|follower|lobby|A|miracle|n.|奇蹟
+M|7|The farmer grows tomatoes and strawberries in a big ______.|peanut|missile|greenhouse|apron|C|greenhouse|n.|溫室
+M|8|The boy is very short, so he has to stand on a ______ when he brushes his teeth.|mist|horn|stool|fence|C|stool|n.|凳子
+M|9|An elephant's ______ serves as both a nose and a hand, allowing it to grab objects easily.|storm|mist|horn|trunk|D|trunk|n.|象鼻;樹幹
+M|10|Max started learning English last month, and he could write the whole English ______ within just a few days.|alphabet|grasshopper|lobby|missile|A|alphabet|n.|字母表
+K|11-15|peanut;missile;excelled;arrested;followers;fighters
+B|11|The athlete ______ at long-distance running, breaking several school records before graduating.|C|v.|擅長;表現傑出|excel
+B|12|The ______ flew a long distance and exploded when it hit the building.|B|n.|飛彈
+B|13|Jane is a famous YouTuber. She has more than a million ______.|E|n.|追隨者;粉絲|follower
+B|14|Many people find that ______ butter pairs perfectly with jam on toast.|A|n.|花生
+B|15|The police officers rushed into the room and ______ the man for possessing illegal weapons.|D|v.|逮捕|arrest
+K|16-20|wicked;anyhow;stormy;excellence;armed;tub
+B|16|Danny always feels grateful to have a roof over his head during ______ weather.|C|adj.|暴風雨的
+B|17|In the story, the ______ witch put an evil spell on the beautiful princess.|A|adj.|邪惡的
+B|18|After swimming 20 laps in the pool, Janice took a rest in the hot ______.|F|n.|浴缸;盆
+B|19|The ______ of their teamwork showed in how smoothly the group completed every assignment throughout the semester.|D|n.|卓越;優秀
+B|20|I don't have time for lunch. ______, I don't feel hungry at all.|B|adv.|無論如何;反正

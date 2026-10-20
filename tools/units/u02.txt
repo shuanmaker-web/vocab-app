@@ -1,0 +1,23 @@
+U|2
+F|1|The company's salary s______e is based on employees' work experience and length of employment.|structure|n.|結構
+F|2|Our P.E. teacher always asks us to o______e his movements closely before we start playing basketball.|observe|v.|觀察
+F|3|More workers had to be hired because the factory needed to p______e a large quantity of goods.|produce|v.|生產;製造
+F|4|The policeman's success in tracking and arresting the brutal murderer was ______ (admire).|admirable|adj.|令人欽佩的
+F|5|The expert explained why it is often highly ______ (profit) to invest in real estate.|profitable|adj.|有利可圖的
+M|6|My ______ for Jake is beyond description; he devotes himself full-time to helping the poor.|preparation|imagination|determination|admiration|D|admiration|n.|欽佩;敬佩
+M|7|Andy tried to ______ his parents into letting him study abroad for one semester.|persuade|detect|shorten|recognize|A|persuade|v.|說服
+M|8|The teacher ______ of the students' careless attitude toward their group project.|reduced|determined|appealed|disapproved|D|disapprove|v.|不贊成
+M|9|The candidate left a good ______ on the public by listening to everyone's concerns carefully.|reduction|promotion|observation|impression|D|impression|n.|印象
+M|10|Selina ______ on stage, forgetting every word of her speech while the audience just stared at her in silence.|froze|attracted|secured|reserved|A|freeze|v.|僵住;凍結
+K|11-15|attractive;imaginative;reduction;prevent;effective;persuasion
+B|11|It took Nancy lots of ______ to convince her brother to change his mind.|F|n.|說服
+B|12|Karl feels disappointed that his back injury may ______ him from playing in tomorrow's game.|D|v.|阻止;預防
+B|13|Students are encouraged to write ______ works in the creative writing class.|B|adj.|富有想像力的
+B|14|The company needs to make its advertisements ______ to a wider range of people.|A|adj.|吸引人的
+B|15|With the appearance of smartphones, a large ______ in sales of MP3 players was seen.|C|n.|減少;降低
+K|16-20|vision;advice;efficient;detective;invisible;reduce
+B|16|It would be smart to seek ______ from a qualified expert before you make such an important decision.|B|n.|建議
+B|17|Great leaders often possess a clear ______ that guides their decisions and motivates others.|A|n.|願景;視野
+B|18|Mr. Woods is a(n) ______; his job is to discover information about crimes and find out who committed them.|D|n.|偵探
+B|19|Taking public transportation regularly is a good way to ______ air pollution.|F|v.|減少
+B|20|The company is seeking a more ______ way to deliver its products to the customers.|C|adj.|有效率的

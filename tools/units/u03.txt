@@ -1,0 +1,23 @@
+U|3
+F|1|The new bridge has brought considerable b______ts to the residents. For example, it will reduce the time required to travel from one side of the city to the other.|benefits|n.|好處;利益|benefit
+F|2|E______e weather, such as very warm winters and hot summers, has become increasingly common in recent years.|extreme|adj.|極端的
+F|3|By the 1980s, oil had r______ed agricultural products as the country's main export. Decades later, the nation became a net importer of basic food items.|replaced|v.|取代|replace
+F|4|Doctors are sometimes ______ (threat) with violence if they don't do what their patients want.|threatened|v.|威脅|threaten
+F|5|The international ______ (organize) was founded to promote peace and protect human rights.|organization|n.|組織;機構
+M|6|It never ceases to ______ me how John can talk for so long without ever saying anything interesting.|amaze|organize|engage|locate|A|amaze|v.|使驚訝
+M|7|The ______ noise of the machine is driving me crazy.|amazing|distant|constant|native|C|constant|adj.|持續不斷的
+M|8|After being ______ for two days, Mr. Smith finally woke up, which brought great relief to his family.|organic|unconscious|scientific|religious|B|unconscious|adj.|失去知覺的
+M|9|When the teacher asked Bill to answer a question, he ______ silent as if he hadn't heard anything.|remained|withdrew|suffered|processed|A|remain|v.|保持;仍然
+M|10|The doctor performed a ______ check-up to ensure the patient's recovery was going smoothly.|talented|present|risky|routine|D|routine|adj.|例行的
+K|11-15|medal;native;local;organic;religion;engaged
+B|11|Despite her illness, Alice remains actively ______ in promoting gender equality.|F|adj.|投入的;從事的
+B|12|The swimmer was a gold ______ winner at the Olympic Games.|A|n.|獎牌
+B|13|Mr. Chen speaks English without a foreign accent. He sounds like a(n) ______ speaker.|B|adj.|母語的;本地的
+B|14|The car industry in this country is dominated by five international companies; ______ ones find it hard to compete with them.|C|adj.|當地的;本地的
+B|15|The constitution promises freedom of ______ for all citizens; people are allowed to hold any beliefs.|E|n.|宗教
+K|16-20|deposit;beware;conscious;suffer;threat;unique
+B|16|The train station is closed because of a bomb ______. The police are trying to find the criminal.|E|n.|威脅
+B|17|The operation was successful, but the patient was not fully ______ yet.|C|adj.|有意識的;清醒的
+B|18|It is very common for people to pay a two-month ______ before they move into a rented apartment.|A|n.|押金;存款
+B|19|Don't hesitate to get professional help if you ______ from depression.|D|v.|受苦;罹患
+B|20|Jennifer has a ______ ability to imitate any sound she hears.|F|adj.|獨特的

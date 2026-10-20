@@ -1,0 +1,23 @@
+U|57
+F|1|The nurse put the s______e into the bucket, and it quickly absorbed the water and swelled up.|sponge|n.|海綿
+F|2|The house may look old from the outside, but its i______r is actually very modern.|interior|n.|內部;內側
+F|3|We told our friends about our plan for a Christmas party, and they were all very e______c about the idea.|enthusiastic|adj.|熱情的;熱衷的
+F|4|Each new r______t received training to prepare for the responsibilities of the rescue mission.|recruit|n.|新進人員;新兵
+F|5|Tommy got the flu. He suffered from s______ms such as severe headache, coughing, and high fever.|symptoms|n.|症狀|symptom
+M|6|Animal ______ is not only cruel but also illegal and punishable by law.|calcium|abuse|stimulus|texture|B|abuse|n.|虐待;濫用
+M|7|The stadium is so ______ that it can house up to forty thousand people.|decent|federal|immense|mainstream|C|immense|adj.|巨大的
+M|8|Doctors recommend that patients with ______ diseases do mild exercises regularly.|absurd|chronic|naive|beloved|B|chronic|adj.|慢性的
+M|9|Dorothy loves to ______ in the bathtub and relax on cold winter nights.|abolish|stream|soak|steer|C|soak|v.|浸泡
+M|10|This morning, the ______ in my company building was under repair, so everyone had to take either the elevator or the stairs.|cathedral|escalator|lawmaker|sandal|B|escalator|n.|電扶梯
+K|11-15|stimulate;barren;belongings;deadly;supervise;removal
+B|11|The scandal led to the minister's ______ from office. He was replaced by a much younger man.|F|n.|免職;移除
+B|12|Though the farmer has tried his best to grow crops on his land, the soil there is just too ______. No plants can grow well there.|B|adj.|貧瘠的
+B|13|The government issued vouchers to all the citizens to ______ the economy.|A|v.|刺激;激勵
+B|14|Don't forget to take your personal ______ with you. The room will soon be locked.|C|n.|財物;隨身物品
+B|15|This snake's poison is ______. Be careful not to step into its territory and get bitten.|D|adj.|致命的
+K|16-20|traits;abolition;certificate;declaration;soles;steered
+B|16|Honesty and kindness are both great personality ______ that you should look for in a partner.|A|n.|特質|trait
+B|17|After three long years of war, the two countries finally reached an agreement and made a(n) ______ of peace.|D|n.|宣告;宣言
+B|18|The ______ of slavery marked a turning point in America's long struggles for equality and justice.|B|n.|廢除
+B|19|The rain boots have thick rubber ______, and I like to wear them on rainy days because my feet don't get wet at all.|E|n.|鞋底|sole
+B|20|The hospital issued a birth ______ shortly after the child was safely delivered.|C|n.|證書;證明書

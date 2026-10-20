@@ -1,0 +1,23 @@
+U|43
+F|1|Bruce got the second-hand book at a flea market; it was a real b______n.|bargain|n.|便宜貨;特價品
+F|2|Beatrice screamed loudly when she stepped into the bathroom and saw a g______c cockroach on the wall.|gigantic|adj.|巨大的
+F|3|The cook poured milk into the bowl and mixed it with the other i______ts thoroughly.|ingredients|n.|食材;原料|ingredient
+F|4|Instead of adding chemical fertilizers to the soil, the farmer uses organic methods to keep the land f______e.|fertile|adj.|肥沃的
+F|5|Daisy's i______t into the group project improved the structure and flow of the final presentation.|input|n.|投入;貢獻;意見
+M|6|The suspect is ______ of armed robbery and now faces a trial.|rescued|accused|clarified|giggled|B|accuse|v.|指控
+M|7|Make sure to leave some space in the ______ of each page.|knobs|spades|refunds|margins|D|margin|n.|頁邊空白
+M|8|Everyone knows not to trust what Billy says because he is such a ______.|voyage|basin|plum|liar|D|liar|n.|說謊者
+M|9|As the sun sank slowly toward the horizon, the shadows began to ______.|clarify|giggle|lengthen|refund|C|lengthen|v.|變長
+M|10|A(n) ______ storm struck the coast, forcing residents to stay indoors until conditions improved.|fierce|tense|divine|oval|A|fierce|adj.|猛烈的;兇猛的
+K|11-15|concrete;elsewhere;overnight;overcoat;skyscraper;nightmare
+B|11|The boy woke up crying because of his horrible ______.|F|n.|惡夢
+B|12|The man put on a thick ______ and walked into the snowy night.|D|n.|大衣;外套
+B|13|It had snowed ______, so when I looked outside in the morning, the world was completely covered in white.|C|adv.|一整夜;隔夜
+B|14|Sandy encouraged her students to use ______ examples instead of vague ideas to strengthen their essays.|A|adj.|具體的|concrete
+B|15|The Empire State Building, probably the most famous ______ in the world, was completed in 1931.|E|n.|摩天大樓
+K|16-20|ginger;rescue;chew;inflation;refund;marathon
+B|16|The lifeguard came to the swimmer's ______ after noticing him struggling against the strong waves.|B|n.|救援;營救
+B|17|After the ______, the runner was exhausted and was covered in sweat.|F|n.|馬拉松
+B|18|The angry customer is yelling at the manager and asking for a(n) ______ because the air-conditioner that he bought yesterday isn't working.|E|n.|退款
+B|19|It is very rude to ______ gum at formal occasions such as weddings or meetings.|C|v.|嚼;咀嚼
+B|20|The ______ rate has been on the rise for many years, so the cost of living nowadays is much higher than it used to be.|D|n.|通貨膨脹

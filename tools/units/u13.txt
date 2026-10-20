@@ -1,0 +1,23 @@
+U|13
+F|1|Able to understand difficult concepts, d______ns are one of the smartest animals in the world.|dolphins|n.|海豚|dolphin
+F|2|"Don't be so g______y! Leave some of that cake for your sister!" the mother said angrily to her son.|greedy|adj.|貪心的
+F|3|The students usually have their lunch in the school c______a. The meals served there are healthy and delicious.|cafeteria|n.|自助餐廳
+F|4|The teacher was disappointed to find out that the student had been ______ (honest) about finishing his project on his own.|dishonest|adj.|不誠實的
+F|5|Our English teacher reminded us to always check the ______ (pronounce) of unfamiliar words in the dictionary so that we say them correctly.|pronunciation|n.|發音
+M|6|The mountain road was so ______ that drivers could barely see a few meters ahead.|jealous|honest|foggy|skinny|C|foggy|adj.|多霧的
+M|7|Sandy buys her ______ at the local farmer's market every weekend; the food there are very fresh.|groceries|heaters|carpets|flutes|A|grocery|n.|食品雜貨
+M|8|My favorite subject in school is ______ because I like to learn about other places around the world.|handkerchief|pharmacy|dragonfly|geography|D|geography|n.|地理
+M|9|Michael has a cold, but the clinic is closed. He can only buy medicine at a ______ for now.|hanger|drugstore|trumpet|grocery|B|drugstore|n.|藥局
+M|10|To be ______, I didn't think you'd be able to do it. I'm surprised that you actually succeeded.|hateful|grassy|frank|dizzy|C|frank|adj.|坦白的
+K|11-15|dragged;donkey;chin;hammered;handkerchief;flour
+B|11|The workers ______ at the broken metal gate for hours, trying to bend it back into shape.|D|v.|搥打;敲打|hammer
+B|12|The bag was too heavy to carry, so the old man ______ it into the room.|A|v.|拖;拉|drag
+B|13|David fell from the stairs and hit his ______ on the floor. Luckily, none of his teeth fell out.|C|n.|下巴
+B|14|The farmer loaded all the hay onto the back of his ______, which then carried it back to the barn.|B|n.|驢子
+B|15|The old lady blew her nose loudly into the ______ and then used it to wipe her tears away.|E|n.|手帕
+K|16-20|dizzy;doughnuts;clay;downtown;carpeted;hateful
+B|16|The artist is good at working with ______; she makes beautiful vases and cups out of it.|C|n.|黏土
+B|17|There are many tall office buildings in the ______ area.|D|adj.|市中心的
+B|18|The man tried to spread ______ rumors about his colleague throughout the office, but no one listened to him.|F|adj.|可恨的;惡意的
+B|19|We bought some ______ and milk tea as an afternoon snack.|B|n.|甜甜圈|doughnut
+B|20|Every autumn, the park would be ______ with golden leaves, and the ground would look magical.|E|v.|鋪滿|carpet

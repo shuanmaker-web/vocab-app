@@ -1,0 +1,23 @@
+U|46
+F|1|The teacher f______ds his students from using their cellphones in class.|forbids|v.|禁止|forbid
+F|2|The children showed little e______m for the game. They thought it was boring and said they would rather watch TV.|enthusiasm|n.|熱忱
+F|3|Rosa is a c______e person who prefers traditional values, so she often worries about the rapid changes in modern society.|conservative|adj.|保守的
+F|4|Some people think it is d______g to eat worms, but others find them delicious.|disgusting|adj.|令人噁心的
+F|5|Jacky is a t______e kid; his mother has had to go to his school many times because of the problems he has caused.|troublesome|adj.|麻煩的;令人煩惱的
+M|6|Apart from wealth in agriculture, this area is also very rich in ______ such as gold and iron.|minerals|quarrels|plumbers|statistics|A|mineral|n.|礦物
+M|7|Please send my ______ to your husband and children. I hope your family has a great New Year!|homelands|workouts|statistics|greetings|D|greeting|n.|問候
+M|8|The robber finally turned himself in at the police station because his guilty ______ had been keeping him awake at night.|enlargement|refusal|conscience|gratitude|C|conscience|n.|良知
+M|9|Jackson's father gives him a monthly ______ of ten thousand dollars. No wonder he can buy so many expensive clothes.|allowance|recovery|welfare|homeland|A|allowance|n.|零用錢
+M|10|The police had the photos ______ in order to identify the thief.|winked|blended|enlarged|reflected|C|enlarge|v.|放大
+K|11-15|reflections;microscope;amateur;dispute;stabbed;keen
+B|11|Lily decided to join a(n) ______ tennis league to improve her skills and see if there was any chance of becoming a professional in the future.|C|adj.|業餘的
+B|12|Before we could view the cells under a(n) ______, the biology teacher gave us some instructions on how to use it.|B|n.|顯微鏡
+B|13|Judy's contribution to the project was beyond ______; the final success depended on her leadership.|D|n.|無庸置疑的(beyond dispute)
+B|14|It is said that dogs cannot recognize their own ______ in the mirror.|A|n.|倒影|reflection
+B|15|The victim was ______ in the chest and lost a large amount of blood.|E|v.|刺|stab
+K|16-20|alcohol;cunning;ground;tremendous;withdraw;spare
+B|16|Lisa's mom likes her boyfriend a lot because he doesn't drink ______ or smoke.|A|n.|酒
+B|17|The chef ______ the spices into a fine powder, which gave the soup a stronger flavor.|C|v.|磨碎|grind
+B|18|Janet praised her husband for the ______ support he had given her while she was starting her business.|D|adj.|巨大的
+B|19|My favorite activity during my ______ time is reading novels.|F|adj.|空閒的
+B|20|I am going to ______ some money from the ATM because I need to pay my rent.|E|v.|提取

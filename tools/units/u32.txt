@@ -1,0 +1,23 @@
+U|32
+F|1|The government i______ed a warning about heavy rainfall, urging residents to stay indoors and avoid unnecessary travel.|issued|v.|發布;發出|issue
+F|2|C______y to his parents' expectations, Walter decided to major in visual art rather than law in university.|Contrary|adj.|相反的
+F|3|The lawyer tried hard to c______e the judge of the accused man's innocence.|convince|v.|說服;使相信
+F|4|It is e______ed that the population of the Earth will reach 8 billion in 2023.|estimated|v.|估計|estimate
+F|5|Every team member's effort is e______l to the team's success. We must all try our best!|essential|adj.|必要的;極重要的
+M|6|Dave had a(n) ______ cold last week, including a fever and bad headache.|eventual|identical|severe|annual|C|severe|adj.|嚴重的
+M|7|The company ______ a long-term strategy that focused on sustainability and protect the environment.|composed|adopted|preserved|demanded|B|adopt|v.|採用;採取
+M|8|Both teachers and students should remember that a person's ______ performance does not define their worth.|consequent|evident|initial|academic|D|academic|adj.|學業的
+M|9|Before he became a(n) ______ basketball player in the NBA, LeBron James was a great player in high school.|professional|eventual|original|identical|A|professional|adj.|職業的;專業的
+M|10|Alice ______ the tea cup from an online store for the very low price of fifty dollars.|persuaded|acquired|commanded|identified|B|acquire|v.|取得;購得
+K|11-15|despite;professions;incident;research;involve;refer
+B|11|The runner managed to reach the finish line ______ having pulled a muscle in his leg during the race.|A|prep.|儘管
+B|12|Mr. and Mrs. Wang are both doctors, but they want their children to enter other ______ such as law or teaching.|B|n.|職業;行業|profession
+B|13|Before writing her report, Jane conducted ______ on teen mental health, reading studies from several universities.|D|n.|研究;調查
+B|14|When giving the presentation, you may ______ to your notes if necessary.|F|v.|參考;查閱
+B|15|The terrible traffic accident was an unfortunate ______.|C|n.|事件
+K|16-20|accidental;access;annual;percentage;reference;consequence
+B|16|Unidentified hackers gained ______ to many people's email accounts and stole their personal information.|B|n.|進入;使用權
+B|17|Sam did not prepare for the midterm at all, and as a(n) ______, he failed several subjects.|F|n.|後果;結果
+B|18|The English grammar book includes a vocabulary index for easy ______.|E|n.|參考;查閱
+B|19|Fortunately, the thief was arrested and a large ______ of the stolen goods were recovered.|D|n.|百分比;部分
+B|20|My family spends our ______ holiday at a small cabin by a lake up in the mountains.|C|adj.|每年的

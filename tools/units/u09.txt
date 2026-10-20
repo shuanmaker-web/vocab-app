@@ -1,0 +1,23 @@
+U|9
+F|1|Winning a scholarship to Harvard University is a great h______r. You should be very proud of yourself.|honor|n.|榮幸;榮譽
+F|2|The old lady t______ted her ankle while walking on the uneven sidewalk.|twisted|v.|扭傷;扭轉|twist
+F|3|The s______w that the father felt over his daughter's death was too much for him to bear.|sorrow|n.|悲傷
+F|4|In Taiwan, there are two major ______ (politics) parties. One is the Democratic Progressive Party, and the other is the Kuomintang.|political|adj.|政治的
+F|5|It's important to wear sunglasses as ______ (protect) for your eyes when the sun is very bright.|protection|n.|保護
+M|6|Justin likes to do ______ activities such as skiing, mountain climbing, and hiking.|honest|plastic|sincere|outdoor|D|outdoor|adj.|戶外的
+M|7|Checking the map, the general realized that his troops were only five ______ from their enemy.|politicians|dealers|kilometers|tourists|C|kilometer|n.|公里
+M|8|The doctor told Wendy not to worry about the big ______ on her arm—it was only a bruise.|bump|thread|liver|twin|A|bump|n.|腫塊;撞擊
+M|9|Though Joanna was born in Taipei, she considers Taichung her ______. She has worked there for decades.|plastic|tourism|sincerity|hometown|D|hometown|n.|家鄉
+M|10|The scientist found a small ______ of salt in the water sample taken from the river.|rumor|trace|ton|deal|B|trace|n.|微量;痕跡
+K|11-15|indoors;dealer;nap;fireworks;tourist;lung
+B|11|It's raining cats and dogs! Let's go ______ and play chess.|A|adv.|在室內
+B|12|Everyone knows there is a strong relationship between smoking and ______ cancer.|F|n.|肺
+B|13|At the New Year's Eve countdown party, people can view a(n) ______ display.|D|n.|煙火
+B|14|Sun Moon Lake is one of Taiwan's most popular ______ attractions.|E|adj.|觀光的;遊客的
+B|15|My sister wanted to sell her old car, so she found a car ______ to arrange the sale for her.|B|n.|經銷商;商人
+K|16-20|column;plastic;pilot;clue;protective;stuff
+B|16|Wearing sunglasses provides people's eyes with a ______ layer against bright light from the sun.|E|adj.|保護的
+B|17|Charles is trying to ______ his bag with snacks and drinks before leaving for school.|F|v.|塞滿;填塞
+B|18|According to the investigation, the air crash was caused by ______ error.|C|n.|飛行員
+B|19|My classmates didn't have a ______ as to what the lecturer was talking about.|D|n.|線索;頭緒
+B|20|It is better to store food in glass containers than ______ ones.|B|adj.|塑膠的

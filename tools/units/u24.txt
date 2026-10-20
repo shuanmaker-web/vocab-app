@@ -1,0 +1,23 @@
+U|24
+F|1|Everyone cheered when the b______e and groom kissed each other in the wedding ceremony.|bride|n.|新娘
+F|2|Of all Italian dishes, s______i and pizza are the most well-known around the world.|spaghetti|n.|義大利麵
+F|3|You don't have to bring anything to the party. We have p______y of food and drink already.|plenty|n.|大量;充足
+F|4|Those living in p______y often can't afford the basic necessities of life.|poverty|n.|貧窮
+F|5|If you want to return a product, you have to provide the r______t as proof that you actually bought it.|receipt|n.|收據
+M|6|Sarah was filled with ______ when she saw that her brother had gotten a big present, while she had not.|ditch|wagon|collar|envy|D|envy|n.|嫉妒
+M|7|On warm autumn days, I like to sit by the lake and enjoy the cool ______ on my face.|ash|breeze|crown|fist|B|breeze|n.|微風
+M|8|The heat was so unbearable that Amy ______ and turned until sunrise, unable to find a comfortable position.|tossed|spilled|envied|drowned|A|toss|v.|翻來覆去;投擲
+M|9|The chef added some ______ to the soup, and a wonderful smell filled the kitchen.|spices|bunches|pits|flames|A|spice|n.|香料
+M|10|The teacher asked the class to memorize several ______ from the poem to better appreciate its sound and meaning.|tutors|cocktails|ballets|verses|D|verse|n.|詩句;韻文
+K|11-15|awful;bullets;crispy;dove;split;flame
+B|11|Don't let the children go near the ______, or they may accidentally burn themselves.|F|n.|火焰
+B|12|The lifeguard ______ into the swimming pool to save the boy who didn't know how to swim.|D|v.|跳水;躍入|dive
+B|13|Rick had a(n) ______ day at school. He forgot to bring his lunch, and then he twisted his ankle.|A|adj.|糟糕的;可怕的
+B|14|The doctor removed two ______ from the man who had been shot in the back.|B|n.|子彈|bullet
+B|15|My mom makes really delicious potato chips. They are thin and ______, and the flavor is just right.|C|adj.|酥脆的
+K|16-20|spill;bunches;someday;reception;cocktail;blue-collar
+B|16|Billy's parents both worked ______ jobs, which taught him the value of physical labor and responsibility from a young age.|F|adj.|藍領的
+B|17|John carefully held the bottle for fear that he might ______ the water within.|A|v.|灑出;溢出
+B|18|The martini is a(n) ______ that James Bond famously liked to drink.|E|n.|雞尾酒
+B|19|______ I hope to have enough money to buy that nice house.|C|adv.|有一天;將來某日
+B|20|The company holds a ______ party once a year to welcome new employees.|D|n.|歡迎會;接待

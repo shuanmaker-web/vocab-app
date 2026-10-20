@@ -1,0 +1,23 @@
+U|11
+F|1|The government invited several marketing experts to devise a s______y to promote domestic tourist attractions.|strategy|n.|策略
+F|2|Edward's recent behavior has been really o______d. We don't understand why he is acting so strangely.|odd|adj.|古怪的
+F|3|The woman p______ded that nothing had happened when she heard the bad news.|pretended|v.|假裝|pretend
+F|4|The problem of domestic ______ (violent) can't be solved by arrests and prosecutions alone.|violence|n.|暴力
+F|5|If you ______ (multiple) 13 by 7, you get 91.|multiply|v.|乘;使增加
+M|6|Many students rely on their ______ phones not only for communication but also for studying and managing daily tasks.|sticky|bizarre|mobile|rational|C|mobile|adj.|行動的;可移動的
+M|7|The mysterious ______ was alone, and no one knew where he had come from.|decoration|republic|county|traveler|D|traveler|n.|旅行者
+M|8|William likes to sing a soft and happy ______ to himself as he works in the garden.|stadium|van|tune|cruelty|C|tune|n.|曲調
+M|9|It is not easy for a single mother to feed and ______ one child, let alone three.|clothe|wed|squeeze|pump|A|clothe|v.|供給衣服;給…穿衣
+M|10|Before Christmas, volunteers ______ the whole campus to give it a holiday atmosphere.|broadcast|decorated|furnished|intended|B|decorate|v.|裝飾
+K|11-15|cleaner;wedding;unreasonable;stare;photographer;caved
+B|11|The bride and groom only invited their best friends and relatives to the ______.|B|n.|婚禮
+B|12|Demanding perfect results in every situation is a(n) ______ expectation that only adds stress.|C|adj.|不合理的
+B|13|Judy has no time to do house chores, so she wants to hire a(n) ______ to help her tidy the house.|A|n.|清潔工
+B|14|After the earthquake, the walls and ceilings of the shopping mall ______ in, and the shoppers were trapped inside until the rescue team arrived.|F|v.|塌陷|cave
+B|15|It is not polite to ______ at a stranger for a long time.|D|v.|盯著看;凝視
+K|16-20|brutal;desires;motor;advance;professor;stick
+B|16|Customers who want to have a meal at this restaurant are advised to make reservations in ______.|D|n.|預先;前進
+B|17|While most of his companions gave up, James decided to ______ to his goal and finally made his debut (初次登臺) in Seoul with four other new team members.|F|v.|堅持;黏住
+B|18|It is impossible for parents to constantly satisfy the ever-changing ______ of their children for new toys.|B|n.|渴望;慾望|desire
+B|19|Something must have gotten into the ______. That is why it isn't working properly.|C|n.|馬達;發動機
+B|20|The ______ asked one student to summarize the main points of the lecture.|E|n.|教授

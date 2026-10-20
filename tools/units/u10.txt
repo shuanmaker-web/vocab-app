@@ -1,0 +1,23 @@
+U|10
+F|1|This door is a______c. All you need to do is walk near it, and it will open by itself.|automatic|adj.|自動的
+F|2|They sell more than 20 different f______rs of ice cream; my personal favorite is vanilla.|flavors|n.|口味;風味|flavor
+F|3|The domestic price of f______l is closely related to the international price of oil. When there is a war in an oil-exporting country, the price usually goes up.|fuel|n.|燃料
+F|4|You can tell from the similar style of these trousers that they all come from the same ______ (design).|designer|n.|設計師
+F|5|Our field trip was to see an ______ (exhibit) of ancient Chinese art at the National Palace Museum.|exhibition|n.|展覽
+M|6|The inner part of this wallet is made of ______, so it is soft but sturdy.|quotation|humidity|leather|freedom|C|leather|n.|皮革
+M|7|The carpenter made the table from ______ wood, making sure that it would last for years.|daily|bald|liberal|solid|D|solid|adj.|堅固的;固體的
+M|8|The old friends were ______ up in conversation and didn't notice the time passing.|wrapped|folded|quoted|spoiled|A|wrap|v.|包裹;使沉浸
+M|9|When Melody tried to explain what had happened, her friends kept ______ her.|resisting|interrupting|exhibiting|consisting|B|interrupt|v.|打斷
+M|10|James needs just one more science ______ to complete his degree requirements.|entry|credit|restriction|feather|B|credit|n.|學分
+K|11-15|moist;restrict;interruption;resistance;spoil;might
+B|11|Alex put his smartphone on silent mode so that he could watch the movie without ______.|C|n.|打擾;中斷
+B|12|The entire family pushed the car with all their ______ until it finally started moving.|F|n.|力量;威力
+B|13|Parents who give their children too much money are likely to ______ them.|E|v.|寵壞;破壞
+B|14|Because of an increase in the number of gun crimes, the government has passed a new law to ______ the sale of guns.|B|v.|限制
+B|15|The gardener waters the plants every morning to keep the soil ______.|A|adj.|濕潤的
+K|16-20|mission;outer;bold;apart;moisture;committee
+B|16|To find out which planets may be suitable for human beings to live on in the future, much research has been conducted on ______ space.|B|adj.|外部的;外層的
+B|17|A(n) ______ was set up to investigate the terrible incident.|F|n.|委員會
+B|18|Ben made a(n) ______ decision to drop out of school and start a business.|C|adj.|大膽的
+B|19|The army's ______ was to destroy all the buildings in the area immediately.|A|n.|任務
+B|20|According to the doctor, ______ is important for keeping your skin healthy. Without it, your skin may become dry and itchy.|E|n.|水分;濕氣

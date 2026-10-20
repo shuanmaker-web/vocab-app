@@ -1,0 +1,23 @@
+U|38
+F|1|My father is a person worth trusting because he always f______ls his promises.|fulfills|v.|履行;實現|fulfill
+F|2|The singer's s______e hairstyle made her instantly recognizable, even in crowded public places.|signature|adj.|標誌性的;簽名
+F|3|We've had c______s rain since this morning, so we canceled our picnic and stayed home watching TV instead.|continuous|adj.|連續不斷的
+F|4|The w______s statement provides an accurate account of exactly how the accident happened.|witness|n.|目擊者
+F|5|Lisa has no t______e for cold weather, so she dreams of moving to Singapore.|tolerance|n.|容忍度;耐受力
+M|6|The firefighters are well trained to deal with ______ situations like this, so there is no need to worry about them.|ashamed|voluntary|urgent|intense|C|urgent|adj.|緊急的
+M|7|The ______ way of solving this problem has been replaced with a more effective solution.|incredible|conventional|triumphant|shameful|B|conventional|adj.|傳統的
+M|8|Driving a car without ______ your seatbelt is dangerous.|interacting|retreating|tumbling|fastening|D|fasten|v.|繫緊;扣上
+M|9|The choir produced a(n) ______ blend of voices, filling the auditorium with warm, balanced sounds.|intensive|interactive|prominent|harmonious|D|harmonious|adj.|和諧的
+M|10|Tony put forward a(n) ______, but his suggestion to reform the organization was rejected.|triumph|intensity|proposal|remedy|C|proposal|n.|提案;建議
+K|11-15|intense;prominence;cooperative;mild;urged;annoyed
+B|11|The scientist's research achieved international ______ because her discoveries challenged traditional theories.|B|n.|突出;顯著
+B|12|The lawyer ______ his clients to take further legal action.|E|v.|力勸;敦促|urge
+B|13|Today is a pleasant, ______ spring day, so we should go for a stroll outdoors.|D|adj.|溫和的
+B|14|Last night, there was a mosquito in my room, and it ______ me greatly.|F|v.|惹惱;使煩惱|annoy
+B|15|The pain was so ______ that it left the poor patient unable to sit still.|A|adj.|劇烈的;強烈的
+K|16-20|overcome;exception;categorizes;privilege;differ;devices
+B|16|The store sells all kinds of electronic ______, such as computers, digital cameras, and televisions.|F|n.|裝置;設備|device
+B|17|Though the problem seems complicated, we must have faith that we'll be able to ______ it.|A|v.|克服
+B|18|Many people believe that access to education should not be a(n) ______ but a right for all.|D|n.|特權
+B|19|Shopping habits of men and women ______ greatly.|E|v.|不同;相異
+B|20|The teacher often ______ assignments by difficulty to help her students track their progress and manage their work.|C|v.|將…分類|categorize

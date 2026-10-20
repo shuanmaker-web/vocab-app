@@ -1,0 +1,23 @@
+U|8
+F|1|We can't afford a vacation this year because we're really t______t on money right now.|tight|adj.|手頭緊的;緊的
+F|2|Most people r______y on electronic devices such as computers and smartphones to get the information they need.|rely|v.|依賴;依靠
+F|3|R______r has it that Alexander is the real father of the baby boy.|rumor|n.|謠言;傳聞
+F|4|If you want to attend the meeting, you have to get official ______ (permit) from the administration.|permission|n.|許可;准許
+F|5|The smell in this room is ______ (bare) tolerable. Would you mind if I opened the window?|barely|adv.|幾乎不;勉強
+M|6|The new water tank has a much larger ______ and can hold twice as much as the old one.|advantage|substance|material|volume|D|volume|n.|容量;體積
+M|7|The bush fires have caused ______ damage to Australia.|inferior|superior|reliable|considerable|D|considerable|adj.|相當大的
+M|8|Annie ______ from the idea of giving a speech in public, fearing she would make mistakes.|tightened|subtracted|permitted|shrank|D|shrink|v.|退縮;縮小
+M|9|This bridge is a great work of engineering and construction, and it helps people who live in ______ areas get to the city quickly.|fancy|wealthy|remote|superior|C|remote|adj.|偏遠的
+M|10|After getting an invitation to the Halloween party, Kevin decided to dress up as a Roman ______.|tumor|emperor|vehicle|supervisor|B|emperor|n.|皇帝
+K|11-15|screaming;bare;fancy;thread;patience;electricity
+B|11|A kindergarten teacher should have a fun personality, a kind heart, and ______.|E|n.|耐心
+B|12|The nurse asked the patient to ______ his arm so that she could give the injection.|B|v.|露出;裸露
+B|13|My brother disconnected the machine from the ______ supply before trying to fix it.|F|n.|電;電力
+B|14|The actress didn't want to wear something too ______, but rather a simple white dress.|C|adj.|華麗的;花俏的
+B|15|Running away or ______ in horror is the reaction of many people when they see big spiders or cockroaches.|A|v.|尖叫
+K|16-20|media;victims;union;vehicles;tapped;scattered
+B|16|Up to 85% of the employees don't support the ______ of the two technology enterprises.|C|n.|結合;合併;工會
+B|17|Shortly after the eight-car train traveling to Taitung came off the tracks inside a tunnel, the authorities made a rough calculation of the number of ______.|B|n.|受害者
+B|18|The baker ______ some cocoa powder on top of the birthday cake.|F|v.|撒;散布
+B|19|In his speech, he emphasized the negative impacts of social ______, including gossip and false information.|A|n.|媒體
+B|20|The latest figures show that there are too many ______ in Taiwan, leading to frequent traffic jams.|D|n.|車輛

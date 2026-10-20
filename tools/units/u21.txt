@@ -1,0 +1,23 @@
+U|21
+F|1|We decided to stay at a m______l because the rooms there were cheap.|motel|n.|汽車旅館
+F|2|I s______pped a few chapters to find out what happened at the end of the story.|skipped|v.|跳過|skip
+F|3|In the story, the main character m______red the king with a knife while he was sleeping.|murdered|v.|謀殺|murder
+F|4|Tim and Tom are brothers. You can definitely see the s______y between them.|similarity|n.|相似之處
+F|5|Diana enjoys her work as a teacher because she finds it satisfying and m______l.|meaningful|adj.|有意義的
+M|6|Donna is grateful to her teacher because he always gives her ______ when she faces difficulties.|temper|dump|guidance|marker|C|guidance|n.|指引;指導
+M|7|After walking in the sun for one hour, the man drank some water to quench his ______.|boot|thirst|knot|ray|B|thirst|n.|口渴
+M|8|The movie star's sudden marriage made national ______. Many journalists suddenly wanted to interview her.|morals|headlines|branches|skates|B|headline|n.|頭條新聞
+M|9|Please spit the ______ out. You are not allowed to chew it in class.|gum|fur|hut|sin|A|gum|n.|口香糖
+M|10|Reading is my favorite leisure activity. I like to sit by the window with a book and ______ hot tea.|bore|glow|pave|sip|D|sip|v.|啜飲
+K|11-15|headquarters;blouse;meanwhile;tenderly;ivory;paving
+B|11|Mary keeps an extra ______ in her office in case she accidentally spills something on the one she is wearing.|B|n.|女用襯衫
+B|12|The construction workers are ______ a new sidewalk in front of the building.|F|v.|鋪(路)|pave
+B|13|Many international companies choose to establish their ______ in New York City because it is America's financial center.|A|n.|總部
+B|14|Many professors are criticized for living in ______ towers, unaware of the real challenges young people face outside the university.|E|n.|象牙
+B|15|The shop does not open until one hour from now; ______, a long line of people has already formed outside, waiting to get in.|C|adv.|同時;在此期間
+K|16-20|knot;immoral;peas;glowed;familiarity;waterfalls
+B|16|Danny is a picky eater. For example, he won't eat ______ or carrots.|C|n.|豌豆|pea
+B|17|Alice's ______ with the laboratory allowed the group to finish their science project much faster than the other teams.|E|n.|熟悉
+B|18|At night, a lantern ______ dimly in the corner of the hut.|D|v.|發光|glow
+B|19|The principal reminded the students that cheating on exams is not only dishonest but also deeply ______.|B|adj.|不道德的
+B|20|Mandy told her parents that she planned to tie the ______ with her partner next spring, hoping everyone would support their decision.|A|n.|結(tie the knot:結婚)

@@ -1,0 +1,23 @@
+U|18
+F|1|Henry cast a g______e at the letter on the table but decided not to open it yet.|glance|n.|一瞥
+F|2|There are still many unknown plant and animal species in tropical j______es.|jungles|n.|叢林|jungle
+F|3|Since all the hotels were fully booked, we had no choice but to stay at a small i______n.|inn|n.|小旅館
+F|4|We gave Chrissy the n______e "Cutie" because she looks really cute.|nickname|n.|綽號
+F|5|My mother always separates white clothes from colored ones when she does the l______y.|laundry|n.|待洗衣物;洗衣
+M|6|Be careful with your ______ when you're in a foreign country because they may have different meanings there.|barrels|gestures|marbles|alleys|B|gesture|n.|手勢;姿態
+M|7|The duck laid eight eggs, and they ______ twelve days later.|loosened|assisted|hatched|grabbed|C|hatch|v.|孵化
+M|8|There will be a book fair next week, and my favorite ______ will be there.|alley|harbor|outline|novelist|D|novelist|n.|小說家
+M|9|I think there is a hole in the pipe under the sink. I can hear water ______ from it.|grabbing|hatching|leaking|assisting|C|leak|v.|漏;滲漏
+M|10|The castle's floor is paved with white ______. It is smooth and shiny.|marble|barrel|cattle|valley|A|marble|n.|大理石
+K|11-15|loose;kit;barrel;forever;grab;fake
+B|11|I noticed that my tooth felt a little bit ______; a few weeks later, it fell out.|A|adj.|鬆的;鬆動的
+B|12|The coach always carries a first-aid ______ to treat minor cuts or sprains during practice.|B|n.|成套用品;工具包
+B|13|Waiting for the results felt like it took ______, though it had only been a few minutes.|D|adv.|永遠
+B|14|Those earrings look expensive, but the stones on them are actually ______.|F|adj.|假的;偽造的
+B|15|When an opportunity appears, you must ______ it, for it may never come again.|E|v.|抓住;奪取
+K|16-20|assistance;joyful;alley;spite;outline;ambitious
+B|16|With some financial ______ from the government, Bill was finally able to start his own business.|A|n.|協助;援助
+B|17|Patty is a(n) ______ woman. She wants to expand her fashion business internationally.|F|adj.|有野心的
+B|18|In ______ of the heavy rain, the runners continued the marathon with remarkable determination.|D|n.|惡意;(in spite of)儘管
+B|19|To begin, the speaker showed a(n) ______ of his presentation to the audience.|E|n.|大綱;概要
+B|20|The dark and narrow ______ between the houses leads to the main street.|C|n.|小巷

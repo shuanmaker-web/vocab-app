@@ -1,0 +1,23 @@
+U|15
+F|1|The model hadn't had a proper meal for days, so she f______ted from hunger.|fainted|v.|昏倒|faint
+F|2|Susan is a very kind person. She is always e______r to help those in need.|eager|adj.|渴望的;熱切的
+F|3|Since he was sixteen, Nick has been saving money to realize his dream of studying a______d.|abroad|adv.|在國外
+F|4|For some aboriginal groups in Taiwan, facial tattoos are a t______l tradition.|tribal|adj.|部落的
+F|5|At the end of the lecture, the professor briefly s______ed his main points in a few words.|summarized|v.|總結;概述|summarize
+M|6|I am allergic to ______ products, so I cannot eat yogurt, cream, or any kind of cheese.|angle|bacon|cabin|dairy|D|dairy|adj.|乳製的
+M|7|Many people want to buy ______ computers because they are light and convenient to use.|shadow|gallon|canyon|tablet|D|tablet|n.|平板電腦
+M|8|On her way to the airport, Louise suddenly realized that she had left her ______ at the hotel and had to head back there.|angel|baggage|gallon|tunnel|B|baggage|n.|行李
+M|9|Ellen's friendships with other students gradually ______ as the days went by.|widened|apologized|survived|deepened|D|deepen|v.|加深
+M|10|Tom was so ______ that he spilled his drink three times during dinner and broke a glass.|awkward|clumsy|sexual|urban|B|clumsy|adj.|笨拙的
+K|11-15|aboard;scarcely;satisfactory;apology;badly;sum
+B|11|The company has hired a team of experts to analyze the problem, but they haven't found a(n) ______ solution.|C|adj.|令人滿意的
+B|12|She felt very sad because she had lost a large ______ of money.|F|n.|金額;總和
+B|13|I was late to the party, and when I finally arrived, there was ______ any food left.|B|adv.|幾乎沒有
+B|14|Everyone ______ the ship was in a panic when they heard that it was sinking.|A|prep.|在(船、車、飛機)上
+B|15|Please accept my sincere ______. I did not mean to hurt your feelings.|D|n.|道歉
+K|16-20|angel;bleed;survivor;dash;cabin;lengthen
+B|16|Toward evening, the shadows ______ across the fields.|F|v.|變長;拉長
+B|17|I accidentally cut myself when I was using a knife, but the wound was small and didn't ______ much.|B|v.|流血
+B|18|You can put a star or a(n) ______ on top of the Christmas tree.|A|n.|天使
+B|19|The lawyer spent his vacation relaxing in a quiet wooden ______ in the mountains, far away from the busy city life.|E|n.|小木屋
+B|20|The little boy is the only ______ of the horrible traffic accident.|C|n.|倖存者

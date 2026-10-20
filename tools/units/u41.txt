@@ -1,0 +1,23 @@
+U|41
+F|1|Can you read this sentence for me? Your h______g is so messy that I can't read it.|handwriting|n.|筆跡;手寫字
+F|2|During my free time, I like to go to the a______m and look at the colorful fish.|aquarium|n.|水族館
+F|3|Jack bid f______l to his girlfriend from the platform as the train went off.|farewell|n.|告別;再見
+F|4|To build the tunnel, the crew had to use heavy m______y to dig deep into the ground.|machinery|n.|機器;機械
+F|5|Oscar is lost in the forest and unable to determine his o______n.|orientation|n.|方向;方位
+M|6|Rather than classical, realistic paintings, Mary prefers the more modern, ______ style.|abstract|promising|nutritious|damp|A|abstract|adj.|抽象的
+M|7|If you are on a diet, you should avoid eating fried foods because they are high in ______.|priorities|options|calories|idioms|C|calorie|n.|卡路里;熱量
+M|8|Male citizens in Taiwan with dual ______ often face difficult choices regarding military service, voting rights, and long-term personal identity.|recreation|lifeguard|nationality|publicity|C|nationality|n.|國籍
+M|9|The project has been ______ owing to a lack of funds.|paced|halted|sued|raged|B|halt|v.|使停止;暫停
+M|10|When the teacher announced the upcoming exam, the entire class moved up a(n) ______ and began studying far more seriously.|panel|orbit|canoe|gear|D|gear|n.|排檔;檔位(move up a gear:提高檔次)
+K|11-15|bald;priority;begged;gazed;pessimistic;stockings
+B|11|The coach reminded the players that their ______ should be teamwork, not personal glory or individual awards.|B|n.|優先事項
+B|12|Philip ______ at Candice, attracted by her unique beauty.|D|v.|凝視|gaze
+B|13|My father went ______ at 40. When he was forty-five years old, he had no hair on his head.|A|adj.|禿頭的
+B|14|Every Christmas, Max and his family hang a row of ______ over the fireplace.|F|n.|長襪|stocking
+B|15|Don't be so ______. I am sure you can succeed if you just put a little more effort into it.|E|adj.|悲觀的
+K|16-20|cabinet;rage;recreation;hawks;earphones;quilt
+B|16|The customer flew into a(n) ______ after waiting for half an hour, even though the delay was caused by a technical problem.|B|n.|憤怒;暴怒
+B|17|Ellen puts on ______ when she listens to music at work because she doesn't want to disturb her colleagues.|E|n.|耳機|earphone
+B|18|Hiking is a form of ______ that is good for both body and mind.|C|n.|休閒活動;娛樂
+B|19|I keep a(n) ______ on my sofa so that I can cover my legs if I feel cold.|F|n.|被子;棉被
+B|20|Can you please help me put some plates on the table? They are in the ______ over there.|A|n.|櫥櫃

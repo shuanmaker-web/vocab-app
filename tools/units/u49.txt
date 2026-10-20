@@ -1,0 +1,23 @@
+U|49
+F|1|Joan's f______y about living in a magical kingdom inspired her to write stories filled with dragons and brave heroes.|fantasy|n.|幻想
+F|2|The workers sat i______e for hours, not doing any work because the factory machines suddenly stopped working.|idle|adj.|無所事事的
+F|3|The ballet dancer made a g______l leap into the air and then struck an ending pose.|graceful|adj.|優雅的
+F|4|You should not exercise until your food has had a chance to d______t, or you may feel uncomfortable.|digest|v.|消化
+F|5|The U.K. economy is heavily d______t on international trade. Most British companies sell their products overseas.|dependent|adj.|依賴的
+M|6|Many people believe that children learn language through ______. That is, they just repeat what their parents and other people say.|admission|imitation|disadvantage|celebration|B|imitation|n.|模仿
+M|7|It is much easier to ______ a point by giving examples rather than trying to explain it.|furnish|devise|illustrate|classify|C|illustrate|v.|說明
+M|8|John felt ______ about forgetting his girlfriend's birthday again.|guilty|delightful|functional|crunchy|A|guilty|adj.|內疚的
+M|9|The ______ against unfair labor practices attracted national attention and sparked important discussions.|illustration|classification|constitution|demonstration|D|demonstration|n.|示威
+M|10|Julia bought a birthday gift for her father to show her ______ for what he had done for her.|appreciation|emphasis|commerce|disadvantage|A|appreciation|n.|感激
+K|11-15|comedy;classified;confidence;burglar;dyed;drowsy
+B|11|The books are ______ by general subject. For example, if you want to find something related to World War I, you should go to the history section.|B|v.|分類|classify
+B|12|My house was robbed by a ______ a few months ago when we were away on a trip.|D|n.|竊賊
+B|13|The actor achieved great popularity and success after appearing on the ______ show.|A|n.|喜劇
+B|14|You should have ______ in yourself, and I believe you can make it.|C|n.|信心
+B|15|After eating the big dinner, Henry felt very ______ and lay down on the sofa.|F|adj.|困倦的
+K|16-20|concerning;disadvantages;diploma;admission;crunchy;functional
+B|16|Those under 18 are refused ______ to the night club because it is illegal for them to drink alcohol.|D|n.|允許進入|admission
+B|17|Stella earned a(n) ______ in nursing, which allowed her to work in hospitals and care for patients.|C|n.|文憑
+B|18|Although the idea sounded good at first, a final evaluation revealed that its potential ______ were greater than its advantages.|B|n.|缺點|disadvantage
+B|19|To make sure the alarm clock was ______, Andy tested it before going to bed.|F|adj.|正常使用的
+B|20|If you want to learn more about issues ______ gender or race, you should read this magazine.|A|prep.|關於

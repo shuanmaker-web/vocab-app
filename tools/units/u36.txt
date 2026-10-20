@@ -1,0 +1,23 @@
+U|36
+F|1|My grandmother shared her secret apple pie r______e with me. She suggested following the step-by-step guide exactly.|recipe|n.|食譜
+F|2|The movie's plot was so c______d that Lucy couldn't understand it.|complicated|adj.|複雜的
+F|3|When the priest asked if there was any o______n, no one raised a hand, so the couple went on to get married.|objection|n.|反對;異議
+F|4|Hikers remained on the a______t for sudden weather changes, knowing a fast-moving storm could trap them on the mountain trail.|alert|n.|警戒;警覺
+F|5|Due to the typhoon, there was a delay in the d______e of the flight; the flight would take off a few hours later.|departure|n.|起飛;出發
+M|6|Jason is a(n) ______ latecomer, so he often misses the first lesson of the morning.|aggressive|habitual|favorable|delicate|B|habitual|adj.|習慣性的
+M|7|After many hours of being questioned, the suspect finally confessed to ______ the crime.|analyzing|invading|committing|departing|C|commit|v.|犯(罪);承諾
+M|8|Many people can't ______ fact from opinion when reading posts on social media.|immigrate|distinguish|concentrate|sacrifice|B|distinguish|v.|區別;分辨
+M|9|William is a successful tennis player, but he has ______ most of his free time in order to achieve this success.|alerted|sacrificed|emerged|fetched|B|sacrifice|v.|犧牲
+M|10|The characters in this animated film look so ______ that many viewers almost believe they are real actors.|manual|favorable|amusing|realistic|D|realistic|adj.|逼真的;寫實的
+K|11-15|implies;concepts;install;disability;immigrants;fame
+B|11|The plumber will come to ______ the new dishwasher in the kitchen tomorrow.|C|v.|安裝
+B|12|Britney first rose to ______ as a singer when she was seventeen years old.|F|n.|名聲
+B|13|As the new study ______, humans are almost totally responsible for global warming.|A|v.|暗示;意味著|imply
+B|14|In mathematics, it is more important to understand ______ than to memorize formulae.|B|n.|概念|concept
+B|15|Fanny refused to let her ______ stop her from pursuing her dream.|D|n.|殘疾;身心障礙
+K|16-20|peers;protested;recall;satellites;seize;gender
+B|16|After Andy's parents told him that he was grounded, he ______ the decision by refusing to talk to them.|B|v.|抗議|protest
+B|17|Many teenagers feel pressure to fit in with their ______, especially when facing new academic or social challenges in school.|A|n.|同儕|peer
+B|18|Judy wanted to write a postcard to Sam, but she couldn't ______ his address, so she wrote him an email instead.|C|v.|回想起;記得
+B|19|Mr. and Mrs. White value ______ equality, so they try to treat their son and daughter in exactly the same way.|F|n.|性別
+B|20|After recovering from illness, Ted decided to ______ the day and make the most of every chance to grow and learn.|E|v.|抓住;奪取

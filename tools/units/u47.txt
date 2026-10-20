@@ -1,0 +1,23 @@
+U|47
+F|1|Taipei 101 is the most famous l______k in Taipei.|landmark|n.|地標
+F|2|My trip to Japan last spring was great because the cherry blossoms there looked s______d!|splendid|adj.|燦爛的;壯麗的
+F|3|The boys were full of m______f and kept whispering and throwing paper balls to one another during class.|mischief|n.|頑皮
+F|4|These women are protesting for e______y in pay between the sexes.|equality|n.|平等
+F|5|Our teacher reminded us that we should check for g______l errors in our essays before turning them in.|grammatical|adj.|文法的
+M|6|Critics gave the movie bad reviews because the ______ was boring and predictable.|cord|bloom|drill|plot|D|plot|n.|情節
+M|7|This ______ is home to some of the country's most expensive apartments.|district|extent|divorce|riddle|A|district|n.|區域
+M|8|Being on time is a ______ that many people lack nowadays.|postage|virtue|copper|fossil|B|virtue|n.|美德
+M|9|I want to come back to this garden next June because all the cherry trees usually ______ at that time.|mislead|blossom|dodge|converse|B|blossom|v.|開花
+M|10|The teacher let David off the ______ this time, but she warned him that she wouldn't ignore late homework again.|stem|hook|curve|arch|B|hook|n.|放某人一馬(let sb. off the hook)
+K|11-15|bloom;mislead;correspond;dodge;bulletin;fleas
+B|11|Sally used to ______ with her pen pal, exchanging long letters about school life and personal dreams.|C|v.|互通信件
+B|12|Please don't ______ my question. Answer me honestly, and I won't be mad at you.|D|v.|躲避
+B|13|Sometimes, there may be ______ in your pet's fur, so you should check regularly.|F|n.|跳蚤|flea
+B|14|The cunning salesman tried to ______ the woman into believing that the product was fantastic.|B|v.|誤導
+B|15|If there is any important information, it will be displayed on the ______ board in the front of the classroom.|E|n.|公告
+K|16-20|stingy;honeymoon;convenience;drifted;mystery;frowned
+B|16|Most of us like the ______ of credit cards for buying things, but they can easily cause us to accidentally spend too much money.|C|n.|便利
+B|17|The fallen leaves ______ on the river and were carried away.|D|v.|漂流|drift
+B|18|Steve and his wife went to Hawaii for their ______.|B|n.|蜜月
+B|19|Vivian loved reading ______ novels because solving the hidden clues made her feel clever and excited.|E|n.|神祕;懸疑
+B|20|Mary ______ at her son because he was making too much noise in the restaurant.|F|v.|皺眉|frown

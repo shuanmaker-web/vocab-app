@@ -1,0 +1,23 @@
+U|52
+F|1|The director's new film has received w______d praise. Both critics and the public enjoyed the film greatly, and more and more people are going to see it.|widespread|adj.|普遍的
+F|2|The singer's performance became the h______t of the festival, drawing enthusiastic applause from the entire audience.|highlight|n.|最精采處
+F|3|The dress is made of delicate and expensive f______c, so you should wash it by hand instead of using the washing machine.|fabric|n.|布料
+F|4|John made a p______e of a brand-new laptop because his old one had finally stopped working.|purchase|n.|購買
+F|5|The actress gave a touching speech at the awards c______y, and everyone in the audience clapped loudly for her.|ceremony|n.|典禮
+M|6|Jake slowly ______ himself to the colder weather after moving to a northern city.|accommodated|fragmented|interpreted|gathered|A|accommodate|v.|適應
+M|7|The oil spill from the cargo ship is a(n) ______ disaster; many seabirds and marine animals have died because of it.|ecological|exceptional|indifferent|statistical|A|ecological|adj.|生態的
+M|8|The woman asked her son to run some ______ for her and gave him an apple as a reward afterward.|bureaus|errands|layers|series|B|errand|n.|差事;跑腿
+M|9|The hundred-year-old building has become a symbol of ______ in the district. You must see it if you ever go to that region.|ecology|assessment|heritage|shortage|C|heritage|n.|遺產
+M|10|Maggie seldom lets her dog ______ into unfamiliar parts of the neighborhood because she is afraid that it would get lost and never return.|assess|erect|perceive|venture|D|venture|v.|冒險
+K|11-15|behalf;massive;participants;viewers;opponent;specializes
+B|11|Dylan is a lawyer who ______ in civil law, especially family law.|F|v.|專攻|specialize
+B|12|The computer can process a(n) ______ amount of information in a very short period of time.|B|adj.|大量的
+B|13|Serena is such a powerful and experienced player that anyone would be fearful of being her ______.|E|n.|對手
+B|14|The manager had a full schedule, so he had his assistant attend the meeting on his ______.|A|n.|代表
+B|15|The new talk show has attracted many ______. It is now one of the most popular shows on the network.|D|n.|觀眾|viewer
+K|16-20|specialty;perception;via;banned;granted;flipped
+B|16|If you have any questions, please contact me ______ email. I check my mailbox every day.|C|prep.|透過
+B|17|The man finally ______ his children's wishes and bought each of them a new laptop.|E|v.|同意|grant
+B|18|Sarah ______ through the book and quickly browsed the chapter titles; she decided to buy it.|F|v.|瀏覽|flip
+B|19|After the legalization of same-sex marriage, the public's ______ of the gay community gradually changed.|B|n.|觀念
+B|20|The school ______ students from using phones in class to reduce distractions and improve concentration.|D|v.|禁止|ban

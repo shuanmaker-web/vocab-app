@@ -1,0 +1,23 @@
+U|45
+F|1|It is so cold in the room that I can't help but t______e.|tremble|v.|顫抖
+F|2|After many hours of being questioned, the suspect finally c______sed that he had committed the crime.|confessed|v.|坦白;招供|confess
+F|3|Jimmy c______ted his friend on winning first place in the international piano contest.|congratulated|v.|祝賀|congratulate
+F|4|Sam was caught p______ping at his classmate's exam paper. In the end, he failed the course and had to take it again the next year.|peeping|v.|偷看|peep
+F|5|Many people consider p______ts bad creatures, but they are actually an essential part of the ecosystem.|pests|n.|害蟲|pest
+M|6|Nick wants to make sure that the watch he just bought is ______, not fake.|thoughtful|elementary|intermediate|authentic|D|authentic|adj.|真正的;可靠的
+M|7|I just finished reading Stephen Hawking's ______, which tells the entire life story of the scientist.|autobiography|discouragement|vegetarian|enforcement|A|autobiography|n.|自傳
+M|8|The camp leaders are training the kids to follow orders to teach them good ______.|nursery|discipline|hydrogen|telescope|B|discipline|n.|紀律;訓練
+M|9|The failure didn't ______ him. Instead, he used it as motivation and came back stronger than ever.|reinforce|enforce|discourage|shiver|C|discourage|v.|使氣餒
+M|10|After eating the fried chicken, my fingers were all ______.|greasy|timid|intellectual|agreeable|A|greasy|adj.|油膩的
+K|11-15|hurricane;empire;hatred;perfume;telescopes;merits
+B|11|The coastal town prepared for the ______ by sealing up windows and storing emergency supplies.|A|n.|颶風
+B|12|The ______ between the supporters of the two political parties is not something that can be solved by words alone.|C|n.|仇恨
+B|13|When the boss evaluates his employees, he tries to look at their ______ instead of their flaws.|F|n.|優點|merit
+B|14|I really disliked the woman's ______ because its smell filled the entire room and made me feel sick.|D|n.|香水
+B|15|The Persian ______ once ruled over most of the Middle East, Central Asia, and parts of Europe.|B|n.|帝國
+K|16-20|surrendered;timid;thoughtful;oxygen;merchant;nuclear
+B|16|Marco Polo was a Venetian ______ who traveled along the ancient Silk Road.|E|n.|商人
+B|17|Betty found it ______ of her neighbor to check in after hearing about her recent injury.|C|adj.|體貼的
+B|18|After ten days of fighting, the rebels finally ______ to the government.|A|v.|投降|surrender
+B|19|______ technology can produce low-carbon electricity, but it requires strict monitoring to prevent dangerous accidents.|F|adj.|核能的
+B|20|Emma was so ______ that she wouldn't even speak to her classmates on her first day of school.|B|adj.|膽小的;羞怯的

@@ -1,0 +1,23 @@
+U|26
+F|1|You should seize any chance to fulfill your dream, or else you may r______t not doing it in the future.|regret|v.|後悔
+F|2|Have you seen my keys? I was holding them in my hand just now, but they have v______hed.|vanished|v.|消失|vanish
+F|3|More and more people are choosing to live in the s______bs because of the cheap housing and quieter environment there.|suburbs|n.|郊區|suburb
+F|4|Pills are sometimes ground into p______r so that young children can swallow them more easily.|powder|n.|粉末
+F|5|The farmer s______yed pesticides on his crops in order to stop insects from eating them.|sprayed|v.|噴灑|spray
+M|6|______ and pitying yourself won't solve the problem. You must be tough to overcome it.|Sucking|Starving|Transporting|Weeping|D|weep|v.|哭泣
+M|7|There is a sign that warns drivers about the ______ slope ahead. Drivers need to slow down when they pass it.|steep|hollow|stale|stable|A|steep|adj.|陡峭的
+M|8|Tourists often ______ the beach during holidays, leaving behind bottles and wrappers that cleaners must clear the next morning.|spit|record|litter|dive|C|litter|v.|亂丟垃圾
+M|9|As an employer, Henry is opposed to raising the minimum ______, which will increase his company's expenses.|spy|rope|poll|wage|D|wage|n.|工資
+M|10|Thousands of people were ______ to death during the terrible famine.|sucking|weeping|transporting|starving|D|starve|v.|挨餓
+K|11-15|swan;suicide;microphone;studio;stubborn;hollow
+B|11|Before the rock star became a household name in this country, he recorded all of his songs in a small ______ in his home.|D|n.|錄音室;工作室
+B|12|This chocolate egg is ______, and there is a small toy inside it.|F|adj.|中空的
+B|13|It's difficult to persuade the ______ man to change his mind.|E|adj.|固執的
+B|14|Although the man had suffered from depression and even had thoughts of committing ______, he sought help from professionals and gradually recovered from the condition.|B|n.|自殺
+B|15|The teacher chose to use a ______ in class so that every student could hear him clearly.|C|n.|麥克風
+K|16-20|wheat;pole;transportation;robe;salary;poll
+B|16|The temperature at the North ______ is so low that most animals cannot survive there.|B|n.|極;極地|pole
+B|17|Before planning the festival, the organizers carried out a ______ to learn which activities would attract the most participants.|F|n.|民意調查
+B|18|The public ______ system is terrible in this city; there is no metro, and the buses are really slow.|C|n.|交通運輸
+B|19|The workers are asking for a higher ______ because they believe their responsibilities have increased significantly.|E|n.|薪水
+B|20|Rice is the staple grain of most Asian countries, while ______ is more common in North America and Europe.|A|n.|小麥

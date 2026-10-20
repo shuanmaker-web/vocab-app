@@ -1,0 +1,23 @@
+U|17
+F|1|This p______e is the most famous tourist attraction in this city. It is a beautiful building surrounded by a big garden.|palace|n.|宮殿
+F|2|Tony tried to stay serious during the speech but burst into l______r when his friend made a funny face.|laughter|n.|笑;笑聲
+F|3|Greta p______ked when she realized her passport was missing just minutes before boarding the plane.|panicked|v.|驚慌|panic
+F|4|You should help others for the s______e of being helpful, not just to make yourself look good.|sake|n.|緣故;目的
+F|5|The plane that carried the passengers across the Pacific was a wide-bodied j______t.|jet|n.|噴射客機
+M|6|What you just did was a genuinely kind ______. I am very proud of you.|deed|kidney|jelly|scout|A|deed|n.|行為;善行
+M|7|One benefit of Jacob's weight loss is that he feels more ______ and healthy.|inferior|frightening|energetic|terrifying|C|energetic|adj.|精力充沛的
+M|8|Jessica often hangs out with her friends at the ______. They like to go shopping and have afternoon tea together.|disc|screw|fairy|mall|D|mall|n.|購物中心
+M|9|Great inventions like electricity and the Internet have completely changed the way ______ lives and communicates.|conduct|handful|necktie|mankind|D|mankind|n.|人類
+M|10|This ______ features a good public school, a bookstore, and a beautiful park. Therefore, many people want to live here.|gasoline|industry|neighborhood|keyboard|C|neighborhood|n.|社區;鄰近地區
+K|11-15|inferior;screws;industrial;drips;fairly;deck
+B|11|Jack waved farewell to his family and friends from the ______ as the ship sailed away.|F|n.|甲板
+B|12|Despite his wealth, Don lives in a(n) ______ modest house that contains only a few pieces of furniture.|E|adv.|相當地
+B|13|The boy always feels that he is ______ to other people because he is short.|A|adj.|較差的;自覺低人一等的
+B|14|A meeting of the leaders of the world's major ______ nations was held to discuss the issue of global warming.|C|adj.|工業的
+B|15|The ______ holding the bed together have loosened, so we need to tighten them.|B|n.|螺絲|screw
+K|16-20|fairy;handy;industry;scary;pancakes;queer
+B|16|My father works in the automobile ______, so he knows a lot about the quality and prices of various cars.|C|n.|產業;工業
+B|17|There was something ______ about the atmosphere in the room, as if something strange had just happened there.|F|adj.|奇怪的;古怪的
+B|18|I wonder why witches in ______ tales are always evil.|A|n.|童話;仙女|fairy
+B|19|The ghost in the movie looked really ______ and gave me a nightmare last night.|D|adj.|恐怖的;嚇人的
+B|20|When I get up early, I always have ______ for breakfast.|E|n.|鬆餅;薄煎餅|pancake

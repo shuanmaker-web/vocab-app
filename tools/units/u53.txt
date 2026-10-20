@@ -1,0 +1,23 @@
+U|53
+F|1|This area is not open to any tourists or hunters for the purpose of w______e protection.|wildlife|n.|野生生物
+F|2|The coach s______ted another player for the injured captain during the game.|substituted|v.|以……代替……|substitute
+F|3|When peaceful talks failed, the workers r______ted to striking to make their complaints heard.|resorted|v.|訴諸於|resort
+F|4|I s______ed on the doorstep when I entered the restaurant, but, thankfully, I wasn't injured.|stumbled|v.|絆倒|stumble
+F|5|One way to distinguish m______ls from other animals is that they usually have hair or fur covering most of their skin.|mammals|n.|哺乳動物|mammal
+M|6|The teacher asked Alex for a(n) ______ for his late assignment, but he couldn't give a convincing explanation.|initiative|justification|specimen|modification|B|justification|n.|正當性
+M|7|The mayor's affair has become a huge ______; many people have predicted that he will not win the next election.|innovation|mattress|prospect|scandal|D|scandal|n.|醜聞
+M|8|Scientists have proven that dust may ______ allergies in young children and can even lead to more serious diseases.|institute|rival|modify|trigger|D|trigger|v.|引發
+M|9|The church offers shelter to the homeless, who can find ______ there on cold winter nights.|series|refuge|scent|tribute|B|refuge|n.|避難
+M|10|The ______ of the apartment building got together for a meeting about their new noisy neighbor.|performers|residents|settings|institutions|B|resident|n.|居民
+K|11-15|toxic;ratio;preference;residence;overall;innovative
+B|11|Mina has a(n) ______ for classical music over pop songs because it helps her relax.|C|n.|偏好
+B|12|Terry often comes up with ______ yet practical ideas. That's why everyone likes to have him on their team.|F|adj.|創新的
+B|13|The river turned pink because the factory had been discharging ______ wastewater into it.|A|adj.|有毒的
+B|14|Though Steve failed mathematics, his ______ performance in the midterm exams wasn't that bad.|E|adj.|全面的
+B|15|The ______ of water to flour in this bread recipe is 3 to 5; you need to add three cups of water for every five cups of flour.|B|n.|比例
+K|16-20|penetrate;specimens;likewise;radiation;initiative;marine
+B|16|The biology teacher has a collection of beautiful butterfly ______ which are kept in glass cases at the back of the classroom.|B|n.|標本|specimen
+B|17|After the nuclear explosion, many plants and animals in the region became diseased because of the effects of ______.|D|n.|輻射
+B|18|Sherry was asked to help with the house chores by her mom and her brother ______.|C|adv.|同樣地
+B|19|If you want to impress your boss, try to complete some tasks on your own ______.|E|n.|主動性
+B|20|Nowadays, ______ life is threatened by environmental pollution, especially plastic pollution in the sea.|F|adj.|海洋的

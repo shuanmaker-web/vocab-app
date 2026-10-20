@@ -1,0 +1,23 @@
+U|5
+F|1|Interpersonal harmony is one of the most important e______ts of Chinese culture.|elements|n.|要素;元素|element
+F|2|The government has a______ed that it will be making a series of changes to improve the economic situation.|announced|v.|宣布|announce
+F|3|The government promised to take i______e action to help those who were most in need.|immediate|adj.|立即的
+F|4|It was ______ (fortune) that the concert was canceled just minutes before it started due to the heavy rain.|unfortunate|adj.|不幸的
+F|5|Sometimes people use computers to perform advanced calculations, as computers are both efficient and ______ (accuracy).|accurate|adj.|精確的
+M|6|Einstein was ______ the Nobel Prize for his outstanding contribution to modern physics.|awarded|confused|expanded|wandered|A|award|v.|授予;頒發
+M|7|After the exam ended, the teacher walked down each row and ______ all the answer sheets.|healed|widened|collected|destroyed|C|collect|v.|收集;收取
+M|8|Nowadays, children are encouraged to be ______ rather than think like everyone else.|pessimistic|normal|dramatic|creative|D|creative|adj.|有創意的
+M|9|There is a strong ______ between smoking and lung cancer; people who smoke are a lot more likely to develop it.|kingdom|connection|fortune|journey|B|connection|n.|關聯;連結
+M|10|Bread and butter is practically a daily ______ for most French people.|budget|creature|necessity|property|C|necessity|n.|必需品
+K|11-15|creatures;connect;passion;march;destruction;fortune
+B|11|Most people hope that they can make a ______ someday.|F|n.|財富;命運
+B|12|A band will lead the victory parade and slowly ______ through the streets tomorrow morning.|D|v.|行進;遊行
+B|13|If you have great ______ for your job, you will surely be successful.|C|n.|熱情
+B|14|The Amazon rainforest is home to a great variety of ______.|A|n.|生物;動物
+B|15|The ______ of the rainforest will result in more pollution and less rain in the world.|E|n.|破壞;毀滅
+K|16-20|confuse;creation;optimistic;race;wander;racial
+B|16|This is the best ______ that this artist has ever produced.|B|n.|創作;作品
+B|17|Martin trained for months, hoping to win the ______ and prove that hard work matters more than talent.|D|n.|競賽;賽跑
+B|18|______ discrimination in this country is widespread and has caused a lot of violence and unrest.|F|adj.|種族的
+B|19|Joanna is ______ about her chances of winning the scholarship to study abroad.|C|adj.|樂觀的
+B|20|Some tourists ______ Taiwan with Thailand, even though the two countries have very different cultures and languages.|A|v.|混淆;使困惑

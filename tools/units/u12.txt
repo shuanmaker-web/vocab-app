@@ -1,0 +1,23 @@
+U|12
+F|1|Before the flight took off, the p______rs were asked to turn off their electronic devices or put them in airplane mode.|passengers|n.|乘客|passenger
+F|2|Regular exercise and balanced meals helped Ken maintain a s______m and healthy body.|slim|adj.|苗條的
+F|3|After watching the h______r movie, Jill couldn't sleep alone that night.|horror|n.|恐怖
+F|4|The reasons behind feelings of ______ (jealous) are often insecurity, low self-esteem, and greed.|jealousy|n.|嫉妒
+F|5|The classroom has been painted in bright colors in order to create a ______ (cheer) learning atmosphere.|cheerful|adj.|愉快的;興高采烈的
+M|6|Don't ______ to ask your parents if you need help with your homework.|confirm|explode|hesitate|invent|C|hesitate|v.|猶豫
+M|7|The ______ of trains has benefitted people a lot by saving them considerable time when traveling long distances.|dinosaur|explosion|invention|hesitation|C|invention|n.|發明
+M|8|The athlete ______ taking any drugs, claiming that a mistake must have been made in the test results.|denied|invented|exploded|horrified|A|deny|v.|否認
+M|9|Psychologists argue that personality is developed through the ______ interactions of a person with his or her environment and the people in it.|skinny|fearful|hesitant|ongoing|D|ongoing|adj.|持續進行的
+M|10|Words can be used to inspire others, but they can also be used like ______ and cause harm.|onions|weapons|towers|garages|B|weapon|n.|武器
+K|11-15|flash;elevators;floods;inventor;hesitant;missing
+B|11|Thomas Edison was a great ______ who introduced the electric light bulb to the world.|D|n.|發明家
+B|12|Despite the convenience of ______, they require regular maintenance by trained professionals.|B|n.|電梯|elevator
+B|13|It was a relief for the girl to find out that her ______ ID card had been found.|F|adj.|遺失的;失蹤的
+B|14|The most common natural disasters in Taiwan are ______, mudslides, and earthquakes.|C|n.|洪水|flood
+B|15|The memory of her childhood came back in a(n) ______ when Nancy smelled her grandmother's cooking.|A|n.|閃現;一閃
+K|16-20|semester;hesitation;quit;skinny;talkative;cropped
+B|16|As soon as the firefighters received the phone call, they rushed to the fire scene without ______.|B|n.|猶豫
+B|17|The editor ______ the unnecessary details from the image to make it more focused and professional.|F|v.|裁剪;修剪|crop
+B|18|This ______, Joanna is taking a course on modern American novels.|A|n.|學期
+B|19|Only a really ______ person could fit between the extremely narrow alley between the two walls.|D|adj.|極瘦的
+B|20|It's not easy for a person to ______ smoking; doing so requires determination and patience.|C|v.|戒除;放棄

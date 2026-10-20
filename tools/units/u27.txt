@@ -1,0 +1,23 @@
+U|27
+F|1|It is d______l that we will arrive on time, since now we are stuck in a traffic jam.|doubtful|adj.|懷疑的;不確定的
+F|2|The concert will be p______ed until next week owing to the typhoon.|postponed|v.|延期|postpone
+F|3|This chef usually r______ts the meat over hot coals for several hours to make it tender.|roasts|v.|烘烤|roast
+F|4|The mother can have a rest now that her baby has finally fallen asleep in the c______e.|cradle|n.|搖籃
+F|5|The farm dogs are chasing a f______k of sheep, forcing them to return home.|flock|n.|(羊、鳥)群
+M|6|Even though the boy had done something wrong, his mother didn't punish him because she appreciated his ______.|misery|portion|lottery|honesty|D|honesty|n.|誠實
+M|7|This ______ tea set is a valuable treasure to my family.|buffalo|porcelain|portrait|sausage|B|porcelain|n.|瓷器
+M|8|The museum displayed a ______ ancient box whose purpose no historian has been able to explain.|mysterious|stubborn|vigorous|mature|A|mysterious|adj.|神祕的
+M|9|Following the outbreak of World War II, many people in Europe lived in ______ for years.|lottery|sausage|pottery|misery|D|misery|n.|悲慘;痛苦
+M|10|Luke grabbed a cloth to ______ off the muddy footprints his dog had left all over the floor.|wipe|boast|float|crawl|A|wipe|v.|擦拭
+K|11-15|portions;grasped;miserable;crashed;lively;automobiles
+B|11|Exhaust from ______ contains gasses that contribute to global warming.|F|n.|汽車|automobile
+B|12|The car ______ straight into the tree, but luckily the driver wasn't seriously injured.|D|v.|猛撞;撞毀|crash
+B|13|To make more money, the businessman ______ every opportunity to expand his business.|B|v.|抓住;掌握|grasp
+B|14|Many children like the picture book because the story is ______ and interesting.|E|adj.|生動的;活潑的
+B|15|Because of the war, the kid lost his parents and then lived a(n) ______ life.|C|adj.|悲慘的;痛苦的
+K|16-20|poured;mature;skeptical;ripe;roared;portrayed
+B|16|Larry ______ all the milk into his coffee, but it still tasted very bitter.|A|v.|倒;灌|pour
+B|17|The audience grew ______ about the speaker's claims when he refused to provide any evidence.|C|adj.|懷疑的
+B|18|The young man is ______ enough to make decisions by himself.|B|adj.|成熟的
+B|19|When the lion ______, the wolves ran away.|E|v.|吼叫|roar
+B|20|The article ______ the athlete as hardworking and determined, describing the long journey behind her success.|F|v.|描繪;描寫|portray

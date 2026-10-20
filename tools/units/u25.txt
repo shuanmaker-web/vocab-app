@@ -1,0 +1,23 @@
+U|25
+F|1|When you speak English, it is important to remember which nouns are c______e and which ones are not.|countable|adj.|可數的
+F|2|The knife had cut deep into my f______h, and the wound wouldn't stop the bleeding.|flesh|n.|肉;果肉
+F|3|Whoever visits this city should go to the famous f______n, toss a coin into it, and make a wish.|fountain|n.|噴泉
+F|4|You must remember to wear a h______t when you ride a motorcycle.|helmet|n.|安全帽
+F|5|It is very cold these days, so we turn on the heater for w______h every night.|warmth|n.|溫暖
+M|6|My uncle has traveled to five of the world's ______.|recorders|youngsters|continents|bubbles|C|continent|n.|大陸;洲
+M|7|The manager of each branch of the coffee shop reports to a ______ manager.|teenage|merry|vital|regional|D|regional|adj.|區域的;地區的
+M|8|You should eat more fruit and vegetables. There are a lot of ______ in them.|ministers|vitamins|gangsters|recorders|B|vitamin|n.|維他命
+M|9|The car hit a truck and ______ off the road, and the driver was badly injured in the accident.|spun|towed|erased|grinned|A|spin|v.|旋轉
+M|10|Melissa gave several ______ about wanting a present, hoping her husband would get the message and buy a necklace for her.|hints|bubbles|traders|violets|A|hint|n.|暗示
+K|11-15|splash;youthful;record;region;trail;pity
+B|11|The largest castle in the ______ used to stand here. Unfortunately, it was destroyed by a bomb during the First World War.|D|n.|地區
+B|12|The class expressed deep ______ for their classmate, who had unexpectedly lost a close family member.|F|n.|同情;憐憫
+B|13|Some people keep a diary to ______ their personal thoughts and experiences every day.|C|v.|記錄
+B|14|Despite Mr. Smith's age, he still carried a ______ spirit that made him popular among his students.|B|adj.|年輕的;青春的
+B|15|The hunter followed the ______ of the deer carefully and silently, hoping to catch it.|E|n.|蹤跡;足跡
+K|16-20|spit;teenage;limb;towed;plug;merry
+B|16|Chinese New Year's Eve is a ______ time for my family.|F|adj.|歡樂的
+B|17|Dave's parents gave him complete freedom during his ______ years.|B|adj.|十幾歲的
+B|18|The doctor examined the patient's swollen ______ carefully, checking for signs of a broken bone or torn muscle.|C|n.|四肢;肢體
+B|19|My car was ______ away because I had parked it on the red line.|D|v.|拖|tow
+B|20|As long as you place the ______ of the machine into a socket, it should work.|E|n.|插頭

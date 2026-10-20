@@ -1,0 +1,23 @@
+U|37
+F|1|Susan decided to study b______y at university because she has always loved nature and animals.|biology|n.|生物學
+F|2|The prince e______red a beautiful girl in the forest and fell in love with her immediately.|encountered|v.|遇到;邂逅|encounter
+F|3|Without her car, Sarah was at the m______y of bus or train schedules, which often made her late for appointments.|mercy|n.|擺布;仁慈(at the mercy of)
+F|4|The poor woman has suffered from d______n for many years. She always feels unhappy and anxious, which prevents her from living a normal life.|depression|n.|憂鬱(症);沮喪
+F|5|The international company plans to establish its headquarters in Singapore because it is considered one of Asia's most important f______l centers.|financial|adj.|金融的;財務的
+M|6|To pay off her debts, Julia sold everything of value that she ______.|neglected|appointed|constructed|possessed|D|possess|v.|擁有
+M|7|The ______ is a non-profit organization that collects and distributes clothing to the poor.|foundation|insurance|possession|application|A|foundation|n.|基金會
+M|8|It is safer to store hot and oily food in glass ______ than in plastic ones.|tragedies|fictions|containers|possessions|C|container|n.|容器
+M|9|The host's joke was ______ for a formal awards ceremony, causing several guests to exchange uncomfortable glances.|diligent|constructive|inappropriate|numerous|C|inappropriate|adj.|不適當的
+M|10|The girl kept ______ at the mosquito bites on her legs.|consulting|scratching|forecasting|enclosing|B|scratch|v.|抓;搔
+K|11-15|construction;comedy;diversity;appointment;scenery;anniversary
+B|11|A new bridge that will connect two major cities on either side of the river is currently under ______.|A|n.|建造;施工
+B|12|For their wedding ______, the Wangs plan to have dinner at a fancy restaurant.|F|n.|週年紀念
+B|13|Patients must make a(n) ______ in advance to see the doctor because he has a tight schedule.|D|n.|預約
+B|14|Fred enjoys ______ because it helps him relax after long study sessions and reminds him not to take things too seriously.|B|n.|喜劇
+B|15|Though the island is not very developed, it has beautiful natural ______.|E|n.|風景;景色
+K|16-20|shelter;desperation;possession;founder;reformed;overlooked
+B|16|The outcome of Randy's experiment was not satisfactory because he ______ an important detail.|F|v.|忽略;俯瞰|overlook
+B|17|The rain came suddenly and we had no umbrellas, so we had to seek ______ from the rain.|A|n.|遮蔽處;庇護
+B|18|In his ______ to finish the project, George skipped meals and stayed awake far longer than was healthy.|B|n.|絕望;不顧一切
+B|19|As the ______ of the company, Ken has led his employees through all kinds of difficulties.|D|n.|創辦人
+B|20|That painting came into Sara's ______ last week when she bought it at a gallery.|C|n.|擁有;財產

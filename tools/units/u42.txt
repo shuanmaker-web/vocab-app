@@ -1,0 +1,23 @@
+U|42
+F|1|I really can't afford to put off writing this paper anymore. The d______e is tomorrow afternoon!|deadline|n.|截止日期
+F|2|The mountain offered a m______t view of the sunrise that made the long, exhausting climb completely worthwhile.|magnificent|adj.|壯觀的
+F|3|The poor girl became an o______n at the age of six, when her parents died in a terrible fire.|orphan|n.|孤兒
+F|4|The group of friends ate lunch under the s______e of a large maple tree, enjoying cool air on the hot summer afternoon.|shade|n.|樹蔭;陰涼處
+F|5|Many of the s______rs in America originally came from Europe.|settlers|n.|移居者;拓荒者|settler
+M|6|The ______ couldn't stand the loud noises in the café and started to cry.|ferry|kettle|infant|chamber|C|infant|n.|嬰兒
+M|7|Eddie played the Chinese flute in the ______ in high school.|catalogue|orchestra|refugee|bankruptcy|B|orchestra|n.|管弦樂團
+M|8|The peaceful afternoon changed in the ______ of an eye when dark storm clouds suddenly covered the sky.|feast|fax|blink|sketch|C|blink|n.|眨眼
+M|9|The ______ car crash took the lives of more than four people.|elastic|fatal|needy|partial|B|fatal|adj.|致命的
+M|10|With the economy going into recession, the company eventually went ______.|bankrupt|elegant|flexible|magnificent|A|bankrupt|adj.|破產的
+K|11-15|hardship;chemistry;scolded;cue;elastic;gifted
+B|11|The bus was about to leave, and on ______, Jason ran up to the stop, out of breath.|D|n.|提示;暗示(on cue:適時地)
+B|12|Our ancestors went through a lot of ______ to create the world that we live in now.|A|n.|艱難;困苦
+B|13|Patrick was ______ by the teacher because he had skipped school again.|C|v.|責罵|scold
+B|14|Martin is a(n) ______ musician who has performed in many big concert halls.|F|adj.|有天賦的
+B|15|Jack majored in ______ in college, and now he teaches science in a junior high school.|B|n.|化學
+K|16-20|accountant;accent;ceased;winked;elegant;feast
+B|16|To be a good ______, you need to be skilled with numbers and have good attention to detail.|A|n.|會計師
+B|17|Judging by his ______, the man probably comes from Ireland.|B|n.|口音
+B|18|My grandmother was a very ______ woman who always dressed beautifully.|E|adj.|優雅的
+B|19|My mother prepared a(n) ______ for Christmas dinner.|F|n.|盛宴
+B|20|The dance instructor waved her hand, and then the music ______.|C|v.|停止|cease

@@ -1,0 +1,23 @@
+U|56
+F|1|The volunteers d______e their time to taking care of stray animals.|dedicate|v.|奉獻;致力於
+F|2|The amoeba is a single-celled o______m, and it is so small that it can't be seen with the naked eye.|organism|n.|生物;有機體
+F|3|Tom chose a book at r______m from the shelf and ended up enjoying it more than he had expected.|random|n.|隨機(at random:隨意地)
+F|4|Melody broke her right leg and had to use a w______r for two months.|wheelchair|n.|輪椅
+F|5|The restaurant owner installed a water f______r on every tap in his kitchen. He cares a lot about the quality of the water he serves.|filter|n.|濾水器;過濾器
+M|6|The famous actor finally ______ to the interview after receiving reassurance about the questions.|suspended|worshiped|consented|schemed|C|consent|v.|同意
+M|7|Linda is on a diet, so she asked her friends not to ______ her with any desserts or soft drinks.|dissolve|pedal|generate|tempt|D|tempt|v.|引誘;誘惑
+M|8|Many ______ organizations are established for the purpose of promoting environmental protection.|transparent|nonprofit|neutral|crucial|B|nonprofit|adj.|非營利的
+M|9|It is recommended that you back up the data stored in your computer before you ______ its system. That way, if anything goes wrong, you can still access your old files.|update|yield|provoke|manifest|A|update|v.|更新
+M|10|In order to recover quickly, the patient needs to get enough rest and ______.|burial|nutrition|temptation|terminal|B|nutrition|n.|營養
+K|11-15|intent;chef;commission;vague;vacuum;recession
+B|11|The museum decided to ______ a famous artist to create a sculpture for its new outdoor garden.|C|v.|委託(創作);任命
+B|12|When you want to describe something, you should use precise language rather than ______ and flat vocabulary.|D|adj.|模糊的;含糊的
+B|13|Cathy was ______ on improving her grades and spent every evening reviewing her notes.|A|adj.|專注的;決心的
+B|14|Economists have predicted that the weak market will go into a period of ______ very soon.|F|n.|經濟衰退
+B|15|Tina's dog sheds a lot of hair, so she has to ______ her room at least twice a week.|E|v.|用吸塵器清掃|vacuum
+K|16-20|rear;generator;confession;loop;ultimate;nutrient
+B|16|The criminal tried to sneak out of the building through its ______ entrance, but the police were waiting there for him.|A|adj.|後方的
+B|17|The manager has the power to make the ______ decision, but he always listens to everyone's opinions before giving his final say.|E|adj.|最終的
+B|18|The apartment building has its own electricity ______; even in an emergency blackout, it can provide power for the residents.|B|n.|發電機
+B|19|A: "I have a(n) ______ to make: I forgot your birthday." B: "That's okay."|C|n.|坦白;招認
+B|20|Carol likes to put her favorite song on a(n) ______ and listen to it again and again while she works. She never gets tired of that song.|D|n.|循環;迴圈

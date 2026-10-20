@@ -1,0 +1,23 @@
+U|22
+F|1|Thick grey smoke comes out of the factory c______y all the time, and the residents in the area often complain about it.|chimney|n.|煙囪
+F|2|The bathtub is very full, so please turn off the f______t.|faucet|n.|水龍頭
+F|3|The brave knight raised his s______d high and brought it down on the beast's neck.|sword|n.|劍
+F|4|This morning, Amy went to the bank and withdrew some money from her a______t.|account|n.|帳戶
+F|5|The ground is very s______y because it just rained. Be careful where you step, or you may fall.|slippery|adj.|滑的
+M|6|Andy's ankle had ______ so badly after the fall that the school nurse insisted he visit a doctor immediately.|frozen|swollen|glowed|proven|B|swollen|adj.|腫起的|swell
+M|7|Vivian has become a ______ to her phone because she checks messages constantly instead of focusing on real conversations.|skate|pearl|slave|chip|C|slave|n.|奴隸;沉迷者
+M|8|There is a lot of ______ going around about Jessica and her boyfriend, but none of it is true.|evidence|gossip|headline|voter|B|gossip|n.|八卦;閒話
+M|9|There is a sale on right now—you can get a ______ if you buy more than three pieces of clothing at once.|razor|snapshot|punch|discount|D|discount|n.|折扣
+M|10|It is the best feeling in the world to have chocolate ______ in your mouth.|melt|swear|skip|vote|A|melt|v.|融化
+K|11-15|summit;proof;swiftly;snapping;sweat;slipping
+B|11|Jenny apologized after ______ at her friend, admitting she was worried about deadlines and hadn't slept well.|D|v.|厲聲說話|snap
+B|12|The baseball game has lasted for more than three hours, and the players are all covered in ______ and dirt.|E|n.|汗水
+B|13|After hours of hiking, we finally got to the ______ of the mountain.|A|n.|山頂
+B|14|This company's latest motorcycle can move around very ______ and silently.|C|adv.|迅速地
+B|15|Since there wasn't any ______ that the man had stolen the money, the police had no choice but to let him go.|B|n.|證據;證明
+K|16-20|pub;scrubbed;rug;sealed;heap;penny
+B|16|Mandy's room is always very messy. She piles her clothes into a ______ on the floor instead of folding them properly and putting them away.|E|n.|一堆
+B|17|The character in the novel started his journey with nothing, not even a ______ to his name.|F|n.|一分錢;便士
+B|18|Your boots are covered with mud; they need to be ______ clean.|B|v.|刷洗|scrub
+B|19|Frank put a stamp on the envelope and ______ it.|D|v.|密封|seal
+B|20|The dog was sleeping on the thick, woolen ______ on the floor in front of the fire.|C|n.|小地毯

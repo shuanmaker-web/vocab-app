@@ -1,0 +1,23 @@
+U|6
+F|1|Last night, the police s______ded a factory in which a criminal was hiding and finally managed to catch him.|surrounded|v.|包圍|surround
+F|2|Upon seeing Jessica, Jill turned around and walked to the o______e direction.|opposite|adj.|相反的
+F|3|A detective was employed to conduct an i______n into the murder case.|investigation|n.|調查
+F|4|The negotiations between North Korea and South Korea were ______ (significance) because they improved the relationship between the two nations.|significant|adj.|重大的;顯著的
+F|5|The poem is ______ (represent) of the poet's early style, when he focused on nature and peaceful countryside scenes.|representative|adj.|典型的;代表性的
+M|6|Besides being an excellent ______, Nathan always showed good sportsmanship (體育精神) and encouraged his teammates.|magician|suspect|athlete|civilian|C|athlete|n.|運動員
+M|7|Thanks to the instant messaging apps, people can now ______ with others much more easily than before.|define|frighten|communicate|harvest|C|communicate|v.|溝通;交流
+M|8|The customer ______ to the manager of the restaurant's poor service and asked for a refund.|complained|ranked|faded|marched|A|complain|v.|抱怨
+M|9|According to a survey conducted by the Ministry of Health and Welfare in 2020, the most ______ cause of death in Taiwan is heart disease.|additional|magical|naive|frequent|D|frequent|adj.|頻繁的;常見的
+M|10|In our society, individuals accused of a crime are supposed to be considered ______ until proven guilty by a judge.|additional|technical|magical|innocent|D|innocent|adj.|無辜的
+K|11-15|opposed;investigated;civil;graduated;compete;rough
+B|11|Kate ______ from medical school last year. Now she works in a hospital.|D|v.|畢業|graduate
+B|12|Robert had a(n) ______ time adjusting to the new school after his family moved to another city.|F|adj.|艱難的;粗糙的
+B|13|In every democratic country, people should have basic ______ rights, including the right to vote and to express their opinions.|C|adj.|公民的
+B|14|It is impossible for most small grocery stores to ______ with large supermarkets.|E|v.|競爭
+B|15|This study ______ the negative effects of violent video games on children.|B|v.|調查|investigate
+K|16-20|competitive;completed;suspicious;strengths;harvested;graduation
+B|16|After the manager ______ his tasks for the day, he went home.|B|v.|完成|complete
+B|17|This year, the college invited the mayor to speak at its ______ ceremony.|F|n.|畢業
+B|18|The farmer quickly ______ the vegetables before the hurricane came.|E|v.|收割;收成|harvest
+B|19|In today's ______ world, children are often expected to achieve excellence in their academic performance.|A|adj.|競爭激烈的
+B|20|One of Jenny's greatest ______ is her ability to stay calm and think clearly under pressure.|D|n.|優點;長處|strength

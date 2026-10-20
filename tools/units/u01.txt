@@ -1,0 +1,23 @@
+U|1
+F|1|Ken a______ed his objective by working hard and following other people's advice.|achieved|v.|達成|achieve
+F|2|Our school basketball team has p______med especially well this season. We have now won five games in a row.|performed|v.|表現|perform
+F|3|After serving a three-year sentence, the man was r______ed from prison last month.|released|v.|釋放|release
+F|4|After weeks of careful preparation, the students were ______ (anxiety) to start the experiment.|anxious|adj.|急切渴望的
+F|5|The cute design of this product is ______ (appeal) to many teenage girls.|appealing|adj.|有吸引力的
+M|6|An official from the Ministry of Agriculture warned that the price of most vegetables was going to ______ by around 10% owing to the strong typhoon.|increase|transform|explore|unite|A|increase|v.|增加
+M|7|Credit cards are not really bad as long as people can ______ to pay their bills every month.|decrease|enable|reform|afford|D|afford|v.|負擔得起
+M|8|The ______ lasted more than five hours, but, fortunately, the doctors said it was a complete success.|pollution|operation|condition|majority|B|operation|n.|手術
+M|9|Tim was very fortunate to be selected from more than 200 applicants. His work experience and positive ______ made him stand out from others.|product|situation|tendency|attitude|D|attitude|n.|態度
+M|10|Before we jump to ______, let's gather more evidence to understand what really happened.|varieties|passages|reactions|conclusions|D|conclusion|n.|結論
+K|11-15|inform;background;original;enables;produce;emotional
+B|11|The government's new policy was made during a(n) ______ of rising unemployment.|B|n.|背景
+B|12|The test ______ a pregnant woman to find out the sex of her baby before it's born.|D|v.|使能夠|enable
+B|13|Buying fresh ______ directly from farmers not only supports local agriculture but also costs less than shopping at the market.|E|n.|農產品
+B|14|There are several ways to deal with sexual harassment in the workplace. One is for victims to ______ their supervisors.|A|v.|通知
+B|15|The definition of many English words today are quite different from their ______ meaning.|C|adj.|最初的
+K|16-20|information;reacted;polluted;probable;unity;familiar
+B|16|The voice on the phone sounded ______, but Amanda couldn't remember where she'd heard it.|F|adj.|熟悉的
+B|17|The rivers in the area are heavily ______ with harmful chemicals from both agriculture and the manufacturing industry.|C|adj.|污染的|pollute
+B|18|The prime minister ______ angrily to the rumor because it was going to damage his reputation and leave a bad impression of him on the public.|B|v.|反應|react
+B|19|This company tends to hire people from a variety of backgrounds. Therefore, it's not easy to make all the employees work together in ______.|E|n.|團結
+B|20|Before students use sources from the Internet, they must check whether the ______ is accurate and reliable.|A|n.|資訊

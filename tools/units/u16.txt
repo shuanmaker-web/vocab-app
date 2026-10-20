@@ -1,0 +1,23 @@
+U|16
+F|1|Compared to her first novel, which was a bestseller, Chris' l______t novel barely sold any copies.|latest|adj.|最新的
+F|2|My friends and I enjoyed a l______y vacation in the countryside last winter.|leisurely|adj.|悠閒的
+F|3|Suddenly, the door b______ged shut, which scared everyone in the room.|banged|v.|砰地關上|bang
+F|4|Mr. Brown is a c______r; his job is to make and repair wooden objects.|carpenter|n.|木匠
+F|5|The queen waved to everybody from her c______e as it slowly made its way down the street.|carriage|n.|馬車
+M|6|The mailman came this morning while I was out, so my neighbor received the ______ for me.|parcel|hallway|navy|ladder|A|parcel|n.|包裹
+M|7|You have to tighten the ______ of your shoes, or you may trip and fall down when you are walking.|rags|jars|baits|laces|D|lace|n.|鞋帶
+M|8|Some companies allow their employees to wear ______ clothes to work on Fridays.|icy|casual|magnetic|formal|B|casual|adj.|休閒的
+M|9|My father used to ______ on the horse races, but eventually, he quit because he had lost too much money.|cast|chop|lace|gamble|D|gamble|v.|賭博
+M|10|David invited his old ______ from college to celebrate his birthday at a small restaurant.|pads|jaws|pals|oaks|C|pal|n.|夥伴;朋友
+K|11-15|leisure;lately;hairdresser;comma;rag;maid
+B|11|During the summer break, Lily finally had time to read novels and paint at her ______.|A|n.|閒暇;悠閒
+B|12|Molly wiped her shoes with an old ______ and then threw it away.|E|n.|破布;抹布
+B|13|I never go to a ______. In fact, I cut my hair by myself.|C|n.|美髮師
+B|14|Sometimes a ______ can totally change the meaning of a sentence.|D|n.|逗號
+B|15|______, many students have become addicted to live streaming apps.|B|adv.|最近;近來
+K|16-20|chop;icy;magnetic;crew;barn;cast
+B|16|Every ______ member played an important role in ensuring the ship's safe journey across the ocean.|D|n.|全體船員
+B|17|The little boy ______ a stone into the lake, smiling as circles spread across the calm surface.|F|v.|投;扔|cast
+B|18|The children often use ______ letters to spell words on the fridge.|C|adj.|磁性的
+B|19|If you ______ the wood into two pieces, it will be easier for us to carry it.|A|v.|砍;劈
+B|20|The farmer raised many animals, such as ducks and chickens, in his ______.|E|n.|穀倉

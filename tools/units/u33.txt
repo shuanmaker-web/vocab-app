@@ -1,0 +1,23 @@
+U|33
+F|1|The student a______ted the position of his chair so that he could see the blackboard.|adjusted|v.|調整|adjust
+F|2|To the fans' d______t, the concert was canceled due to sudden weather changes that made outdoor performances unsafe.|disappointment|n.|失望
+F|3|Ken is a successful painter whose works are displayed in several art g______ries in the city.|galleries|n.|畫廊|gallery
+F|4|Emissions from the new factory will have a negative i______t on the local environment, so the residents are protesting against it.|impact|n.|影響;衝擊
+F|5|Charlie is one of the most i______l scholars in his field. His outstanding research has inspired many.|influential|adj.|有影響力的
+M|6|If you look at successful people from around the world, you'll find that bravery and confidence are two common ______ among them.|economists|characteristics|sculptures|adjustments|B|characteristic|n.|特質;特徵
+M|7|Red blood cells ______ in the blood and carry oxygen from the lungs to the rest of the body.|circulate|devote|recycle|measure|A|circulate|v.|循環
+M|8|In our company, the work schedule is really ______; as long as we can finish our tasks, we can choose our own working hours.|permanent|economical|artificial|flexible|D|flexible|adj.|有彈性的
+M|9|Owing to a severe ______ in the wound on his leg, the patient is now in a critical condition and has to be monitored at all times.|infection|defense|laboratory|adjustment|A|infection|n.|感染
+M|10|Hedy grabbed a ruler to ______ the length of the book.|rebel|transfer|measure|neglect|C|measure|v.|測量
+K|11-15|generations;campaigned;eliminated;landscapes;facilities;endangered
+B|11|The report highlighted several ______ species whose homes were shrinking because of rapid urban development.|F|adj.|瀕臨絕種的
+B|12|The research lab is getting pretty old, so the department is planning to upgrade the ______.|E|n.|設施;設備|facility
+B|13|The police still had not ______ the possibility of murder, even though the body was not marked or bruised.|C|v.|排除;消除|eliminate
+B|14|Environmental groups ______ against the new factory, arguing that it would damage local wildlife and worsen air quality.|B|v.|發起運動|campaign
+B|15|The photographer is famous for his amazing photos of natural ______.|D|n.|風景;景觀|landscape
+K|16-20|passive;universe;economy;recycling;neglect;objective
+B|16|The government is considering a series of measures to boost the ______.|C|n.|經濟
+B|17|When grading essays, a teacher must stay ______ and review every student's work according to the same standard.|F|adj.|客觀的
+B|18|Many people nowadays are so busy with work that they ______ their health.|E|v.|忽略;疏忽
+B|19|______ reduces the amount of waste, thus protecting wildlife habitats and improving the overall environment.|D|n.|回收利用
+B|20|Traditionally, women were encouraged to play a(n) ______ role in society, while men were expected to be far more active.|A|adj.|被動的
