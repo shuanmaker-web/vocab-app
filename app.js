@@ -252,7 +252,7 @@ function render() {
 
 const starPts = (n, ro, ri) => Array.from({ length: n * 2 }, (_, i) => { const r = i % 2 ? ri : ro, a = -Math.PI / 2 + i * Math.PI / n; return (12 + r * Math.cos(a)).toFixed(2) + ',' + (12.4 + r * Math.sin(a)).toFixed(2); }).join(' ');
 const STAR5 = starPts(5, 11, 4.8), STAR8 = starPts(8, 11.5, 6.6);
-const starCell = (k, n, cls, lv) => `<i class="${cls}" title="${k}${n == null ? '' : ': ' + n}"${lv == null ? '' : ` data-l="${lv}"`}><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="${cls.includes('exday') ? STAR8 : STAR5}" stroke-linejoin="round"/></svg></i>`;
+const starCell = (k, n, cls, lv) => `<i class="${cls}" title="${k}${n == null ? '' : ': ' + n}"${lv == null ? '' : ` data-l="${lv}"`}><svg viewBox="0 0 24 24" aria-hidden="true">${cls.includes('exday') ? `<polygon points="${STAR8}" stroke-linejoin="round"/>` : `<circle class="c" cx="12" cy="12" r="9.5"/>${cls.includes('today') ? '<circle class="dot" cx="12" cy="12" r="3.8"/>' : ''}`}</svg></i>`;
 function examLine() {
   const e = S.settings.examDate; if (!e) return '';
   const days = Math.ceil((new Date(e + 'T00:00:00') - new Date()) / DAY); if (days < 0) return '';
@@ -372,7 +372,7 @@ function renderProgress() {
     if (bank === 'gsat') html += '<div style="margin-top:12px">' + Object.keys(byLv).sort().map(l => { const v = byLv[l]; return `<div class="lvl"><span>L${l}</span><div class="track"><i class="m" style="width:${v.m / v.n * 100}%"></i><i class="l" style="width:${(v.l - v.m) / v.n * 100}%"></i></div><span class="muted small">${v.m}/${v.n}</span></div>`; }).join('') + '</div>';
     html += '<p class="small muted">「精熟」= 記憶穩定度超過 21 天</p></section>';
   }
-  const goal = S.settings.dailyGoal, lvl = n => n === 0 ? 0 : n < goal ? 1 : n < goal * 3 ? 2 : 3;
+  const goal = S.settings.dailyGoal, lvl = n => n === 0 ? 0 : n <= 20 ? 1 : 2;
   const exD = S.settings.examDate ? new Date(S.settings.examDate + 'T00:00:00') : null, left = exD ? Math.ceil((exD - new Date()) / DAY) : -1;
   const toExam = !S.settings.progressDays && left >= 0, cells = [];
   let nd, calTitle;
@@ -387,11 +387,10 @@ function renderProgress() {
     for (let i = nd - 1; i >= 0; i--) { const k = dayKey(new Date(Date.now() - i * DAY)), n = S.daily[k]?.reviews || 0; cells.push(starCell(k, n, '', lvl(n))); }
   }
   const sIcon = (cls, lv) => starCell('', null, cls, lv).replace(' title=""', '');
-  const legend = [[sIcon('', 0), '沒有練習'], ...(goal > 1 ? [[sIcon('', 1), `1–${goal - 1} 題`]] : []), [sIcon('', 2), `${goal}–${goal * 3 - 1} 題`], [sIcon('', 3), `${goal * 3} 題以上`]];
-  if (toExam) legend.push([sIcon('today', 0), '今天'], [sIcon('f'), '還沒到的日子'], [sIcon('exday'), `${esc(S.settings.examName || '考試')}日`]);
+  const legend = [[sIcon('f'), '沒有練習 / 未到'], [sIcon('', 1), '1–20 題'], [sIcon('', 2), '20 題以上']];
+  if (toExam) legend.push([sIcon('today', 0), '今天'], [sIcon('exday'), `${esc(S.settings.examName || '考試')}日`]);
   const legendHtml = `<div class="star-legend">${legend.map(([ic, t]) => `<div class="sl">${ic}<span>${t}</span></div>`).join('')}</div>`;
-  const stP = streak();
-  html += `<section class="card"><div class="row between"><h2>${calTitle}</h2><div class="row" style="gap:8px">${examLine()}<span class="pill streak-pill">🔥 ${stP} 天</span></div></div><div class="heat">${cells.join('')}</div>${legendHtml}</section></div>`;
+  html += `<section class="card"><div class="row between"><h2>${calTitle}</h2><div class="row" style="gap:8px">${examLine()}</div></div><div class="heat">${cells.join('')}</div>${legendHtml}</section></div>`;
   app.innerHTML = html;
 }
 

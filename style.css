@@ -521,3 +521,19 @@ body #tabs button.on .ti{background:#1a1a1a}
 #bankswitch{padding:calc(20px + env(safe-area-inset-top)) 16px 20px}
 #bankswitch button{color:#fff}
 #bankswitch button.on{flex:1.35;margin:-11px 0;padding:19px 6px;font-size:1.2rem;font-weight:800;background:var(--page);color:#1a1a1a;box-shadow:none;border:3px solid #1a1a1a}
+
+/* ===== progress calendar: circles ===== */
+:is(.heat,.star-legend) i circle.c{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:2.4 2.2}
+:is(.heat,.star-legend) i[data-l="1"] circle.c{fill:#FFE3D3;stroke:var(--page);stroke-width:1.8;stroke-dasharray:none}
+:is(.heat,.star-legend) i[data-l="2"] circle.c{fill:var(--page);stroke:#1a1a1a;stroke-width:1.8;stroke-dasharray:none}
+:is(.heat,.star-legend) i.f circle.c{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:2.4 2.2}
+:is(.heat,.star-legend) i circle.dot{fill:var(--page);stroke:#1a1a1a;stroke-width:1.4}
+:is(.heat,.star-legend) i.exday polygon{fill:var(--page);stroke:#1a1a1a;stroke-width:1.8}
+
+/* ===== selected chip orange, others white ===== */
+body[data-bank] .chip:not(.on){background:#fff;color:#1a1a1a;border-color:#1a1a1a}
+body[data-bank] .chip.on{background:var(--page);color:#1a1a1a;border-color:#1a1a1a}
+
+/* ===== top switch: thicker active outline, bigger font, same overall size ===== */
+#bankswitch button{font-size:1.1rem;padding:7px 6px}
+#bankswitch button.on{font-size:1.32rem;padding:15px 6px;border-width:5px;margin:-11px 0}
