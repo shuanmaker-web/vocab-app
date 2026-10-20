@@ -346,14 +346,14 @@ function renderProgress() {
     if (S.questions.length) {
       const t = qTotals(), pct = t.ok / t.total * 100, units = unitList();
       const full = units.filter(u => { const x = qTotals(q => q.unit === u); return x.ok === x.total; }).length;
-      html += `<div class="sec-t">📝 練習題本</div>
+      html += `<div class="sec-t">練習題本</div>
       <div class="pbar"><i class="g" style="width:${pct}%"></i><i class="r" style="width:${t.wrong / t.total * 100}%"></i><em>${pct < 10 ? pct.toFixed(1) : Math.round(pct)}%</em></div>
       <div class="stat-grid" style="margin-top:12px"><div class="stat pstat"><b>${t.tried}</b><span>已作答</span></div><div class="stat pstat"><b>${t.wrong}</b><span>錯題</span></div><div class="stat pstat"><b>${full}</b><span>全對單元 / ${units.length}</span></div></div>`;
     }
     if (mat.length) {
       let learned = 0, mastered = 0, due = 0;
       for (const w of mat) { const c = S.cards.get(cardId('material', w.id, 'recog')); if (c) { learned++; if (c.stability >= 21) mastered++; if (c.due <= now) due++; } }
-      html += `<div class="sec-t" style="margin-top:18px">📖 單字學習</div><div class="stat-grid"><div class="stat pstat"><b>${learned}</b><span>已學 / ${mat.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>
+      html += `<div class="sec-t" style="margin-top:18px">單字學習</div><div class="stat-grid"><div class="stat pstat"><b>${learned}</b><span>已學 / ${mat.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>
       <div class="pbar" style="margin-top:10px"><i class="g" style="width:${learned / mat.length * 100}%"></i><em>${Math.round(learned / mat.length * 100)}%</em></div><div class="small muted" style="margin-top:6px">已學的單字佔全部 ${mat.length} 個的比例</div>
       <p class="small muted" style="margin-top:6px">「精熟」= 記憶穩定度超過 21 天</p>`;
     }
