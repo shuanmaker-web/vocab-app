@@ -496,3 +496,7 @@ body.in-session{padding-bottom:16px}
 .card.q .zh{margin-top:4px;font-size:1.35rem}
 .opts{gap:8px;margin-top:10px}
 .opt{padding:11px 14px}
+
+/* fill-in blank: a single underline */
+.nb{white-space:nowrap}
+.blank{border-bottom:2px solid var(--ink);display:inline-block;height:1em;vertical-align:baseline;margin:0 2px}

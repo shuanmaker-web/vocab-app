@@ -542,7 +542,7 @@ async function answerCurrent(rating, extra = {}) {
 /* ---------- exercise questions (教材練習題本) ---------- */
 const BLANK_RE = /[A-Za-z]*_{2,}[A-Za-z]*(?:\s*\([A-Za-z]+\))?/;
 function sentenceHtml(q, revealed, wrongPick) {
-  if (!revealed) return esc(q.q).replace(/_{2,}/g, m => '<span class="blank">' + '&nbsp;'.repeat(2) + m + '&nbsp;'.repeat(2) + '</span>');
+  if (!revealed) return esc(q.q).replace(/([A-Za-z]*)(_{2,})([A-Za-z]*)/g, (_, a, m, b) => '<span class="nb">' + a + '<span class="blank" style="min-width:' + Math.max(2.4, m.length * 0.55).toFixed(1) + 'em"></span>' + b + '</span>');
   const m = BLANK_RE.exec(q.q); if (!m) return esc(q.full);
   const tail = q.q.length - m.index - m[0].length, ans = q.full.slice(m.index, q.full.length - tail);
   return esc(q.q.slice(0, m.index)) + '<mark class="ans">' + esc(ans) + '</mark>' + esc(q.q.slice(m.index + m[0].length));
