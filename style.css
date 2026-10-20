@@ -241,7 +241,7 @@ body[data-bank="gsat"],button.card.bank.ac-gsat{--accent:var(--y);--accent-soft:
 
 /* ===== v5: blob faces, individual tab icons, consistent thick outlines ===== */
 :root{
-  --bg:#f5ead6;--surface:#fffcf5;--ink:#1a1a1a;--muted:#6b5e50;--line:#d9c9a8;
+  --page:#FF5700;--bg:#f5ead6;--surface:#fffcf5;--ink:#1a1a1a;--muted:#6b5e50;--line:#d9c9a8;
   --blue:#2347f0;--yellow:#ffd200;--red:#ff3b1d;--green:#00b856;--pink:#ff6b9d;--orange:#ff8c1a;
   --accent:#2347f0;--accent-soft:#dde4ff;--accent-ink:#fff;
   --good:#00a34a;--good-soft:#d8f5e3;--bad:#e5270e;--bad-soft:#ffe0da;--warn:#d98e00;
@@ -249,11 +249,11 @@ body[data-bank="gsat"],button.card.bank.ac-gsat{--accent:var(--y);--accent-soft:
   --shadow:4px 4px 0 #1a1a1a;
 }
 
-/* all pages: beige background */
-html,html body{background:var(--bg)!important}
+/* all pages: orange page background (cards/chips keep the beige --bg) */
+html,html body{background:var(--page)!important}
 html[data-view="landing"],html[data-view="landing"] body,
 html[data-view="material"],html[data-view="material"] body,
-html[data-view="gsat"],html[data-view="gsat"] body{background:var(--bg)!important}
+html[data-view="gsat"],html[data-view="gsat"] body{background:var(--page)!important}
 
 /* per-bank accents stay vivid */
 body[data-bank="material"]{--accent:var(--orange);--accent-soft:#fff1bf;--accent-ink:#fff}
