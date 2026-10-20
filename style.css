@@ -467,3 +467,12 @@ body[data-bank] #bankswitch .bs-track{background:var(--surface)}
 
 /* tab bar outline */
 body #tabs{border:3px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;box-sizing:border-box}
+
+/* ===== calendar: same yellow in both sections; sub-buttons orange ===== */
+html[data-view="material"]{--bd:var(--yellow);--bdn:#1a1a1a;--bdl:#1a1a1a}
+body[data-bank] .chip:not(.on),
+body[data-bank] .mode,
+body[data-bank] .btn.ghost{background:var(--page);color:#fff}
+body[data-bank] .mode b,body[data-bank] .mode span{color:#fff}
+body[data-bank] .mode:disabled{opacity:.55}
+body[data-bank] .chip.on{background:var(--yellow);color:#1a1a1a;border-color:#1a1a1a}
