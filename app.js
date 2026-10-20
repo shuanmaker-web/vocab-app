@@ -259,6 +259,12 @@ function examLine() {
   const name = S.settings.examName || '考試', fs = days >= 1000 ? 13 : days >= 100 ? 16 : 21;
   return `<span class="exam-badge" role="img" aria-label="距離${esc(name)}還有 ${days} 天" title="距離${esc(name)}還有 ${days} 天"><svg viewBox="0 0 52 52" width="52" height="52" aria-hidden="true"><circle class="bd" cx="26" cy="27" r="22"/><rect class="ring" x="15" y="1.5" width="5" height="11" rx="2.5"/><rect class="ring" x="32" y="1.5" width="5" height="11" rx="2.5"/><text x="26" y="${days >= 100 ? 33 : 35}" text-anchor="middle" font-size="${fs}" font-weight="800" font-family="inherit">${days}</text></svg><span class="dl">Days<br>Left</span></span>`;
 }
+function examCal() {
+  const e = S.settings.examDate; if (!e) return '';
+  const days = Math.ceil((new Date(e + 'T00:00:00') - new Date()) / DAY); if (days < 0) return '';
+  const name = S.settings.examName || '考試', fs = days >= 1000 ? 22 : days >= 100 ? 28 : 34;
+  return `<span class="exam-badge exam-cal" role="img" aria-label="距離${esc(name)}還有 ${days} 天" title="距離${esc(name)}還有 ${days} 天"><svg viewBox="0 0 80 84" width="80" height="84" aria-hidden="true"><circle class="bd" cx="40" cy="46" r="34"/><rect class="ring" x="22" y="2" width="7" height="16" rx="3.5"/><rect class="ring" x="51" y="2" width="7" height="16" rx="3.5"/><text x="40" y="52" text-anchor="middle" font-size="${fs}" font-weight="800" font-family="inherit">${days}</text><text class="dl2" x="40" y="66" text-anchor="middle" font-size="10" font-weight="800" font-family="inherit">Days Left</text></svg></span>`;
+}
 function iosHint() {
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent), standalone = navigator.standalone || matchMedia('(display-mode: standalone)').matches;
   if (!ios || standalone) return '';
@@ -323,7 +329,7 @@ function renderLanding() {
 function renderHome() {
   const st = streak(), today = S.daily[dayKey()]?.reviews || 0;
   app.innerHTML = `${iosHint()}
-    <div class="hero"><h1>${BANKS[S.bank].name}</h1><div class="row" style="gap:10px">${examLine()}<span class="pill streak-pill">🔥 ${st} 天</span></div></div>
+    <div class="hero"><h1>${BANKS[S.bank].name}</h1>${examCal()}</div>
     <div class="stack">${bankCard(S.bank)}
     <p class="small muted">今天已練習 ${today} 題(每天 ${S.settings.dailyGoal} 題算一天;每週有 2 次自動保護)${store.volatile ? '<br><b style="color:var(--bad)">⚠ 此瀏覽器無法儲存資料,關閉後進度會消失</b>' : ''}</p></div>`;
   const uf = $('#u-from'), ut = $('#u-to');
