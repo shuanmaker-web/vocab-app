@@ -23,7 +23,7 @@ const EXAM_PRESETS = [
   { name: '段考', date: '' },
   { name: '期末考', date: '' },
 ];
-const DEFAULTS = { newPerDay: 20, sessionSize: 20, retention: 0.9, examName: '學測', examDate: '2027-01-22', progressDays: 0, levels: [3, 4, 5], unitFrom: null, unitTo: null, dailyGoal: 10, lastBackupAt: 0 };
+const DEFAULTS = { newPerDay: 20, sessionSize: 20, retention: 0.9, examName: '學測', examDate: '2027-01-22', progressDays: 0, levels: [3, 4, 5], unitFrom: null, unitTo: null, lastBackupAt: 0 };
 
 /* ---------- storage (IndexedDB, with in-memory fallback) ---------- */
 const store = (() => {
@@ -162,20 +162,6 @@ function previewIntervals(bank, wid) {
 }
 function fmtIv(ms) {
   const d = ms / DAY; if (d < 0.5) return '今天'; if (d < 30) return `${Math.max(1, Math.round(d))} 天`; if (d < 365) return `${Math.round(d / 30)} 個月`; return `${(d / 365).toFixed(1)} 年`;
-}
-
-/* ---------- streak ---------- */
-function streak() {
-  const goal = S.settings.dailyGoal; const ok = k => (S.daily[k]?.reviews || 0) >= goal;
-  let n = 0, gaps = [], d = new Date(); if (!ok(dayKey(d))) d = new Date(+d - DAY); // today not finished yet: don't break
-  for (let i = 0; i < 1000; i++, d = new Date(+d - DAY)) {
-    const k = dayKey(d);
-    if (ok(k)) { n++; continue; }
-    gaps = gaps.filter(t => +d - t < 7 * DAY); // up to 2 free "freeze" days per rolling week
-    if (gaps.length < 2) { gaps.push(+d); continue; }
-    break;
-  }
-  return n;
 }
 
 /* ---------- distractors ---------- */
@@ -317,7 +303,6 @@ function circleBtn(bank) {
   return `<button class="circle c-${bank}" data-enter="${bank}" aria-label="${info.name}">${FACES[bank]}<span class="cn">${(([h, ...r]) => esc(h) + (r.length ? '<br><span class="nw">' + esc(r.join(' ')) + '</span>' : ''))(info.name.split(' '))}</span></button>`;
 }
 function renderLanding() {
-  const st = streak();
   app.innerHTML = `${iosHint()}
     <div class="land">
       <div class="land-top"><div class="row" style="gap:8px">${examLine()}</div></div>
@@ -327,7 +312,7 @@ function renderLanding() {
     </div>`;
 }
 function renderHome() {
-  const st = streak(), today = S.daily[dayKey()]?.reviews || 0;
+  const today = S.daily[dayKey()]?.reviews || 0;
   app.innerHTML = `${iosHint()}
     <div class="hero"><h1>${BANKS[S.bank].name}</h1>${examCal()}</div>
     <div class="stack">${bankCard(S.bank)}
@@ -372,7 +357,7 @@ function renderProgress() {
     if (bank === 'gsat') html += '<div style="margin-top:12px">' + Object.keys(byLv).sort().map(l => { const v = byLv[l]; return `<div class="lvl"><span>L${l}</span><div class="track"><i class="m" style="width:${v.m / v.n * 100}%"></i><i class="l" style="width:${(v.l - v.m) / v.n * 100}%"></i></div><span class="muted small">${v.m}/${v.n}</span></div>`; }).join('') + '</div>';
     html += '<p class="small muted">「精熟」= 記憶穩定度超過 21 天</p></section>';
   }
-  const goal = S.settings.dailyGoal, lvl = n => n === 0 ? 0 : n <= 20 ? 1 : 2;
+  const lvl = n => n === 0 ? 0 : n <= 20 ? 1 : 2;
   const exD = S.settings.examDate ? new Date(S.settings.examDate + 'T00:00:00') : null, left = exD ? Math.ceil((exD - new Date()) / DAY) : -1;
   const toExam = !S.settings.progressDays && left >= 0, cells = [];
   let nd, calTitle;
@@ -394,7 +379,7 @@ function renderProgress() {
   app.innerHTML = html;
 }
 
-const APP_VERSION = 'v72';
+const APP_VERSION = 'v73';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
@@ -402,7 +387,6 @@ function renderSettings() {
   <section class="card">
     <label class="set"><span>每天新字上限</span><input type="number" id="s-new" min="0" max="200" value="${s.newPerDay}"></label>
     <label class="set"><span>每回題數</span><input type="number" id="s-size" min="5" max="100" value="${s.sessionSize}"></label>
-    <label class="set"><span>每天幾題算一天</span><input type="number" id="s-goal" min="1" max="200" value="${s.dailyGoal}"></label>
     <label class="set"><span>目標記憶保留率</span><select id="s-ret">${[0.85, 0.9, 0.95].map(v => `<option value="${v}" ${v === s.retention ? 'selected' : ''}>${v * 100}%</option>`).join('')}</select></label>
     <label class="set"><span>常用考試</span><select id="s-preset">${EXAM_PRESETS.map((x, i) => `<option value="${i}" ${x.name === s.examName ? 'selected' : ''}>${x.name}${x.date ? '(' + x.date + ')' : ''}</option>`).join('')}<option value="-1" ${EXAM_PRESETS.some(x => x.name === s.examName) ? '' : 'selected'}>自訂</option></select></label>
     <label class="set"><span>考試名稱</span><input type="text" id="s-ename" maxlength="12" placeholder="例如:學測、會考、段考" value="${esc(s.examName)}"></label>
@@ -422,7 +406,7 @@ function renderSettings() {
     <p>複習排程:<a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">ts-fsrs</a>(MIT)。</p>
   </section><p class="small muted" style="text-align:center">Vocaboo ${APP_VERSION}</p></div>`;
   const num = (id, key) => $(id).addEventListener('change', async e => { s[key] = Math.max(0, +e.target.value || 0); await saveSettings(); });
-  num('#s-new', 'newPerDay'); num('#s-size', 'sessionSize'); num('#s-goal', 'dailyGoal');
+  num('#s-new', 'newPerDay'); num('#s-size', 'sessionSize');
   $('#s-preset').addEventListener('change', async e => { const x = EXAM_PRESETS[+e.target.value]; if (!x) return $('#s-ename').focus(); s.examName = x.name; s.examDate = x.date; await saveSettings(); renderSettings(); if (!x.date) $('#s-exam').focus(); });
   $('#s-ename').addEventListener('change', async e => { s.examName = e.target.value.trim(); await saveSettings(); });
   $('#s-pdays').addEventListener('change', async e => { { const v = Math.round(+e.target.value) || 0; s.progressDays = v <= 0 ? 0 : Math.min(365, Math.max(7, v)); } e.target.value = s.progressDays; await saveSettings(); });
