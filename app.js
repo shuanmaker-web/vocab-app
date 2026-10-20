@@ -1,4 +1,4 @@
-/* 學測單字 — flashcards / multiple choice / spelling with FSRS.
+/* Vocaboo — flashcards / multiple choice / spelling with FSRS.
    Two word banks: "gsat" (CEEC Level 1–6) and "material" (teacher's list). */
 'use strict';
 
