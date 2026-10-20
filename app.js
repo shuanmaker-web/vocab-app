@@ -224,6 +224,7 @@ function setBank(b) {
   render();
 }
 function render() {
+  applyTheme();
   document.body.classList.toggle('in-session', !!S.session);
   document.body.classList.toggle('landing', !S.bank && !S.session);
   document.body.dataset.bank = S.bank || '';
@@ -238,8 +239,9 @@ function render() {
 
 const starPts = (n, ro, ri) => Array.from({ length: n * 2 }, (_, i) => { const r = i % 2 ? ri : ro, a = -Math.PI / 2 + i * Math.PI / n; return (12 + r * Math.cos(a)).toFixed(2) + ',' + (12.4 + r * Math.sin(a)).toFixed(2); }).join(' ');
 const STAR5 = starPts(5, 11, 4.8), STAR8 = starPts(8, 11.5, 6.6);
+const TROPHY = '<g class="trophy"><path d="M7.5 3.5h9v6a4.5 4.5 0 0 1-9 0z"/><path class="hd" d="M7.5 5.5H4.6v1.8a3 3 0 0 0 3 3M16.5 5.5h2.9v1.8a3 3 0 0 1-3 3"/><rect x="10.8" y="13.6" width="2.4" height="3.4"/><rect x="7.8" y="17" width="8.4" height="3.4" rx="1"/><path class="sh" d="M10 6.2v3"/></g>';
 const starCell = (k, n, cls, lv) => {
-  const shape = cls.includes('exday') ? `<polygon points="${STAR8}" stroke-linejoin="round"/>` : lv > 0 ? `<polygon class="st" points="${STAR5}" stroke-linejoin="round"/>` : '<circle class="c" cx="12" cy="12" r="9.5"/>';
+  const shape = cls.includes('exday') ? TROPHY : lv > 0 ? `<polygon class="st" points="${STAR5}" stroke-linejoin="round"/>` : '<circle class="c" cx="12" cy="12" r="9.5"/>';
   return `<i class="${cls}" title="${k}${n == null ? '' : ': ' + n}"${lv == null ? '' : ` data-l="${lv}"`}><svg viewBox="0 0 24 24" aria-hidden="true">${shape}${cls.includes('today') ? '<circle class="dot" cx="12" cy="12.6" r="3.4"/>' : ''}</svg></i>`;
 };
 function examLine() {
@@ -315,11 +317,11 @@ function renderLanding() {
     </div>`;
 }
 function renderHome() {
-  const today = S.daily[dayKey()]?.reviews || 0;
+  const today = S.daily[dayKey()]?.correct || 0;
   app.innerHTML = `${iosHint()}
     <div class="hero"><h1>${BANKS[S.bank].name}</h1>${examCal()}</div>
     <div class="stack">${bankCard(S.bank)}
-    <p class="today-n">今天已練習 ${today} 題${store.volatile ? '<br><b style="color:var(--bad)">⚠ 此瀏覽器無法儲存資料,關閉後進度會消失</b>' : ''}</p></div>`;
+    <p class="today-n">今天答對 ${today} 題${store.volatile ? '<br><b style="color:var(--bad)">⚠ 此瀏覽器無法儲存資料,關閉後進度會消失</b>' : ''}</p></div>`;
   const uf = $('#u-from'), ut = $('#u-to');
   if (uf && ut) { const h = async () => { let a = +uf.value, b = +ut.value; if (a > b) [a, b] = [b, a]; S.settings.unitFrom = a; S.settings.unitTo = b; await saveSettings(); render(); }; uf.onchange = h; ut.onchange = h; }
 }
@@ -382,11 +384,19 @@ function renderProgress() {
   app.innerHTML = html;
 }
 
-const APP_VERSION = 'v75';
+const THEMES = { orange: ['橘', '#FF5700'], blue: ['藍', '#2F5BFF'], green: ['綠', '#00A04A'], purple: ['紫', '#7B3FF2'], pink: ['粉', '#FF4F9A'], teal: ['青', '#0097B2'] };
+const BRAND = '#FF5700';
+function applyTheme() {
+  const c = S.bank ? (THEMES[S.settings.theme] || THEMES.orange)[1] : BRAND;
+  document.documentElement.style.setProperty('--page', c);
+  const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
+}
+const APP_VERSION = 'v76';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
   app.innerHTML = `<h1>設定</h1><div class="stack" style="margin-top:12px">
+  <section class="card"><h2>主題色</h2><div class="swatches">${Object.entries(THEMES).map(([k, [n, c]]) => `<button class="sw ${(s.theme || 'orange') === k ? 'on' : ''}" data-theme="${k}" style="--c:${c}" aria-label="${n}" aria-pressed="${(s.theme || 'orange') === k}"><i></i><span>${n}</span></button>`).join('')}</div></section>
   <section class="card">
     <label class="set"><span>每天新字上限</span><input type="number" id="s-new" min="0" max="200" value="${s.newPerDay}"></label>
     <label class="set"><span>每回題數</span><input type="number" id="s-size" min="5" max="100" value="${s.sessionSize}"></label>
@@ -409,6 +419,7 @@ function renderSettings() {
     <p>複習排程:<a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">ts-fsrs</a>(MIT)。</p>
   </section><p class="small muted" style="text-align:center">Vocaboo ${APP_VERSION}</p></div>`;
   const num = (id, key) => $(id).addEventListener('change', async e => { s[key] = Math.max(0, +e.target.value || 0); await saveSettings(); });
+  document.querySelectorAll('[data-theme]').forEach(b => b.onclick = async () => { s.theme = b.dataset.theme; await saveSettings(); applyTheme(); renderSettings(); });
   num('#s-new', 'newPerDay'); num('#s-size', 'sessionSize');
   $('#s-preset').addEventListener('change', async e => { const x = EXAM_PRESETS[+e.target.value]; if (!x) return $('#s-ename').focus(); s.examName = x.name; s.examDate = x.date; await saveSettings(); renderSettings(); if (!x.date) $('#s-exam').focus(); });
   $('#s-ename').addEventListener('change', async e => { s.examName = e.target.value.trim(); await saveSettings(); });

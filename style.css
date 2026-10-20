@@ -559,3 +559,23 @@ body[data-bank] .btn.ghost.danger-btn,.btn.ghost.danger-btn{background:#1a1a1a;c
 :is(.heat,.star-legend) i polygon.st{stroke-linejoin:round}
 :is(.heat,.star-legend) i[data-l="1"] polygon.st{fill:#FFE3D3;stroke:var(--page);stroke-width:1.6}
 :is(.heat,.star-legend) i[data-l="2"] polygon.st{fill:var(--page);stroke:#1a1a1a;stroke-width:1.6}
+
+/* ===== theme color: everything follows --page (set from settings) ===== */
+:root{--red:var(--page);--orange:var(--page);--accent:var(--page);--bad:var(--page);--warn:var(--page);
+  --accent-soft:color-mix(in srgb,var(--page) 16%,#fff);--bad-soft:color-mix(in srgb,var(--page) 16%,#fff)}
+body[data-bank],body[data-bank="gsat"],body[data-bank="material"]{--accent:var(--page);--accent-soft:color-mix(in srgb,var(--page) 16%,#fff);--bad:var(--page);--bad-soft:color-mix(in srgb,var(--page) 16%,#fff);--warn:var(--page)}
+:is(.heat,.star-legend) i[data-l="1"] circle.c,:is(.heat,.star-legend) i[data-l="1"] polygon.st{fill:var(--accent-soft)}
+:is(.heat,.star-legend) i circle.dot{fill:#1a1a1a;stroke:none}
+body[data-bank] .stat,body[data-bank] .mode b{color:inherit}
+
+/* exam-day trophy */
+:is(.heat,.star-legend) i.exday svg{transform:scale(1.35);transform-origin:50% 55%}
+:is(.heat,.star-legend) i.exday .trophy path,:is(.heat,.star-legend) i.exday .trophy rect{fill:#FFD200;stroke:#1a1a1a;stroke-width:1.3;stroke-linejoin:round}
+:is(.heat,.star-legend) i.exday .trophy path.hd{fill:none}
+:is(.heat,.star-legend) i.exday .trophy path.sh{fill:none;stroke:#fff;stroke-width:1.2;stroke-linecap:round}
+
+/* theme swatches */
+.swatches{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:10px}
+.sw{display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:none;font:inherit;font-size:.8rem;font-weight:700;color:var(--ink);cursor:pointer;padding:0}
+.sw i{display:block;width:44px;height:44px;border-radius:50%;background:var(--c);border:3px solid #1a1a1a;box-shadow:2px 2px 0 #1a1a1a}
+.sw.on i{box-shadow:0 0 0 3px var(--surface),0 0 0 6px #1a1a1a}
