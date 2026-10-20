@@ -552,3 +552,4 @@ body:not([data-bank]) #tabs,body:not([data-bank]) #bankswitch{display:none}
 /* correct answer tag on the picked option */
 .opt.picked{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .opt-tag{color:var(--good);font-weight:800;white-space:nowrap;font-size:.95rem}
+body[data-bank] .btn.ghost.danger-btn,.btn.ghost.danger-btn{background:#1a1a1a;color:#fff;border-color:#1a1a1a}

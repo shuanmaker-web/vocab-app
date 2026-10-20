@@ -394,7 +394,7 @@ function renderProgress() {
   app.innerHTML = html;
 }
 
-const APP_VERSION = 'v70';
+const APP_VERSION = 'v71';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
@@ -414,7 +414,7 @@ function renderSettings() {
     <p class="small muted">${days === null ? '尚未備份過。' : `上次備份在 ${days} 天前。`}換手機或清除瀏覽器資料前,請先匯出。</p>
     <div class="row wrap" style="margin-top:8px"><button class="btn" id="b-export">匯出進度</button><label class="btn ghost" style="display:inline-flex;align-items:center">匯入進度<input type="file" id="b-import" accept="application/json" hidden></label></div>
     <p class="small muted" style="margin-top:12px">${store.volatile ? '⚠ 無法使用瀏覽器儲存。' : '資料只存在這支手機的瀏覽器中。'}</p>
-    <button class="btn ghost" id="b-reset" style="margin-top:6px;color:var(--bad)">清除所有進度</button>
+    <button class="btn ghost danger-btn" id="b-reset" style="margin-top:6px">清除所有進度</button>
   </section>
   <section class="card credits"><h2>關於與致謝</h2>
     <p>學測詞彙等級:大學入學考試中心《高中英文參考詞彙表》(111 學年度起適用)。著作權屬財團法人大學入學考試中心基金會所有,僅供非營利目的使用。</p>
