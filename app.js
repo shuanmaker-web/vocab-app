@@ -730,4 +730,8 @@ async function boot(reload = false) {
   S.qstats = await store.allQ();
   render();
 }
-boot().then(() => { if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => { }); });
+boot().catch(e => {
+  console.error(e);
+  app.innerHTML = `<div class="card" style="margin-top:30px"><h2>載入失敗</h2><p class="small muted">${esc(String(e && e.message || e))}</p><button class="btn block" id="reload-fix">清除快取並重新載入</button></div>`;
+  $('#reload-fix').onclick = async () => { try { for (const k of await caches.keys()) await caches.delete(k); const rs = await navigator.serviceWorker.getRegistrations(); for (const r of rs) await r.unregister(); } catch { } location.reload(); };
+}).then(() => { if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => { }); });

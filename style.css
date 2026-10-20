@@ -547,3 +547,4 @@ body #tabs button.on .ti{transform:translateY(-12px) scale(1.2)}
 body #tabs button.on::before{margin:-52px 0 0 -30px;top:50%}
 body #tabs button.on .ti{transform:translateY(-22px) scale(1.2)}
 body #tabs button.on::before{margin:-62px 0 0 -30px}
+body:not([data-bank]) #tabs,body:not([data-bank]) #bankswitch{display:none}
