@@ -364,22 +364,22 @@ function renderProgress() {
   if (toExam) {
     const t0 = new Date(); t0.setHours(0, 0, 0, 0); const sd = new Date((S.settings.startDate || dayKey()) + 'T00:00:00'), back = Math.max(0, Math.min(365, Math.round((t0 - sd) / DAY))); nd = back + left + 1; calTitle = `${esc(S.settings.examName || '考試')}倒數`;
     for (let i = -back; i <= left; i++) {
-      const k = dayKey(new Date(t0.getFullYear(), t0.getMonth(), t0.getDate() + i)), n = S.daily[k]?.reviews || 0;
+      const k = dayKey(new Date(t0.getFullYear(), t0.getMonth(), t0.getDate() + i)), n = S.daily[k]?.correct || 0;
       cells.push(i > 0 ? starCell(k, null, i === left ? 'exday' : 'f') : starCell(k, n, i === 0 ? 'today' : '', lvl(n)));
     }
   } else {
     nd = Math.min(365, Math.max(7, S.settings.progressDays || 45)); calTitle = `最近 ${nd} 天`;
-    for (let i = nd - 1; i >= 0; i--) { const k = dayKey(new Date(Date.now() - i * DAY)), n = S.daily[k]?.reviews || 0; cells.push(starCell(k, n, '', lvl(n))); }
+    for (let i = nd - 1; i >= 0; i--) { const k = dayKey(new Date(Date.now() - i * DAY)), n = S.daily[k]?.correct || 0; cells.push(starCell(k, n, '', lvl(n))); }
   }
   const sIcon = (cls, lv) => starCell('', null, cls, lv).replace(' title=""', '');
-  const legend = [[sIcon('f'), '沒有練習 / 未到'], [sIcon('', 1), '1–20 題'], [sIcon('', 2), '20 題以上']];
+  const legend = [[sIcon('f'), '沒答對 / 未到'], [sIcon('', 1), '答對 1–20 題'], [sIcon('', 2), '答對 20 題以上']];
   if (toExam) legend.push([sIcon('today', 0), '今天'], [sIcon('exday'), `${esc(S.settings.examName || '考試')}日`]);
   const legendHtml = `<div class="star-legend">${legend.map(([ic, t]) => `<div class="sl">${ic}<span>${t}</span></div>`).join('')}</div>`;
   html += `<section class="card"><div class="row between"><h2>${calTitle}</h2><div class="row" style="gap:8px">${examLine()}</div></div><div class="heat">${cells.join('')}</div>${legendHtml}</section></div>`;
   app.innerHTML = html;
 }
 
-const APP_VERSION = 'v73';
+const APP_VERSION = 'v74';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
