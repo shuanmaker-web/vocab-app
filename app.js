@@ -359,8 +359,8 @@ function renderProgress() {
     }
     html += `<section class="card"><h2>${BANKS[bank].name}</h2><div class="stat-grid" style="margin-top:8px">
       <div class="stat pstat"><b>${learned}</b><span>已學 / ${ws.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>`;
-    if (bank === 'gsat') html += '<div style="margin-top:12px">' + Object.keys(byLv).sort().map(l => { const v = byLv[l]; return `<div class="lvl"><span>L${l}</span><div class="track"><i class="m" style="width:${v.m / v.n * 100}%"></i><i class="l" style="width:${(v.l - v.m) / v.n * 100}%"></i></div><span class="muted small">${v.m}/${v.n}</span></div>`; }).join('') + '</div>';
-    html += '<p class="small muted">「精熟」= 記憶穩定度超過 21 天</p></section>';
+    if (bank === 'gsat') html += '<div style="margin-top:12px">' + Object.keys(byLv).sort().map(l => { const v = byLv[l]; const seg = c => c > 0 ? Math.max(4, c / v.n * 100) : 0; return `<div class="lvl"><span>L${l}</span><div class="track"><i class="m" style="width:${seg(v.m)}%"></i><i class="l" style="width:${seg(v.l - v.m)}%"></i></div><span class="muted small">${v.l}/${v.n}</span></div>`; }).join('') + '</div>';
+    html += '<p class="small muted">深色＝已精熟,淺色＝已學習(記憶穩定度未滿 21 天);右側數字為已學／該級總數</p></section>';
   }
   const lvl = n => n === 0 ? 0 : n <= 20 ? 1 : 2;
   const exD = S.settings.examDate ? new Date(S.settings.examDate + 'T00:00:00') : null, left = exD ? Math.ceil((exD - new Date()) / DAY) : -1;
