@@ -22,6 +22,25 @@ operational handoff for whoever (human or Claude) picks the project up next.
 3. `git add -A && git commit -m "..." && git push origin main`.
 4. Wait ~1 min, then load the URL and hard-refresh (Ctrl/Cmd+Shift+R) to confirm.
 
+## Students are LIVE — verify BEFORE you push ⚠️
+Students already use the published site on their phones, and there is **no separate staging
+site**: a push to `main` goes live in ~1 min. Treat `main` as production.
+- **Verify before pushing, not after.** Before `git push`, run the working copy and actually
+  exercise the change, then show the owner evidence (screenshot / test result). Reliable way:
+  `python3 -m http.server` in the repo dir + headless Chromium (Playwright is installed) to
+  load it and drive the feature; or the built-in browser against a local server. Only push
+  once it's confirmed working.
+- For risky or owner-flagged changes, get the owner's OK on the verification first, then push.
+
+## Don't break existing students' saved data ⚠️
+Each student's progress (FSRS cards, practice results, backups) lives in **their own phone's
+IndexedDB** — it is not on any server and cannot be recovered if a change corrupts it.
+- Before any change, tell the owner in one line whether it could affect existing features or
+  saved progress.
+- Anything touching the data shape, storage keys, IndexedDB schema/version, backup format, or
+  `sw.js` must stay **backward-compatible** with data already on students' devices. If a
+  migration is unavoidable, make it additive and non-destructive, and flag it first.
+
 ## For a fresh Claude session
 - Attach + clone: `add_repo(owner=shuanmaker-web, repo=vocab-app, access=push)` then the
   clone it instructs. Push access depends on the Claude GitHub App staying installed on the
