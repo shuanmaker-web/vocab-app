@@ -142,6 +142,12 @@ function buildQueue(bank, mode, practice = false) {
 }
 
 /* ---------- grading ---------- */
+function noteAnswer(bank, wid, mode, correct) {
+  if (mode !== 'flash' && mode !== 'mcq' && mode !== 'spell') return;
+  const key = bank + ':' + wid;
+  let set = S.modes.get(key); if (!set) { set = new Set(); S.modes.set(key, set); } set.add(mode);
+  if (mode === 'spell' && correct) S.spellOK.add(key);
+}
 async function grade(bank, wid, mode, rating, extra = {}) {
   const type = typeOf(mode), id = cardId(bank, wid, type), isNew = !S.cards.has(id);
   let rec = S.cards.get(id) || blankCard(bank, wid, type);
@@ -154,6 +160,7 @@ async function grade(bank, wid, mode, rating, extra = {}) {
   if (isNew && !S.session?.practice) d.new[`${bank}:${type}`] = (d.new[`${bank}:${type}`] || 0) + 1;
   await store.setKV('daily', S.daily);
   await store.addLog({ ts: Date.now(), cardId: id, rating, source: mode, ...extra });
+  noteAnswer(bank, wid, mode, extra.correct === true || (extra.correct === undefined && rating >= 3));
   return rec;
 }
 function previewIntervals(bank, wid) {
@@ -343,10 +350,10 @@ function renderProgress() {
     }
     if (mat.length) {
       let learned = 0, mastered = 0, due = 0;
-      for (const w of mat) { const c = S.cards.get(cardId('material', w.id, 'recog')); if (c) { learned++; if (c.stability >= 21) mastered++; if (c.due <= now) due++; } }
-      html += `<div class="sec-t" style="margin-top:18px">單字學習</div><div class="stat-grid"><div class="stat pstat"><b>${learned}</b><span>已學 / ${mat.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>
+      for (const w of mat) { const key = 'material:' + w.id, modes = S.modes?.get(key)?.size || 0, c = S.cards.get(cardId('material', w.id, 'recog')); if (modes >= 2) learned++; if (S.spellOK?.has(key) && c && c.stability >= 21) mastered++; if (c && c.due <= now) due++; }
+      html += `<div class="sec-t" style="margin-top:18px">單字學習</div><div class="stat-grid"><div class="stat pstat"><b>${learned}</b><span>已學 / ${mat.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟 / ${mat.length}</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>
       <div class="pbar" style="margin-top:10px"><i class="g" style="width:${learned / mat.length * 100}%"></i><em>${Math.round(learned / mat.length * 100)}%</em></div><div class="small muted" style="margin-top:6px">已學的單字佔全部 ${mat.length} 個的比例</div>
-      <p class="small muted" style="margin-top:6px">「精熟」= 記憶穩定度超過 21 天</p>`;
+      <p class="small muted" style="margin-top:6px">已學 = 字卡／選擇題／拼字 任 2 種答過;精熟 = 拼字答對過 且 記憶穩定度 ≥ 21 天</p>`;
     }
     html += '</section>';
   }
@@ -355,13 +362,16 @@ function renderProgress() {
     let learned = 0, mastered = 0, due = 0;
     const byLv = {};
     for (const w of ws) {
-      const c = S.cards.get(cardId(bank, w.id, 'recog')), l = w.lv || 0; (byLv[l] ||= { n: 0, m: 0, l: 0 }).n++;
-      if (c) { learned++; byLv[l].l++; if (c.stability >= 21) { mastered++; byLv[l].m++; } if (c.due <= now) due++; }
+      const l = w.lv || 0, g = (byLv[l] ||= { n: 0, m: 0, l: 0 }); g.n++;
+      const key = bank + ':' + w.id, modes = S.modes?.get(key)?.size || 0, c = S.cards.get(cardId(bank, w.id, 'recog'));
+      if (modes >= 2) { learned++; g.l++; }
+      if (S.spellOK?.has(key) && c && c.stability >= 21) { mastered++; g.m++; }
+      if (c && c.due <= now) due++;
     }
     html += `<section class="card"><h2>${BANKS[bank].name}</h2><div class="stat-grid" style="margin-top:8px">
-      <div class="stat pstat"><b>${learned}</b><span>已學 / ${ws.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>`;
+      <div class="stat pstat"><b>${learned}</b><span>已學 / ${ws.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟 / ${ws.length}</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>`;
     if (bank === 'gsat') html += '<div style="margin-top:12px">' + Object.keys(byLv).sort().map(l => { const v = byLv[l]; const seg = c => c > 0 ? Math.max(4, c / v.n * 100) : 0; return `<div class="lvl"><span>L${l}</span><div class="track"><i class="m" style="width:${seg(v.m)}%"></i><i class="l" style="width:${seg(v.l - v.m)}%"></i></div><span class="muted small">${v.l}/${v.n}</span></div>`; }).join('') + '</div>';
-    html += '<p class="small muted">深色＝已精熟,淺色＝已學習(記憶穩定度未滿 21 天);右側數字為已學／該級總數</p></section>';
+    html += '<p class="small muted">已學 = 字卡／選擇題／拼字 任 2 種答過;精熟 = 拼字答對過 且 記憶穩定度 ≥ 21 天。深色＝精熟,淺色＝已學未精熟;右側數字為已學／該級總數</p></section>';
   }
   const lvl = n => n === 0 ? 0 : n <= 20 ? 1 : 2;
   const exD = S.settings.examDate ? new Date(S.settings.examDate + 'T00:00:00') : null, left = exD ? Math.ceil((exD - new Date()) / DAY) : -1;
@@ -728,6 +738,15 @@ async function boot(reload = false) {
   S.daily = (await store.getKV('daily')) || {};
   if (!S.settings.startDate) { const ks = Object.keys(S.daily).filter(k => /^\d{4}-\d\d-\d\d$/.test(k)).sort(); S.settings.startDate = ks[0] || dayKey(); store.setKV('settings', S.settings); }
   S.cards = await store.allCards(); S.session = null; makeFsrs();
+  S.modes = new Map(); S.spellOK = new Set();
+  for (const lg of await store.allLogs()) {
+    const src = lg.source;
+    if (src !== 'flash' && src !== 'mcq' && src !== 'spell') continue;
+    const parts = String(lg.cardId || '').split(':');
+    const bk = parts[0], wd = (lg.wid != null ? lg.wid : parts.slice(1, -1).join(':'));
+    if (!bk || wd === '') continue;
+    noteAnswer(bk, wd, src, lg.correct === true || (lg.correct === undefined && lg.rating >= 3));
+  }
   if (!reload) { await Promise.all([...Object.keys(BANKS).map(loadBank), loadQuestions()]); }
   S.qstats = await store.allQ();
   render();
