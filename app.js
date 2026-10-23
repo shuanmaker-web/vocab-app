@@ -136,7 +136,8 @@ function buildQueue(bank, mode, practice = false) {
   }
   const due = words.map(w => ({ w, c: S.cards.get(cardId(bank, w.id, type)) })).filter(x => x.c && x.c.due <= now).sort((a, b) => a.c.due - b.c.due).map(x => x.w.id);
   const { newLeft } = countsFor(bank, mode);
-  const fresh = words.filter(w => !S.cards.has(cardId(bank, w.id, type))).slice(0, newLeft).map(w => w.id);
+  const freshPool = words.filter(w => !S.cards.has(cardId(bank, w.id, type)));
+  const fresh = (bank === 'gsat' ? shuffle(freshPool) : freshPool).slice(0, newLeft).map(w => w.id);
   return [...due, ...fresh].slice(0, size);
 }
 
