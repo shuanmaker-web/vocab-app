@@ -50,6 +50,14 @@ IndexedDB** — it is not on any server and cannot be recovered if a change corr
 - To preview: the built-in browser can open the live URL, or run `start.bat` locally
   (needs Python; opening `index.html` via `file://` won't load the JSON data).
 
+## Git-proxy limits in the Claude session
+- Pushing commits to existing branches works. But this session's git proxy **blocks branch
+  deletion** and some write APIs (`gh api` to Pages, git refs) return HTTP 403 — don't retry,
+  it won't succeed here.
+- So: push approved changes **straight to `main`** (after verifying — see above). Only use a
+  temporary branch if you must stash unapproved work; if you do, the **owner must delete that
+  branch manually** on GitHub (repo → Branches → trash icon), since the session can't.
+
 ## Conventions that matter
 - **Keep all asset paths relative** (`style.css`, `data/gsat.json`, `./`). The site is
   served from the `/vocab-app/` sub-path, so a leading-slash absolute path (`/style.css`)
