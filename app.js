@@ -10,7 +10,7 @@ const pad = n => String(n).padStart(2, '0');
 const dayKey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const BANKS = {
-  gsat: { name: '學測單字表', file: 'data/gsat.json', qtab: '歷屆試題', qtitle: '學測歷屆試題', qfile: 'data/gsat_questions.json' },
+  gsat: { name: '學測單字表', file: 'data/gsat.json', qtab: '練習題本', qtitle: '學測歷屆試題', qfile: 'data/gsat_questions.json' },
   material: { name: '字彙王 Level 3-5', file: 'data/material.json', qtab: '練習題本', qtitle: '字彙王 Level 3-5  練習題本', qfile: 'data/questions.json' },
 };
 const MODES = { flash: '字卡', mcq: '選擇題', spell: '拼字' };
