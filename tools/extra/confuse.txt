@@ -15,14 +15,6 @@ open|adj.|開著的、開放的
 ? hollow|The old tree trunk is ___ inside, and a family of owls lives there.|empty vacant
 ? blank|Please leave this page ___ so I can draw on it.|empty open
 ? open|Applications are still ___, so you can apply until Friday.|vacant empty
-## persistent / persistence|拼字相近
-note: persistent 是形容詞(堅持的、持續的);persistence 是名詞(堅持、毅力)。
-persistent|adj.|堅持不懈的、持續的
-persistence|n.|堅持、毅力
-? persistence|Success requires hard work and ___.
-? persistent|She is ___ in pursuing her goals, even when it is difficult.
-? persistent|A ___ cough kept him awake for three weeks.
-? persistence|Her ___ finally paid off when she won the contest.
 ## relatable / relative|拼字相近
 note: relatable = 令人有共鳴的;relative = 親戚(n.)、相對的(adj.)。
 relatable|adj.|令人產生共鳴的
