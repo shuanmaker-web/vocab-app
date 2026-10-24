@@ -83,7 +83,9 @@ const S = {
 };
 const wordById = {}, qById = {};
 const cardId = (bank, wid, type) => `${bank}:${wid}:${type}`;
-const typeOf = mode => (mode === 'spell' ? 'spell' : 'recog');
+// GSAT multiple choice has its own cards (schedule + daily new-word quota), so it can re-do the same words as the flashcards.
+const typeOf = (mode, bank) => (mode === 'spell' ? 'spell' : mode === 'mcq' && bank === 'gsat' ? 'mcq' : 'recog');
+const recogCards = (bank, wid) => [S.cards.get(cardId(bank, wid, 'recog')), bank === 'gsat' ? S.cards.get(cardId(bank, wid, 'mcq')) : null].filter(Boolean); // flashcard (+ GSAT multiple-choice) cards of a word
 
 function makeFsrs() {
   S.fsrs = FSRS.fsrs(FSRS.generatorParameters({ request_retention: S.settings.retention, enable_fuzz: true, learning_steps: [], relearning_steps: [] }));
@@ -127,7 +129,7 @@ function scopeWords(bank) {
 
 /* ---------- queue ---------- */
 function countsFor(bank, mode) {
-  const type = typeOf(mode), now = Date.now(), words = scopeWords(bank);
+  const type = typeOf(mode, bank), now = Date.now(), words = scopeWords(bank);
   let due = 0, fresh = 0;
   for (const w of words) { const c = S.cards.get(cardId(bank, w.id, type)); if (!c) fresh++; else if (c.due <= now) due++; }
   const used = (S.daily[dayKey()]?.new?.[`${bank}:${type}`]) || 0;
@@ -138,7 +140,7 @@ function countsFor(bank, mode) {
 const seqKey = id => { let h = 2166136261; for (let i = 0; i < id.length; i++) h = Math.imul(h ^ id.charCodeAt(i), 16777619); h ^= h >>> 15; h = Math.imul(h, 2246822507); h ^= h >>> 13; return h >>> 0; };
 const bySeq = (a, b) => seqKey(a.id) - seqKey(b.id) || (a.id < b.id ? -1 : 1);
 function buildQueue(bank, mode, practice = false) {
-  const type = typeOf(mode), now = Date.now(), words = scopeWords(bank), size = S.settings.sessionSize;
+  const type = typeOf(mode, bank), now = Date.now(), words = scopeWords(bank), size = S.settings.sessionSize;
   if (practice) {
     let seen = words.filter(w => S.cards.has(cardId(bank, w.id, type))); if (!seen.length) seen = S.words[bank].filter(w => S.cards.has(cardId(bank, w.id, type)));
     return shuffle(seen).slice(0, 10).map(w => w.id);
@@ -148,7 +150,9 @@ function buildQueue(bank, mode, practice = false) {
   const due = words.map(w => ({ w, c: S.cards.get(cardId(bank, w.id, type)) })).filter(x => x.c && x.c.due <= now).sort(dueSort).map(x => x.w.id);
   const { newLeft } = countsFor(bank, mode);
   const freshPool = words.filter(w => !S.cards.has(cardId(bank, w.id, type)));
-  const fresh = (gsat ? freshPool.slice().sort(bySeq) : freshPool).slice(0, newLeft).map(w => w.id);
+  // gsat: words already studied in another mode come first (so 選擇題 / 拼字 redo the same batch as 字卡), then the fixed sequence
+  const other = new Set(gsat ? freshPool.filter(w => ['recog', 'mcq', 'spell'].some(t => t !== type && S.cards.has(cardId(bank, w.id, t)))).map(w => w.id) : []);
+  const fresh = (gsat ? freshPool.slice().sort((a, b) => other.has(b.id) - other.has(a.id) || bySeq(a, b)) : freshPool).slice(0, newLeft).map(w => w.id);
   return [...due, ...fresh].slice(0, size);
 }
 
@@ -160,7 +164,7 @@ function noteAnswer(bank, wid, mode, correct) {
   if (mode === 'spell' && correct) S.spellOK.add(key);
 }
 async function grade(bank, wid, mode, rating, extra = {}) {
-  const type = typeOf(mode), id = cardId(bank, wid, type), isNew = !S.cards.has(id);
+  const type = typeOf(mode, bank), id = cardId(bank, wid, type), isNew = !S.cards.has(id);
   let rec = S.cards.get(id) || blankCard(bank, wid, type);
   if (!S.session?.practice) {
     const next = S.fsrs.next(toFsrsCard(rec), new Date(), rating).card;
@@ -295,7 +299,7 @@ function bankCard(bank) {
     const c = countsFor(bank, m), n = c.due + c.newLeft;
     return `<button class="mode" data-start="${bank}:${m}" ${c.total ? '' : 'disabled'}><b>${MODES[m]}</b><span>${n ? `${c.due} 複習 · ${c.newLeft} 新` : '今日完成 ✓'}</span></button>`;
   }).join('');
-  const learned = ws.filter(w => S.cards.has(cardId(bank, w.id, 'recog'))).length;
+  const learned = ws.filter(w => recogCards(bank, w.id).length).length;
   return `<section class="card bank"><div class="row between"><h2>${info.name}</h2><span class="bank-stat"><b>${learned}</b> / ${ws.length}<small>已學</small></span></div><p class="muted small" style="margin:2px 0 0">目前範圍 ${scopeWords(bank).length} 字</p>${chips}<div class="modes">${modes}</div>${sample}</section>`;
 }
 const deco = (x, y, size, color, rot = 0, burst = false) => `<svg class="deco" style="left:${x};top:${y};width:${size}px;height:${size}px;transform:rotate(${rot}deg)" viewBox="0 0 24 24" aria-hidden="true"><polygon points="${burst ? STAR8 : STAR5}" fill="${color}" stroke-linejoin="round"/></svg>`;
@@ -376,10 +380,10 @@ function renderProgress() {
     const byLv = {};
     for (const w of ws) {
       const l = w.lv || 0, g = (byLv[l] ||= { n: 0, m: 0, l: 0 }); g.n++;
-      const key = bank + ':' + w.id, modes = S.modes?.get(key)?.size || 0, c = S.cards.get(cardId(bank, w.id, 'recog'));
+      const key = bank + ':' + w.id, modes = S.modes?.get(key)?.size || 0, cs = recogCards(bank, w.id);
       if (modes >= 2) { learned++; g.l++; }
-      if (S.spellOK?.has(key) && c && c.stability >= 21) { mastered++; g.m++; }
-      if (c && c.due <= now) due++;
+      if (S.spellOK?.has(key) && cs.some(c => c.stability >= 21)) { mastered++; g.m++; }
+      if (cs.some(c => c.due <= now)) due++;
     }
     const exam = bankQs(bank).length ? qProgressHtml(bank, '歷屆試題 · 詞彙題') + '<div class="sec-t" style="margin-top:18px">單字學習</div>' : '';
     html += `<section class="card"><h2>${BANKS[bank].name}</h2>${exam}<div class="stat-grid" style="margin-top:8px">
@@ -416,7 +420,7 @@ function applyTheme() {
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v87';
+const APP_VERSION = 'v88';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
@@ -468,7 +472,7 @@ const saveSettings = () => store.setKV('settings', S.settings);
 
 /* ---------- session ---------- */
 function doneSheet(bank, mode) {
-  const { fresh } = countsFor(bank, mode), more = Math.min(20, fresh), seen = S.words[bank].some(w => S.cards.has(cardId(bank, w.id, typeOf(mode))));
+  const { fresh } = countsFor(bank, mode), more = Math.min(20, fresh), seen = S.words[bank].some(w => S.cards.has(cardId(bank, w.id, typeOf(mode, bank))));
   const el = document.createElement('div'); el.className = 'sheet-bg';
   el.innerHTML = `<div class="sheet card"><h2>今天的進度已完成 ✓</h2><p class="muted small">你想怎麼繼續?</p>
     <button class="btn block" data-sheet="more" ${more ? '' : 'disabled'}>再學 ${more} 個新字${more ? '' : '(沒有新字了)'}</button>
@@ -477,7 +481,7 @@ function doneSheet(bank, mode) {
   el.onclick = async e => {
     const a = e.target.dataset.sheet; if (!a && e.target !== el) return;
     el.remove();
-    if (a === 'more') { const d = (S.daily[dayKey()] ||= { reviews: 0, correct: 0, new: {} }); d.bonus ||= {}; const k = `${bank}:${typeOf(mode)}`; d.bonus[k] = (d.bonus[k] || 0) + more; await store.setKV('daily', S.daily); startSession(bank, mode); }
+    if (a === 'more') { const d = (S.daily[dayKey()] ||= { reviews: 0, correct: 0, new: {} }); d.bonus ||= {}; const k = `${bank}:${typeOf(mode, bank)}`; d.bonus[k] = (d.bonus[k] || 0) + more; await store.setKV('daily', S.daily); startSession(bank, mode); }
     else if (a === 'practice') startSession(bank, mode, true);
   };
   document.body.appendChild(el);
@@ -518,7 +522,7 @@ function renderFlash(head, w) {
 function renderMcq(head, w) {
   const s = S.session;
   if (!s.q || s.q.id !== w.id) {
-    const rec = S.cards.get(cardId(s.bank, w.id, 'recog')), reverse = !!rec && rec.stability > 3 && S.words[s.bank].length >= 4 && Math.random() < 0.5;
+    const rec = S.cards.get(cardId(s.bank, w.id, typeOf('mcq', s.bank))), reverse = !!rec && rec.stability > 3 && S.words[s.bank].length >= 4 && Math.random() < 0.5;
     const field = reverse ? 'w' : 'zh', ds = distractors(w, s.bank, field);
     s.q = { id: w.id, reverse, field, opts: shuffle([w, ...ds]), picked: null, t0: Date.now() };
   }
