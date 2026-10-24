@@ -86,6 +86,8 @@ const cardId = (bank, wid, type) => `${bank}:${wid}:${type}`;
 // GSAT multiple choice has its own cards (schedule + daily new-word quota), so it can re-do the same words as the flashcards.
 const typeOf = (mode, bank) => (mode === 'spell' ? 'spell' : mode === 'mcq' && bank === 'gsat' ? 'mcq' : 'recog');
 const recogCards = (bank, wid) => [S.cards.get(cardId(bank, wid, 'recog')), bank === 'gsat' ? S.cards.get(cardId(bank, wid, 'mcq')) : null].filter(Boolean); // flashcard (+ GSAT multiple-choice) cards of a word
+// 「已學」: GSAT = answered in BOTH multiple choice and spelling (flashcards alone don't count); other banks = any 2 of the 3 modes.
+const isLearned = (bank, wid) => { const m = S.modes?.get(bank + ':' + wid); return !!m && (bank === 'gsat' ? m.has('mcq') && m.has('spell') : m.size >= 2); };
 
 function makeFsrs() {
   S.fsrs = FSRS.fsrs(FSRS.generatorParameters({ request_retention: S.settings.retention, enable_fuzz: true, learning_steps: [], relearning_steps: [] }));
@@ -299,7 +301,7 @@ function bankCard(bank) {
     const c = countsFor(bank, m), n = c.due + c.newLeft;
     return `<button class="mode" data-start="${bank}:${m}" ${c.total ? '' : 'disabled'}><b>${MODES[m]}</b><span>${n ? `${c.due} 複習 · ${c.newLeft} 新` : '今日完成 ✓'}</span></button>`;
   }).join('');
-  const learned = ws.filter(w => recogCards(bank, w.id).length).length;
+  const learned = ws.filter(w => bank === 'gsat' ? isLearned(bank, w.id) : recogCards(bank, w.id).length).length;
   return `<section class="card bank"><div class="row between"><h2>${info.name}</h2><span class="bank-stat"><b>${learned}</b> / ${ws.length}<small>已學</small></span></div><p class="muted small" style="margin:2px 0 0">目前範圍 ${scopeWords(bank).length} 字</p>${chips}<div class="modes">${modes}</div>${sample}</section>`;
 }
 const deco = (x, y, size, color, rot = 0, burst = false) => `<svg class="deco" style="left:${x};top:${y};width:${size}px;height:${size}px;transform:rotate(${rot}deg)" viewBox="0 0 24 24" aria-hidden="true"><polygon points="${burst ? STAR8 : STAR5}" fill="${color}" stroke-linejoin="round"/></svg>`;
@@ -381,15 +383,16 @@ function renderProgress() {
     for (const w of ws) {
       const l = w.lv || 0, g = (byLv[l] ||= { n: 0, m: 0, l: 0 }); g.n++;
       const key = bank + ':' + w.id, modes = S.modes?.get(key)?.size || 0, cs = recogCards(bank, w.id);
-      if (modes >= 2) { learned++; g.l++; }
-      if (S.spellOK?.has(key) && cs.some(c => c.stability >= 21)) { mastered++; g.m++; }
+      const lrn = isLearned(bank, w.id); // mastered is always a subset of learned
+      if (lrn) { learned++; g.l++; }
+      if (lrn && S.spellOK?.has(key) && cs.some(c => c.stability >= 21)) { mastered++; g.m++; }
       if (cs.some(c => c.due <= now)) due++;
     }
     const exam = bankQs(bank).length ? qProgressHtml(bank, '歷屆試題 · 詞彙題') + '<div class="sec-t" style="margin-top:18px">單字學習</div>' : '';
     html += `<section class="card"><h2>${BANKS[bank].name}</h2>${exam}<div class="stat-grid" style="margin-top:8px">
       <div class="stat pstat"><b>${learned}</b><span>已學 / ${ws.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟 / ${ws.length}</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>`;
     if (bank === 'gsat') html += '<div style="margin-top:12px">' + Object.keys(byLv).sort().map(l => { const v = byLv[l]; const seg = c => c > 0 ? Math.max(4, c / v.n * 100) : 0; return `<div class="lvl"><span>L${l}</span><div class="track"><i class="m" style="width:${seg(v.m)}%"></i><i class="l" style="width:${seg(v.l - v.m)}%"></i></div><span class="muted small">${v.l}/${v.n}</span></div>`; }).join('') + '</div>';
-    html += '<p class="small muted">已學 = 字卡／選擇題／拼字 任 2 種答過;精熟 = 拼字答對過 且 記憶穩定度 ≥ 21 天。深色＝精熟,淺色＝已學未精熟;右側數字為已學／該級總數</p></section>';
+    html += '<p class="small muted">已學 = 選擇題與拼字都答過(只用字卡不算);精熟 = 已學 且 拼字答對過 且 記憶穩定度 ≥ 21 天。深色＝精熟,淺色＝已學未精熟;右側數字為已學／該級總數</p></section>';
   }
   const lvl = n => n === 0 ? 0 : n <= 20 ? 1 : 2;
   const exD = S.settings.examDate ? new Date(S.settings.examDate + 'T00:00:00') : null, left = exD ? Math.ceil((exD - new Date()) / DAY) : -1;
@@ -420,7 +423,7 @@ function applyTheme() {
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v88';
+const APP_VERSION = 'v89';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
