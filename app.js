@@ -410,7 +410,7 @@ function applyTheme() {
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v85';
+const APP_VERSION = 'v86';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
@@ -570,7 +570,7 @@ const qSt = id => S.qstats.get(id);
 const bankQs = (bank = S.bank) => S.questions.filter(q => q.bank === bank); // questions of one bank (教材 / 學測)
 const unitName = (u, bank = S.bank, long = false) => bank === 'gsat' ? (long ? `${u} 學年度學測` : `${u} 學測`) : `Unit ${u}`;
 const qKind = q => q.bank === 'gsat' ? '詞彙題' : QTYPES[q.type];
-const srcNote = q => q.bank === 'gsat' ? `<div class="small muted src-note">出處:${q.unit} 學年度學科能力測驗(學測)英文 · 第壹部分 詞彙題 第 ${q.no} 題</div>` : '';
+const srcNote = q => q.bank === 'gsat' ? `<div class="small muted src-note">${q.unit} 學測</div>` : '';
 function qTotals(filter = () => true, bank = S.bank) {
   let total = 0, tried = 0, ok = 0, wrong = 0, first = 0;
   for (const q of bankQs(bank)) { if (!filter(q)) continue; total++; const st = qSt(q.id); if (!st) continue; tried++; if (st.last) ok++; else wrong++; if (st.firstOk) first++; }
