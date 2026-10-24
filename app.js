@@ -133,16 +133,22 @@ function countsFor(bank, mode) {
   const used = (S.daily[dayKey()]?.new?.[`${bank}:${type}`]) || 0;
   return { due, fresh, newLeft: Math.max(0, Math.min(fresh, S.settings.newPerDay + (S.daily[dayKey()]?.bonus?.[`${bank}:${type}`] || 0) - used)), total: words.length };
 }
+/* GSAT words come in ONE fixed, scrambled order (a hash of the word id, not a new random shuffle per session),
+   so 字卡 / 選擇題 / 拼字 all walk the same sequence. Nothing is stored; the order is identical on every device. */
+const seqKey = id => { let h = 2166136261; for (let i = 0; i < id.length; i++) h = Math.imul(h ^ id.charCodeAt(i), 16777619); h ^= h >>> 15; h = Math.imul(h, 2246822507); h ^= h >>> 13; return h >>> 0; };
+const bySeq = (a, b) => seqKey(a.id) - seqKey(b.id) || (a.id < b.id ? -1 : 1);
 function buildQueue(bank, mode, practice = false) {
   const type = typeOf(mode), now = Date.now(), words = scopeWords(bank), size = S.settings.sessionSize;
   if (practice) {
     let seen = words.filter(w => S.cards.has(cardId(bank, w.id, type))); if (!seen.length) seen = S.words[bank].filter(w => S.cards.has(cardId(bank, w.id, type)));
     return shuffle(seen).slice(0, 10).map(w => w.id);
   }
-  const due = words.map(w => ({ w, c: S.cards.get(cardId(bank, w.id, type)) })).filter(x => x.c && x.c.due <= now).sort((a, b) => a.c.due - b.c.due).map(x => x.w.id);
+  const gsat = bank === 'gsat', dk = x => dayKey(new Date(x.c.due)); // gsat: due cards go by due day, then the fixed sequence
+  const dueSort = gsat ? (a, b) => (dk(a) < dk(b) ? -1 : dk(a) > dk(b) ? 1 : bySeq(a.w, b.w)) : (a, b) => a.c.due - b.c.due;
+  const due = words.map(w => ({ w, c: S.cards.get(cardId(bank, w.id, type)) })).filter(x => x.c && x.c.due <= now).sort(dueSort).map(x => x.w.id);
   const { newLeft } = countsFor(bank, mode);
   const freshPool = words.filter(w => !S.cards.has(cardId(bank, w.id, type)));
-  const fresh = (bank === 'gsat' ? shuffle(freshPool) : freshPool).slice(0, newLeft).map(w => w.id);
+  const fresh = (gsat ? freshPool.slice().sort(bySeq) : freshPool).slice(0, newLeft).map(w => w.id);
   return [...due, ...fresh].slice(0, size);
 }
 
@@ -410,7 +416,7 @@ function applyTheme() {
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v86';
+const APP_VERSION = 'v87';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
