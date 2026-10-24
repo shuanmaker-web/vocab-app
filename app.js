@@ -10,8 +10,8 @@ const pad = n => String(n).padStart(2, '0');
 const dayKey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const BANKS = {
-  gsat: { name: '學測單字表', file: 'data/gsat.json' },
-  material: { name: '字彙王 Level 3-5', file: 'data/material.json' },
+  gsat: { name: '學測單字表', file: 'data/gsat.json', qtab: '歷屆試題', qtitle: '學測歷屆試題', qfile: 'data/gsat_questions.json' },
+  material: { name: '字彙王 Level 3-5', file: 'data/material.json', qtab: '練習題本', qtitle: '字彙王 Level 3-5  練習題本', qfile: 'data/questions.json' },
 };
 const MODES = { flash: '字卡', mcq: '選擇題', spell: '拼字' };
 const QTYPES = { fill: '一、文意字彙', mcq: '二、選擇題', match: '三、配合題' };
@@ -104,11 +104,16 @@ async function loadBank(bank) {
   for (const w of S.words[bank]) wordById[`${bank}:${w.id}`] = w;
 }
 async function loadQuestions() {
-  try {
-    const r = await fetch('data/questions.json', { cache: 'no-cache' });
-    if (!r.ok) throw new Error(r.status);
-    const j = await r.json(); S.questions = j.questions || []; S.qmeta = j.meta || {};
-  } catch (e) { S.questions = []; S.qmeta = { error: true }; }
+  S.questions = []; S.qmeta = {};
+  for (const bank of Object.keys(BANKS)) { // each bank has its own question file; every question is tagged with its bank
+    try {
+      const r = await fetch(BANKS[bank].qfile, { cache: 'no-cache' });
+      if (!r.ok) throw new Error(r.status);
+      const j = await r.json();
+      for (const q of j.questions || []) { q.bank = bank; S.questions.push(q); }
+      S.qmeta[bank] = j.meta || {};
+    } catch (e) { S.qmeta[bank] = { error: true }; }
+  }
   for (const q of S.questions) qById[q.id] = q;
 }
 const answers = w => String(w.w).split('/').map(s => s.trim()).filter(Boolean);
@@ -226,8 +231,8 @@ function renderBankSwitch() {
 function setBank(b) {
   if (!BANKS[b] || b === S.bank) return;
   const fromLanding = !S.bank; S.bank = b;
-  if (fromLanding || b !== 'material' && S.tab === 'practice') S.tab = 'home';
-  S.pview = 'main';
+  if (fromLanding) S.tab = 'home';
+  S.pview = 'main'; S.punit = null; S.wrongType = 'all';
   document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x.dataset.tab === S.tab));
   render();
 }
@@ -237,7 +242,8 @@ function render() {
   document.body.classList.toggle('landing', !S.bank && !S.session);
   document.body.dataset.bank = S.bank || '';
   document.documentElement.dataset.view = S.bank || 'landing';
-  const pt = document.querySelector('#tabs [data-tab="practice"]'); if (pt) pt.hidden = S.bank !== 'material';
+  const pt = document.querySelector('#tabs [data-tab="practice"]'); // same tab + icon in both banks; only its label differs
+  if (pt) { pt.hidden = !S.bank; const lb = BANKS[S.bank]?.qtab; if (lb) { pt.setAttribute('aria-label', lb); const sp = pt.querySelector('span'); if (sp) sp.textContent = lb; } }
   renderBankSwitch();
   if (S.session) return renderSession();
   if (!S.bank) { renderLanding(); window.scrollTo(0, 0); return; }
@@ -335,19 +341,20 @@ function renderHome() {
 }
 
 
+function qProgressHtml(bank, title) { // 練習題 / 歷屆試題 progress block (bar + stats), shared by both banks
+  const t = qTotals(() => true, bank), pct = t.ok / t.total * 100, units = unitList(bank), uw = bank === 'gsat' ? '年度' : '單元';
+  const full = units.filter(u => { const x = qTotals(q => q.unit === u, bank); return x.ok === x.total; }).length;
+  return `<div class="sec-t">${title}</div>
+      <div class="pbar"><i class="g" style="width:${pct}%"></i><i class="r" style="width:${t.wrong / t.total * 100}%"></i><em>${pct < 10 ? pct.toFixed(1) : Math.round(pct)}%</em></div>
+      <div class="stat-grid" style="margin-top:12px"><div class="stat pstat"><b>${t.tried}</b><span>已作答</span></div><div class="stat pstat"><b>${t.wrong}</b><span>錯題</span></div><div class="stat pstat"><b>${full}</b><span>全對${uw} / ${units.length}</span></div></div>`;
+}
 function renderProgress() {
   const now = Date.now(); let html = '<h1>進度</h1><div class="stack" style="margin-top:12px">';
   // ---- 教材:練習題本 + 單字,同一個框 ----
   const mat = S.words.material || [];
-  if (S.bank === 'material' && (S.questions.length || mat.length)) {
+  if (S.bank === 'material' && (bankQs('material').length || mat.length)) {
     html += '<section class="card"><h2>字彙王 Level 3-5</h2>';
-    if (S.questions.length) {
-      const t = qTotals(), pct = t.ok / t.total * 100, units = unitList();
-      const full = units.filter(u => { const x = qTotals(q => q.unit === u); return x.ok === x.total; }).length;
-      html += `<div class="sec-t">練習題本</div>
-      <div class="pbar"><i class="g" style="width:${pct}%"></i><i class="r" style="width:${t.wrong / t.total * 100}%"></i><em>${pct < 10 ? pct.toFixed(1) : Math.round(pct)}%</em></div>
-      <div class="stat-grid" style="margin-top:12px"><div class="stat pstat"><b>${t.tried}</b><span>已作答</span></div><div class="stat pstat"><b>${t.wrong}</b><span>錯題</span></div><div class="stat pstat"><b>${full}</b><span>全對單元 / ${units.length}</span></div></div>`;
-    }
+    if (bankQs('material').length) html += qProgressHtml('material', '練習題本');
     if (mat.length) {
       let learned = 0, mastered = 0, due = 0;
       for (const w of mat) { const key = 'material:' + w.id, modes = S.modes?.get(key)?.size || 0, c = S.cards.get(cardId('material', w.id, 'recog')); if (modes >= 2) learned++; if (S.spellOK?.has(key) && c && c.stability >= 21) mastered++; if (c && c.due <= now) due++; }
@@ -368,7 +375,8 @@ function renderProgress() {
       if (S.spellOK?.has(key) && c && c.stability >= 21) { mastered++; g.m++; }
       if (c && c.due <= now) due++;
     }
-    html += `<section class="card"><h2>${BANKS[bank].name}</h2><div class="stat-grid" style="margin-top:8px">
+    const exam = bankQs(bank).length ? qProgressHtml(bank, '歷屆試題 · 詞彙題') + '<div class="sec-t" style="margin-top:18px">單字學習</div>' : '';
+    html += `<section class="card"><h2>${BANKS[bank].name}</h2>${exam}<div class="stat-grid" style="margin-top:8px">
       <div class="stat pstat"><b>${learned}</b><span>已學 / ${ws.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟 / ${ws.length}</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>`;
     if (bank === 'gsat') html += '<div style="margin-top:12px">' + Object.keys(byLv).sort().map(l => { const v = byLv[l]; const seg = c => c > 0 ? Math.max(4, c / v.n * 100) : 0; return `<div class="lvl"><span>L${l}</span><div class="track"><i class="m" style="width:${seg(v.m)}%"></i><i class="l" style="width:${seg(v.l - v.m)}%"></i></div><span class="muted small">${v.l}/${v.n}</span></div>`; }).join('') + '</div>';
     html += '<p class="small muted">已學 = 字卡／選擇題／拼字 任 2 種答過;精熟 = 拼字答對過 且 記憶穩定度 ≥ 21 天。深色＝精熟,淺色＝已學未精熟;右側數字為已學／該級總數</p></section>';
@@ -402,7 +410,7 @@ function applyTheme() {
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v80';
+const APP_VERSION = 'v84';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
@@ -428,6 +436,7 @@ function renderSettings() {
     <p>學測詞彙等級:大學入學考試中心《高中英文參考詞彙表》(111 學年度起適用)。著作權屬財團法人大學入學考試中心基金會所有,僅供非營利目的使用。</p>
     <p>中文釋義(若有):ECDICT(MIT License),經轉換為繁體中文。例句(若有):<a href="https://tatoeba.org" target="_blank" rel="noopener">Tatoeba</a>(CC BY 2.0 FR)或自編。</p>
     <p>複習排程:<a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">ts-fsrs</a>(MIT)。</p>
+    <p>歷屆試題:大學入學考試中心歷年學科能力測驗英文科試題(第壹部分 詞彙題,106–115 學年度)與公布之選擇題答案;答案單字的中文釋義為自編。</p>
   </section><p class="small muted" style="text-align:center">Vocaboo ${APP_VERSION}</p></div>`;
   const num = (id, key) => $(id).addEventListener('change', async e => { s[key] = Math.max(0, +e.target.value || 0); await saveSettings(); });
   document.querySelectorAll('[data-theme]').forEach(b => b.onclick = async () => { s.theme = b.dataset.theme; await saveSettings(); applyTheme(); renderSettings(); });
@@ -558,13 +567,16 @@ function sentenceHtml(q, revealed, wrongPick) {
   return esc(q.q.slice(0, m.index)) + '<mark class="ans">' + esc(ans) + '</mark>' + esc(q.q.slice(m.index + m[0].length));
 }
 const qSt = id => S.qstats.get(id);
-function qTotals(filter = () => true) {
+const bankQs = (bank = S.bank) => S.questions.filter(q => q.bank === bank); // questions of one bank (教材 / 學測)
+const unitName = (u, bank = S.bank, long = false) => bank === 'gsat' ? (long ? `${u} 學年度學測` : `${u} 學測`) : `Unit ${u}`;
+const qKind = q => q.bank === 'gsat' ? '詞彙題' : QTYPES[q.type];
+function qTotals(filter = () => true, bank = S.bank) {
   let total = 0, tried = 0, ok = 0, wrong = 0, first = 0;
-  for (const q of S.questions) { if (!filter(q)) continue; total++; const st = qSt(q.id); if (!st) continue; tried++; if (st.last) ok++; else wrong++; if (st.firstOk) first++; }
+  for (const q of bankQs(bank)) { if (!filter(q)) continue; total++; const st = qSt(q.id); if (!st) continue; tried++; if (st.last) ok++; else wrong++; if (st.firstOk) first++; }
   return { total, tried, ok, wrong, first };
 }
-const wrongIds = (filter = () => true) => S.questions.filter(q => filter(q) && qSt(q.id) && !qSt(q.id).last).map(q => q.id);
-const unitList = () => [...new Set(S.questions.map(q => q.unit))].sort((a, b) => a - b);
+const wrongIds = (filter = () => true, bank = S.bank) => bankQs(bank).filter(q => filter(q) && qSt(q.id) && !qSt(q.id).last).map(q => q.id);
+const unitList = (bank = S.bank) => [...new Set(bankQs(bank).map(q => q.unit))].sort((a, b) => bank === 'gsat' ? b - a : a - b); // exam years: newest first
 
 async function recordQ(q, ok, extra = {}) {
   const prev = qSt(q.id), st = { id: q.id, n: (prev?.n || 0) + 1, ok: (prev?.ok || 0) + (ok ? 1 : 0), last: ok, firstOk: prev ? prev.firstOk : ok, ts: Date.now() };
@@ -578,41 +590,42 @@ function startEx(ids, opts = {}) {
   S.session = { kind: 'ex', queue: ids.slice(), pos: 0, total: ids.length, results: [], t0: Date.now(), retest: !!opts.retest, title: opts.title || '', cur: null };
   render();
 }
-function nextNewIds(n = 20) { return S.questions.filter(q => !qSt(q.id)).slice(0, n).map(q => q.id); }
+function nextNewIds(n = 20) { return bankQs().filter(q => !qSt(q.id)).slice(0, n).map(q => q.id); }
 
 function unitTile(u) {
   const t = qTotals(q => q.unit === u), cls = t.tried === 0 ? '' : t.wrong ? 'bad' : t.ok === t.total ? 'good' : 'part';
   return `<button class="tile ${cls}" data-xunit="${u}"><b>${u}</b><span>${t.ok}/${t.total}</span></button>`;
 }
 function renderPractice() {
-  if (!S.questions.length) { app.innerHTML = '<h1>字彙王 Level 3-5  練習題本</h1><p class="muted" style="margin-top:12px">尚未匯入練習題本(<code>data/questions.json</code>)。</p>'; return; }
+  const B = BANKS[S.bank], gsat = S.bank === 'gsat', uw = gsat ? '年度' : '單元';
+  if (!bankQs().length) { app.innerHTML = `<h1>${B.qtitle}</h1><p class="muted" style="margin-top:12px">尚未匯入題庫(<code>${B.qfile}</code>)。</p>`; return; }
   if (S.pview === 'unit') return renderUnit();
   const t = qTotals(), w = t.wrong, units = unitList();
-  app.innerHTML = `<h1>字彙王 Level 3-5  練習題本</h1><div class="stack" style="margin-top:12px">
-  <section class="card"><div class="row between"><h2>總進度</h2><span class="muted small">共 ${t.total} 題 · ${units.length} 個單元</span></div>
+  app.innerHTML = `<h1>${B.qtitle}</h1>${gsat ? `<p class="muted small" style="margin:4px 0 0">大考中心歷年學科能力測驗英文科 · 第壹部分 詞彙題(第 1–10 題)</p>` : ''}<div class="stack" style="margin-top:12px">
+  <section class="card"><div class="row between"><h2>總進度</h2><span class="muted small">共 ${t.total} 題 · ${units.length} 個${uw}</span></div>
     <div class="bigscore"><b>${t.ok}</b><span>/ ${t.total} 題目前答對</span></div>
     <div class="seg"><i class="g" style="width:${t.ok / t.total * 100}%"></i><i class="r" style="width:${t.wrong / t.total * 100}%"></i></div>
     <div class="stat-grid" style="margin-top:12px"><div class="stat"><b>${t.tried}</b><span>已作答</span></div><div class="stat"><b>${w}</b><span>錯題待複習</span></div><div class="stat"><b>${t.tried ? Math.round(t.first / t.tried * 100) : 0}%</b><span>一次答對率</span></div></div>
     <div class="row wrap" style="margin-top:14px"><button class="btn block" data-pact="retest" ${w ? '' : 'disabled'}>重測所有錯題(${w})</button></div>
   </section>
-  <section class="card"><h2>選擇單元</h2><p class="small muted">點單元進入:可測驗整個單元、只重測錯題,並查看該單元的錯題。做到一半離開,進度會自動存起來。<span class="dot g"></span>全對 <span class="dot y"></span>進行中 <span class="dot r"></span>有錯題</p>
+  <section class="card"><h2>選擇${uw === '年度' ? '學年度' : uw}</h2><p class="small muted">點${uw}進入:可測驗整${gsat ? '份試題' : '個單元'}、只重測錯題,並查看該${uw}的錯題。做到一半離開,進度會自動存起來。<span class="dot g"></span>全對 <span class="dot y"></span>進行中 <span class="dot r"></span>有錯題</p>
     <div class="tiles">${units.map(unitTile).join('')}</div></section></div>`;
 }
 
 function renderUnit() {
-  const u = S.punit, qs = S.questions.filter(q => q.unit === u), t = qTotals(q => q.unit === u);
+  const u = S.punit, gsat = S.bank === 'gsat', qs = bankQs().filter(q => q.unit === u), t = qTotals(q => q.unit === u);
   const left = qs.filter(q => !qSt(q.id)), wrong = qs.filter(q => qSt(q.id) && !qSt(q.id).last);
-  const item = q => `<div class="witem"><div class="muted small">第 ${q.no} 題 · ${QTYPES[q.type]} · 答錯 ${(qSt(q.id).n - qSt(q.id).ok)} 次</div><div>${sentenceHtml(q, true)}</div><div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`;
+  const item = q => `<div class="witem"><div class="muted small">第 ${q.no} 題 · ${qKind(q)} · 答錯 ${(qSt(q.id).n - qSt(q.id).ok)} 次</div><div>${sentenceHtml(q, true)}</div><div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`;
   const types = ['all', ...['fill', 'mcq', 'match'].filter(x => wrong.some(q => q.type === x))], f = types.includes(S.wrongType) ? S.wrongType : 'all';
   const shown = wrong.filter(q => f === 'all' || q.type === f), partial = left.length > 0 && left.length < qs.length;
-  app.innerHTML = `<div class="topbar"><button class="icon-btn" data-pact="back" aria-label="返回">←</button><h1 style="font-size:1.25rem">Unit ${u}</h1></div>
+  app.innerHTML = `<div class="topbar"><button class="icon-btn" data-pact="back" aria-label="返回">←</button><h1 style="font-size:1.25rem">${unitName(u, S.bank, true)}</h1></div>
   <div class="stack"><section class="card">
     <div class="stat-grid"><div class="stat"><b>${t.tried}/${t.total}</b><span>已作答</span></div><div class="stat"><b>${t.ok}</b><span>目前答對</span></div><div class="stat"><b>${wrong.length}</b><span>錯題</span></div></div>
     <div class="stack" style="margin-top:14px;gap:10px">
-      ${partial ? `<button class="btn block" data-uact="resume">繼續作答(還剩 ${left.length} 題)</button><button class="btn ghost block" data-uact="all">從頭重做整個單元(${qs.length} 題)</button>` : `<button class="btn block" data-uact="all">測驗整個單元(${qs.length} 題)</button>`}
+      ${partial ? `<button class="btn block" data-uact="resume">繼續作答(還剩 ${left.length} 題)</button><button class="btn ghost block" data-uact="all">從頭重做${gsat ? '整份試題' : '整個單元'}(${qs.length} 題)</button>` : `<button class="btn block" data-uact="all">測驗${gsat ? '整份試題' : '整個單元'}(${qs.length} 題)</button>`}
       <button class="btn ghost block" data-uact="wrong" ${wrong.length ? '' : 'disabled'}>只重測錯題(${wrong.length})</button>
     </div></section>
-  <section class="card"><h2>答錯的題目</h2>${wrong.length ? `<div class="chips">${types.map(x => `<button class="chip ${f === x ? 'on' : ''}" data-wtype="${x}">${x === 'all' ? '全部' : QTYPES[x]}</button>`).join('')}</div>${shown.map(item).join('')}` : '<p class="muted small" style="margin-top:6px">這個單元目前沒有錯題。</p>'}</section></div>`;
+  <section class="card"><h2>答錯的題目</h2>${wrong.length ? `${!gsat ? `<div class="chips">${types.map(x => `<button class="chip ${f === x ? 'on' : ''}" data-wtype="${x}">${x === 'all' ? '全部' : QTYPES[x]}</button>`).join('')}</div>` : ''}${shown.map(item).join('')}` : `<p class="muted small" style="margin-top:6px">這個${gsat ? '學年度' : '單元'}目前沒有錯題。</p>`}</section></div>`;
 }
 
 /* --- exercise session --- */
@@ -626,7 +639,7 @@ function renderEx() {
   if (s.pos >= s.queue.length) return renderExSummary();
   const q = qById[s.queue[s.pos]], c = exQuestionState(q), pct = Math.round(s.results.length / s.total * 100), done = c.result !== null;
   let body = `<div class="topbar"><button class="icon-btn" data-xact="quit" aria-label="離開">✕</button><div class="bar"><i style="width:${pct}%"></i></div><span class="muted small">${s.results.length}/${s.total}${s.retest ? ' · 重測' : ''}</span></div>`;
-  body += `<div class="card"><div class="muted small">Unit ${q.unit} · 第 ${q.no} 題 · ${QTYPES[q.type]}</div><p class="qtext">${sentenceHtml(q, done)}</p>${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
+  body += `<div class="card"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}</div><p class="qtext">${sentenceHtml(q, done)}</p>${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
   if (q.type === 'fill') {
     if (!done) body += `<form id="ex-form" style="margin-top:14px" autocomplete="off"><input class="field" id="ex-in" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入完整單字" aria-label="答案"><div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-xact="hint" ${c.hint ? 'disabled' : ''}>提示</button><button type="button" class="btn ghost" data-xact="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
     else {
@@ -649,7 +662,7 @@ function renderExSummary() {
   const s = S.session, ok = s.results.filter(r => r.ok).length, miss = s.results.filter(r => !r.ok).map(r => qById[r.id]);
   const left = wrongIds().length;
   app.innerHTML = `<div class="stack"><section class="card q"><h1>${ok === s.total ? '全部答對!🎉' : '完成這一回'}</h1><p class="zh">${ok} / ${s.total}</p><p class="muted">答對率 ${Math.round(ok / s.total * 100)}% · 用時 ${Math.max(1, Math.round((Date.now() - s.t0) / 60000))} 分鐘</p>${s.retest ? `<p class="small">錯題本還剩 <b>${left}</b> 題</p>` : ''}</section>
-    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">Unit ${q.unit} · 第 ${q.no} 題</div><div>${sentenceHtml(q, true)}</div><div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`).join('')}</section>` : ''}
+    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題</div><div>${sentenceHtml(q, true)}</div><div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`).join('')}</section>` : ''}
     ${miss.length ? `<button class="btn block" data-xact="redo-miss">馬上重測這 ${miss.length} 題</button>` : ''}
     ${left && !miss.length ? '<button class="btn block" data-xact="retest-all">繼續重測錯題本</button>' : ''}
     <button class="btn ghost block" data-xact="quit">回練習題本</button></div>`;
@@ -685,7 +698,7 @@ document.addEventListener('click', async e => {
   if (t.dataset.tab) return setTab(t.dataset.tab);
   if (t.dataset.pgunit) { S.tab = 'practice'; S.punit = +t.dataset.pgunit; S.pview = 'unit'; S.wrongType = 'all'; document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === 'practice')); return render(); }
   if (t.dataset.xunit) { S.punit = +t.dataset.xunit; S.pview = 'unit'; S.wrongType = 'all'; return render(); }
-  if (t.dataset.uact) { const u = S.punit, all = S.questions.filter(q => q.unit === u).map(q => q.id), act = t.dataset.uact, ttl = 'Unit ' + u;
+  if (t.dataset.uact) { const u = S.punit, all = bankQs().filter(q => q.unit === u).map(q => q.id), act = t.dataset.uact, ttl = unitName(u, S.bank, true);
     if (act === 'wrong') return startEx(shuffle(wrongIds(q => q.unit === u)), { retest: true, title: ttl });
     if (act === 'resume') return startEx(all.filter(id => !qSt(id)), { title: ttl });
     return startEx(all, { title: ttl }); }

@@ -1,0 +1,105 @@
+# 學測英文 第壹部分、一、詞彙題(第 1–10 題),106–115 學年度
+# 來源:大學入學考試中心 歷年學科能力測驗 英文試題 PDF(ceec.edu.tw)與選擇題答案
+# 欄位(以 | 分隔):學年度|題號|題目(空格以 ______ 表示)|A|B|C|D|答案字母|詞性|答案單字的中文釋義(自編)
+# 答案字母另有官方答案核對檔 official_keys.txt;tools/build_gsat_exam.py 會比對,不符就報錯。
+# 112 學年度各題與 111 第 4 題:PDF 文字擷取時底線遺失,空格位置為依句意補回(請對照原卷確認)。
+106|1|John's clock is not functioning ______. The alarm rings even when it's not set to go off.|tenderly|properly|solidly|favorably|B|adv.|正常地;適當地
+106|2|Michael has decided to ______ a career in physics and has set his mind on becoming a professor.|pursue|swear|reserve|draft|A|v.|追求
+106|3|Peter plans to hike in a ______ part of Africa, where he might not meet another human being for days.|native|tricky|remote|vacant|C|adj.|偏遠的
+106|4|People in this community tend to ______ with the group they belong to, and often put group interests before personal ones.|appoint|eliminate|occupy|identify|D|v.|認同
+106|5|I mistook the man for a well-known actor and asked for his autograph; it was really ______.|relaxing|embarrassing|appealing|defending|B|adj.|令人尷尬的
+106|6|After spending most of her salary on rent and food, Amelia ______ had any money left for entertainment and other expenses.|barely|fairly|merely|readily|A|adv.|幾乎不
+106|7|In the Bermuda Triangle, a region in the western part of the North Atlantic Ocean, some airplanes and ships were reported to have mysteriously disappeared without a ______.|guide|trace|code|print|B|n.|痕跡
+106|8|Shouting greetings and waving a big sign, Tony ______ the passing shoppers to visit his shop and buy the freshly baked bread.|accessed|edited|imposed|urged|D|v.|力勸;催促
+106|9|With a continuous 3 km stretch of golden sand, the beach attracts artists around the world each summer to create amazing ______ with its fine soft sand.|constitutions|objections|sculptures|adventures|C|n.|雕塑
+106|10|The clouds parted and a ______ of light fell on the church, through the windows, and onto the floor.|dip|beam|spark|path|B|n.|(光)束
+107|1|Mangoes are a ______ fruit here in Taiwan; most of them reach their peak of sweetness in July.|mature|usual|seasonal|particular|C|adj.|季節性的
+107|2|Writing term papers and giving oral reports are typical course ______ for college students.|requirements|techniques|situations|principles|A|n.|要求;必備條件
+107|3|If we work hard to ______ our dreams when we are young, we will not feel that we missed out on something when we get old.|distribute|fulfill|convince|monitor|B|v.|實現
+107|4|Few people will trust you if you continue making ______ promises and never make efforts to keep them.|chilly|liberal|hollow|definite|C|adj.|空洞的;不實在的
+107|5|Becky ______ her ankle while she was playing tennis last week. Now it still hurts badly.|slipped|dumped|twisted|recovered|C|v.|扭傷
+107|6|Research shows that men and women usually think differently. For example, they have quite different ______ about what marriage means in their life.|decisions|beliefs|styles|degrees|B|n.|信念;看法
+107|7|The new manager is very ______. For instance, the employees are given much shorter deadlines for the same tasks than before.|persuasive|tolerable|suspicious|demanding|D|adj.|要求嚴格的
+107|8|While the couple were looking ______ for their missing children, the kids were actually having fun in the woods nearby.|anxiously|precisely|evidently|distinctly|A|adv.|焦急地
+107|9|After delivering a very powerful speech, the award winner was ______ by a group of fans asking for her signature.|deposited|reserved|vanished|surrounded|D|v.|包圍
+107|10|The interviewees were trying very hard to ______ the interviewers that they were very capable and should be given the job.|credit|impress|relieve|acquire|B|v.|使印象深刻
+108|1|Bobby cared a lot about his ______ at home and asked his parents not to go through his things without his permission.|discipline|facility|privacy|representation|C|n.|隱私
+108|2|The new manager is a real gentleman. He is kind and humble, totally different from the former manager, who was ______ and bossy.|eager|liberal|mean|inferior|C|adj.|刻薄的;惡劣的
+108|3|The weather bureau ______ that the typhoon would bring strong winds and heavy rains, and warned everyone of the possible danger.|conveyed|associated|interpreted|predicted|D|v.|預測
+108|4|Different airlines have different ______ for carry-on luggage, but many international airlines limit a carry-on piece to 7 kilograms.|landmarks|restrictions|percentages|circumstances|B|n.|限制
+108|5|Many people were happy that the government had finally ______ Children's Day as a national holiday.|appointed|declared|performed|involved|B|v.|宣布
+108|6|To reach the goal of making her company a market leader, Michelle ______ a plan to open ten new stores around the country this year.|advised|occupied|proposed|recognized|C|v.|提議
+108|7|Silence in some way is as ______ as speech. It can be used to show, for example, disagreement or lack of interest.|sociable|expressive|reasonable|objective|B|adj.|有表現力的
+108|8|This TV program is designed for children, ______ for those under five. It contains no violence or strong language.|particularly|sensibly|moderately|considerably|A|adv.|特別地
+108|9|Tommy, please put away the toys in the box, or you might ______ on them and hurt yourself.|stumble|graze|navigate|dwell|A|v.|絆倒;失足
+108|10|The ______ costume party, held every September, is one of the biggest events of the school year.|initial|annual|evident|occasional|B|adj.|年度的;每年的
+109|1|After hours of discussion, our class finally reached the ______ that we would go to Hualien for our graduation trip.|balance|conclusion|definition|harmony|B|n.|結論
+109|2|Jane ______ her teacher by passing the exam with a nearly perfect score; she almost failed the course last semester.|bored|amazed|charmed|informed|B|v.|使驚訝
+109|3|The vacuum cleaner is not working. Let's send it back to the ______ to have it inspected and repaired.|lecturer|publisher|researcher|manufacturer|D|n.|製造商
+109|4|Due to the global financial crisis, the country's exports ______ by 40 percent last month, the largest drop since 2000.|flattered|transformed|relieved|decreased|D|v.|減少
+109|5|The potato chips have been left uncovered on the table for such a long time that they no longer taste fresh and ______.|solid|crispy|original|smooth|B|adj.|酥脆的
+109|6|The townspeople built a ______ in memory of the brave teacher who sacrificed her life to save her students from a burning bus.|monument|refugee|souvenir|firecracker|A|n.|紀念碑
+109|7|The students in Professor Smith's classical Chinese class are required to ______ poems by famous Chinese poets.|construct|expose|recite|install|C|v.|背誦
+109|8|Although Mr. Tang claims that the house belongs to him, he has not offered any proof of ______.|convention|relationship|insurance|ownership|D|n.|所有權
+109|9|Ancient Athens, famous for its early development of the democratic system, is often said to be the ______ of democracy.|mission|target|cradle|milestone|C|n.|搖籃;發源地
+109|10|The candy can no longer be sold because it was found to contain artificial ingredients far beyond the ______ level.|abundant|immense|permissible|descriptive|C|adj.|容許的
+110|1|Tom is really a naughty boy. He likes to ______ and play jokes on his younger sister when their parents are not around.|alert|spare|tease|oppose|C|v.|戲弄;取笑
+110|2|Elderly shoppers in this store are advised to take the elevator rather than the ______, which may move too fast for them to keep their balance.|airway|operator|escalator|instrument|C|n.|電扶梯
+110|3|Upon hearing its master's call, the dog wagged its tail, and followed her out of the room ______.|obediently|apparently|logically|thoroughly|A|adv.|順從地
+110|4|Since many of our house plants are from humid jungle environments, they need ______ air to keep them green and healthy.|moist|stale|crisp|fertile|A|adj.|潮濕的
+110|5|The skydiver managed to land safely after jumping out of the aircraft, even though her ______ failed to open in midair.|glimpse|latitude|segment|parachute|D|n.|降落傘
+110|6|The invention of the steam engine, which was used to power heavy machines, brought about a ______ change in society.|persuasive|harmonious|conventional|revolutionary|D|adj.|革命性的
+110|7|To encourage classroom ______, the teacher divided the class into groups and asked them to solve a problem together with their partners.|operation|interaction|adjustment|explanation|B|n.|互動
+110|8|Lisa ______ onto the ground and injured her ankle while she was playing basketball yesterday.|buried|punched|scattered|tumbled|D|v.|跌倒;摔落
+110|9|Hundreds of residents received free testing ______ from the city government to find out if their water contained any harmful chemicals.|kits|trials|zones|proofs|A|n.|成套用具;檢測包
+110|10|The 2011 Nobel Peace Prize was awarded ______ to three women for the efforts they made in fighting for women's rights.|actively|earnestly|jointly|naturally|C|adv.|共同地
+111|1|When Jeffery doesn't feel like cooking, he often orders pizza online and has it ______ to his house.|advanced|delivered|offered|stretched|B|v.|遞送;送達
+111|2|Jane is the best ______ I have ever had. I cannot imagine running my office without her help.|assistant|influence|contribution|politician|A|n.|助理
+111|3|The temple celebrated Mazu Festival by hosting ten days of lion dances, Taiwanese operas, and traditional hand ______ shows.|chat|quiz|puppet|variety|C|n.|木偶
+111|4|The new vaccine was banned by the Food and Drug Administration due to its ______ fatal side effects.|potentially|delicately|ambiguously|optionally|A|adv.|潛在地
+111|5|______ the photos with dates and keywords help you sort them easily in your file.|Tagging|Flocking|Rolling|Snapping|A|v.|加標籤
+111|6|An ______ person is usually pleasant and easy to get along with, but don't expect that he or she will always say "yes" to everything.|enormous|intimate|agreeable|ultimate|C|adj.|隨和的
+111|7|Hidden deep in a small alley among various tiny shops, the entrance of the Michelin star restaurant is barely ______ to passersby.|identical|visible|available|remarkable|B|adj.|看得見的
+111|8|The original budget for my round-island trip was NT$5,000, but the ______ cost is likely to be 50 percent higher.|moderate|absolute|promising|eventual|D|adj.|最終的
+111|9|After watching a TV program on natural history, Adam decided to go on a ______ for dinosaur fossils in South Dakota.|trial|route|strike|quest|D|n.|探尋
+111|10|With pink cherry blossoms blooming everywhere, the valley ______ like a young bride under the bright spring sunshine.|bounces|blushes|polishes|transfers|B|v.|臉紅;泛紅
+112|1|The bus driver often complains about chewing gum found under passenger seats because it is ______ and very hard to remove.|sticky|greasy|clumsy|mighty|A|adj.|黏的
+112|2|Jesse is a talented model. He can easily adopt an elegant ______ for a camera shoot.|clap|toss|pose|snap|C|n.|姿勢
+112|3|In order to draw her family tree, Mary tried to trace her ______ back to their arrival in North America.|siblings|commuters|ancestors|instructors|C|n.|祖先
+112|4|Upon the super typhoon warning, Nancy rushed to the supermarket—only to find the shelves almost ______ and the stock nearly gone.|blank|bare|hollow|queer|B|adj.|空的;光禿禿的
+112|5|Even though Jack said "Sorry!" to me in person, I did not feel any ______ in his apology.|liability|generosity|integrity|sincerity|D|n.|誠意
+112|6|My grandfather has astonishing powers of ______. He can still vividly describe his first day at school as a child.|resolve|fraction|privilege|recall|D|n.|記憶力;回想
+112|7|Recent research has found lots of evidence to ______ the drug company's claims about its "miracle" tablets for curing cancer.|provoke|counter|expose|convert|B|v.|反駁
+112|8|Corrupt officials and misguided policies have ______ the country's economy and burdened its people with enormous foreign debts.|crippled|accelerated|rendered|ventured|A|v.|使癱瘓;嚴重削弱
+112|9|As a record number of fans showed up for the baseball final, the highways around the stadium were ______ with traffic all day.|choked|disturbed|enclosed|injected|A|v.|堵塞
+112|10|Studies show that the ______ unbiased media are in fact often deeply influenced by political ideology.|undoubtedly|roughly|understandably|supposedly|D|adv.|據稱;據說
+113|1|People who desire a ______ figure should exercise regularly and maintain healthy eating habits.|spicy|slender|slight|slippery|B|adj.|苗條的
+113|2|Watching the sun ______ from a sea of clouds is a must-do activity for all visitors to Ali Mountain.|emerging|flashing|rushing|floating|A|v.|浮現;升起
+113|3|Do you know what time the next bus is ______? I've been waiting here for more than 30 minutes.|apt|due|bound|docked|B|adj.|預定到達的
+113|4|The roasting heat and high ______ made me feel hot and sticky, no matter what I did to cool off.|density|humidity|circulation|atmosphere|B|n.|濕度
+113|5|Artwork created by truly great artists such as Picasso and Monet will no doubt ______ the test of time.|stay|take|serve|stand|D|v.|經得起(考驗)
+113|6|In some countries, military service is ______ for men only; women do not have to serve in the military.|forceful|realistic|compulsory|distinctive|C|adj.|強制的;義務的
+113|7|The team complained that its leader always took the ______ for all the hard work done by the team members.|advantage|revenge|remedy|credit|D|n.|功勞
+113|8|Located at the center of the city, the business hotel ______ not only good service but also convenient public transport.|proposes|contains|promises|confirms|C|v.|保證(會有)
+113|9|As blood supplies have fallen to a critically low level, many hospitals are making an ______ for the public to donate blood.|appeal|approach|operation|observation|A|n.|呼籲
+113|10|David felt disappointed when he found out that he could not choose his study partners, but would be ______ placed in a study group.|eligibly|randomly|apparently|consequently|B|adv.|隨機地
+114|1|If you put a ______ under a leaking faucet, you will be surprised at the amount of water collected in 24 hours.|border|timer|container|marker|C|n.|容器
+114|2|The local farmers' market is popular as it offers a variety of fresh seasonal ______ to people in the community.|produce|fashion|brand|trend|A|n.|農產品
+114|3|As the years have passed by, many of my childhood memories are already ______; I can no longer recall clearly what happened back then.|blurring|trimming|draining|glaring|A|v.|變模糊
+114|4|Racist remarks are by nature ______ and hurtful, and should be avoided on all occasions.|excessive|furious|offensive|stubborn|C|adj.|冒犯的
+114|5|Not satisfied with the first ______ of her essay, Mary revised it several times before turning it in to the teacher.|text|brush|draft|plot|C|n.|草稿
+114|6|Left ______ for years, the deserted house was filled with a thick coating of dust and a smell of old damp wood.|casual|fragile|remote|vacant|D|adj.|空著的;無人居住的
+114|7|The high school student showed ______ courage when she helped the old man escape from the fire.|gigantic|exclusive|multiple|enormous|D|adj.|極大的
+114|8|Publicly financed projects are often ______ or delayed during tough economic times due to a lack of resources.|halted|hatched|possessed|reinforced|A|v.|中止;使停頓
+114|9|Despite his busy schedule, the President ______ the school's graduation ceremony with his presence and a heartwarming speech.|praised|graced|addressed|credited|B|v.|為…增光;蒞臨
+114|10|The manager of the company was sued for ______ abusing his colleagues, calling them "hopeless losers."|verbally|dominantly|legitimately|relevantly|A|adv.|言語上地;口頭上地
+115|1|The mayor has such a ______ schedule that it takes weeks to arrange an interview with her.|hasty|tight|diligent|routine|B|adj.|緊湊的;排滿的
+115|2|Jane started as an ______ art designer, but now she has a professional studio of her own.|official|instant|amateur|elementary|C|adj.|業餘的
+115|3|The teaching ______ at the famous high school soon attracted more than a dozen well-qualified applicants.|career|vacancy|expectation|inspiration|B|n.|職缺
+115|4|Designed by a young engineer, the new product has created far more profit than ______ expected.|initially|genuinely|alternatively|fundamentally|A|adv.|起初;原先
+115|5|It has been confirmed that a balanced ______ of fruit and vegetables is a key element to good health.|dimension|integration|provision|consumption|D|n.|攝取;消耗
+115|6|As a shy boy afraid of making public appearances, Timmy ______ the thought of speaking before large audiences.|dreads|stresses|wanders|escapes|A|v.|懼怕
+115|7|To the newly-crowned winner of the piano competition, music is his life's ______, which he has devoted himself to whole-heartedly.|resource|impact|passion|emphasis|C|n.|熱情;熱愛
+115|8|The drunk driver who shouted at passers-by and ______ them with glass bottles was quickly arrested by the police.|shattered|assaulted|overturned|condemned|B|v.|攻擊;襲擊
+115|9|There were so many people at the bus station that I had to ______ my way through the crowd to board the bus in time.|crash|tumble|elbow|struggle|C|v.|用手肘推擠(前進)
+115|10|Deadly shootings on US campuses have raised ______ concerns about how to prevent such tragic incidents from happening again.|swift|brutal|harsh|grave|D|adj.|嚴重的;重大的

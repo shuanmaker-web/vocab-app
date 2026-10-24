@@ -40,3 +40,9 @@
 - 題目為教材照片轉錄,**答案與中文釋義已與教材官方解答(`tools/answers_all.txt`,由解答頁照片轉錄)逐題核對**:`python3 tools/compare_answers.py` 可重新比對,`build_material.py` 若發現答案與官方解答不同會直接報錯。題目文字(照片轉錄)仍可能有零星抄寫誤差,見 `tools/CHECKLIST_uncertain.md`。
 - 改動任何檔案後,請把 `sw.js` 的 `VERSION` 加 1,學生才會拿到新版。
 - 備份檔現已包含練習題本作答紀錄。
+
+## 更新:學測歷屆試題(詞彙題)
+- 「學測單字表」也有題目分頁(圖示與 Level 3-5 的練習題本相同,標籤為「歷屆試題」):收錄大考中心 106–115 學年度學測英文第壹部分「詞彙題」第 1–10 題,共 100 題,以學年度分組,作答、錯題重測、進度計算與練習題本相同。
+- 資料:`data/gsat_questions.json`,由 `python3 tools/build_gsat_exam.py` 從 `tools/gsat_exam/part1_vocab_106-115.txt`(題目)與 `tools/gsat_exam/official_keys.txt`(官方答案,獨立輸入)產生;兩者答案不符、題號缺漏或空格數不對都會直接報錯。
+- 題目來自大考中心公布的試題 PDF;112 學年度各題與 111 第 4 題因 PDF 文字擷取遺失底線,空格位置為依句意補回,請對照原卷抽查。答案單字的中文釋義為自編。
+- 新增學年度:在 `part1_vocab_106-115.txt` 加 10 行、在 `official_keys.txt` 加一行官方答案,執行 build 腳本,再把 `sw.js` 的 `VERSION` 加 1。
