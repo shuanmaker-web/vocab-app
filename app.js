@@ -410,7 +410,7 @@ function applyTheme() {
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v84';
+const APP_VERSION = 'v85';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
@@ -570,6 +570,7 @@ const qSt = id => S.qstats.get(id);
 const bankQs = (bank = S.bank) => S.questions.filter(q => q.bank === bank); // questions of one bank (教材 / 學測)
 const unitName = (u, bank = S.bank, long = false) => bank === 'gsat' ? (long ? `${u} 學年度學測` : `${u} 學測`) : `Unit ${u}`;
 const qKind = q => q.bank === 'gsat' ? '詞彙題' : QTYPES[q.type];
+const srcNote = q => q.bank === 'gsat' ? `<div class="small muted src-note">出處:${q.unit} 學年度學科能力測驗(學測)英文 · 第壹部分 詞彙題 第 ${q.no} 題</div>` : '';
 function qTotals(filter = () => true, bank = S.bank) {
   let total = 0, tried = 0, ok = 0, wrong = 0, first = 0;
   for (const q of bankQs(bank)) { if (!filter(q)) continue; total++; const st = qSt(q.id); if (!st) continue; tried++; if (st.last) ok++; else wrong++; if (st.firstOk) first++; }
@@ -615,7 +616,7 @@ function renderPractice() {
 function renderUnit() {
   const u = S.punit, gsat = S.bank === 'gsat', qs = bankQs().filter(q => q.unit === u), t = qTotals(q => q.unit === u);
   const left = qs.filter(q => !qSt(q.id)), wrong = qs.filter(q => qSt(q.id) && !qSt(q.id).last);
-  const item = q => `<div class="witem"><div class="muted small">第 ${q.no} 題 · ${qKind(q)} · 答錯 ${(qSt(q.id).n - qSt(q.id).ok)} 次</div><div>${sentenceHtml(q, true)}</div><div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`;
+  const item = q => `<div class="witem"><div class="muted small">第 ${q.no} 題 · ${qKind(q)} · 答錯 ${(qSt(q.id).n - qSt(q.id).ok)} 次</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`;
   const types = ['all', ...['fill', 'mcq', 'match'].filter(x => wrong.some(q => q.type === x))], f = types.includes(S.wrongType) ? S.wrongType : 'all';
   const shown = wrong.filter(q => f === 'all' || q.type === f), partial = left.length > 0 && left.length < qs.length;
   app.innerHTML = `<div class="topbar"><button class="icon-btn" data-pact="back" aria-label="返回">←</button><h1 style="font-size:1.25rem">${unitName(u, S.bank, true)}</h1></div>
@@ -639,7 +640,7 @@ function renderEx() {
   if (s.pos >= s.queue.length) return renderExSummary();
   const q = qById[s.queue[s.pos]], c = exQuestionState(q), pct = Math.round(s.results.length / s.total * 100), done = c.result !== null;
   let body = `<div class="topbar"><button class="icon-btn" data-xact="quit" aria-label="離開">✕</button><div class="bar"><i style="width:${pct}%"></i></div><span class="muted small">${s.results.length}/${s.total}${s.retest ? ' · 重測' : ''}</span></div>`;
-  body += `<div class="card"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}</div><p class="qtext">${sentenceHtml(q, done)}</p>${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
+  body += `<div class="card"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}</div><p class="qtext">${sentenceHtml(q, done)}</p>${srcNote(q)}${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
   if (q.type === 'fill') {
     if (!done) body += `<form id="ex-form" style="margin-top:14px" autocomplete="off"><input class="field" id="ex-in" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入完整單字" aria-label="答案"><div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-xact="hint" ${c.hint ? 'disabled' : ''}>提示</button><button type="button" class="btn ghost" data-xact="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
     else {
@@ -662,7 +663,7 @@ function renderExSummary() {
   const s = S.session, ok = s.results.filter(r => r.ok).length, miss = s.results.filter(r => !r.ok).map(r => qById[r.id]);
   const left = wrongIds().length;
   app.innerHTML = `<div class="stack"><section class="card q"><h1>${ok === s.total ? '全部答對!🎉' : '完成這一回'}</h1><p class="zh">${ok} / ${s.total}</p><p class="muted">答對率 ${Math.round(ok / s.total * 100)}% · 用時 ${Math.max(1, Math.round((Date.now() - s.t0) / 60000))} 分鐘</p>${s.retest ? `<p class="small">錯題本還剩 <b>${left}</b> 題</p>` : ''}</section>
-    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題</div><div>${sentenceHtml(q, true)}</div><div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`).join('')}</section>` : ''}
+    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`).join('')}</section>` : ''}
     ${miss.length ? `<button class="btn block" data-xact="redo-miss">馬上重測這 ${miss.length} 題</button>` : ''}
     ${left && !miss.length ? '<button class="btn block" data-xact="retest-all">繼續重測錯題本</button>' : ''}
     <button class="btn ghost block" data-xact="quit">回練習題本</button></div>`;
