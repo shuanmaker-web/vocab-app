@@ -22,7 +22,7 @@ function extraEntryCards() {
     <button class="btn block" data-ext="cf">進入易混淆字<span class="muted small"> · ${c.ok}/${c.total} 題答對</span></button></section>`;
 }
 const xBack = (to, label = '返回') => `<div class="topbar"><button class="icon-btn" data-ext="${to}" aria-label="${label}">←</button>`;
-const xTag = w => w.gsat ? `<span class="muted small">L${w.lv}</span>` : '<span class="muted small">超出學測字表</span>';
+const xTag = w => (w.gsat ? `L${w.lv}` : '超出學測字表') + (w.learn ? ' · 先認識,不出題' : '');
 function renderExtraView() {
   const e = S.extra, v = S.pview; if (!e) { S.pview = 'main'; return renderPractice(); }
   if (v === 'xup') { // list of sets
@@ -31,7 +31,7 @@ function renderExtraView() {
   } else if (v === 'xupset') {
     const s = e.upgrade.sets.find(x => x.id === S.xid), m = xProg(xq('up', s.id, 2)), f = xProg(xq('up', s.id, 3)), n = s.bases.reduce((a, b) => a + b.words.length, 0);
     const wrong = xq('up', s.id).filter(q => qSt(q.id) && !qSt(q.id).last).length;
-    app.innerHTML = `${xBack('up')}<h1 style="font-size:1.25rem">${esc(s.name.split('|')[0])} · ${esc(s.en)}</h1></div><div class="stack"><section class="card"><p class="small muted">${n} 個升級字,${s.bases.length} 個基本字。建議照順序做。</p>
+    app.innerHTML = `${xBack('up')}<h1 style="font-size:1.25rem">${esc(s.name.split('|')[0])} · ${esc(s.en)}</h1></div><div class="stack"><section class="card"><p class="small muted">${n} 個升級字,${s.bases.length} 個基本字。學習卡會列出全部(含 L1–L2 的字);L1–L2 的字只在學習卡認識,選擇題和拼字只考 L3 以上與超出字表的字。</p>
     <div class="stack" style="margin-top:12px;gap:10px">
       <button class="btn ghost block" data-ext="uplearn:${s.id}">① 學習卡:基本字 → 升級字</button>
       <button class="btn block" data-ext="upgo:${s.id}:2">② 選擇題(${m.total} 題 · 答對 ${m.ok})</button>
@@ -39,7 +39,7 @@ function renderExtraView() {
       <button class="btn ghost block" data-ext="upwrong:${s.id}" ${wrong ? '' : 'disabled'}>只重測錯題(${wrong})</button></div></section></div>`;
   } else if (v === 'xuplearn') {
     const s = e.upgrade.sets.find(x => x.id === S.xid);
-    app.innerHTML = `${xBack('upset:' + s.id)}<h1 style="font-size:1.25rem">學習卡 · ${esc(s.name.split('|')[0])}</h1></div><div class="stack">${s.bases.map(b => `<section class="card"><h2>${esc(b.base)} <span class="muted small">${esc(b.zh)}</span> →</h2>${b.words.map(w => `<div class="witem"><div class="row between"><b>${esc(w.w)}</b><span class="muted small">${esc(w.zh)} · ${xTag(w).replace(/<[^>]+>/g, '')}</span></div><div class="small">${esc(w.sent).replace(esc(w.w), `<mark class="ans">${esc(w.w)}</mark>`)}</div></div>`).join('')}</section>`).join('')}
+    app.innerHTML = `${xBack('upset:' + s.id)}<h1 style="font-size:1.25rem">學習卡 · ${esc(s.name.split('|')[0])}</h1></div><div class="stack">${s.bases.map(b => `<section class="card"><h2>${esc(b.base)} <span class="muted small">${esc(b.zh)}</span> →</h2>${b.words.map(w => `<div class="witem"><div class="row between"><b>${esc(w.w)}</b><span class="muted small">${esc(w.zh)} · ${xTag(w)}</span></div><div class="small">${esc(w.sent).replace(esc(w.w), `<mark class="ans">${esc(w.w)}</mark>`)}</div></div>`).join('')}</section>`).join('')}
     <button class="btn block" data-ext="upgo:${s.id}:2">前往 ② 選擇題</button></div>`;
   } else if (v === 'xcf') {
     const gs = e.confuse.groups;

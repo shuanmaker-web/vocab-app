@@ -27,18 +27,29 @@ for ln, raw in enumerate(open(f'{ROOT}/tools/extra/upgrade.txt', encoding='utf-8
     w, zh, sent = [s.strip() for s in p]
     if sent.count('___') != 1: die(f'upgrade.txt:{ln} need exactly one ___: {sent}'); continue
     x = gidx.get(w.lower())
-    base['words'].append({'w': w, 'zh': zh, 'lv': x['lv'] if x else 0, 'gsat': bool(x), 'sent': sent.replace('___', w)})
+    pos = (x['pos'].split()[0] if x and x['pos'] else 'adj.') if x else 'adj.'
+    base['words'].append({'w': w, 'zh': zh, 'lv': x['lv'] if x else 0, 'gsat': bool(x), 'pos': pos, 'learn': bool(x and x['lv'] in (1, 2)), 'sent': sent.replace('___', w)})
     base['words'][-1]['_raw'] = sent
 ALLW = [(s['id'], bw['w']) for s in SETS for b in s['bases'] for bw in b['words']]
 BLACK = set('sharp strong soft smooth rough coarse harsh shaky noisy prickly sticky cozy fuzzy bitter sour salty mild plain neat pale messy scruffy unique colorful exotic dynamic active burnt smoky rotten smelly stinky fishy crispy juicy flashing sparkling twinkling lush grand strong fruity greasy oily gooey slippery'.split())
 POOL = {'視覺': ['聽覺', '觸覺', '嗅覺', '味覺'], '聽覺': ['觸覺', '嗅覺', '味覺', '個性'], '觸覺': ['聽覺', '個性'],
         '嗅覺': ['聽覺', '觸覺', '個性'], '味覺': ['聽覺', '個性', '外貌'], '外貌': ['聽覺', '觸覺', '味覺'], '個性': ['聽覺', '嗅覺', '味覺', '觸覺']}
 PERSON_OK = set('blaring deafening roaring high-pitched melodious whispering hoarse raspy creaky lukewarm ice-cold floppy aromatic fragrant perfumed scented musty rancid appetizing mouth-watering scrumptious delicious tasty palatable nectarous peppery'.split())
+POS_OF = {bw['w']: bw['pos'] for s in SETS for b in s['bases'] for bw in b['words']}
+BASE_OF = {bw['w']: (s['id'], b['base']) for s in SETS for b in s['bases'] for bw in b['words']}
+PERSON_OK_LIST = sorted(PERSON_OK)
 words_by_set = {s['id']: [bw['w'] for b in s['bases'] for bw in b['words']] for s in SETS}
 name_by_id = {s['id']: s['name'] for s in SETS}
 id_by_name = {s['name'].split('|')[0]: s['id'] for s in SETS}
 def stem(w): return re.sub(r'(ing|ed|ly|y|e|s)$', '', w.lower())[:5]
 def distractors(sid, ans, rnd):
+    if name_by_id[sid] == '常用字':
+        pos = POS_OF[ans]; base_of = BASE_OF[ans]
+        if pos.startswith('v'):
+            pl = [w for w in words_by_set[sid] if POS_OF[w].startswith('v') and BASE_OF[w] != base_of and (' ' not in w)]
+        else:
+            pl = [w for w in PERSON_OK_LIST if w != ans]
+        pl = [w for w in dict.fromkeys(pl) if stem(w) != stem(ans)]; rnd.shuffle(pl); return pl[:3]
     pools = []
     for nm in POOL[name_by_id[sid]]:
         pools += [w for w in words_by_set[id_by_name[nm]]]
@@ -50,6 +61,7 @@ for s in SETS:
     k = 0
     for b in s['bases']:
         for bw in b['words']:
+            if bw['learn']: bw.pop('_raw'); continue
             k += 1; w = bw['w']; rnd = random.Random(f"{s['id']}-{w}")
             slug = re.sub(r'[^a-z]+', '-', w.lower()).strip('-')
             ds = distractors(s['id'], w, rnd)
@@ -57,9 +69,9 @@ for s in SETS:
             opts = ds + [w]; rnd.shuffle(opts)
             raw = bw.pop('_raw')
             UQ.append({'id': f'up-{s["id"]}-{slug}-m', 'unit': s['id'], 'no': k, 'type': 'mcq', 'extra': 'up', 'stage': 2, 'q': raw.replace('___', '______'),
-                       'ans': w, 'pos': 'adj.', 'zh': bw['zh'], 'full': bw['sent'], 'opts': opts})
+                       'ans': w, 'pos': bw['pos'], 'zh': bw['zh'], 'full': bw['sent'], 'opts': opts})
             UQ.append({'id': f'up-{s["id"]}-{slug}-f', 'unit': s['id'], 'no': k, 'type': 'fill', 'extra': 'up', 'stage': 3, 'q': raw.replace('___', w[0] + '_' * max(2, len(w) - 1)),
-                       'ans': w, 'pos': 'adj.', 'zh': bw['zh'], 'full': bw['sent']})
+                       'ans': w, 'pos': bw['pos'], 'zh': bw['zh'], 'full': bw['sent']})
 # ---------- 易混淆字 ----------
 GR = []; CQ = []; g = None
 for ln, raw in enumerate(open(f'{ROOT}/tools/extra/confuse.txt', encoding='utf-8'), 1):
@@ -93,4 +105,4 @@ if err:
 out = {'meta': {'note': '寫作升級 + 易混淆字;由 tools/build_extra.py 自 tools/extra/*.txt 產生', 'upgradeWords': len(ALLW), 'confuseGroups': len(GR)},
        'upgrade': {'sets': SETS, 'questions': UQ}, 'confuse': {'groups': GR, 'questions': CQ}}
 json.dump(out, open(f'{ROOT}/data/extra.json', 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-print(f'upgrade: {len(SETS)} sets, {len(ALLW)} words, {len(UQ)} questions; confuse: {len(GR)} groups, {len(CQ)} questions')
+print(f'upgrade: {len(SETS)} sets, {len(ALLW)} words ({sum(1 for s in SETS for b in s["bases"] for w in b["words"] if w["learn"])} learn-only L1–L2), {len(UQ)} questions; confuse: {len(GR)} groups, {len(CQ)} questions')

@@ -82,6 +82,6 @@ IndexedDB** — it is not on any server and cannot be recovered if a change corr
 - 中文釋義一律用官方解答的寫法(單一「…」,sb./sth./one's 統一);題目/單字卡兩邊都要改。
 
 ## 寫作升級 + 易混淆字 (extra.js, data/extra.json) — added 2026-10-25, sw v94
-- Source text: `tools/extra/upgrade.txt` (基本字 → 升級字, 7 sets: 視覺/聽覺/觸覺/嗅覺/味覺/外貌/個性, 151 words incl. 78 not in GSAT list, kept on purpose) and `tools/extra/confuse.txt` (29 groups). Build: `python3 tools/build_extra.py` → `data/extra.json` (touches no other data file).
+- Source text: `tools/extra/upgrade.txt` (基本字 → 升級字, 8 sets: 視覺/聽覺/觸覺/嗅覺/味覺/外貌/個性, 211 words in 8 sets (new 常用字 set: nice/bad/happy/say/walk/look…; 78 words not in GSAT list kept on purpose; L1–L2 words are 學習卡-only, no questions)) and `tools/extra/confuse.txt` (29 groups). Build: `python3 tools/build_extra.py` → `data/extra.json` (touches no other data file).
 - UI lives in the 練習題本 tab (renamed from 歷屆試題) of the 學測 bank (two cards at the top). Questions reuse the existing practice engine (mcq/fill) with own ids `up-…`/`cf-…` in the existing `qstats` store — no schema change. Upgrade sets have 3 stages: 學習卡 → 選擇題 → 拼字.
 - Sentences/distractors were written by Claude → teacher to review before/after first push.
