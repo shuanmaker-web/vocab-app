@@ -615,8 +615,10 @@ function renderPractice() {
   if (S.pview && S.pview[0] === 'x' && typeof renderExtraView === 'function') return renderExtraView();
   if (!bankQs().length) { app.innerHTML = `<h1>${B.qtitle}</h1><p class="muted" style="margin-top:12px">尚未匯入題庫(<code>${B.qfile}</code>)。</p>`; return; }
   if (S.pview === 'unit') return renderUnit();
+  const sub = gsat && S.extra && typeof extraSubHead === 'function', psub = sub ? (S.psub || 'exam') : 'exam';
+  if (sub && psub !== 'exam') { app.innerHTML = `<h1>練習題本</h1>${extraSubHead(psub)}${extraSubBody(psub)}`; return; }
   const t = qTotals(), w = t.wrong, units = unitList();
-  app.innerHTML = `<h1>${B.qtitle}</h1>${gsat ? `<p class="muted small" style="margin:4px 0 0">大考中心歷年學科能力測驗英文科 · 第壹部分 詞彙題(第 1–10 題)</p>` : ''}<div class="stack" style="margin-top:12px">${typeof extraEntryCards === 'function' ? extraEntryCards() : ''}
+  app.innerHTML = `<h1>${sub ? '練習題本' : B.qtitle}</h1>${sub ? extraSubHead('exam') : ''}${gsat ? `<p class="muted small" style="margin:4px 0 0">大考中心歷年學科能力測驗英文科 · 第壹部分 詞彙題(第 1–10 題)</p>` : ''}<div class="stack" style="margin-top:12px">
   <section class="card"><div class="row between"><h2>總進度</h2><span class="muted small">共 ${t.total} 題 · ${units.length} 個${uw}</span></div>
     <div class="bigscore"><b>${t.ok}</b><span>/ ${t.total} 題目前答對</span></div>
     <div class="seg"><i class="g" style="width:${t.ok / t.total * 100}%"></i><i class="r" style="width:${t.wrong / t.total * 100}%"></i></div>
