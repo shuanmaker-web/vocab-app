@@ -86,8 +86,8 @@ const cardId = (bank, wid, type) => `${bank}:${wid}:${type}`;
 // GSAT multiple choice has its own cards (schedule + daily new-word quota), so it can re-do the same words as the flashcards.
 const typeOf = (mode, bank) => (mode === 'spell' ? 'spell' : mode === 'mcq' && bank === 'gsat' ? 'mcq' : 'recog');
 const recogCards = (bank, wid) => [S.cards.get(cardId(bank, wid, 'recog')), bank === 'gsat' ? S.cards.get(cardId(bank, wid, 'mcq')) : null].filter(Boolean); // flashcard (+ GSAT multiple-choice) cards of a word
-// 「已學」: GSAT = answered in BOTH multiple choice and spelling (flashcards alone don't count); other banks = any 2 of the 3 modes.
-const isLearned = (bank, wid) => { const m = S.modes?.get(bank + ':' + wid); return !!m && (bank === 'gsat' ? m.has('mcq') && m.has('spell') : m.size >= 2); };
+// 「已學」(all banks): answered in BOTH multiple choice and spelling (flashcards alone don't count).
+const isLearned = (bank, wid) => { const m = S.modes?.get(bank + ':' + wid); return !!m && m.has('mcq') && m.has('spell'); };
 
 function makeFsrs() {
   S.fsrs = FSRS.fsrs(FSRS.generatorParameters({ request_retention: S.settings.retention, enable_fuzz: true, learning_steps: [], relearning_steps: [] }));
@@ -301,7 +301,7 @@ function bankCard(bank) {
     const c = countsFor(bank, m), n = c.due + c.newLeft;
     return `<button class="mode" data-start="${bank}:${m}" ${c.total ? '' : 'disabled'}><b>${MODES[m]}</b><span>${n ? `${c.due} 複習 · ${c.newLeft} 新` : '今日完成 ✓'}</span></button>`;
   }).join('');
-  const learned = ws.filter(w => bank === 'gsat' ? isLearned(bank, w.id) : recogCards(bank, w.id).length).length;
+  const learned = ws.filter(w => isLearned(bank, w.id)).length;
   return `<section class="card bank"><div class="row between"><h2>${info.name}</h2><span class="bank-stat"><b>${learned}</b> / ${ws.length}<small>已學</small></span></div><p class="muted small" style="margin:2px 0 0">目前範圍 ${scopeWords(bank).length} 字</p>${chips}<div class="modes">${modes}</div>${sample}</section>`;
 }
 const deco = (x, y, size, color, rot = 0, burst = false) => `<svg class="deco" style="left:${x};top:${y};width:${size}px;height:${size}px;transform:rotate(${rot}deg)" viewBox="0 0 24 24" aria-hidden="true"><polygon points="${burst ? STAR8 : STAR5}" fill="${color}" stroke-linejoin="round"/></svg>`;
@@ -369,10 +369,10 @@ function renderProgress() {
     if (bankQs('material').length) html += qProgressHtml('material', '練習題本');
     if (mat.length) {
       let learned = 0, mastered = 0, due = 0;
-      for (const w of mat) { const key = 'material:' + w.id, modes = S.modes?.get(key)?.size || 0, c = S.cards.get(cardId('material', w.id, 'recog')); if (modes >= 2) learned++; if (S.spellOK?.has(key) && c && c.stability >= 21) mastered++; if (c && c.due <= now) due++; }
+      for (const w of mat) { const key = 'material:' + w.id, c = S.cards.get(cardId('material', w.id, 'recog')), lrn = isLearned('material', w.id); if (lrn) learned++; if (lrn && S.spellOK?.has(key) && c && c.stability >= 21) mastered++; if (c && c.due <= now) due++; } // mastered ⊆ learned
       html += `<div class="sec-t" style="margin-top:18px">單字學習</div><div class="stat-grid"><div class="stat pstat"><b>${learned}</b><span>已學 / ${mat.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟 / ${mat.length}</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>
       <div class="pbar" style="margin-top:10px"><i class="g" style="width:${learned / mat.length * 100}%"></i><em>${Math.round(learned / mat.length * 100)}%</em></div><div class="small muted" style="margin-top:6px">已學的單字佔全部 ${mat.length} 個的比例</div>
-      <p class="small muted" style="margin-top:6px">已學 = 字卡／選擇題／拼字 任 2 種答過;精熟 = 拼字答對過 且 記憶穩定度 ≥ 21 天</p>`;
+      <p class="small muted" style="margin-top:6px">已學 = 選擇題與拼字都答過(只用字卡不算);精熟 = 已學 且 拼字答對過 且 記憶穩定度 ≥ 21 天</p>`;
     }
     html += '</section>';
   }
@@ -423,7 +423,7 @@ function applyTheme() {
   document.documentElement.style.setProperty('--page', c);
   const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = c;
 }
-const APP_VERSION = 'v89';
+const APP_VERSION = 'v91';
 function renderSettings() {
   const s = S.settings;
   const days = s.lastBackupAt ? Math.floor((Date.now() - s.lastBackupAt) / DAY) : null;
