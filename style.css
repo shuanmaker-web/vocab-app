@@ -397,6 +397,9 @@ button.card.bank.enter:active{transform:translate(2px,2px);box-shadow:2px 2px 0 
 .hit-material{left:50%;top:26%;width:47%;height:68%}
 .land-logo{display:block;width:min(78%,340px);height:auto;margin:clamp(16px,8vh,80px) auto 0;user-select:none;-webkit-user-drag:none}
 .land .duo-img{margin-top:clamp(24px,6vh,60px)}
+/* landing: the two-blob illustration floats gently up and down (off when the phone asks for reduced motion) */
+@media (prefers-reduced-motion:no-preference){.land .duo-img{animation:duo-bob 2.6s ease-in-out infinite}}
+@keyframes duo-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 
 html[data-view="landing"],html[data-view="landing"] body{background:var(--page) !important}
 
