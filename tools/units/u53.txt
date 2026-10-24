@@ -1,6 +1,6 @@
 U|53
 F|1|This area is not open to any tourists or hunters for the purpose of w______e protection.|wildlife|n.|野生生物
-F|2|The coach s______ted another player for the injured captain during the game.|substituted|v.|以……代替……|substitute
+F|2|The coach s______ted another player for the injured captain during the game.|substituted|v.|以…代替…|substitute
 F|3|When peaceful talks failed, the workers r______ted to striking to make their complaints heard.|resorted|v.|訴諸於|resort
 F|4|I s______ed on the doorstep when I entered the restaurant, but, thankfully, I wasn't injured.|stumbled|v.|絆倒|stumble
 F|5|One way to distinguish m______ls from other animals is that they usually have hair or fur covering most of their skin.|mammals|n.|哺乳動物|mammal

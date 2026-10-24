@@ -107,6 +107,7 @@ def main():
                 if s == 'missing' and part == w: src = 'missing'
             zh = ' / '.join(zhs); src = 'ecdict' if zh else 'missing'
             if key in overrides: zh, src = overrides[key], 'manual'
+            zh = re.sub(r'\.{2,}|…+', '…', zh)                      # one ellipsis style everywhere: …
             words.append(dict(id='g-' + slug(w), w=w, pos=pos, zh=zh, lv=e['lv']))
             rows.append((e['lv'], w, pos, zh, src))
     missing = [r for r in rows if not r[3]]

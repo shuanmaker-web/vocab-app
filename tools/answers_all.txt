@@ -78,7 +78,7 @@ B|13|A|逮捕
 B|14|C|穩定的
 B|15|E|比率
 B|16|C|之前的
-B|17|F|為……配置組員
+B|17|F|為…配置組員
 B|18|D|暫時的
 B|19|E|緊急情況
 B|20|A|存款
@@ -217,7 +217,7 @@ F|5|multiply|乘以
 M|6|C|可移動的;行動電話(mobile phone)
 M|7|D|旅行者
 M|8|C|曲調
-M|9|A|給……穿衣
+M|9|A|給…穿衣
 M|10|B|裝飾
 B|11|B|婚禮
 B|12|C|不合理的
@@ -737,7 +737,7 @@ U|36
 F|1|recipe|食譜
 F|2|complicated|複雜的
 F|3|objection|異議
-F|4|alert|對……提防(on the alert for...)
+F|4|alert|對…提防(on the alert for…)
 F|5|departure|出發
 M|6|B|習慣性的
 M|7|C|犯(罪)
@@ -757,7 +757,7 @@ B|20|E|把握當下(seize the day)
 U|37
 F|1|biology|生物學
 F|2|encountered|碰見
-F|3|mercy|任由……擺布(be at the mercy of)
+F|3|mercy|任由…擺布(be at the mercy of)
 F|4|depression|憂鬱症
 F|5|financial|財務的;金融的
 M|6|D|擁有
@@ -1004,7 +1004,7 @@ B|15|F|慰問
 B|16|A|點頭之交
 B|17|D|尊敬的
 B|18|F|繼續進行
-B|19|B|倚;靠(lean... against...)
+B|19|B|倚;靠(lean… against…)
 B|20|C|櫃臺
 U|49
 F|1|fantasy|幻想
@@ -1063,12 +1063,12 @@ B|11|E|獨特的
 B|12|C|當代的
 B|13|F|經營管理的;有權執行決策的
 B|14|B|(疾病)傳染的
-B|15|A|(與……)一致
+B|15|A|(與…)一致
 B|16|D|全體的
 B|17|E|廣泛的
 B|18|A|改變
 B|19|C|能力
-B|20|B|具有……的特徵
+B|20|B|具有…的特徵
 U|52
 F|1|widespread|普遍的
 F|2|highlight|最精采處
@@ -1092,7 +1092,7 @@ B|19|B|觀念
 B|20|D|禁止
 U|53
 F|1|wildlife|野生生物
-F|2|substituted|以……代替……
+F|2|substituted|以…代替…
 F|3|resorted|訴諸於
 F|4|stumbled|絆倒
 F|5|mammals|哺乳動物
@@ -1257,4 +1257,4 @@ B|16|B|然而
 B|17|F|無窮無盡;無止境的(know no bounds)
 B|18|A|大腿
 B|19|C|連續的
-B|20|D|(在……)之中
+B|20|D|(在…)之中

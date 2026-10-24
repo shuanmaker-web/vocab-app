@@ -14,10 +14,10 @@ B|11|The artist used bold shapes and colors, giving his paintings a(n) ______ st
 B|12|Vivian prefers classical music to ______ music; she simply can't stand rock and pop music.|C|adj.|當代的
 B|13|______ positions require not only experience but also strong communication and problem-solving skills.|F|adj.|經營管理的;有權執行決策的
 B|14|The disease is highly ______. In order to stop it from spreading, the government is urging people to get vaccinated.|B|adj.|(疾病)傳染的
-B|15|Jason is an honorable businessperson; everything he does is in ______ with the law, and he never cheats his clients.|A|n.|(與……)一致
+B|15|Jason is an honorable businessperson; everything he does is in ______ with the law, and he never cheats his clients.|A|n.|(與…)一致
 K|16-20|altered;characterized;capability;corporate;extensive;conformed
 B|16|Protecting public resources should be treated as a(n) ______ responsibility in every community.|D|adj.|全體的
 B|17|Leo did ______ research on the features and prices of different cars before he finally bought one.|E|adj.|廣泛的
 B|18|We ______ our travel plans at the last minute because a big typhoon is coming. We will just stay at the hotel and do some shopping.|A|v.|改變|alter
 B|19|Roger's parents always believed that he had the ______ to achieve great success in music, and sure enough, he is now a world-renowned pianist.|C|n.|能力
-B|20|The director's movies are ______ by a dark sense of humor and surprising plot twists.|B|v.|具有……的特徵|characterize
+B|20|The director's movies are ______ by a dark sense of humor and surprising plot twists.|B|v.|具有…的特徵|characterize
