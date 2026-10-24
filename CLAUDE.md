@@ -71,3 +71,12 @@ IndexedDB** — it is not on any server and cannot be recovered if a change corr
 ## Backup
 - A full project zip was delivered to the owner in chat on 2026-10-20; the repo itself is
   now the source of truth.
+
+## ⚠️ 字彙王 (教材) 資料:不要執行 `tools/build_material.py`
+- `data/material.json` / `data/questions.json` 共 **75 單元(1,492 字、1,500 題)**,但 `tools/units/` 只有 **u01–u60**。
+  執行 `build_material.py` 會把資料重建成 60 單元,**Unit 61–75 會被刪掉**(學生已在用)。
+- Unit 61–75 只存在 JSON 裡:直接改 JSON(或寫腳本改 JSON),改完用腳本確認 id 與筆數不變。
+- 官方解答轉錄:`tools/answers/p01–p04.txt` → `tools/answers_all.txt`(p04 = Unit 60–75,2026-10-24 與官方解答逐題核對:
+  75 單元答案、中文釋義皆已對過)。`compare_answers.py` 只比對 `tools/units/` 內有的單元。
+- 要重建 61–75 的 `tools/units/uNN.txt` 時,先由 JSON 反推出來,並確認重建結果與現有 JSON 完全相同再使用 build 腳本。
+- 中文釋義一律用官方解答的寫法(單一「…」,sb./sth./one's 統一);題目/單字卡兩邊都要改。
