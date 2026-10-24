@@ -587,3 +587,8 @@ body[data-bank] .stat,body[data-bank] .mode b{color:inherit}
 /* wrong-answer color stays red regardless of theme */
 :root,body[data-bank],body[data-bank="gsat"],body[data-bank="material"]{--bad:#E5270E;--bad-soft:#FFE0DA}
 .src-note{margin-top:2px}
+
+/* extra practice (寫作升級 / 易混淆字) */
+.xrow{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--card,#fff);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:8px;cursor:pointer}
+.xrow.good{border-left:6px solid #2e9e5b}.xrow.part{border-left:6px solid #e0a800}.xrow.bad{border-left:6px solid #d64545}
+button.card.xrow{display:block;margin-top:12px}

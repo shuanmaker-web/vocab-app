@@ -1,0 +1,181 @@
+# 寫作升級:基本字 → 升級字。格式:word|中文|含 ___ 的句子(同時是作文可用句)
+# 「##」= 一組(感官/外貌/個性);「>」= 基本字(學生熟悉的說法)與提示
+## 視覺|vision
+> big|大
+vast|浩瀚的|We stood at the edge of a ___ desert that stretched to the horizon.
+enormous|極大的|An ___ whale surfaced beside our tiny boat.
+giant|巨大的|A ___ tree blocked the whole road after the storm.
+gigantic|龐大的|The company built a ___ factory the size of ten football fields.
+huge|巨大的|There was a ___ crowd outside the stadium waiting for the singer.
+immense|無邊無際的|The ___ stadium could hold more than a hundred thousand fans.
+massive|厚重龐大的|A ___ rock rolled down the hill and crushed the fence.
+> beautiful|美麗
+appealing|吸引人的|The restaurant has an ___ view of the harbor, so tourists love it.
+charming|迷人的|We stayed in a ___ little village with flower-covered cottages.
+enchanting|迷人的、令人陶醉的|The ___ garden at night made us feel as if we were in a fairy tale.
+fascinating|極具吸引力的|The museum holds a ___ collection of ancient maps.
+inviting|誘人的|The warm, ___ cabin made us want to stay for the whole winter.
+breathtaking|令人屏息的|From the top of the mountain, the sunrise was truly ___.
+magnificent|壯觀的|We admired the ___ palace with its golden gates.
+spectacular|壯觀的|The fireworks over the river were absolutely ___.
+elaborate|精心製作的|The bride wore an ___ gown decorated with hundreds of tiny pearls.
+exquisite|精緻的|She served tea in ___ porcelain cups painted by hand.
+elegant|高雅的|The ___ lady in a long silk dress walked slowly into the hall.
+graceful|優雅的|The ___ dancer moved across the stage like a swan.
+glamorous|耀眼迷人的|The movie star looked ___ in her sparkling red dress.
+gorgeous|燦爛的、極美的|The bride looked ___ in her white wedding dress.
+splendid|燦爛的、輝煌的|The king lived in a ___ palace full of gold and jewels.
+grand|雄偉的|We walked up the ___ staircase to the main hall.
+grandiose|宏偉的|The mayor announced a ___ plan to build a new city in the sea.
+majestic|雄偉的|A ___ eagle spread its wings above the snowy peak.
+impressive|令人印象深刻的|The architect's design for the museum was truly ___.
+imposing|氣勢逼人的|The ___ castle on the cliff looked down on the whole town.
+striking|醒目的|The ___ red bridge stands out against the gray sky.
+mind-blowing|震撼人心的|The view from the top of the tower was absolutely ___.
+stunning|令人驚艷的|The ___ sunset painted the whole sky orange and pink.
+scenic|風光明媚的|We took the ___ route along the coast to enjoy the view.
+picturesque|如畫般的|The ___ village by the lake looks like a postcard.
+statuesque|身材如雕像般完美的|The ___ model walked down the runway with perfect posture.
+> lively / special|熱鬧、特別
+bustling|熙來攘往的|The night market was ___ with shoppers and street food sellers.
+hilarious|熱鬧的|The ___ street festival lasted all night, with music and dancing everywhere.
+colorful|多彩多姿的|The ___ lanterns lit up the whole temple square.
+exotic|異國風情的|The shop sells ___ fruits from tropical islands.
+flashing|閃爍的|A ___ light on the police car warned the drivers to slow down.
+lush|草木茂盛的|After the rainy season, the hills turned ___ and green.
+luxurious|奢華的|The ___ hotel has a golden lobby and a private swimming pool.
+posh|奢華的|They had dinner at a ___ restaurant where a glass of water costs ten dollars.
+messy|髒亂的|His room was so ___ that I could not find the floor.
+scruffy|髒亂的|The ___ stray dog had dirty, uneven fur and no collar.
+quaint|古色古香的|We wandered through the ___ old streets of the little town.
+rustic|鄉村風味的|They spent the weekend in a ___ wooden cabin in the countryside.
+sparkling|閃閃發光的|The ___ lake looked like it was covered in diamonds.
+twinkling|閃爍的|We lay on the grass and watched the ___ stars.
+sprawling|擴張中的|The ___ city keeps growing and swallowing the farmland around it.
+unique|獨特的|Every snowflake has a ___ shape.
+## 聽覺|hearing
+> loud|很大聲
+blaring|響亮刺耳的|The ___ horn of the truck woke everyone on the street.
+deafening|震耳欲聾的|The ___ thunder shook the windows of the house.
+roaring|咆哮的|We could hear the ___ of the waterfall from a mile away.
+high-pitched|高亢的|The baby let out a ___ scream that hurt my ears.
+harsh|刺耳的|A ___ voice shouted at us from the other side of the door.
+noisy|吵雜的|The ___ classroom calmed down as soon as the teacher walked in.
+> quiet / pleasant|輕柔、悅耳
+soft|柔和的|She sang a ___ lullaby to put the baby to sleep.
+whispering|低聲的|The ___ voices in the library made it hard to hear the speaker.
+melodious|悅耳的|The ___ voice of the singer filled the concert hall.
+> unpleasant voice or sound|難聽的聲音
+hoarse|沙啞的|After shouting at the game, his voice was ___.
+raspy|沙啞的|The old man spoke in a low, ___ voice from years of smoking.
+creaky|吱吱作響的|The ___ stairs warned us that someone was coming up.
+shaky|顫抖的|Her ___ voice showed that she was very nervous.
+## 觸覺|touch
+> rough|粗糙
+coarse|粗糙的|The ___ sand hurt our feet as we ran along the beach.
+rough|粗糙的|The old farmer's hands felt ___ against my skin.
+prickly|有刺的|Be careful with that ___ cactus; its spines are sharp.
+> soft / smooth|柔軟
+smooth|滑順的|The ___ silk scarf slid easily through my fingers.
+fuzzy|毛茸茸的|The kitten's ___ fur felt warm against my cheek.
+floppy|鬆軟的|The rabbit has long, ___ ears that hang down.
+cozy|舒適的|We sat by the fire in the ___ room and drank hot chocolate.
+> sticky / wet|黏、滑
+sticky|有黏性的|The candy left my fingers ___ and I had to wash my hands.
+gooey|黏稠的|The ___ melted cheese stretched from the pizza to my mouth.
+slippery|溼滑的|Be careful on the ___ floor after the rain.
+greasy|油膩的|The ___ French fries left shiny stains on the paper bag.
+oily|油膩的|The ___ skin of the fried fish felt slippery in my hand.
+> temperature|溫度
+ice-cold|冰冷的|I jumped into the ___ water and shivered all over.
+lukewarm|微溫的|The soup was only ___, so I put it back in the microwave.
+## 嗅覺|smell
+> good smell|好聞
+aromatic|芳香的|The ___ herbs in the kitchen made the whole house smell wonderful.
+fragrant|芳香的|The ___ flowers on the table made the whole room smell sweet.
+perfumed|加香水的|The ___ letter carried a soft smell of roses.
+scented|有香味的|She lit a ___ candle that smelled like lavender.
+fruity|有果香的|The tea has a light, ___ smell of peaches.
+> bad smell|難聞
+smelly|臭的|Please wash your ___ socks before you put them in the basket.
+stinky|臭的|The ___ garbage can attracted flies all summer.
+rotten|腐臭的|A ___ smell came from the old fish in the fridge.
+rancid|有油臭味的|The butter went ___ after a week in the hot sun.
+musty|有霉味的|The room had a ___ smell, as if no one had opened the windows for years.
+fishy|魚腥味的|The kitchen smelled ___ after Dad cooked the sea food.
+burnt|燒焦味的|There was a ___ smell in the kitchen after I forgot the toast.
+smoky|煙燻味的|The tea has a ___ smell, like a campfire in the forest.
+sharp|刺鼻的|A ___ smell of bleach came from the swimming pool.
+strong|氣味濃烈的|The cheese has such a ___ smell that I could notice it from the next room.
+## 味覺|taste
+> delicious|好吃
+delicious|美味的|Grandma made a ___ soup that warmed us all.
+tasty|可口的|The ___ sandwich made the long trip worth it.
+palatable|可口的|The cook made even the plainest vegetables ___.
+scrumptious|極好吃的|The ___ chocolate cake disappeared in five minutes.
+appetizing|引起食慾的|The ___ smell of fried chicken made my stomach growl.
+mouth-watering|令人垂涎的|The ___ steak on the grill made everyone hungry.
+nectarous|甘甜好喝的|The ___ fruit juice tasted like honey and flowers.
+juicy|多汁的|Biting into the ___ peach, I felt the sweet juice run down my chin.
+crispy|酥脆的|The ___ fried chicken made a loud crunch with every bite.
+> flavor|味道
+sour|酸的|The lemon was so ___ that I closed my eyes.
+bitter|苦的|The ___ medicine made the little boy make a face.
+spicy|辣的|The ___ hot pot made my face turn red and my nose run.
+peppery|胡椒口味的|The ___ soup made me cough a little with every spoon.
+salty|鹹的|The soup was too ___, so I added some water.
+highly seasoned|重口味的|My uncle likes ___ dishes full of garlic, chili and pepper.
+mild|味道清淡的|The curry is ___, so even young children can eat it.
+tasteless|沒有味道的|The soup was so ___ that I had to add salt.
+## 外貌|appearance
+> pretty / attractive|好看
+attractive|有吸引力的|The ___ young actor was surrounded by fans wherever he went.
+charismatic|有魅力的|The ___ speaker held the whole audience's attention for an hour.
+charming|迷人的|The ___ prince smiled at everyone in the hall.
+glamorous|耀眼的|The ___ singer arrived at the party in a long silver dress.
+classy|高貴的|The ___ lady wore a simple black dress and pearl earrings.
+elegant|高雅的|The ___ old woman in a gray coat walked into the opera house.
+graceful|優雅的|The ___ girl bowed to the audience after her piano recital.
+> look|外表
+brown-eyed|棕色眼睛的|The ___ girl smiled at me and waved from across the street.
+neat|乾淨整齊的|The boy in the ___ uniform walked in with his hair carefully combed.
+pale|蒼白的|She looked ___ after she saw the accident and sat down quickly.
+plain|樸素的|She wore a ___ white shirt and jeans, without any makeup or jewelry.
+> body shape|身材
+overweight|過重的|The doctor told the ___ man to eat less and exercise more.
+chubby|微胖的|The ___ baby had round cheeks and tiny fat hands.
+obese|肥胖的|Doctors warn that ___ people are more likely to get heart disease.
+skinny|過瘦的|The ___ boy could hardly carry his heavy backpack.
+## 個性|personality
+> kind|善良
+altruistic|利他的|The ___ doctor gave up his weekends to treat poor villagers for free.
+benevolent|仁慈的|The ___ king gave food to everyone who was hungry.
+caring|關懷的|The ___ nurse stayed by the patient's bed all night.
+kind-hearted|仁慈的|The ___ old man shared his lunch with the stray dog.
+> selfish|自私
+individualistic|利己的|In an ___ culture, people often put personal goals before the group.
+ego-centric|自我中心的|The ___ boss never listens to anyone else's ideas.
+self-centered|自我中心的|He is so ___ that he only talks about his own problems.
+selfish|自私的|It was ___ of him to eat the last piece of cake without asking.
+> open-minded|包容
+broad-minded|心胸寬廣的|My ___ parents let me make my own choices and respect them.
+tolerant|包容的|A ___ teacher accepts students who see the world differently.
+compassionate|同情的|The ___ nurse held the crying child's hand.
+sympathetic|同情的|She gave me a ___ smile when she heard about my lost dog.
+good-tempered|好脾氣的|My ___ grandfather never gets angry, even when we make noise.
+> active|積極
+active|積極的|The ___ student joins every club and speaks up in every class.
+aggressive|積極進取的|The ___ salesman called a hundred customers every day.
+enterprising|有進取心的|The ___ young woman started three small businesses before she was twenty.
+motivated|積極的、有動力的|The ___ team practiced every morning before school.
+assertive|有自信的、堅定的|An ___ person can say no politely but firmly.
+confident|有信心的|The ___ student walked onto the stage and began her speech.
+determined|有決心的|The ___ runner refused to give up, even with an injured leg.
+judicious|深思熟慮的|The ___ manager listened to everyone before making a decision.
+shallow|膚淺的|He is a ___ person who cares only about clothes and money.
+dynamic|有活力的|The ___ young mayor turned the sleepy town into a lively city.
+energetic|有活力的|The ___ puppy ran around the yard for hours.
+vigorous|精力旺盛的|The ___ old man still swims a mile every morning.
+restless|靜不下來的|The ___ children could not sit still during the long speech.
+awkward|笨拙的|I felt ___ when I forgot my speech in front of the whole class.
+clumsy|笨拙的|The ___ waiter dropped three plates in one evening.

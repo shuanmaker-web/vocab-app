@@ -80,3 +80,8 @@ IndexedDB** — it is not on any server and cannot be recovered if a change corr
   75 單元答案、中文釋義皆已對過)。`compare_answers.py` 只比對 `tools/units/` 內有的單元。
 - 要重建 61–75 的 `tools/units/uNN.txt` 時,先由 JSON 反推出來,並確認重建結果與現有 JSON 完全相同再使用 build 腳本。
 - 中文釋義一律用官方解答的寫法(單一「…」,sb./sth./one's 統一);題目/單字卡兩邊都要改。
+
+## 寫作升級 + 易混淆字 (extra.js, data/extra.json) — added 2026-10-25, sw v94
+- Source text: `tools/extra/upgrade.txt` (基本字 → 升級字, 7 sets: 視覺/聽覺/觸覺/嗅覺/味覺/外貌/個性, 151 words incl. 78 not in GSAT list, kept on purpose) and `tools/extra/confuse.txt` (29 groups). Build: `python3 tools/build_extra.py` → `data/extra.json` (touches no other data file).
+- UI lives in the 歷屆試題 tab of the 學測 bank (two cards at the top). Questions reuse the existing practice engine (mcq/fill) with own ids `up-…`/`cf-…` in the existing `qstats` store — no schema change. Upgrade sets have 3 stages: 學習卡 → 選擇題 → 拼字.
+- Sentences/distractors were written by Claude → teacher to review before/after first push.

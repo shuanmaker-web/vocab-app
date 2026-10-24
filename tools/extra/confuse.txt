@@ -1,0 +1,249 @@
+# 易混淆字。格式:
+#   ## 組名|類型          (類型:拼字相近 / 語意相近)
+#   note: 一句辨析重點
+#   word|詞性|中文       (成員;缺詞性中文時自動從 gsat.json 補)
+#   ? 答案|含 ___ 的句子|要排除的選項(可省略,空白分隔)
+## empty / vacant / hollow / blank / open|語意相近
+note: empty = 裡面沒有東西;vacant = 沒人占用、可使用;hollow = 內部中空;blank = 表面空白;open = 開放、尚可參與。
+empty|adj.|空的
+vacant|adj.|無人使用的、空缺的
+hollow|adj.|中空的
+blank|adj.|空白的
+open|adj.|開著的、開放的
+? empty|The glass is ___, so please fill it with water.|vacant open
+? vacant|The hospital has no ___ beds tonight.|empty open
+? hollow|The old tree trunk is ___ inside, and a family of owls lives there.|empty vacant
+? blank|Please leave this page ___ so I can draw on it.|empty open
+? open|Applications are still ___, so you can apply until Friday.|vacant empty
+## persistent / persistence|拼字相近
+note: persistent 是形容詞(堅持的、持續的);persistence 是名詞(堅持、毅力)。
+persistent|adj.|堅持不懈的、持續的
+persistence|n.|堅持、毅力
+? persistence|Success requires hard work and ___.
+? persistent|She is ___ in pursuing her goals, even when it is difficult.
+? persistent|A ___ cough kept him awake for three weeks.
+? persistence|Her ___ finally paid off when she won the contest.
+## relatable / relative|拼字相近
+note: relatable = 令人有共鳴的;relative = 親戚(n.)、相對的(adj.)。
+relatable|adj.|令人產生共鳴的
+relative|n.|親戚;adj. 相對的
+? relatable|That video about being tired all the time was so ___.
+? relative|We visited our ___ in Taichung last weekend.
+? relative|The cost is low ___ to our income.
+? relatable|Many students find the main character very ___ because they feel the same pressure.
+## restrain / refrain|語意相近
+note: restrain + 人/情緒 = 約束某人;refrain from + V-ing = 自己克制不做。
+restrain|v.|制止、抑制
+refrain|v.|克制、避免
+? restrain|He managed to ___ his anger in front of the customers.|refrain
+? refrain|Please ___ from smoking in this building.|restrain
+? restrain|The security guards had to ___ the angry man.|refrain
+? refrain|Visitors should ___ from touching the paintings.|restrain
+## reply / response|語意相近
+note: reply = 對問題、信件的答覆;response 範圍較廣,也可指行動或生理反應(an immune response)。
+reply|n./v.|回覆
+response|n.|回應、反應
+? reply|I sent her an email last week, but I haven't received a ___ yet.|response
+? response|The body's immune ___ helps fight the virus.|reply
+? response|The city's quick ___ to the flood saved many lives.|reply
+? reply|Please ___ to my message as soon as you can.|response
+## save / spare|語意相近
+note: save time = 節省時間;spare some time = 抽出一些時間;spare 另有「備用的」。
+save|v.|拯救、節省
+spare|adj./v.|備用的;抽出
+? save|Taking the shortcut will ___ us twenty minutes.|spare
+? spare|Do you have a ___ key in case I lose mine?|save
+? spare|Can you ___ me a few minutes to talk about my project?|save
+? save|The firefighter risked his life to ___ the child.|spare
+## preserve / conserve / reserve / book|語意相近
+note: preserve = 保存原貌;conserve = 節約資源;reserve / book = 預訂(reserve 另有「保留」)。
+preserve|v.|保存、維護
+conserve|v.|節約、保護資源
+reserve|v.|預訂、保留
+book|v.|預訂
+? preserve|We need to ___ this ancient temple so future generations can see it.|conserve reserve book
+? conserve|People should ___ water during the long drought.|preserve reserve book
+? reserve|These seats are ___d for guests, so please do not sit here.|book
+? book|We want to ___ a hotel room for two nights.|reserve
+## avoid / prevent|語意相近
+note: avoid + V-ing = 避免自己去做;prevent + 人 + from V-ing = 阻止別人去做。
+avoid|v.|避開、避免
+prevent|v.|防止、阻止
+? avoid|We took another road to ___ the traffic downtown.|prevent
+? prevent|The heavy rain will ___ us from going out.|avoid
+? avoid|I try to ___ eating too much sugar.|prevent
+? prevent|Washing your hands can ___ the spread of germs.|avoid
+## packed / crowded / bustling|語意相近
+note: packed = 擠得滿滿的;crowded = 擁擠的(語氣較弱);bustling = 熱鬧忙碌、充滿生氣。
+packed|adj.|擠滿的
+crowded|adj.|擁擠的
+bustling|adj.|熱鬧忙碌的
+? packed|The train was so ___ that nobody could move.|crowded bustling
+? crowded|The bus was a little ___ this morning, but I found a seat.|packed bustling
+? bustling|The market was ___ with shoppers and street musicians.|packed crowded
+## suspend / cease / stop / hold / abort|語意相近
+note: suspend = 暫停(可能恢復);cease = 正式的停止;stop = 一般的停止;hold = 暫緩;abort = 在完成前中止。
+suspend|v.|暫停
+cease|v.|停止(正式)
+stop|v.|停止
+hold|v.|暫緩、保留
+abort|v.|中止
+? suspend|The ferry service was ___ed because of the typhoon, and will start again tomorrow.|cease stop hold abort
+? abort|The pilot decided to ___ the landing because of engine trouble.|suspend cease stop hold
+? cease|According to the notice, the factory will ___ production next month.|stop suspend
+## affect / effect|拼字相近
+note: affect 是動詞(影響);effect 是名詞(效果、影響),have an effect on = affect。
+affect|v.|影響
+effect|n.|效果、影響
+? affect|The loud music did not ___ her concentration.
+? effect|The new medicine had a quick ___ on his cough.
+? effect|Pollution has a bad ___ on our health.
+? affect|Lack of sleep can ___ your grades.
+## accept / except|拼字相近
+note: accept = 接受;except = 除了…之外。
+accept|v.|接受
+except|prep.|除了…之外
+? accept|She decided to ___ the job offer from the bank.
+? except|Everyone passed the test ___ Tom.
+? accept|We cannot ___ his excuse for being late again.
+? except|The shop is open every day ___ Sunday.
+## adapt / adopt|拼字相近
+note: adapt (to) = 適應、改編;adopt = 採用、收養。
+adapt|v.|適應、改編
+adopt|v.|採用、收養
+? adapt|It took her a few months to ___ to life in a new country.
+? adopt|The school decided to ___ a new teaching method.
+? adopt|The couple wants to ___ a child.
+? adapt|The director will ___ the novel into a movie.
+## assume / assure / ensure|拼字相近
+note: assume = 假定;assure + 人 = 向某人保證;ensure = 確保。
+assume|v.|假定、認為
+assure|v.|向人保證
+ensure|v.|確保
+? ensure|Please ___ that all the windows are closed before you leave.|assure
+? assure|I can ___ you that the food here is safe.|ensure
+? assume|Don't ___ that he knows the answer just because he is quiet.|ensure assure
+## award / reward / aware|拼字相近
+note: award = 獎(頒給成就);reward = 酬謝、賞金;aware (of) = 察覺的。
+award|n.|獎、獎項
+reward|n.|獎賞、酬謝
+aware|adj.|察覺的、知道的
+? award|She won an ___ for her research on climate change.
+? reward|The police offered a $1,000 ___ for information about the missing dog.
+? aware|Are you ___ of the danger of swimming in this river?
+## complement / compliment|拼字相近
+note: complement = 補充、相配;compliment = 稱讚(口訣:I like compliments)。
+complement|v./n.|補充、相配
+compliment|n./v.|稱讚
+? compliment|My teacher gave me a ___ on my speech.
+? complement|The red scarf will ___ your gray coat perfectly.
+? compliment|He blushed when she began to ___ him on his cooking.
+? complement|A good wine will ___ a meal.
+## principal / principle|拼字相近
+note: principal = 校長、主要的;principle = 原則、原理。
+principal|n./adj.|校長;主要的
+principle|n.|原則、原理
+? principal|The ___ announced the new rule to the whole school.
+? principle|Honesty is a basic ___ of our family.
+? principle|The ___ of the machine is quite simple.
+? principal|The ___ reason for the delay was the heavy rain.
+## stationary / stationery|拼字相近
+note: stationary = 靜止的(adj.);stationery = 文具(n.),e 結尾像 envelope。
+stationary|adj.|靜止的
+stationery|n.|文具
+? stationary|The car was ___ when the truck hit it from behind.
+? stationery|I bought pens and notebooks at the ___ store.
+? stationery|The shop sells beautiful paper and other ___.
+? stationary|Keep the camera ___ while you take the photo.
+## quiet / quite / quit|拼字相近
+note: quiet = 安靜的;quite = 相當、頗;quit = 辭職、放棄。
+quiet|adj.|安靜的
+quite|adv.|相當、頗
+quit|v.|辭職、放棄
+? quiet|The baby is finally ___, so please do not make any noise.|quite quit
+? quite|It's ___ cold today, so wear a jacket.|quiet quit
+? quit|He decided to ___ his job and travel around the world.|quiet quite
+## lose / loose|拼字相近
+note: lose = 失去、輸(動詞);loose = 鬆的、寬鬆的(形容詞)。
+lose|v.|失去、輸
+loose|adj.|鬆的、寬鬆的
+? lose|Don't ___ your keys again, or you won't get into the house.
+? loose|This shirt is too ___ for me; I need a smaller size.
+? loose|One of the screws on the chair is ___.
+? lose|Our team will ___ if we don't practice more.
+## personal / personnel|拼字相近
+note: personal = 個人的;personnel = 全體人員、人事部門。
+personal|adj.|個人的
+personnel|n.|全體人員
+? personal|That is a ___ question, so I would rather not answer it.
+? personnel|All hospital ___ must wear a mask in the ward.
+? personnel|Please send your resume to the ___ department.
+? personal|He keeps his ___ life separate from his work.
+## sensible / sensitive|拼字相近
+note: sensible = 明智的、合理的;sensitive = 敏感的、易受傷的。
+sensible|adj.|明智的
+sensitive|adj.|敏感的
+? sensible|It is ___ to take an umbrella when the sky is full of dark clouds.
+? sensitive|She is very ___ to criticism and cries easily.
+? sensitive|My skin is ___ to the sun, so I use sunscreen every day.
+? sensible|He made a ___ decision and saved some of his allowance.
+## considerate / considerable|拼字相近
+note: considerate = 體貼的(對人);considerable = 相當大的、可觀的。
+considerate|adj.|體貼的
+considerable|adj.|相當大的
+? considerate|It was very ___ of you to call and ask how I was.
+? considerable|The storm caused ___ damage to the town.
+? considerable|It took a ___ amount of time to finish the project.
+? considerate|A ___ neighbor never plays loud music late at night.
+## raise / rise / arise|拼字相近
+note: raise + 受詞(舉起、提高);rise 不接受詞(上升);arise = 出現、產生。
+raise|v.|舉起、提高
+rise|v.|上升
+arise|v.|出現、產生
+? raise|Please ___ your hand if you know the answer.|rise arise
+? rise|The sun will ___ at six tomorrow morning.|raise arise
+? arise|If any problems ___ during the trip, please call me.|raise rise
+## assemble / resemble|拼字相近
+note: assemble = 集合、組裝;resemble = 像、類似(及物,不加 to)。
+assemble|v.|集合、組裝
+resemble|v.|像、類似
+? assemble|All students must ___ in the gym at eight o'clock.
+? resemble|She seems to ___ her mother in both looks and voice.
+? assemble|It took me two hours to ___ the bookshelf.
+? resemble|The twins do not ___ each other at all.
+## persist / persevere / insist / resist|語意相近
+note: persist in = 持續做(可褒可貶,也可指事物持續存在);persevere = 克服困難、堅持到底;insist on = 堅持主張;resist = 抵抗。
+persist|v.|堅持、持續
+persevere|v.|堅持到底
+insist|v.|堅持主張
+resist|v.|抵抗
+? resist|I couldn't ___ the delicious chocolate cake.|persist persevere insist
+? insist|My mother will ___ on driving me to school on my first day.|persist persevere resist
+? persevere|Despite many failures, the scientist chose to ___ and finally found a cure.|persist insist resist
+? persist|The cough will ___ unless you see a doctor.|persevere insist resist
+## carry on / keep on / hang on / stick to|語意相近
+note: carry on = 繼續(中斷後);keep on + V-ing = 持續做;hang on = 稍等、撐住;stick to = 堅守(計畫、原則)。
+carry on|v. phr.|繼續進行
+keep on|v. phr.|持續做
+hang on|v. phr.|稍等、撐住
+stick to|v. phr.|堅守
+? hang on|___ a moment, I'll get my coat.|carry on keep on stick to
+? stick to|You must ___ your plan, even when it gets difficult.|carry on keep on hang on
+? keep on|If you ___ studying every day, your English will improve.|carry on hang on stick to
+? carry on|After the short break, the teacher asked us to ___ with the experiment.|keep on hang on stick to
+## crumble / crash / crush|語意相近
+note: crumble = 碎裂、崩塌(慢慢);crash = 撞擊、墜毀、當機;crush = 壓碎、擊潰。
+crumble|v.|碎裂、崩塌
+crash|v.|撞擊、墜毀
+crush|v.|壓碎
+? crumble|The old wall began to ___ after the earthquake.|crash crush
+? crash|The truck lost control and will ___ into the fence.|crumble crush
+? crush|Be careful not to ___ the eggs in your bag.|crumble crash
+## steal / rob|語意相近
+note: steal + 東西(偷);rob + 人或地方(搶劫),rob sb. of sth.。
+steal|v.|偷
+rob|v.|搶劫
+? steal|He was caught trying to ___ money from the shop.
+? rob|Two men tried to ___ the bank last night.
+? rob|The thieves planned to ___ the old woman of her bag.
+? steal|Someone tried to ___ my bike last night.

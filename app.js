@@ -601,7 +601,7 @@ async function recordQ(q, ok, extra = {}) {
 
 function startEx(ids, opts = {}) {
   if (!ids.length) return;
-  S.session = { kind: 'ex', queue: ids.slice(), pos: 0, total: ids.length, results: [], t0: Date.now(), retest: !!opts.retest, title: opts.title || '', cur: null };
+  S.session = { kind: 'ex', queue: ids.slice(), pos: 0, total: ids.length, results: [], t0: Date.now(), retest: !!opts.retest, title: opts.title || '', back: opts.back || null, cur: null };
   render();
 }
 function nextNewIds(n = 20) { return bankQs().filter(q => !qSt(q.id)).slice(0, n).map(q => q.id); }
@@ -612,10 +612,11 @@ function unitTile(u) {
 }
 function renderPractice() {
   const B = BANKS[S.bank], gsat = S.bank === 'gsat', uw = gsat ? '年度' : '單元';
+  if (S.pview && S.pview[0] === 'x' && typeof renderExtraView === 'function') return renderExtraView();
   if (!bankQs().length) { app.innerHTML = `<h1>${B.qtitle}</h1><p class="muted" style="margin-top:12px">尚未匯入題庫(<code>${B.qfile}</code>)。</p>`; return; }
   if (S.pview === 'unit') return renderUnit();
   const t = qTotals(), w = t.wrong, units = unitList();
-  app.innerHTML = `<h1>${B.qtitle}</h1>${gsat ? `<p class="muted small" style="margin:4px 0 0">大考中心歷年學科能力測驗英文科 · 第壹部分 詞彙題(第 1–10 題)</p>` : ''}<div class="stack" style="margin-top:12px">
+  app.innerHTML = `<h1>${B.qtitle}</h1>${gsat ? `<p class="muted small" style="margin:4px 0 0">大考中心歷年學科能力測驗英文科 · 第壹部分 詞彙題(第 1–10 題)</p>` : ''}<div class="stack" style="margin-top:12px">${typeof extraEntryCards === 'function' ? extraEntryCards() : ''}
   <section class="card"><div class="row between"><h2>總進度</h2><span class="muted small">共 ${t.total} 題 · ${units.length} 個${uw}</span></div>
     <div class="bigscore"><b>${t.ok}</b><span>/ ${t.total} 題目前答對</span></div>
     <div class="seg"><i class="g" style="width:${t.ok / t.total * 100}%"></i><i class="r" style="width:${t.wrong / t.total * 100}%"></i></div>
@@ -653,7 +654,7 @@ function renderEx() {
   if (s.pos >= s.queue.length) return renderExSummary();
   const q = qById[s.queue[s.pos]], c = exQuestionState(q), pct = Math.round(s.results.length / s.total * 100), done = c.result !== null;
   let body = `<div class="topbar"><button class="icon-btn" data-xact="quit" aria-label="離開">✕</button><div class="bar"><i style="width:${pct}%"></i></div><span class="muted small">${s.results.length}/${s.total}${s.retest ? ' · 重測' : ''}</span></div>`;
-  body += `<div class="card"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}</div><p class="qtext">${sentenceHtml(q, done)}</p>${srcNote(q)}${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
+  body += `<div class="card"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}`}</div><p class="qtext">${sentenceHtml(q, done)}</p>${srcNote(q)}${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
   if (q.type === 'fill') {
     if (!done) body += `<form id="ex-form" style="margin-top:14px" autocomplete="off"><input class="field" id="ex-in" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入完整單字" aria-label="答案"><div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-xact="hint" ${c.hint ? 'disabled' : ''}>提示</button><button type="button" class="btn ghost" data-xact="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
     else {
@@ -666,7 +667,7 @@ function renderEx() {
       const hit = done && i === c.picked && o === q.ans;
       return `<button class="opt ${cls}${hit ? ' picked' : ''}" data-xpick="${i}" ${done ? 'disabled' : ''}><span>${lab}${esc(o)}</span>${hit ? '<b class="opt-tag">✓ 正確</b>' : ''}</button>`;
     }).join('')}</div>`;
-    if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div>`;
+    if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span>${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}</div>`;
   }
   if (done) body += `<div class="row" style="margin-top:12px"><button class="icon-btn" data-speak="${esc(q.ans)}" aria-label="發音">🔊</button><button class="btn grow" data-xact="next">${s.pos + 1 >= s.queue.length ? '看結果' : '下一題'}</button></div>`;
   app.innerHTML = body;
@@ -674,9 +675,9 @@ function renderEx() {
 }
 function renderExSummary() {
   const s = S.session, ok = s.results.filter(r => r.ok).length, miss = s.results.filter(r => !r.ok).map(r => qById[r.id]);
-  const left = wrongIds().length;
+  const left = s.back ? 0 : wrongIds().length;
   app.innerHTML = `<div class="stack"><section class="card q"><h1>${ok === s.total ? '全部答對!🎉' : '完成這一回'}</h1><p class="zh">${ok} / ${s.total}</p><p class="muted">答對率 ${Math.round(ok / s.total * 100)}% · 用時 ${Math.max(1, Math.round((Date.now() - s.t0) / 60000))} 分鐘</p>${s.retest ? `<p class="small">錯題本還剩 <b>${left}</b> 題</p>` : ''}</section>
-    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">${unitName(q.unit, q.bank)} · 第 ${q.no} 題</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`).join('')}</section>` : ''}
+    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題`}</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`).join('')}</section>` : ''}
     ${miss.length ? `<button class="btn block" data-xact="redo-miss">馬上重測這 ${miss.length} 題</button>` : ''}
     ${left && !miss.length ? '<button class="btn block" data-xact="retest-all">繼續重測錯題本</button>' : ''}
     <button class="btn ghost block" data-xact="quit">回練習題本</button></div>`;
@@ -695,11 +696,11 @@ async function exClick(t, s) {
   const q = qById[s.queue[s.pos]];
   if (t.dataset.xpick !== undefined && s.cur && s.cur.result === null) { const i = +t.dataset.xpick; s.cur.picked = i; return exAnswer(s.cur.opts[i] === q.ans, { answer: s.cur.opts[i] }); }
   switch (t.dataset.xact) {
-    case 'quit': if (!s.results.length || s.pos >= s.queue.length || confirm('要離開嗎?已作答的題目會保留。')) { S.session = null; S.pview = S.punit != null ? 'unit' : 'main'; render(); } break;
+    case 'quit': if (!s.results.length || s.pos >= s.queue.length || confirm('要離開嗎?已作答的題目會保留。')) { S.session = null; if (s.back) { S.pview = s.back.view; S.xid = s.back.xid; } else S.pview = S.punit != null ? 'unit' : 'main'; render(); } break;
     case 'hint': s.cur.hint = true; { const v = $('#ex-in')?.value; renderEx(); if ($('#ex-in')) $('#ex-in').value = v || ''; } break;
     case 'giveup': s.cur.fill = { kind: 'wrong', user: '', gaveUp: true }; await exAnswer(false, { answer: '' }); break;
     case 'next': s.pos++; s.cur = null; render(); break;
-    case 'redo-miss': { const ids = s.results.filter(r => !r.ok).map(r => r.id); S.session = null; startEx(ids, { retest: true }); break; }
+    case 'redo-miss': { const ids = s.results.filter(r => !r.ok).map(r => r.id); S.session = null; startEx(ids, { retest: true, back: s.back, title: s.title }); break; }
     case 'retest-all': S.session = null; startEx(shuffle(wrongIds()), { retest: true }); break;
   }
 }
@@ -711,6 +712,7 @@ document.addEventListener('click', async e => {
   if (t.dataset.enter) return setBank(t.dataset.enter);
   if (t.dataset.tab) return setTab(t.dataset.tab);
   if (t.dataset.pgunit) { S.tab = 'practice'; S.punit = +t.dataset.pgunit; S.pview = 'unit'; S.wrongType = 'all'; document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === 'practice')); return render(); }
+  if (t.dataset.ext) return extraClick(t.dataset.ext);
   if (t.dataset.xunit) { S.punit = +t.dataset.xunit; S.pview = 'unit'; S.wrongType = 'all'; return render(); }
   if (t.dataset.uact) { const u = S.punit, all = bankQs().filter(q => q.unit === u).map(q => q.id), act = t.dataset.uact, ttl = unitName(u, S.bank, true);
     if (act === 'wrong') return startEx(shuffle(wrongIds(q => q.unit === u)), { retest: true, title: ttl });
@@ -774,7 +776,7 @@ async function boot(reload = false) {
     if (!bk || wd === '') continue;
     noteAnswer(bk, wd, src, lg.correct === true || (lg.correct === undefined && lg.rating >= 3));
   }
-  if (!reload) { await Promise.all([...Object.keys(BANKS).map(loadBank), loadQuestions()]); }
+  if (!reload) { await Promise.all([...Object.keys(BANKS).map(loadBank), loadQuestions(), typeof loadExtra === 'function' ? loadExtra() : null]); }
   S.qstats = await store.allQ();
   render();
 }
