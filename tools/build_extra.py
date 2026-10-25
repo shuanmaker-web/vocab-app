@@ -78,8 +78,10 @@ for ln, raw in enumerate(open(f'{ROOT}/tools/extra/confuse.txt', encoding='utf-8
     line = raw.rstrip('\n')
     if not line.strip() or (line.startswith('#') and not line.startswith('##')): continue
     if line.startswith('##'):
-        name, typ = line[2:].strip().split('|'); g = {'id': 'cfg%d' % (len(GR) + 1), 'name': name.strip(), 'type': typ.strip(), 'note': '', 'members': [], 'qs': []}; GR.append(g); continue
+        name, typ = line[2:].strip().split('|'); g = {'id': 'cfg%d' % (len(GR) + 1), 'name': name.strip(), 'type': typ.strip(), 'note': '', 'tip': '', 'hide': False, 'members': [], 'qs': []}; GR.append(g); continue
     if line.startswith('note:'): g['note'] = line[5:].strip(); continue
+    if line.startswith('tip:'): g['tip'] = line[4:].strip(); continue
+    if line.startswith('hide:'): g['hide'] = line[5:].strip() not in ('', '0'); continue
     if line.startswith('?'):
         p = [s.strip() for s in line[1:].split('|')]
         if len(p) < 2: die(f'confuse.txt:{ln} bad question'); continue
@@ -98,7 +100,7 @@ for g in GR:
         rnd.shuffle(others); opts = [q['ans']] + others[:3]; rnd.shuffle(opts)
         m = next(m for m in g['members'] if m['w'] == q['ans'])
         CQ.append({'id': f'cf-{g["id"]}-{k}', 'unit': g['id'], 'no': k, 'type': 'mcq', 'extra': 'cf', 'q': q['sent'].replace('___', '______'), 'ans': q['ans'],
-                   'pos': m['pos'], 'zh': m['zh'], 'full': q['sent'].replace('___', q['ans']), 'opts': opts, 'note': g['note']})
+                   'pos': m['pos'], 'zh': m['zh'], 'full': q['sent'].replace('___', q['ans']), 'opts': opts, 'note': g['note'], 'tip': g['tip']})
     for q in g.pop('qs'): pass
 if err:
     print('\n'.join(err)); sys.exit(1)

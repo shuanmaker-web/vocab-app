@@ -669,7 +669,7 @@ function renderEx() {
       const hit = done && i === c.picked && o === q.ans;
       return `<button class="opt ${cls}${hit ? ' picked' : ''}" data-xpick="${i}" ${done ? 'disabled' : ''}><span>${lab}${esc(o)}</span>${hit ? '<b class="opt-tag">✓ 正確</b>' : ''}</button>`;
     }).join('')}</div>`;
-    if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span>${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}</div>`;
+    if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span>${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}${q.tip ? `<div class="small" style="margin-top:6px"><b>口訣</b> ${q.tip.split(/[;;]/).map(x => esc(x.trim())).join('<br>')}</div>` : ''}</div>`;
   }
   if (done) body += `<div class="row" style="margin-top:12px"><button class="icon-btn" data-speak="${esc(q.ans)}" aria-label="發音">🔊</button><button class="btn grow" data-xact="next">${s.pos + 1 >= s.queue.length ? '看結果' : '下一題'}</button></div>`;
   app.innerHTML = body;

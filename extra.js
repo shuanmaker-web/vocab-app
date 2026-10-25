@@ -25,6 +25,7 @@ function extraSubBody(sub) {
   const gs = e.confuse.groups;
   return `<div class="stack"><section class="card"><p class="small muted">拼字或意思相近的字放在一起比較,用句子選出最適合的字。共 ${gs.length} 組。</p></section>${['拼字相近', '語意相近'].map(tp => `<section class="card"><h2>${tp}</h2>${gs.filter(g => g.type === tp).map(g => { const p = xProg(xq('cf', g.id)); return `<button class="xrow ${xCls(p)}" data-ext="cfset:${g.id}"><span>${esc(g.name)}</span><span class="muted small">${p.ok}/${p.total}</span></button>`; }).join('')}</section>`).join('')}</div>`;
 }
+const xLines = (label, t) => t ? `<div class="xnote"><div class="xlab">${label}</div>${t.split(/[;;]/).map(x => x.trim().replace(/[。.]$/, '')).filter(Boolean).map(x => `<div><b>${esc(x)}</b></div>`).join('')}</div>` : '';
 const xBack = (to, label = '返回') => `<div class="topbar"><button class="icon-btn" data-ext="${to}" aria-label="${label}">←</button>`;
 const xTag = w => w.gsat ? ` <span class="xlv">(L${w.lv})</span>` : '';
 const xSort = ws => ws.map((w, i) => [w, i]).sort((a, b) => ((a[0].gsat ? a[0].lv : 99) - (b[0].gsat ? b[0].lv : 99)) || (a[1] - b[1])).map(x => x[0]);
@@ -45,8 +46,8 @@ function renderExtraView() {
     <button class="btn block" data-ext="upgo:${s.id}:2">前往 ② 選擇題</button></div>`;
   } else if (v === 'xcfset') {
     const g = e.confuse.groups.find(x => x.id === S.xid), qs = xq('cf', g.id), p = xProg(qs);
-    app.innerHTML = `${xBack('cf')}<h1 style="font-size:1.1rem">${esc(g.name)}</h1></div><div class="stack"><section class="card"><div class="muted small">${esc(g.type)}</div><p style="margin:6px 0 10px"><b>${esc(g.note)}</b></p>
-      ${g.members.map(m => `<div class="witem"><b>${esc(m.w)}</b> <span class="muted">${esc(m.pos)} ${esc(m.zh)}</span> ${m.gsat ? `<span class="muted small">L${m.lv}</span>` : ''}</div>`).join('')}</section>
+    app.innerHTML = `${xBack('cf')}<h1 style="font-size:1.1rem">${esc(g.name)}</h1></div><div class="stack"><section class="card"><div class="muted small">${esc(g.type)}</div>${xLines('用法', g.hide ? '' : g.note)}${xLines('口訣', g.tip)}
+      ${g.members.map(m => `<div class="witem"><b class="xw">${esc(m.w)}</b> <b>${esc(m.pos)} ${esc(m.zh)}</b> ${m.gsat ? `<span class="muted small">L${m.lv}</span>` : ''}</div>`).join('')}</section>
       <section class="card"><div class="stack" style="gap:10px"><button class="btn block" data-ext="cfgo:${g.id}">開始練習(${qs.length} 題 · 答對 ${p.ok})</button>
       <button class="btn ghost block" data-ext="cfwrong:${g.id}" ${p.wrong ? '' : 'disabled'}>只重測錯題(${p.wrong})</button></div></section></div>`;
   }
