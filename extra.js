@@ -23,7 +23,10 @@ function extraSubBody(sub) {
   if (sub === 'up') return `<div class="stack"><section class="card"><p class="small muted">基本字 → 升級字:把 big、nice 這類常用字,換成作文更出色的字。選一組:先看學習卡,再做選擇題,最後練拼字。<span class="dot g"></span>全對 <span class="dot y"></span>進行中 <span class="dot r"></span>有錯題</p></section>
     ${e.upgrade.sets.map(s => { const n = s.bases.reduce((a, b) => a + b.words.length, 0), p = xProg(xq('up', s.id)); return `<button class="card xrow ${xCls(p)}" data-ext="upset:${s.id}"><div class="row between"><b>${esc(s.name.split('|')[0])}</b><span class="muted small">${esc(s.en)} · ${n} 字 · ${p.ok}/${p.total} 題</span></div></button>`; }).join('')}</div>`;
   const gs = e.confuse.groups;
-  return `<div class="stack"><section class="card"><p class="small muted">拼字或意思相近的字放在一起比較,用句子選出最適合的字。共 ${gs.length} 組。</p></section>${['拼字相近', '語意相近'].map(tp => `<section class="card"><h2>${tp}</h2>${gs.filter(g => g.type === tp).map(g => { const p = xProg(xq('cf', g.id)); return `<button class="xrow ${xCls(p)}" data-ext="cfset:${g.id}"><span>${esc(g.name)}</span><span class="muted small">${p.ok}/${p.total}</span></button>`; }).join('')}</section>`).join('')}</div>`;
+  const types = ['拼字相近', '語意相近'], cur = types.includes(S.cftype) ? S.cftype : types[0];
+  return `<div class="stack"><section class="card"><p class="small muted">拼字或意思相近的字放在一起比較,用句子選出最適合的字。共 ${gs.length} 組。</p></section>
+    <div class="chips xchips" role="tablist">${types.map(tp => `<button class="chip ${cur === tp ? 'on' : ''}" role="tab" aria-selected="${cur === tp}" data-ext="cftype:${tp}">${tp}</button>`).join('')}</div>
+    <section class="card">${gs.filter(g => g.type === cur).map(g => { const p = xProg(xq('cf', g.id)); return `<button class="xrow ${xCls(p)}" data-ext="cfset:${g.id}"><span>${esc(g.name)}</span><span class="muted small">${p.ok}/${p.total}</span></button>`; }).join('')}</section></div>`;
 }
 const xLines = (label, t) => t ? `<div class="xnote"><div class="xlab">${label}</div>${t.split(/[;;]/).map(x => x.trim().replace(/[。.]$/, '')).filter(Boolean).map(x => `<div><b>${esc(x)}</b></div>`).join('')}</div>` : '';
 const xBack = (to, label = '返回') => `<div class="topbar"><button class="icon-btn" data-ext="${to}" aria-label="${label}">←</button>`;
@@ -58,6 +61,7 @@ function extraClick(a) {
   const go = (view, xid) => { S.pview = view; S.xid = xid || null; render(); };
   switch (act) {
     case 'main': S.pview = 'main'; S.punit = null; return render();
+    case 'cftype': S.cftype = id; return render();
     case 'up': case 'cf': S.psub = act; S.pview = 'main'; return render();
     case 'sub': S.psub = id; S.pview = 'main'; return render();
     case 'upset': return go('xupset', id); case 'uplearn': return go('xuplearn', id); case 'cfset': return go('xcfset', id);

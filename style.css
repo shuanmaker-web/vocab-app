@@ -595,3 +595,4 @@ button.card.xrow{display:block;margin-top:12px}
 
 .xlv{font-size:.75em;opacity:.85}
 .xnote{margin:8px 0 12px}.xlab{display:inline-block;font-size:.72rem;font-weight:700;color:var(--muted,#8a7f72);border:1px solid var(--line);border-radius:6px;padding:0 6px;margin-bottom:3px}.xw{font-size:1.08em}
+.xchips{justify-content:center;gap:4px;margin:18px 0 6px}.xchips .chip,body[data-bank] .xchips .chip,body[data-bank] .xchips .chip:not(.on),body[data-bank] .xchips .chip.on{background:none;border:0;box-shadow:none;border-radius:0;padding:2px 12px;min-height:0;font-size:.95rem;font-weight:800;color:var(--muted)}body[data-bank] .xchips .chip.on,.xchips .chip.on{font-weight:800;color:#ff5a00}
