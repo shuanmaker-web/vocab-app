@@ -26,7 +26,8 @@ function extraSubBody(sub) {
   return `<div class="stack"><section class="card"><p class="small muted">拼字或意思相近的字放在一起比較,用句子選出最適合的字。共 ${gs.length} 組。</p></section>${['拼字相近', '語意相近'].map(tp => `<section class="card"><h2>${tp}</h2>${gs.filter(g => g.type === tp).map(g => { const p = xProg(xq('cf', g.id)); return `<button class="xrow ${xCls(p)}" data-ext="cfset:${g.id}"><span>${esc(g.name)}</span><span class="muted small">${p.ok}/${p.total}</span></button>`; }).join('')}</section>`).join('')}</div>`;
 }
 const xBack = (to, label = '返回') => `<div class="topbar"><button class="icon-btn" data-ext="${to}" aria-label="${label}">←</button>`;
-const xTag = w => (w.gsat ? `L${w.lv}` : '超出學測字表') + (w.learn ? ' · 先認識,不出題' : '');
+const xTag = w => w.gsat ? ` <span class="xlv">(L${w.lv})</span>` : '';
+const xSort = ws => ws.map((w, i) => [w, i]).sort((a, b) => ((a[0].gsat ? a[0].lv : 99) - (b[0].gsat ? b[0].lv : 99)) || (a[1] - b[1])).map(x => x[0]);
 function renderExtraView() {
   const e = S.extra, v = S.pview; if (!e) { S.pview = 'main'; return renderPractice(); }
   if (v === 'xupset') {
@@ -40,7 +41,7 @@ function renderExtraView() {
       <button class="btn ghost block" data-ext="upwrong:${s.id}" ${wrong ? '' : 'disabled'}>只重測錯題(${wrong})</button></div></section></div>`;
   } else if (v === 'xuplearn') {
     const s = e.upgrade.sets.find(x => x.id === S.xid);
-    app.innerHTML = `${xBack('upset:' + s.id)}<h1 style="font-size:1.25rem">學習卡 · ${esc(s.name.split('|')[0])}</h1></div><div class="stack">${s.bases.map(b => `<section class="card"><h2>${esc(b.base)} <span class="muted small">${esc(b.zh)}</span> →</h2>${b.words.map(w => `<div class="witem"><div class="row between"><b>${esc(w.w)}</b><span class="muted small">${esc(w.zh)} · ${xTag(w)}</span></div><div class="small">${esc(w.sent).replace(esc(w.w), `<mark class="ans">${esc(w.w)}</mark>`)}</div></div>`).join('')}</section>`).join('')}
+    app.innerHTML = `${xBack('upset:' + s.id)}<h1 style="font-size:1.25rem">學習卡 · ${esc(s.name.split('|')[0])}</h1></div><div class="stack">${s.bases.map(b => `<section class="card"><h2>${esc(b.base)} <span class="muted small">${esc(b.zh)}</span> →</h2>${xSort(b.words).map(w => `<div class="witem"><div class="row between"><b>${esc(w.w)}</b><span class="muted small">${esc(w.zh)}${xTag(w)}</span></div><div class="small">${esc(w.sent).replace(esc(w.w), `<mark class="ans">${esc(w.w)}</mark>`)}</div></div>`).join('')}</section>`).join('')}
     <button class="btn block" data-ext="upgo:${s.id}:2">前往 ② 選擇題</button></div>`;
   } else if (v === 'xcfset') {
     const g = e.confuse.groups.find(x => x.id === S.xid), qs = xq('cf', g.id), p = xProg(qs);
