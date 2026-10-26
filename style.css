@@ -598,4 +598,4 @@ button.card.xrow{display:block;margin-top:12px}
 .xchips{justify-content:center;gap:4px;margin:18px 0 6px}.xchips .chip,body[data-bank] .xchips .chip,body[data-bank] .xchips .chip:not(.on),body[data-bank] .xchips .chip.on{background:none;border:0;box-shadow:none;border-radius:0;padding:2px 12px;min-height:0;font-size:.95rem;font-weight:800;color:var(--muted)}body[data-bank] .xchips .chip.on,.xchips .chip.on{font-weight:800;color:#ff5a00}
 /* 寫作升級學習卡:標題列捲動時固定在頂端(位於上方 bankswitch 之下);單字旁的發音鈕 */
 .topbar.xsticky{position:sticky;top:var(--bsh,0px);z-index:15;background:var(--page,var(--bg));padding:8px 0;margin-bottom:6px}
-.xwd{display:inline-flex;align-items:center;gap:8px}.xspk{width:32px;height:32px;min-width:32px;font-size:.85rem;flex:none}
+.xwd{display:inline-flex;align-items:center;gap:8px}.xspk{width:24px;height:24px;min-width:24px;font-size:.62rem;flex:none;padding:0;box-shadow:1px 1px 0 #1a1a1a;border-width:2px}
