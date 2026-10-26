@@ -656,8 +656,17 @@ function renderEx() {
   if (s.pos >= s.queue.length) return renderExSummary();
   const q = qById[s.queue[s.pos]], c = exQuestionState(q), pct = Math.round(s.results.length / s.total * 100), done = c.result !== null;
   let body = `<div class="topbar"><button class="icon-btn" data-xact="quit" aria-label="離開">✕</button><div class="bar"><i style="width:${pct}%"></i></div><span class="muted small">${s.results.length}/${s.total}${s.retest ? ' · 重測' : ''}</span></div>`;
-  body += `<div class="card"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}`}</div><p class="qtext">${sentenceHtml(q, done)}</p>${srcNote(q)}${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
-  if (q.type === 'fill') {
+  body += `<div class="card"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}`}</div><p class="qtext">${sentenceHtml(q, done)}</p>${q.type === 'tri' ? '<div class="small muted">寫出這個動詞的過去式、過去分詞、-ing(拼字要完全正確)</div>' : ''}${srcNote(q)}${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
+  if (q.type === 'tri') { // 三態填空卡(易混淆字:不規則動詞的 過去式 / 過去分詞 / -ing)
+    const labs = ['過去式', '過去分詞', '-ing'];
+    if (!done) body += `<form id="tri-form" style="margin-top:14px" autocomplete="off">${labs.map((l, i) => `<label class="small muted" style="display:block;margin-top:${i ? 10 : 0}px">${l}</label><input class="field" id="tri-${i}" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入英文" aria-label="${l}">`).join('')}<div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-xact="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
+    else {
+      const r = c.tri;
+      body += `<div class="card" style="margin-top:14px;text-align:center">${c.result ? '<div class="verdict ok">✓ 全部正確!</div>' : `<div class="verdict no">${r.gaveUp ? '正確答案' : '✗ 有地方不對(拼字要完全正確)'}</div>`}
+        ${labs.map((l, i) => `<div class="muted small" style="margin-top:8px">${l}</div>${!r.gaveUp && r.user[i] && !r.flags[i] ? `<div class="diff"><span class="x">${esc(r.user[i])}</span></div>` : ''}<div class="diff"><span class="good">${esc(q.parts[i])}</span></div>`).join('')}
+        ${q.zh ? `<div class="small" style="margin-top:10px">${esc(q.zh)}</div>` : ''}${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}</div>`;
+    }
+  } else if (q.type === 'fill') {
     if (!done) body += `<form id="ex-form" style="margin-top:14px" autocomplete="off"><input class="field" id="ex-in" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入完整單字" aria-label="答案"><div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-xact="hint" ${c.hint ? 'disabled' : ''}>提示</button><button type="button" class="btn ghost" data-xact="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
     else {
       const r = c.fill, shown = r.flags ? [...r.user].map((ch, i) => `<span class="${r.flags[i] ? 'good' : 'x'}">${esc(ch)}</span>`).join('') : '';
@@ -671,7 +680,7 @@ function renderEx() {
     }).join('')}</div>`;
     if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span>${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}${q.tip ? `<div class="small" style="margin-top:6px"><b>口訣</b> ${q.tip.split(/[;;]/).map(x => esc(x.trim())).join('<br>')}</div>` : ''}</div>`;
   }
-  if (done) body += `<div class="row" style="margin-top:12px"><button class="icon-btn" data-speak="${esc(q.ans)}" aria-label="發音">🔊</button><button class="btn grow" data-xact="next">${s.pos + 1 >= s.queue.length ? '看結果' : '下一題'}</button></div>`;
+  if (done) body += `<div class="row" style="margin-top:12px"><button class="icon-btn" data-speak="${esc(q.type === 'tri' ? q.parts[0] : q.ans)}" aria-label="發音">🔊</button><button class="btn grow" data-xact="next">${s.pos + 1 >= s.queue.length ? '看結果' : '下一題'}</button></div>`;
   app.innerHTML = body;
   const inp = $('#ex-in'); if (inp) inp.focus({ preventScroll: true });
 }
@@ -700,7 +709,7 @@ async function exClick(t, s) {
   switch (t.dataset.xact) {
     case 'quit': if (!s.results.length || s.pos >= s.queue.length || confirm('要離開嗎?已作答的題目會保留。')) { S.session = null; if (s.back) { S.pview = s.back.view; S.xid = s.back.xid; } else S.pview = S.punit != null ? 'unit' : 'main'; render(); } break;
     case 'hint': s.cur.hint = true; { const v = $('#ex-in')?.value; renderEx(); if ($('#ex-in')) $('#ex-in').value = v || ''; } break;
-    case 'giveup': s.cur.fill = { kind: 'wrong', user: '', gaveUp: true }; await exAnswer(false, { answer: '' }); break;
+    case 'giveup': if (q.type === 'tri') s.cur.tri = { user: ['', '', ''], flags: [false, false, false], gaveUp: true }; else s.cur.fill = { kind: 'wrong', user: '', gaveUp: true }; await exAnswer(false, { answer: '' }); break;
     case 'next': s.pos++; s.cur = null; render(); break;
     case 'redo-miss': { const ids = s.results.filter(r => !r.ok).map(r => r.id); S.session = null; startEx(ids, { retest: true, back: s.back, title: s.title }); break; }
     case 'retest-all': S.session = null; startEx(shuffle(wrongIds()), { retest: true }); break;
@@ -745,6 +754,11 @@ document.addEventListener('click', async e => {
   }
 });
 document.addEventListener('submit', e => {
+  if (e.target.id === 'tri-form') { // 三態填空:三格都要完全拼對才算對
+    e.preventDefault(); const s = S.session, q = qById[s.queue[s.pos]], norm = x => x.trim().toLowerCase().replace(/\s+/g, ' ');
+    const user = [0, 1, 2].map(i => $('#tri-' + i).value); if (user.some(v => !v.trim())) return;
+    const flags = user.map((v, i) => norm(v) === q.parts[i].toLowerCase()); s.cur.tri = { user: user.map(v => v.trim()), flags };
+    exAnswer(flags.every(Boolean), { answer: user.map(v => v.trim()).join(' / ') }); return; }
   if (e.target.id === 'ex-form') { e.preventDefault(); const v = $('#ex-in').value; if (!v.trim()) return; const s = S.session, q = qById[s.queue[s.pos]]; s.cur.fill = checkFill(v, q.ans); exAnswer(s.cur.fill.kind === 'ok', { answer: v.trim() }); return; }
   if (e.target.id !== 'spell-form') return; e.preventDefault();
   const s = S.session, v = $('#spell-in').value; if (!v.trim()) return;

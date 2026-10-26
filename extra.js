@@ -56,6 +56,8 @@ function renderExtraView() {
   }
   window.scrollTo(0, 0);
 }
+// 一般題隨機,三態填空卡(type 'tri')固定排最後:先選擇題、再填三態
+const xCfOrder = ids => { const tri = ids.filter(i => qById[i].type === 'tri'); return [...shuffle(ids.filter(i => qById[i].type !== 'tri')), ...tri]; };
 function extraClick(a) {
   const [act, id, st] = a.split(':');
   const go = (view, xid) => { S.pview = view; S.xid = xid || null; render(); };
@@ -67,8 +69,8 @@ function extraClick(a) {
     case 'upset': return go('xupset', id); case 'uplearn': return go('xuplearn', id); case 'cfset': return go('xcfset', id);
     case 'upgo': { const ids = xq('up', id, +st).map(q => q.id); return startEx(+st === 2 ? shuffle(ids) : ids, { title: '寫作升級', back: { view: 'xupset', xid: id } }); }
     case 'upwrong': return startEx(shuffle(xq('up', id).filter(q => qSt(q.id) && !qSt(q.id).last).map(q => q.id)), { retest: true, title: '寫作升級', back: { view: 'xupset', xid: id } });
-    case 'cfgo': return startEx(shuffle(xq('cf', id).map(q => q.id)), { title: '易混淆字', back: { view: 'xcfset', xid: id } });
-    case 'cfwrong': return startEx(shuffle(xq('cf', id).filter(q => qSt(q.id) && !qSt(q.id).last).map(q => q.id)), { retest: true, title: '易混淆字', back: { view: 'xcfset', xid: id } });
+    case 'cfgo': return startEx(xCfOrder(xq('cf', id).map(q => q.id)), { title: '易混淆字', back: { view: 'xcfset', xid: id } });
+    case 'cfwrong': return startEx(xCfOrder(xq('cf', id).filter(q => qSt(q.id) && !qSt(q.id).last).map(q => q.id)), { retest: true, title: '易混淆字', back: { view: 'xcfset', xid: id } });
   }
 }
 function extraHead(q) {

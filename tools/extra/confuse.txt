@@ -4,7 +4,10 @@
 #   hide: 1             (選填:比較卡上方不顯示 note,因為只是重複下方中文釋義)
 #   tip: 記憶口訣        (選填:分號換行顯示)
 #   word|詞性|中文       (成員;缺詞性中文時自動從 gsat.json 補)
-#   ? 答案|含 ___ 的句子|要排除的選項(可省略,空白分隔)
+#   ? 答案|含 ___ 的句子|要排除的選項(可省略;空白或逗號分隔,片語選項用逗號。排除 = 這些字也說得通,不要當干擾選項)
+#   ?? 答案|含 ___ 的句子|選項1,選項2,選項3,選項4|說明   (自己指定選項,答案不必是組員,例如不規則動詞的各種形態)
+#   = 動詞(中文)|過去式|過去分詞|-ing|說明      (三態填空卡:三格都要完全拼對;排在選擇題之後)
+#   ?-                                         (已停用的題目:保留題號,讓其他題目的作答紀錄 id 不變)
 ## empty / vacant / hollow / blank / open|語意相近
 note: empty = 裡面沒有東西;vacant = 沒人占用、可使用;hollow = 內部中空;blank = 表面空白;open = 開放、尚可參與。
 empty|adj.|空的
@@ -31,52 +34,52 @@ relative|n.|親戚;adj. 相對的
 note: restrain + 人/情緒 = 約束某人;refrain from + V-ing = 自己克制不做。
 restrain|v.|制止、抑制
 refrain|v.|克制、避免
-? restrain|He managed to ___ his anger in front of the customers.|refrain
-? refrain|Please ___ from smoking in this building.|restrain
-? restrain|The security guards had to ___ the angry man.|refrain
-? refrain|Visitors should ___ from touching the paintings.|restrain
+? restrain|He managed to ___ his anger in front of the customers.
+? refrain|Please ___ from smoking in this building.
+? restrain|The security guards had to ___ the angry man.
+? refrain|Visitors should ___ from touching the paintings.
 ## reply / response|語意相近
 note: reply = 對問題、信件的答覆;response 範圍較廣,也可指行動或生理反應(an immune response)。
 reply|n./v.|回覆
 response|n.|回應、反應
-? reply|I sent her an email last week, but I haven't received a ___ yet.|response
-? response|The body's immune ___ helps fight the virus.|reply
-? response|The city's quick ___ to the flood saved many lives.|reply
-? reply|Please ___ to my message as soon as you can.|response
+? reply|I sent her an email last week, but I haven't received a ___ yet.
+? response|The body's immune ___ helps fight the virus.
+? response|The city's quick ___ to the flood saved many lives.
+? reply|Please ___ to my message as soon as you can.
 ## save / spare|語意相近
 note: save time = 節省時間;spare some time = 抽出一些時間;spare 另有「備用的」。
 save|v.|拯救、節省
 spare|adj./v.|備用的;抽出
-? save|Taking the shortcut will ___ us twenty minutes.|spare
-? spare|Do you have a ___ key in case I lose mine?|save
-? spare|Can you ___ me a few minutes to talk about my project?|save
-? save|The firefighter risked his life to ___ the child.|spare
+? save|Taking the shortcut will ___ us twenty minutes.
+? spare|Do you have a ___ key in case I lose mine?
+? spare|Can you ___ me a few minutes to talk about my project?
+? save|The firefighter risked his life to ___ the child.
 ## preserve / conserve / reserve / book|語意相近
 note: preserve = 保存原貌;conserve = 節約資源;reserve / book = 預訂(reserve 另有「保留」)。
 preserve|v.|保存、維護
 conserve|v.|節約、保護資源
 reserve|v.|預訂、保留
 book|v.|預訂
-? preserve|We need to ___ this ancient temple so future generations can see it.|conserve reserve book
-? conserve|People should ___ water during the long drought.|preserve reserve book
+? preserve|We need to ___ this ancient temple so future generations can see it.|conserve
+? conserve|People should ___ water during the long drought.|preserve
 ? reserve|These seats are ___d for guests, so please do not sit here.|book
 ? book|We want to ___ a hotel room for two nights.|reserve
 ## avoid / prevent|語意相近
 note: avoid + V-ing = 避免自己去做;prevent + 人 + from V-ing = 阻止別人去做。
 avoid|v.|避開、避免
 prevent|v.|防止、阻止
-? avoid|We took another road to ___ the traffic downtown.|prevent
-? prevent|The heavy rain will ___ us from going out.|avoid
-? avoid|I try to ___ eating too much sugar.|prevent
-? prevent|Washing your hands can ___ the spread of germs.|avoid
+? avoid|We took another road to ___ the traffic downtown.
+? prevent|The heavy rain will ___ us from going out.
+? avoid|I try to ___ eating too much sugar.
+? prevent|Washing your hands can ___ the spread of germs.
 ## packed / crowded / bustling|語意相近
 note: packed = 擠得滿滿的;crowded = 擁擠的(語氣較弱);bustling = 熱鬧忙碌、充滿生氣。
 packed|adj.|擠滿的
 crowded|adj.|擁擠的
 bustling|adj.|熱鬧忙碌的
-? packed|The train was so ___ that nobody could move.|crowded bustling
-? crowded|The bus was a little ___ this morning, but I found a seat.|packed bustling
-? bustling|The market was ___ with shoppers and street musicians.|packed crowded
+? packed|The train was so ___ that nobody could move.|crowded
+? crowded|The bus was a little ___ this morning, but I found a seat.
+? bustling|The market was ___ with shoppers and street musicians.
 ## suspend / cease / stop / hold / abort|語意相近
 note: suspend = 暫停(可能恢復);cease = 正式的停止;stop = 一般的停止;hold = 暫緩;abort = 在完成前中止。
 suspend|v.|暫停
@@ -84,8 +87,8 @@ cease|v.|停止(正式)
 stop|v.|停止
 hold|v.|暫緩、保留
 abort|v.|中止
-? suspend|The ferry service was ___ed because of the typhoon, and will start again tomorrow.|cease stop hold abort
-? abort|The pilot decided to ___ the landing because of engine trouble.|suspend cease stop hold
+? suspend|The ferry service was ___ed because of the typhoon, and will start again tomorrow.|cease,stop
+? abort|The pilot decided to ___ the landing because of engine trouble.|suspend,stop
 ? cease|According to the notice, the factory will ___ production next month.|stop suspend
 ## affect / effect|拼字相近
 note: affect 是動詞(影響);effect 是名詞(效果、影響),have an effect on = affect。
@@ -124,7 +127,7 @@ assure|v.|向人保證
 ensure|v.|確保
 ? ensure|Please ___ that all the windows are closed before you leave.|assure
 ? assure|I can ___ you that the food here is safe.|ensure
-? assume|Don't ___ that he knows the answer just because he is quiet.|ensure assure
+? assume|Don't ___ that he knows the answer just because he is quiet.
 ## award / reward / aware|拼字相近
 note: award = 獎(頒給成就);reward = 酬謝、賞金;aware (of) = 察覺的。
 tip: reward 的 re- = 回,回報你;aware 的 -ware 像 beware(小心),留意到 = 察覺
@@ -170,9 +173,9 @@ hide: 1
 quiet|adj.|安靜的
 quite|adv.|相當、頗
 quit|v.|辭職、放棄
-? quiet|The baby is finally ___, so please do not make any noise.|quite quit
-? quite|It's ___ cold today, so wear a jacket.|quiet quit
-? quit|He decided to ___ his job and travel around the world.|quiet quite
+? quiet|The baby is finally ___, so please do not make any noise.
+? quite|It's ___ cold today, so wear a jacket.
+? quit|He decided to ___ his job and travel around the world.
 ## lose / loose|拼字相近
 note: lose = 失去、輸(動詞);loose = 鬆的、寬鬆的(形容詞)。
 hide: 1
@@ -210,14 +213,24 @@ considerable|adj.|相當大的
 ? considerable|It took a ___ amount of time to finish the project.
 ? considerate|A ___ neighbor never plays loud music late at night.
 ## raise / rise / arise|拼字相近
-note: raise + 受詞(舉起、提高);rise 不接受詞(上升);arise = 出現、產生。
+note: raise + 受詞(舉起、提高);rise 不接受詞(上升);arise = 出現、產生;三態:rise – rose – risen;raise – raised – raised;arise – arose – arisen。
 tip: rise 自己上升;arise = a- + rise,冒出來
 raise|v.|舉起、提高
 rise|v.|上升
 arise|v.|出現、產生
-? raise|Please ___ your hand if you know the answer.|rise arise
-? rise|The sun will ___ at six tomorrow morning.|raise arise
-? arise|If any problems ___ during the trip, please call me.|raise rise
+? raise|Please ___ your hand if you know the answer.
+? rise|The sun will ___ at six tomorrow morning.
+? arise|If any problems ___ during the trip, please call me.
+?? rise|The sun will ___ at six o'clock tomorrow morning.|rise,rose,risen,raise|rise 不接受詞(上升),原形
+?? rose|The sun ___ at 5:30 this morning.|rise,rose,risen,raised|rise 的過去式 = rose;this morning(已發生)
+?? risen|Prices have ___ sharply since last year.|rise,rose,risen,raised|rise 的過去分詞 = risen;have 是線索,後面沒有受詞
+?? raise|Please ___ your hand if you know the answer.|rise,raise,raised,risen|raise + 受詞(舉起),原形
+?? raised|The teacher ___ her voice when the students got noisy.|raise,raised,risen,rose|raise 的過去式 = raised;受詞 her voice
+?? raised|The company has ___ the price of its coffee twice this year.|raise,raised,risen,rose|raise 的過去分詞 = raised;受詞 the price
+?? arise|If any problem should ___, please call me.|arise,arose,arisen,raise|arise = 出現、產生,原形
+?? arose|A serious problem ___ during the meeting.|arise,arose,arisen,raised|arise 的過去式 = arose
+?? arisen|New questions have ___ since the report came out.|arise,arose,arisen,raised|arise 的過去分詞 = arisen;have 是線索
+?? rising|Smoke was ___ from the chimney.|rising,raising,arising,rose|rise 的 -ing = rising;煙自己上升,無受詞
 ## assemble / resemble|拼字相近
 note: assemble = 集合、組裝;resemble = 像、類似(及物,不加 to)。
 tip: sembl- 有同樣、一起的意思;assemble 的 as- 是向…靠攏,湊在一起 = 集合;resemble 的 re- 是再一次,再看還是同樣 = 像
@@ -227,34 +240,37 @@ resemble|v.|像、類似
 ? resemble|She seems to ___ her mother in both looks and voice.
 ? assemble|It took me two hours to ___ the bookshelf.
 ? resemble|The twins do not ___ each other at all.
-## persist / persevere / insist / resist|語意相近
-note: persist in = 持續做(可褒可貶,也可指事物持續存在);persevere = 克服困難、堅持到底;insist on = 堅持主張;resist = 抵抗。
+## persist / persevere / insist|語意相近
+note: 都能說成「堅持」,方向不同:persist in = 持續做(可褒可貶,也可指事物持續存在);persevere = 克服困難、堅持到底;insist on = 堅持主張或要求。
 persist|v.|堅持、持續
 persevere|v.|堅持到底
 insist|v.|堅持主張
-resist|v.|抵抗
-? resist|I couldn't ___ the delicious chocolate cake.|persist persevere insist
-? insist|My mother will ___ on driving me to school on my first day.|persist persevere resist
-? persevere|Despite many failures, the scientist chose to ___ and finally found a cure.|persist insist resist
-? persist|The cough will ___ unless you see a doctor.|persevere insist resist
+?-
+? insist|My mother will ___ on driving me to school on my first day.
+? persevere|Despite many failures, the scientist chose to ___ and finally found a cure.
+? persist|The cough will ___ unless you see a doctor.
+? persist|If the pain continues to ___, see a doctor.
+? persevere|With hard work, you can ___ through difficulties and reach your goal.|persist
+? insist|I ___ on paying for dinner.
+
 ## carry on / keep on / hang on / stick to|語意相近
 note: carry on = 繼續(中斷後);keep on + V-ing = 持續做;hang on = 稍等、撐住;stick to = 堅守(計畫、原則)。
 carry on|v. phr.|繼續進行
 keep on|v. phr.|持續做
 hang on|v. phr.|稍等、撐住
 stick to|v. phr.|堅守
-? hang on|___ a moment, I'll get my coat.|carry on keep on stick to
-? stick to|You must ___ your plan, even when it gets difficult.|carry on keep on hang on
-? keep on|If you ___ studying every day, your English will improve.|carry on hang on stick to
-? carry on|After the short break, the teacher asked us to ___ with the experiment.|keep on hang on stick to
+? hang on|___ a moment, I'll get my coat.
+? stick to|You must ___ your plan, even when it gets difficult.
+? keep on|If you ___ studying every day, your English will improve.
+? carry on|After the short break, the teacher asked us to ___ with the experiment.
 ## crumble / crash / crush|語意相近
 note: crumble = 碎裂、崩塌(慢慢);crash = 撞擊、墜毀、當機;crush = 壓碎、擊潰。
 crumble|v.|碎裂、崩塌
 crash|v.|撞擊、墜毀
 crush|v.|壓碎
-? crumble|The old wall began to ___ after the earthquake.|crash crush
-? crash|The truck lost control and will ___ into the fence.|crumble crush
-? crush|Be careful not to ___ the eggs in your bag.|crumble crash
+? crumble|The old wall began to ___ after the earthquake.
+? crash|The truck lost control and will ___ into the fence.
+? crush|Be careful not to ___ the eggs in your bag.
 ## steal / rob|語意相近
 note: steal + 東西(偷);rob + 人或地方(搶劫),rob sb. of sth.。
 steal|v.|偷
@@ -263,3 +279,1638 @@ rob|v.|搶劫
 ? rob|Two men tried to ___ the bank last night.
 ? rob|The thieves planned to ___ the old woman of her bag.
 ? steal|Someone tried to ___ my bike last night.
+
+# ===== 2026-10 擴充:以下為新增組別(依 Level 由低到高;拼字相近在前、語意相近在後)=====
+## lie / lay|拼字相近
+note: lie(躺、位於)不接受詞;lay(放置、下蛋)後面要接受詞。另有一個 lie 是「說謊」,三態各不相同:躺 lie – lay – lain – lying;放置 lay – laid – laid – laying;說謊 lie – lied – lied – lying。
+tip: lay 後面一定接東西(lay a book);lie 是人自己躺下
+lie|v.|躺、位於;說謊
+lay|v.|放置;下(蛋)
+?? lie|Every afternoon, my cat likes to ___ in the sun.|lie,lay,laid,lain|lie(躺)的原形
+?? lay|Yesterday I ___ on the sofa and fell asleep.|lie,lay,laid,lain|lie(躺)的過去式 = lay;Yesterday 是線索
+?? lain|She has ___ in bed all day because of the flu.|lay,laid,lain,lie|lie(躺)的過去分詞 = lain;has 是線索
+?? lay|Please ___ the baby gently on the bed.|lie,lay,lain,lied|lay(放置)的原形,後面有受詞 the baby
+?? laid|Mom ___ the keys on the kitchen table an hour ago.|lay,laid,lain,lied|lay(放置)的過去式 = laid;an hour ago 是線索
+?? laid|The hen has ___ three eggs this morning.|lay,laid,lain,lied|lay(下蛋)的過去分詞 = laid
+?? lied|He ___ to his mother about the broken window.|lied,lay,laid,lain|lie(說謊)的過去式 = lied
+?? lying|The baby is ___ quietly in the crib.|lying,laying,lied,lain|lie(躺)的 -ing = lying
+?? laying|She is ___ the table for dinner.|lying,laying,laid,lay|lay(擺放)的 -ing = laying;後面有受詞 the table
+= lie(躺、位於)|lay|lain|lying|lie 的 -ing 是 lying(ie 變 y),不是 lieing
+= lay(放置、下蛋)|laid|laid|laying|lay 的過去式是 laid(不是 layed)
+= lie(說謊)|lied|lied|lying|說謊的 lie 過去式是規則變化 lied,和「躺」的 lay 不同
+## plain / plane|拼字相近
+note: plain = 樸素的、簡單的(也指平原);plane = 飛機、平面。兩字同音。
+hide: 1
+plain|adj./n.|樸素的;平原
+plane|n.|飛機;平面
+? plane|Our ___ will take off in twenty minutes.
+? plain|She wore a ___ white dress without any decoration.
+? plain|Wild horses once ran freely across the wide ___.
+? plane|A flat surface in math is called a ___.
+## role / roll|拼字相近
+note: role = 角色;roll = 滾動、捲(也指圓麵包)。兩字同音。
+hide: 1
+role|n.|角色
+roll|n./v.|滾動;麵包捲
+? role|The actor played the ___ of a brave doctor in the movie.
+? roll|The ball began to ___ down the hill.
+? role|Parents play an important ___ in their children's education.
+? roll|I had a warm bread ___ and a glass of milk for breakfast.
+## classic / classical|拼字相近
+note: classic = 經典的(經得起時間考驗);classical = 古典的(古希臘羅馬或古典時期的風格)。
+classic|adj./n.|經典的;經典作品
+classical|adj.|古典的
+? classical|My grandmother enjoys ___ music, such as Mozart and Bach.
+? classic|"Romeo and Juliet" is a ___ love story that people still read today.
+? classic|That old movie is a true ___, and many people watch it again and again.
+? classical|The museum has many ___ Greek statues.
+## waste / waist|拼字相近
+note: waste = 浪費、廢棄物;waist = 腰。兩字同音。
+hide: 1
+waste|v./n.|浪費;廢棄物
+waist|n.|腰
+? waste|Don't ___ water when you brush your teeth.
+? waist|He wore a thick belt around his ___.
+? waist|The water in the river was up to my ___.
+? waste|Please put the plastic ___ in the recycling bin.
+## abroad / aboard / broad|拼字相近
+note: abroad 是副詞,不加 in / to(go abroad);aboard = 在船、車、飛機上;broad = 寬闊的(形容詞)。
+tip: aboard 裡有 board(登上交通工具);broad 與 wide 同義
+abroad|adv.|在國外、到國外
+aboard|adv./prep.|在(船、車、機)上
+broad|adj.|寬闊的
+? abroad|She plans to study ___ after she graduates from high school.
+? aboard|All passengers must be ___ the ship by ten o'clock.
+? broad|The river is so ___ that it takes ten minutes to cross by boat.
+? abroad|My uncle often travels ___ for business.
+? aboard|Welcome ___! This flight is going to Tokyo.
+## beside / besides|拼字相近
+note: beside = 在…旁邊(= next to);besides = 除…之外還有、此外。
+tip: besides 多一個 s = 多了一些東西(額外)
+beside|prep.|在…旁邊
+besides|prep./adv.|除…之外;此外
+? beside|The dog is sleeping ___ the sofa.
+? besides|She can speak Japanese and French ___ English.
+? besides|I don't want to go out; ___, it is raining hard.
+? beside|Come and sit ___ me, and I will tell you a story.
+## cloth / clothes / clothe|拼字相近
+note: cloth = 布料;clothes = 衣服(只有複數);clothe = 給…穿衣(動詞,常用 be clothed in)。
+cloth|n.|布料
+clothes|n.|衣服
+clothe|v.|給…穿衣
+? clothes|I need to wash my ___ because they are dirty.
+? cloth|She used a wet ___ to clean the table.
+? clothe|The charity helps to feed and ___ poor families.
+? cloth|This dress is made of soft cotton ___.
+## later / latter / lately / latest|拼字相近
+note: later = 較晚、稍後;latter = 後者(與 former 前者相對);lately = 最近(常配現在完成式);latest = 最新的。
+later|adv./adj.|稍後;較晚的
+latter|adj./n.|後者的;後者
+lately|adv.|最近
+latest|adj.|最新的
+? later|I'm busy now. Can I call you ___ tonight?
+? latter|I have two cats, Mimi and Coco. Mimi is shy, but the ___ is very friendly.
+? lately|I haven't seen Peter ___. Is he sick?
+? latest|Have you heard the ___ news about the school festival?
+## diary / dairy / daily|拼字相近
+note: diary = 日記;dairy = 乳製品(dairy products);daily = 每日的。
+tip: diary 與 day 有關(每天寫);dairy 與牛奶有關(dairy farm);daily = day + ly
+diary|n.|日記
+dairy|n./adj.|乳製品;乳品的
+daily|adj.|每日的
+? diary|She writes about her feelings in her ___ every night.
+? dairy|Milk, cheese, and butter are all ___ products.
+? daily|Brushing your teeth is part of your ___ routine.
+? dairy|The farmer keeps fifty cows on his ___ farm.
+## poll / pole / pool|拼字相近
+note: poll = 民意調查;pole = 桿子、地球的極;pool = 水池。
+hide: 1
+poll|n.|民意調查
+pole|n.|桿子;極
+pool|n.|水池
+? poll|A recent ___ shows that most students like online classes.
+? pole|The flag is flying at the top of the tall ___.
+? pool|The children are swimming in the ___.
+? pole|Polar bears live near the North ___.
+? poll|The newspaper took a ___ to find out what people think of the new law.
+## through / thorough / throughout|拼字相近
+note: through = 穿過、經由;thorough = 徹底的、周密的;throughout = 自始至終、遍及各處。
+through|prep.|穿過、經由
+thorough|adj.|徹底的、周密的
+throughout|prep./adv.|遍及;自始至終
+? through|The train passes ___ a long tunnel before reaching the city.
+? thorough|The police made a ___ search of the house but found nothing.
+? throughout|It rained ___ the night, so we stayed at home.
+? thorough|Please give the kitchen a ___ cleaning before the guests arrive.
+## historic / historical|拼字相近
+note: historic = 在歷史上有重大意義的(a historic moment);historical = 與歷史有關的(a historical novel)。
+historic|adj.|歷史上有重大意義的
+historical|adj.|歷史(上)的
+? historic|The signing of the peace agreement was a ___ moment for both countries.
+? historical|She enjoys reading ___ novels about ancient China.
+? historical|The museum keeps many ___ documents from the 18th century.
+? historic|Taiwan won a ___ victory in the championship, the first in thirty years.
+## scarce / scare|拼字相近
+note: scarce = 稀少的、缺乏的(形容詞);scare = 驚嚇(動詞)。
+scarce|adj.|稀少的、缺乏的
+scare|v.|驚嚇
+? scarce|Fresh water is ___ in the desert.
+? scare|The sudden noise may ___ the baby.
+? scarce|Jobs were ___ during the crisis, so many people stayed unemployed.
+? scare|Don't ___ me like that! I almost dropped my cup.
+## trail / trial|拼字相近
+note: trail = 小徑、足跡;trial = 審判、試驗。
+hide: 1
+trail|n.|小徑;足跡
+trial|n.|審判;試驗
+? trail|We followed a narrow ___ up the mountain.
+? trial|The judge will make a decision after the ___ ends.
+? trial|The medicine is still on ___, so it is not on sale yet.
+? trail|The hunter followed the ___ of the wounded deer.
+## wander / wonder|拼字相近
+note: wander = 漫步、閒逛;wonder = 想知道(動詞),也指驚奇(名詞)。
+tip: wander 的 a 唸 /ɑ/(走來走去);wonder 的 o 唸 /ʌ/
+wander|v.|漫步、閒逛
+wonder|v./n.|想知道;驚奇
+? wander|We love to ___ around the old street and look at small shops.
+? wonder|I ___ if it will rain tomorrow.
+? wonder|The children looked at the fireworks with ___ in their eyes.
+? wander|Don't let your little brother ___ off in the crowd.
+## medal / metal / mental|拼字相近
+note: 三個字長得很像,各差一個字母:medal = 獎牌;metal = 金屬;mental = 心理的。
+medal|n.|獎牌
+metal|n.|金屬
+mental|adj.|心理的
+? medal|The runner won a gold ___ at the Olympics.
+? metal|Iron and copper are both ___.
+? mental|Doing exercise is good for both your physical and ___ health.
+? medal|The soldier received a ___ for his bravery.
+? metal|This spoon is made of ___, not plastic.
+## desert / dessert / deserve|拼字相近
+note: desert 當名詞唸 /ˈdɛzɚt/ = 沙漠;當動詞唸 /dɪˈzɝt/ = 遺棄;dessert 唸 /dɪˈzɝt/ = 甜點;deserve = 應得。
+tip: dessert 有兩個 s = 想再吃一份甜點(sweet);desert 一個 s,沙漠裡什麼都沒有
+desert|n./v.|沙漠;遺棄
+dessert|n.|甜點
+deserve|v.|應得
+? desert|Camels can travel for days in the ___ without water.
+? dessert|After dinner, we had chocolate cake for ___.
+? deserve|You worked so hard that you ___ a good rest.
+? desert|The captain refused to ___ his ship, even in the storm.
+? dessert|I'd like ice cream as my ___.
+## propose / suppose / oppose / expose / impose / compose / pose|拼字相近
+note: -pose 是「放」。靠詞首辨認:pro-(向前)= 提出;sup-(下)= 假定;op-(對著)= 反對;ex-(外)= 暴露;im-(加上)= 強加;com-(一起)= 組成;pose = 擺姿勢。
+propose|v.|提議、求婚
+suppose|v.|假定、認為
+oppose|v.|反對
+expose|v.|暴露
+impose|v.|強加
+compose|v.|組成;作曲
+pose|v.|擺姿勢
+? propose|I'd like to ___ a toast to the bride and groom.|expose,compose,pose
+? suppose|Let's ___ you win the lottery. What would you do with the money?|expose,impose,pose
+? oppose|Many residents ___ the plan to build a new factory near the school.|expose,compose,pose
+? expose|Don't ___ your skin to the strong sun for too long.|propose,suppose,oppose
+? impose|The school does not want to ___ too many rules on students.|suppose,compose,pose
+? compose|Mozart began to ___ music when he was only five.|oppose,expose,impose
+? pose|Please ___ for a photo in front of the fountain.|suppose,oppose,impose
+## resist / insist / assist / persist|拼字相近
+note: -sist 家族,意思完全不同:resist = 抵抗、忍住不(擋回去);insist = 堅持要求(推出去);assist = 協助;persist = 持續、堅持下去。常被拼成 ressist(多打一個 s)。
+resist|v.|抵抗、忍住不
+insist|v.|堅持要求
+assist|v.|協助
+persist|v.|持續、堅持
+? resist|I can't ___ eating the fresh cookies.
+? insist|My grandmother will ___ on paying for dinner.
+? assist|Volunteers will ___ the elderly in crossing the road.
+? persist|If these symptoms ___ for more than a week, you should see a doctor.
+? resist|The soldiers tried to ___ the enemy's attack.
+## site / sight / cite|拼字相近
+note: 三字同音:site = 地點、網站;sight = 視力、景象;cite = 引用。
+site|n.|地點、網站
+sight|n.|視力;景象
+cite|v.|引用、引述
+? site|The workers are building a new school on the construction ___.
+? sight|The old man lost the ___ in one eye after the accident.
+? cite|When you write a report, you should ___ your sources.
+? site|You can find more information on our school's web ___.
+? sight|The sunrise over the mountain was a beautiful ___.
+## sustain / maintain / retain / contain / obtain|拼字相近
+note: -tain(握住)家族,靠前綴分:sus-(從下撐住)= 維持、支撐,也指承受(傷害、損失);main-(用手握)= 維持、保養;re-(留住)= 保留;con-(包住)= 包含;ob-(取得)= 獲得。
+sustain|v.|維持、支撐;承受
+maintain|v.|維持、保養
+retain|v.|保留
+contain|v.|包含
+obtain|v.|獲得
+? sustain|The food we carried was not enough to ___ us for the whole trip.
+? maintain|You need to ___ your car regularly to keep it in good condition.|contain
+? retain|She managed to ___ her title as the champion for the third year.|maintain
+? contain|This bottle can ___ up to two liters of water.|maintain
+? obtain|You must ___ permission from your parents before joining the trip.|contain
+? sustain|The driver was lucky to ___ only minor injuries in the crash.
+## conscious / conscience|拼字相近
+note: conscious 是形容詞(be conscious of = 意識到、清醒的);conscience 是名詞(良心,a guilty conscience)。
+tip: conscience 結尾像 science(名詞);conscious 結尾 -ous 是形容詞
+conscious|adj.|意識到的、清醒的
+conscience|n.|良心
+? conscious|He was ___ of someone following him, so he walked faster.
+? conscience|She had a guilty ___ after telling the lie.
+? conscience|A person with a clear ___ can sleep well at night.
+? conscious|The injured man was still ___ when the ambulance arrived.
+## recipe / receipt|拼字相近
+note: recipe /ˈrɛsəpi/ = 食譜;receipt /rɪˈsit/ = 收據,p 不發音。
+recipe|n.|食譜
+receipt|n.|收據
+? recipe|My grandmother's apple pie ___ has been in our family for years.
+? receipt|Please keep the ___ in case you want to return the shirt.
+? receipt|The clerk handed me a ___ after I paid for the shoes.
+? recipe|Could you give me the ___ for this delicious soup?
+## confident / confidential|拼字相近
+note: confident 形容人有自信;confidential 形容資料、訊息屬機密。
+confident|adj.|有信心的
+confidential|adj.|機密的
+? confident|She felt ___ about the exam because she had studied hard.
+? confidential|The doctor must keep all patient information ___.
+? confidential|Please don't tell anyone; this document is strictly ___.
+? confident|The coach is ___ that our team will win the game.
+## steak / stake|拼字相近
+note: steak = 牛排;stake = 賭注、利害關係(at stake = 攸關、危在旦夕)。兩字同音。
+hide: 1
+steak|n.|牛排
+stake|n.|賭注;利害關係
+? steak|I ordered a ___ with mashed potatoes at the restaurant.
+? stake|His job is at ___ if he makes another serious mistake.
+? steak|How would you like your ___ cooked: rare or well done?
+? stake|He has a big ___ in the company because he owns half of it.
+## lesson / lessen|拼字相近
+note: lesson = 課、教訓;lessen = 減少、減輕。兩字同音。
+hide: 1
+lesson|n.|課;教訓
+lessen|v.|減少、減輕
+? lesson|We have an English ___ every Monday morning.
+? lessen|Taking a walk can help ___ your stress.
+? lesson|The accident taught him a valuable ___ about safety.
+? lessen|The new medicine will ___ the pain.
+## scenery / scene / scent|拼字相近
+note: scenery = 風景(不可數,不加 a);scene = 場景、現場(可數);scent = 氣味(c 不發音)。
+scenery|n.|風景
+scene|n.|場景、現場
+scent|n.|氣味
+? scenery|We stopped the car to enjoy the beautiful mountain ___.
+? scene|The police arrived at the ___ of the accident within five minutes.
+? scent|The flowers have a sweet ___ that fills the whole room.
+? scene|The last ___ of the movie made everyone cry.
+## refuse / refuge / refund / refugee|拼字相近
+note: refuse = 拒絕(動詞);refuge = 避難所、庇護;refund = 退款;refugee = 難民(來到避難處的人)。
+refuse|v.|拒絕
+refuge|n.|避難所、庇護
+refund|n./v.|退款;退還
+refugee|n.|難民
+? refuse|She will ___ any gift that costs too much.
+? refuge|The villagers sought ___ in a cave during the storm.
+? refund|If the shirt doesn't fit, you can ask the store for a ___.
+? refugee|The ___ fled his country because of the war and now lives in a new city.
+? refund|The airline will ___ your money if the flight is canceled.
+## cease / seize|拼字相近
+note: cease = 停止、結束(正式);seize = 突然抓住、奪取、扣押。
+cease|v.|停止
+seize|v.|抓住、奪取
+? cease|The factory will ___ production next month because of low sales.
+? seize|The thief tried to ___ the woman's bag and run away.
+? seize|Customs officers ___ illegal goods at the airport.
+? cease|Please ___ talking and listen to the teacher.
+## context / contest / content|拼字相近
+note: context = 上下文、背景;contest = 比賽;content = 內容(名詞,重音在前),也可當形容詞「滿足的」(重音在後)。
+context|n.|上下文、背景
+contest|n.|比賽
+content|n./adj.|內容;滿足的
+? context|You can guess the meaning of a new word from its ___.
+? contest|She won first prize in the speech ___.
+? content|The ___ of this book is too difficult for young children.
+? content|My grandfather is ___ with his simple life in the countryside.
+## device / devise|拼字相近
+note: device = 裝置(名詞);devise = 設計、想出(動詞,devise a plan)。
+tip: device 結尾 -ice(名詞,像 office);devise 結尾 -ise(動詞,像 advise)
+device|n.|裝置、設備
+devise|v.|設計、想出
+? device|This small ___ can translate English into Chinese.
+? devise|The engineers had to ___ a new way to save energy.
+? device|Don't use any electronic ___ during the exam.
+? devise|The teacher tried to ___ a game that would help students learn vocabulary.
+## economic / economical|拼字相近
+note: economic 和「經濟」(economy)有關;economical 指花費少、省錢、有效率。
+economic|adj.|經濟(學)的
+economical|adj.|節儉的、經濟實惠的
+? economic|The government hopes to improve the country's ___ growth.
+? economical|A small car is more ___ because it uses less gas.
+? economic|Many young people moved to the city for ___ reasons.
+? economical|Buying vegetables at the local market is an ___ way to shop.
+## genius / genuine|拼字相近
+note: genius /ˈdʒinjəs/ = 天才;genuine /ˈdʒɛnjuɪn/ = 真正的、非假的、誠懇的。
+genius|n.|天才
+genuine|adj.|真正的、誠懇的
+? genius|Einstein was a ___ who changed the way we think about space and time.
+? genuine|This bag is made of ___ leather, not plastic.
+? genuine|Her ___ smile made everyone feel welcome.
+? genius|The little girl is a math ___; she can solve difficult problems easily.
+## imaginary / imaginative|拼字相近
+note: imaginary = 想像出來的、不存在的;imaginative = 富有想像力的。
+imaginary|adj.|想像出來的、虛構的
+imaginative|adj.|富想像力的
+? imaginary|The little boy has an ___ friend named Bobo who lives under his bed.
+? imaginative|The writer is so ___ that she can create strange new worlds.
+? imaginary|The equator is an ___ line around the earth.
+? imaginative|Children who read a lot are often more ___.
+## intense / intensive|拼字相近
+note: intense = 強烈的、劇烈的(形容強度);intensive = 密集的、加強的(形容密度、投入程度)。
+intense|adj.|強烈的、劇烈的
+intensive|adj.|密集的、加強的
+? intense|We could not go outside because of the ___ heat.
+? intensive|He joined an ___ English course that meets five hours every day.
+? intense|She felt ___ pain in her leg after the fall.
+? intensive|The patient was sent to the ___ care unit.
+## alley / ally|拼字相近
+note: alley /ˈæli/ = 巷弄;ally /ˈælaɪ/ = 盟友、同盟國。
+hide: 1
+alley|n.|巷弄
+ally|n.|盟友
+? alley|The cat ran into a narrow ___ behind the restaurant.
+? ally|Britain was a strong ___ of the United States during the war.
+? alley|The shop is hidden in a small ___ near the night market.
+? ally|When I was in trouble, Jane was my best ___.
+## prospect / perspective / respect / aspect|拼字相近
+note: prospect = 對未來的展望、前景;perspective = 看事情的角度、觀點;respect = 尊敬(也指「方面」);aspect = 方面。
+tip: -spect 與「看」有關:prospect 往前看(前景)、perspective 透過看(角度)、aspect 看過去的那一面
+prospect|n.|前景、展望
+perspective|n.|觀點、看法
+respect|n./v.|尊敬;方面
+aspect|n.|方面
+? prospect|The ___ of living abroad excites her.
+? perspective|Let's look at the problem from a different ___.
+? respect|Students should show ___ to their teachers.
+? aspect|Family is an important ___ of a child's life.
+? respect|I ___ people who work hard.
+## quote / quota|拼字相近
+note: quote = 引用(別人的話)、報價;quota = 規定的配額、名額。
+hide: 1
+quote|v./n.|引用;報價
+quota|n.|配額、名額
+? quote|The teacher asked us to ___ a famous poem in our essays.
+? quota|The factory must meet its production ___ every month.
+? quote|Can you give me a ___ for painting the whole house?
+? quota|Each country has a ___ for the number of fish it can catch.
+## accustom / costume / custom|拼字相近
+note: accustom = 使習慣(be accustomed to + N / V-ing);costume = 服裝、戲服;custom = 習俗、習慣。
+accustom|v.|使習慣
+costume|n.|服裝、戲服
+custom|n.|習俗;習慣
+? accustom|You need time to ___ yourself to the new school life.
+? costume|She wore a pirate ___ to the party.
+? custom|It is a ___ in Taiwan to give red envelopes during Lunar New Year.
+? costume|The actor changed into a ___ before the play began.
+## breath / breathe / breadth|拼字相近
+note: breath /brɛθ/ = 呼吸、氣息(名詞);breathe /brið/ = 呼吸(動詞);breadth /brɛdθ/ = 寬度。
+tip: breathe 多一個 e,是動詞,唸有聲的 /ð/
+breath|n.|呼吸、氣息
+breathe|v.|呼吸
+breadth|n.|寬度、廣度
+? breath|Take a deep ___ before you start your speech.
+? breathe|It is hard to ___ at the top of a high mountain.
+? breadth|The ___ of the river is about fifty meters.
+? breath|He was out of ___ after running up the stairs.
+? breathe|Please ___ in slowly through your nose.
+## cereal / serial|拼字相近
+note: 兩字同音 /ˈsɪriəl/:cereal = 穀片、穀類食品;serial = 連續的、系列的(serial number 序號)。
+cereal|n.|穀片、穀類
+serial|adj.|連續的、系列的
+? cereal|I eat a bowl of ___ with milk for breakfast.
+? serial|Every product has a ___ number printed on the back.
+? cereal|Rice and wheat are two important ___ crops.
+? serial|My favorite TV show is a ___ drama with a new episode every week.
+## perceive / conceive / deceive / receive|拼字相近
+note: 都拼成 -ceive(i before e, except after c:發 /i/ 音、前面是 c 時,e 在 i 前)。perceive = 察覺、認為;conceive = 構想、懷孕;deceive = 欺騙;receive = 收到。
+perceive|v.|察覺、認為
+conceive|v.|構想;懷孕
+deceive|v.|欺騙
+receive|v.|收到
+? perceive|Many people ___ the color red as a sign of danger.
+? conceive|It is hard to ___ how big the universe is.
+? deceive|Don't try to ___ me; I already know the truth.
+? receive|You will ___ the package within three days.
+## precede / proceed / process|拼字相近
+note: precede = 在…之前(pre- 之前);proceed = 繼續進行、前往(proceed to / with);process = 過程;處理。
+precede|v.|在…之前
+proceed|v.|繼續進行、前往
+process|n./v.|過程;處理
+? precede|A short speech will ___ the dinner.
+? proceed|After a short rest, we will ___ to the top of the mountain.
+? process|The factory will ___ the milk into cheese.
+? process|Learning a language is a long ___.
+## alternate / alternative|拼字相近
+note: alternate = 輪流的、交替(on alternate days = 隔天);alternative = 可替代的、另一個選擇。美式英文 alternate route 也常用,題目已避開。
+alternate|adj./v.|輪流的;交替
+alternative|n./adj.|選擇;可替代的
+? alternate|He works at the shop on ___ days, so he only goes there three days a week.
+? alternative|Playing outside is a healthy ___ to watching TV all day.
+? alternate|The two teams ___ between home games and away games every week.
+? alternative|Do you have any ___ to this plan?
+## council / counsel|拼字相近
+note: council = 議會、委員會(機構);counsel = 忠告、輔導(counselor 輔導老師)。
+council|n.|議會、委員會
+counsel|n./v.|忠告;輔導
+? council|The student ___ organizes the school festival every year.
+? counsel|The wise old man gave the young king good ___.
+? council|The city ___ voted to build a new park.
+? counsel|The teacher will ___ students who feel stressed.
+## moral / morale|拼字相近
+note: moral /ˈmɔrəl/ = 道德的;寓意;morale /məˈræl/ = 士氣(名詞,重音在後)。
+moral|adj./n.|道德的;寓意
+morale|n.|士氣
+? moral|The story teaches us a ___ lesson about honesty.
+? morale|The team's ___ was low after losing three games in a row.
+? moral|It is not ___ to cheat on an exam.
+? morale|The coach's speech raised the players' ___.
+## respectful / respectable / respective|拼字相近
+note: respectful = 對人有禮貌、表示尊敬;respectable = 值得尊敬的、體面的;respective = 各自的(一定放在複數名詞前,their respective jobs)。
+respectful|adj.|表示尊敬的
+respectable|adj.|值得尊敬的、體面的
+respective|adj.|各自的
+? respectful|Students should be ___ to their teachers.
+? respectable|He has a ___ job as a doctor, and everyone speaks highly of him.
+? respective|After the meeting, everyone went back to their ___ offices.
+? respectful|It is ___ to listen quietly while others are speaking.
+? respectable|She comes from a ___ family, and her father is a famous judge.
+## cooperate / corporate / coordinate / incorporate|拼字相近
+note: cooperate = 合作(co- 一起 + operate);corporate = 企業的、公司的;coordinate = 協調;incorporate = 把…併入。
+cooperate|v.|合作
+corporate|adj.|企業的、公司的
+coordinate|v.|協調
+incorporate|v.|併入、包含
+? cooperate|Everyone must ___ if we want to finish the project on time.
+? corporate|The company holds a ___ meeting every month.
+? coordinate|The manager will ___ the work of ten teams.
+? incorporate|The chef likes to ___ local fruits into his desserts.
+## attitude / altitude / latitude / gratitude|拼字相近
+note: -itude 家族,靠詞首辨認:att- = 態度;alt-(高)= 海拔;lat-(寬)= 緯度;grat-(感謝)= 感激。
+attitude|n.|態度
+altitude|n.|海拔、高度
+latitude|n.|緯度
+gratitude|n.|感激
+? attitude|A positive ___ can help you overcome many difficulties.
+? altitude|The plane climbed to an ___ of ten thousand meters.
+? latitude|Taipei is located at about 25 degrees north ___.
+? gratitude|She sent a card to show her ___ to the nurse.
+## confine / confide|拼字相近
+note: 兩字只差一個字母:confine = 限制在、禁閉(confine A to B);confide = 吐露(祕密)、信任(confide in sb.)。
+confine|v.|限制在、禁閉
+confide|v.|吐露(祕密)、信任
+? confine|The doctor told him to ___ himself to his room until the fever went down.
+? confide|I can ___ in my best friend about anything.
+? confine|Please ___ your answers to the space provided.
+? confide|She decided to ___ her secret to her sister.
+## access / excess|拼字相近
+note: access = 接近(的權利)、使用權,也可當動詞「存取」(access to + N);excess = 超過的量、過度(excess baggage)。
+access|n./v.|接近、使用權;存取
+excess|n./adj.|過量;過量的
+? access|Students have free ___ to the library after class.
+? excess|Eating an ___ of sugar can harm your teeth.
+? access|Only staff members can ___ these files.
+? excess|Passengers must pay a fee for ___ baggage.
+## emigrate / immigrate|拼字相近
+note: emigrate = 移出(從原居地離開,e- 往外 + from);immigrate = 移入(遷入他國,im- 往內 + into / to)。
+tip: emigrate 的 e = exit(出去);immigrate 的 im = in(進來)
+emigrate|v.|移出、移居國外
+immigrate|v.|移入、遷入
+? emigrate|Many people ___ from Syria to escape the war.
+? immigrate|Thousands of people ___ into Canada every year to find work.
+? emigrate|He decided to ___ from his native land and start a new life abroad.
+? immigrate|To ___ into the country, you need a special visa.
+## fiction / friction|拼字相近
+note: fiction = 虛構作品、小說;friction = 摩擦、衝突。
+hide: 1
+fiction|n.|虛構作品、小說
+friction|n.|摩擦、衝突
+? fiction|She likes to read science ___ in her free time.
+? friction|Rubbing your hands together creates ___, which makes them warm.
+? friction|There has been some ___ between the two neighbors over the noise.
+? fiction|This is a work of ___; none of the characters are real.
+## intimate / intimidate|拼字相近
+note: intimate /ˈɪntəmɪt/ = 親密的(形容詞);intimidate /ɪnˈtɪmɪdeɪt/ = 恐嚇、使膽怯(動詞)。
+intimate|adj.|親密的
+intimidate|v.|恐嚇、使膽怯
+? intimate|The two sisters are very ___ and tell each other everything.
+? intimidate|The bully tried to ___ the younger students.
+? intimate|We held an ___ party with only close friends.
+? intimidate|Don't let the tall player ___ you; he is not that good.
+## statue / statute / stature|拼字相近
+note: statue = 雕像;statute = 成文法、法規;stature = 身材、聲望。
+statue|n.|雕像
+statute|n.|成文法、法規
+stature|n.|身材;聲望
+? statue|A bronze ___ of the famous general stands in the park.
+? statute|The ___ says that anyone who drives without a license will be fined.
+? stature|The scientist's ___ in the field grew after he won the prize.
+? stature|He is a man of short ___ but great courage.
+## literal / literary / literate|拼字相近
+note: literal = 字面上的;literary = 文學的;literate = 識字的、有讀寫能力的(反義 illiterate)。
+literal|adj.|字面上的
+literary|adj.|文學的
+literate|adj.|識字的、有讀寫能力的
+? literal|Don't take his words in a ___ sense; he was only joking.
+? literary|She won a famous ___ prize for her novel.
+? literate|In the village, only half of the adults are ___.
+? literal|A ___ translation of the sentence sounds strange in Chinese.
+? literary|Shakespeare is one of the greatest ___ figures in history.
+## decent / descent|拼字相近
+note: decent /ˈdisənt/ = 像樣的、得體的;descent /dɪˈsɛnt/ = 下降、血統(descend 的名詞)。
+decent|adj.|像樣的、得體的
+descent|n.|下降;血統
+? decent|He earns a ___ salary and lives a comfortable life.
+? descent|The plane began its slow ___ toward the airport.
+? decent|It is not ___ to laugh at other people's mistakes.
+? descent|The climbers began their ___ from the peak at dawn.
+## explicit / implicit|拼字相近
+note: explicit = 明確的、說得清楚明白的;implicit = 暗示的、隱含的(沒說出口)。
+explicit|adj.|明確的
+implicit|adj.|暗示的、隱含的
+? explicit|The rules are ___: no phones are allowed in class.
+? implicit|There was an ___ agreement between them; neither said it out loud.
+? explicit|She gave me ___ instructions, so I knew exactly what to do.
+? implicit|His silence was an ___ way of saying no.
+## suppress / surpass / oppress / depress|拼字相近
+note: suppress(sup- 往下壓)= 抑制、鎮壓;surpass(sur- 超過)= 超越、勝過;oppress = 壓迫(人民);depress = 使沮喪。
+suppress|v.|抑制、鎮壓
+surpass|v.|超越、勝過
+oppress|v.|壓迫
+depress|v.|使沮喪
+? suppress|She tried to ___ a laugh during the serious meeting.
+? surpass|He worked hard to ___ his rival's record.
+? oppress|The king used his army to ___ the people.
+? depress|Rainy weather can ___ people and make them feel sad.
+## solitary / solitude / solidity|拼字相近
+note: solitary = 獨自一人的(形容詞);solitude = 獨處、孤獨(名詞,可以是享受的獨處);solidity = 堅固、穩固(名詞)。
+solitary|adj.|孤單的、獨居的
+solitude|n.|獨處、孤獨
+solidity|n.|堅固、穩固
+? solitary|The old man lives a ___ life in the mountains.
+? solitude|She enjoys the peace and ___ of her morning walk.
+? solidity|Engineers tested the ___ of the bridge before it opened.
+? solitude|After a noisy week, I long for some quiet ___.
+## price / cost / expense / value / worth|語意相近
+note: price = 標價(price tag);cost = 付出的成本、代價;expense = 開銷、花費;value = 價值;worth + 金額 / V-ing(值得)。
+price|n.|價格
+cost|n./v.|成本;花費
+expense|n.|開銷
+value|n.|價值
+worth|adj.|值得的
+? price|Please check the ___ tag before you buy that coat.|cost
+? cost|The ___ of building the new bridge was over two billion dollars.|price
+? expense|Traveling abroad is a big ___ for a student, so I save money all year.|cost
+? value|This old coin is of great ___ to collectors.|worth
+? worth|The movie is well ___ seeing.
+## lonely / alone / lone|語意相近
+note: lonely = 覺得寂寞(感受);alone = 獨自、沒有別人在身邊;lone 只放名詞前(a lone traveler = 唯一的、孤單的)。
+lonely|adj.|孤單的、寂寞的
+alone|adj./adv.|獨自的
+lone|adj.|單獨的、唯一的
+? lonely|Living far from home made him very ___.
+? alone|I like to walk ___ in the park in the morning.
+? lone|The ___ survivor of the crash was a young boy.
+## consider / regard / view / treat|語意相近
+note: consider A (as) B;regard A as B;view A as B;treat A as B(對待,不是「認為」)。
+consider|v.|考慮;認為
+regard|v.|視為
+view|v.|看待
+treat|v.|對待;治療
+? consider|I need to ___ your offer carefully before I decide.
+? regard|Her teachers ___ her highly because she works so hard.
+? view|Different cultures ___ the same event from different angles.
+? treat|The doctor will ___ your cough with medicine.
+## main / chief / major / primary|語意相近
+note: main = 主要的(最常用);chief = 地位最高的(chief editor);major = 較大、較重要的;primary = 第一位、最初的(primary school)。
+main|adj.|主要的
+chief|adj.|首要的
+major|adj.|重要的;主修
+primary|adj.|首要的;初級的
+? main|The ___ gate of the school is closed after 6 p.m.
+? chief|The ___ of police gave a speech at the ceremony.
+? major|The earthquake caused ___ damage to the city.|primary
+? primary|Elementary school is also called ___ school.
+## bring / take / fetch / carry / deliver|語意相近
+note: bring(帶到說話者這邊);take(帶離說話者);fetch(去拿來);carry(攜帶、搬運,不管方向);deliver(遞送到)。
+bring|v.|帶來
+take|v.|帶走
+fetch|v.|去拿來
+carry|v.|攜帶
+deliver|v.|遞送
+? bring|Can you ___ me a glass of water?|fetch
+? take|I will ___ my dog to the vet this afternoon.|bring,carry
+? fetch|Go and ___ some water from the well.|bring,carry
+? carry|Ants can ___ food that is many times their own weight.|bring,take
+? deliver|The postman will ___ the package to your door tomorrow.|bring,carry
+## method / way / manner / means / approach / technique / measure|語意相近
+note: method(有系統的方法);way(一般的方式);manner(態度、方式);means(手段,單複數同形);approach(處理方式);technique(技術、技巧);measure(措施)。
+method|n.|方法
+way|n.|方式
+manner|n.|方式;禮貌
+means|n.|方法;財力
+approach|n.|方法;接近
+technique|n.|技巧
+measure|n.|措施;測量
+? method|Scientists follow the scientific ___ to test their ideas.|approach,technique
+? way|Is there any other ___ to get to the station?|method,means,approach
+? manner|She spoke in a polite ___ to the guests.|method,way,approach
+? means|Email is the fastest ___ of communication.|method,way,approach
+? approach|The teacher took a creative ___ to the problem.|method,way,technique
+? technique|The painter's special ___ makes her work look real.|method,way,approach
+? measure|The government took strong ___ to reduce air pollution.|method,way,means,approach
+## quality / quantity / amount / number / figure / sum|語意相近
+note: quality(質);quantity(量);amount + 不可數名詞;number + 可數名詞;figure(數據、人物);sum(總和、金額)。
+quality|n.|品質
+quantity|n.|數量
+amount|n.|數量
+number|n.|數字;數量
+figure|n.|數字;人物
+sum|n.|總和
+? quality|This restaurant is famous for the high ___ of its food.|figure,sum
+? quantity|We care more about quality than ___.|quality,figure,sum
+? amount|A large ___ of water was wasted in the experiment.|quality,quantity
+? number|A large ___ of students joined the contest.|quality,quantity
+? figure|He is a famous public ___ in the city.|quantity,amount
+? sum|The ___ of 25 and 17 is 42.|quality,amount
+## hope / wish / expect / anticipate / look forward to|語意相近
+note: hope(有可能實現);wish(多與事實相反);expect(預期會發生);anticipate(預料並預作準備);look forward to 的 to 是介系詞,後面接 V-ing。
+hope|v.|希望
+wish|v.|但願
+expect|v.|預期
+anticipate|v.|預期並準備
+look forward to|片語|期待(to 是介系詞,+ V-ing)
+? hope|Will it rain tomorrow? I ___ not.|expect,look forward to
+? wish|I ___ I were taller.|look forward to
+? expect|I didn't ___ so many people at the party.|anticipate,look forward to
+? anticipate|Smart managers ___ problems and make plans in advance.|expect,look forward to
+? look forward to|We all ___ seeing you at the party next week.
+## chance / opportunity / occasion / possibility|語意相近
+note: chance(偶然的機會);opportunity(有利的時機);occasion(特定場合);possibility(可能性)。
+chance|n.|機會
+opportunity|n.|機會
+occasion|n.|場合;時機
+possibility|n.|可能性
+? chance|There is a good ___ that it will rain this afternoon.|possibility
+? opportunity|This job is a great ___ to learn new skills.|chance
+? occasion|A wedding is a special ___ for the whole family.
+? possibility|There is no ___ of changing his mind; he has decided.|chance
+## wage / salary / income / pay|語意相近
+note: wage 依工時計算;salary 固定月薪;income 是總收入;pay 泛指薪資或支付。
+wage|n.|工資
+salary|n.|薪水
+income|n.|收入
+pay|n./v.|薪酬;付款
+? wage|The government raised the minimum ___ again this year.|pay
+? salary|She earns a monthly ___ of 50,000 dollars.|pay
+? income|Taxes are based on your total yearly ___.|pay
+? pay|Good ___ and short hours make this a popular job.
+## attend / participate / accompany / join|語意相近
+note: attend + N(不加 in);participate in(參與);accompany sb.(陪同);join(加入)。
+attend|v.|出席
+participate|v.|參與
+accompany|v.|陪伴
+join|v.|加入
+? attend|Students must ___ every class unless they are sick.
+? participate|All students are encouraged to ___ in the school sports day.
+? accompany|The nurse will ___ the old man to the hospital.|join
+? join|Would you like to ___ us for dinner?|accompany
+## fast / quick / rapid / swift / prompt|語意相近
+note: fast(速度快);quick(短時間完成);rapid(變化、成長快);swift(敏捷,文學味);prompt(立即、準時)。
+fast|adj.|快的
+quick|adj.|迅速的
+rapid|adj.|快速的
+swift|adj.|迅速的
+prompt|adj.|及時的
+? fast|My watch is ten minutes ___, so I arrived early.|swift
+? quick|Let's take a ___ break and then continue.|fast
+? rapid|The ___ growth of the city caused traffic problems.|swift
+? swift|The eagle made a ___ dive and caught the fish.|quick,rapid
+? prompt|Thank you for your ___ reply to my email.|quick,swift
+## rule / law / regulation / principle|語意相近
+note: rule(一般規則);law(法律);regulation(官方規章);principle(行事或思考的原則)。
+rule|n.|規則
+law|n.|法律
+regulation|n.|規章、法規
+principle|n.|原則
+? rule|The ___ in our class is no phones during lessons.
+? law|Anyone who breaks the ___ will be punished.|regulation
+? regulation|The government set a new ___ on food safety.|rule
+? principle|He never lies; it's a matter of ___ for him.
+## cheap / reasonable / costly|語意相近
+note: cheap(便宜,有時帶「廉價」的貶意);reasonable(價格合理);costly(代價大、昂貴)。
+cheap|adj.|便宜的
+reasonable|adj.|價格合理的
+costly|adj.|昂貴的
+? cheap|That bag looks ___ and fell apart after a week.
+? reasonable|The restaurant serves good food at ___ prices, not too high or too low.
+? costly|Making a mistake in this project could be very ___.
+## happen / occur / arise|語意相近
+note: happen / occur 皆指事件發生;happen to + V(碰巧)、occur to sb.(想到);arise(浮現、產生,常 arise from)。
+happen|v.|發生
+occur|v.|發生
+arise|v.|出現
+? happen|I ___ to know her brother.
+? occur|It didn't ___ to me to call her.
+? arise|A big problem may ___ from this misunderstanding.
+## offer / provide / supply / furnish / afford / present|語意相近
+note: offer(主動提供);provide sb. with sth.;supply(持續供給);furnish(配備、裝設家具);afford(負擔得起);present(贈送、呈現)。
+offer|v.|提供
+provide|v.|提供
+supply|v.|供應
+furnish|v.|供應;裝設家具
+afford|v.|負擔得起
+present|v.|呈現;贈送
+? offer|He decided to ___ his seat to the old woman.|furnish
+? provide|The school will ___ every student with a free lunch.|supply,furnish
+? supply|The new power plant will ___ electricity to the whole town.|provide,furnish
+? furnish|They plan to ___ the new apartment with a sofa and a bed.|provide,supply
+? afford|We can't ___ to buy a new car this year.|furnish
+? present|The students will ___ a gift to their teacher on Teacher's Day.|offer,provide
+## custom / habit / tradition / convention / routine|語意相近
+note: custom(社會習俗);habit(個人習慣);tradition(代代相傳);convention(約定俗成);routine(日常固定程序)。
+custom|n.|習俗
+habit|n.|習慣
+tradition|n.|傳統
+convention|n.|慣例;大會
+routine|n.|例行公事
+? custom|In Japan, it is a ___ to take off your shoes before entering a house.|tradition
+? habit|Biting your nails is a bad ___.|convention
+? tradition|Eating dumplings at the New Year is a family ___ passed down for generations.|custom
+? convention|It is a social ___ to shake hands when you meet someone.|custom,tradition
+? routine|My morning ___ includes jogging and a cold shower.
+## choose / select / pick / elect / opt|語意相近
+note: choose(一般選擇);select(慎重挑選);pick(隨手挑);elect(票選);opt for(選用)。
+choose|v.|選擇
+select|v.|挑選
+pick|v.|挑選
+elect|v.|選舉
+opt|v.|選擇
+? choose|You have to ___ between tea and coffee.|select,pick
+? select|The judges will ___ the best three works from over one hundred entries.|choose,pick
+? pick|Please ___ up your toys and put them away.|select
+? elect|The members voted to ___ Tom as club president.|choose
+? opt|Many people ___ for online shopping to save time.
+## whole / entire / total / complete / intact|語意相近
+note: whole(完整的一個);entire(強調沒有遺漏);total(合計的);complete(齊全、完成);intact(完好無損)。
+whole|adj.|整個的
+entire|adj.|全部的
+total|adj.|總共的
+complete|adj.|完整的;完成
+intact|adj.|完好無損的
+? whole|I ate the ___ pizza by myself.|entire
+? entire|The ___ class stood up when the principal walked in.|whole
+? total|The ___ cost of the trip is 20,000 dollars.|entire
+? complete|Please give me a ___ list of all the guests.|whole,entire
+? intact|The vase fell off the table, but it stayed ___.|complete
+## decide / determine / resolve / conclude|語意相近
+note: decide(決定);determine(下定決心、判定);resolve(下決心或解決問題);conclude(推論出結論)。
+decide|v.|決定
+determine|v.|決心;判定
+resolve|v.|決心;解決
+conclude|v.|下結論
+? decide|Take your time to ___ between the two schools.
+? determine|Scientists used a special test to ___ the age of the rock.
+? resolve|The two countries met to ___ their long conflict.
+? conclude|From the evidence, we can ___ that he is innocent.|determine
+## heal / cure / treat / remedy|語意相近
+note: heal(傷口、心靈痊癒);cure(治好疾病);treat(診療、處理);remedy(補救辦法、療法)。
+heal|v.|痊癒
+cure|v.|治癒
+treat|v.|治療
+remedy|n.|療法
+? heal|It took two months for the broken leg to ___ completely.
+? cure|Scientists are still looking for a way to ___ this disease.|remedy
+? treat|The nurse will ___ your wounds with medicine.|heal
+? remedy|Drinking warm water is a simple home ___ for a sore throat.|cure
+## possess / own / occupy / hold|語意相近
+note: possess(正式,擁有,也用於特質);own(自己名下擁有);occupy(佔據、佔用);hold(握著、持有)。
+possess|v.|擁有
+own|v.|擁有
+occupy|v.|佔據
+hold|v.|持有
+? possess|He is proud to ___ great courage and wisdom.
+? own|I want to ___ a house of my own someday.|possess
+? occupy|The big sofa will ___ half of the room.
+? hold|Please ___ my bag for a moment while I tie my shoes.
+## build / construct / establish / found / form|語意相近
+note: build(一般建造);construct(較正式,大型建設);establish(建立制度、關係);found(創辦機構);form(形成)。
+build|v.|建造
+construct|v.|建造
+establish|v.|建立
+found|v.|創立
+form|v.|形成
+? build|The children like to ___ a sandcastle on the beach.|construct
+? construct|The government plans to ___ a new subway line across the city.|build
+? establish|They want to ___ a good relationship with their neighbors.|form
+? found|Dr. Lin plans to ___ a non-profit organization to help children.|construct,establish
+? form|Water will ___ ice when the temperature drops below zero.
+## customer / client / guest / passenger / consumer / visitor / tourist|語意相近
+note: customer(買東西的人);client(接受專業服務的客戶);guest(受邀或住宿的客人);passenger(乘客);consumer(消費者、使用者);visitor(來訪者);tourist(觀光客)。
+customer|n.|顧客
+client|n.|客戶
+guest|n.|賓客
+passenger|n.|乘客
+consumer|n.|消費者
+visitor|n.|訪客
+tourist|n.|觀光客
+? customer|The shop owner greeted every ___ with a smile.|guest,consumer,visitor
+? client|The lawyer is meeting a new ___ this afternoon.|consumer,visitor,tourist
+? guest|She is a special ___ on the talk show tonight.|consumer,visitor,tourist
+? passenger|Every ___ must fasten the seat belt during takeoff.|guest,consumer,visitor
+? consumer|The government passed a new law to protect ___ rights.|customer,client,visitor
+? visitor|Visiting hours end at 8 p.m., so every ___ must leave the ward.|guest,consumer,tourist
+? tourist|The ___ took many photos of the old temple.|guest,consumer,visitor
+## join / connect / link / attach / unite|語意相近
+note: join(加入、把兩者合在一起);connect(把兩處接起來);link(關聯、連結);attach(附上、貼上);unite(團結、合而為一)。
+join|v.|加入
+connect|v.|連接
+link|n./v.|連結
+attach|v.|附上
+unite|v.|團結
+? join|Would you like to ___ our basketball team?
+? connect|Use this cable to ___ the printer to your computer.|link
+? link|Researchers found a strong ___ between sleep and memory.|connect
+? attach|Please ___ a photo to your application form.|link
+? unite|People all over the world should ___ to fight climate change.|join
+## elder / elderly / senior|語意相近
+note: elder(同輩中較年長,my elder brother);elderly(上了年紀的,較委婉);senior(職位、年級較高)。
+elder|adj.|年長的
+elderly|adj.|年長的
+senior|adj.|資深的;長輩
+? elder|My ___ brother is five years older than me.
+? elderly|The ___ woman needs help crossing the street.
+? senior|He is a ___ student; he will graduate this year.
+? senior|Mr. Chen is a ___ manager with twenty years of experience.
+## aim / goal / purpose / target / objective / intention|語意相近
+note: aim(瞄準的目標);goal(想達成的終點);purpose(目的,on purpose = 故意);target(對象、靶);objective(具體目標,也指客觀的);intention(意圖,no intention of V-ing)。
+aim|n./v.|目標;瞄準
+goal|n.|目標;進球
+purpose|n.|目的
+target|n.|目標;對象
+objective|n./adj.|目標;客觀的
+intention|n.|意圖
+? aim|The archer took careful ___ before shooting.|objective,intention
+? goal|He scored the winning ___ in the last minute.|objective,intention
+? purpose|He did it on ___, not by accident.|objective,intention
+? target|The advertisement is aimed at a young ___ audience.|objective,intention
+? objective|The reporter tried to be ___ and not take sides.|intention
+? intention|I had no ___ of hurting your feelings.|purpose,objective
+## clear / obvious / apparent / evident / vivid|語意相近
+note: clear(清楚、透明);obvious(誰都看得出);apparent(看起來如此,apparently);evident(有證據顯示);vivid(畫面、記憶鮮明)。
+clear|adj.|清楚的
+obvious|adj.|明顯的
+apparent|adj.|明顯的;表面上的
+evident|adj.|明顯的
+vivid|adj.|生動的
+? clear|The water in the lake is so ___ that you can see the bottom.
+? obvious|It was ___ to everyone that he was lying.|apparent,evident
+? apparent|Despite his ___ calm, he was very nervous inside.|evident
+? evident|The fingerprints on the glass made it ___ that he had been there.|obvious,apparent
+? vivid|I have a ___ memory of my first day at school.|clear
+## fix / repair / mend / restore / renovate|語意相近
+note: 修理、恢復原狀,對象多半是實物或關係。fix(口語,通用);repair(機械、建物);mend(衣物、關係的修補);restore(使恢復原狀);renovate(翻修舊建築)。
+fix|v.|修理;固定
+repair|v.|修理
+mend|v.|修補
+restore|v.|恢復、修復
+renovate|v.|翻新、整修
+? fix|Can you ___ the broken chair before dinner?|repair
+? repair|The mechanic needs two days to ___ the engine.|fix
+? mend|My grandmother likes to ___ socks with a needle and thread.|fix,repair
+? restore|The workers tried to ___ the painting to its original condition.|fix,repair
+? renovate|The hotel will close for six months to ___ all the rooms.|fix,repair
+## job / work / career / occupation / profession / task / chore / affair|語意相近
+note: job 可數;work 不可數;career(長期職涯);occupation(填表的職業);profession(醫師、律師等需專業訓練);task(分派的任務);chore(家務、雜事);affair(事務、事件)。
+job|n.|工作(可數)
+work|n.|工作(不可數)
+career|n.|職業生涯
+occupation|n.|職業
+profession|n.|專業職業
+task|n.|任務
+chore|n.|家務、雜事
+affair|n.|事務、事件
+? job|He lost his ___ last month and is looking for a new one.|work,career,profession,affair
+? work|I have a lot of ___ to do today.|career,occupation,profession,affair
+? career|She hopes to build a successful ___ in music.|occupation,profession,chore,affair
+? occupation|Please write your name, age, and ___ on the form.|job,work,profession,affair
+? profession|Medicine is a respected ___ that requires years of training.|work,career,occupation,affair
+? task|The teacher gave each group a different ___.|career,occupation,profession,affair
+? chore|Washing the dishes is my daily ___.|work,occupation,task,affair
+? affair|It's a private ___; please don't ask.|work,career,occupation,profession
+## pain / ache / hurt / suffer / agony|語意相近
+note: pain(一般的痛);ache(隱隱作痛、持續的痛);hurt(受傷、感到痛);suffer from(受苦於);agony(劇痛、極度痛苦)。
+pain|n.|疼痛
+ache|n./v.|痛(持續)
+hurt|v.|受傷;痛
+suffer|v.|受苦
+agony|n.|極度痛苦
+? pain|I felt a sharp ___ in my right knee.|ache
+? ache|I have a dull ___ in my stomach after eating too much.|pain,agony
+? hurt|Be careful with the knife, or you will ___ yourself.|agony
+? suffer|Many people ___ from headaches when they don't sleep well.
+? agony|The injured soldier screamed in ___.|pain
+## permit / allow / let / authorize / admit / grant|語意相近
+note: permit(正式許可;許可證);allow(一般允許);let 後面接原形動詞;authorize(授權);admit(承認;准許進入);grant(賜予、准予)。
+permit|v./n.|許可;許可證
+allow|v.|允許
+let|v.|讓
+authorize|v.|授權
+admit|v.|承認;准許進入
+grant|v.|授予、准予
+? permit|You need a special ___ to park here.|authorize
+? allow|My parents don't ___ me to stay out late.|permit
+? let|Please ___ me know if you need any help.|authorize,grant
+? authorize|Only the manager can ___ the payment.|permit,allow
+? admit|He was too proud to ___ that he was wrong.|let,authorize
+? grant|The king decided to ___ the prisoner his freedom.|permit,allow,authorize
+## reject / refuse / deny / decline|語意相近
+note: reject(駁回、拒絕接受);refuse(不肯,refuse to V);deny(否認);decline(禮貌婉拒;下降)。
+reject|v.|拒絕
+refuse|v.|拒絕
+deny|v.|否認
+decline|v.|婉拒;下降
+? reject|The editor chose to ___ my article because it was too long.|decline
+? refuse|The little boy will ___ to eat any vegetables.|decline
+? deny|The thief continued to ___ that he stole the bike.
+? decline|The number of people who read newspapers continues to ___.
+## trip / journey / tour / travel / voyage / commute|語意相近
+note: trip(短途、一來一回);journey(長途旅程);tour(觀光旅行);travel(旅行,動詞或不可數名詞);voyage(航海);commute(通勤)。
+trip|n.|短途旅行
+journey|n.|旅程
+tour|n.|觀光旅行
+travel|v.|旅行
+voyage|n.|航行
+commute|n./v.|通勤
+? trip|We took a short ___ to Tainan over the weekend.|tour,travel
+? journey|The ___ from Taipei to Paris takes about fifteen hours by plane.|trip,travel,commute
+? tour|The guide led us on a ___ of the old city.|trip,travel,commute
+? travel|I love to ___ and see different cultures.|trip,journey,commute
+? voyage|The sailors began a long ___ across the Pacific Ocean.|journey,travel
+? commute|Her daily ___ to the office takes an hour.|travel,voyage
+## injure / harm / damage / hurt / wound / spoil / destroy / ruin / wreck|語意相近
+note: 對人:injure(使受傷)、harm(傷害)、hurt(傷害;痛)、wound(槍或刀傷)。對物:damage(損壞)、spoil(寵壞;毀掉)、destroy(徹底摧毀)、ruin(毀掉)、wreck(使失事、搞砸)。
+injure|v.|使受傷
+harm|v./n.|傷害
+damage|v./n.|損壞
+hurt|v.|傷害;痛
+wound|n./v.|傷口;使受傷
+spoil|v.|寵壞;破壞
+destroy|v.|摧毀
+ruin|v.|毀滅
+wreck|n./v.|毀壞;殘骸
+? injure|The strong wind could ___ people who are standing outside.|harm,hurt,wound,wreck
+? harm|Don't worry; the dog won't ___ you.|injure,damage,hurt,wound
+? damage|The storm may ___ the roof of the house.|harm,hurt,destroy,ruin
+? hurt|Does it ___ when I press here?|spoil,destroy,ruin,wreck
+? wound|The nurse cleaned the ___ on his arm.|injure,hurt,destroy,ruin,wreck
+? spoil|Don't ___ your child by giving him everything he wants.|injure,damage,hurt,wound,ruin
+? destroy|The fire could ___ the whole forest in an hour.|damage,hurt,ruin,wreck
+? ruin|Bad weather can ___ our picnic.|damage,hurt,spoil,destroy,wreck
+? wreck|The old ___ lies at the bottom of the sea.|injure,harm,hurt,wound,ruin
+## fee / fare / fine / charge / rent / toll / tuition|語意相近
+note: fee(服務、入場費);fare(搭車的車資);fine(罰款);charge(收取的費用);rent(租金);toll(過路費);tuition(學費)。
+fee|n.|(服務)費用
+fare|n.|車資
+fine|n.|罰款
+charge|n./v.|收費
+rent|n./v.|租金
+toll|n.|通行費
+tuition|n.|學費
+? fee|You have to pay an entrance ___ to enter the museum.|charge,rent
+? fare|The bus ___ is thirty dollars.|charge,rent,tuition
+? fine|The driver had to pay a heavy ___ for running a red light.|fare,rent,tuition
+? charge|There is no extra ___ for delivery.|fee,rent,tuition
+? rent|The ___ for this apartment is 15,000 dollars a month.|fine,charge,tuition
+? toll|Drivers pay a ___ at the entrance of the highway.|fee,charge,tuition
+? tuition|Many students work part-time to pay their ___.|fine,charge,toll
+## notice / observe / realize / recognize / identify / spot / acknowledge|語意相近
+note: notice(留意到);observe(仔細觀察);realize(領悟、意識到);recognize(認出);identify(辨認身分);spot(瞥見、發現);acknowledge(承認;致謝)。
+notice|v.|注意到
+observe|v.|觀察
+realize|v.|領悟
+recognize|v.|認出
+identify|v.|辨認
+spot|v.|發現
+acknowledge|v.|承認;致謝
+? notice|Did you ___ the new painting on the wall?|observe,realize,spot
+? observe|Scientists ___ the behavior of monkeys for years.|notice,identify,spot
+? realize|I didn't ___ how late it was until I looked at the clock.|notice,observe,spot
+? recognize|I didn't ___ my old classmate because he had changed so much.|notice,observe,realize,spot
+? identify|Police used fingerprints to ___ the thief.|notice,observe,recognize,spot
+? spot|I tried to ___ my mom in the crowd.|notice,observe,recognize
+? acknowledge|He refused to ___ his mistake.|notice,realize,recognize
+## accuse / criticize / blame / charge|語意相近
+note: accuse sb. of;criticize sb. for;blame sb. for / blame sth. on sb.;charge sb. with。
+accuse|v.|控告
+criticize|v.|批評
+blame|v.|責備
+charge|v.|指控
+? accuse|They ___ him of stealing the money.|charge
+? criticize|It's easy to ___ others, but hard to do better yourself.|charge
+? blame|Don't ___ me for your own mistake.
+? charge|The police decided to ___ him with murder.
+## alarm / alert / warn|語意相近
+note: alarm(警報器);alert(警覺的、警示);warn(警告)。
+alarm|n.|警報
+alert|adj./v.|警覺的;警示
+warn|v.|警告
+? alarm|The fire ___ went off in the middle of the night.
+? alert|The guard stayed ___ all night.
+? warn|The doctor will ___ him not to eat too much salt.
+## result / outcome / consequence / effect|語意相近
+note: result(一般結果,as a result of);outcome(最終結果);consequence(多為不良後果);effect(影響,effect on)。
+result|n.|結果
+outcome|n.|結果
+consequence|n.|後果
+effect|n.|影響、效果
+? result|As a ___ of the heavy rain, the match was cancelled.
+? outcome|No one could predict the ___ of the election.|result
+? consequence|Lying to your parents may have a serious ___ for your future.|result
+? effect|Sleeping late has a bad ___ on your health.
+## cause / trigger / contribute / lead|語意相近
+note: cause + N(造成);trigger(引爆、觸發);contribute to + N(促成);lead to + N(導致),lead 也指帶領。
+cause|v.|導致
+trigger|v.|引發
+contribute|v.|促成;貢獻
+lead|v.|導致;帶領
+? cause|Careless driving can ___ serious accidents.|trigger
+? trigger|The smell of flowers can ___ an allergic reaction.|cause
+? contribute|Everyone should ___ to the success of the project.|lead
+? lead|Follow me. I'll ___ you to the hotel.
+## emphasize / stress / highlight|語意相近
+note: emphasize(強調);stress(強調、重音、壓力);highlight(突顯、劃重點)。
+emphasize|v.|強調
+stress|n./v.|強調;壓力
+highlight|v./n.|強調;亮點
+? emphasize|The speaker raised her voice to ___ the importance of her point.|stress
+? stress|Too much ___ can make you sick.
+? highlight|Use a yellow pen to ___ the key words.
+? highlight|The best ___ of the trip was the sunrise on the mountain.
+## lack / shortage / absence|語意相近
+note: lack(缺少,lack of);shortage(供不應求的短缺);absence(不在、缺席)。
+lack|n./v.|缺乏
+shortage|n.|短缺
+absence|n.|缺席;缺乏
+? lack|We didn't finish for ___ of time.
+? shortage|Because of the water ___, people must save every drop.
+? absence|The teacher noticed his ___ from class yesterday.
+? lack|Many students ___ confidence when speaking English.
+## landscape / scenery / scene / view / sight / vision / insight|語意相近
+note: landscape(陸地風景);scenery(整體景色,不可數);scene(場景、現場);view(看到的景);sight(看見的東西,at the sight of);vision(視力、遠見);insight(看穿事物本質的洞察力,抽象)。
+landscape|n.|風景
+scenery|n.|景色
+scene|n.|場景
+view|n.|景色;看法
+sight|n.|景象
+vision|n.|視力;願景
+insight|n.|洞察力、見識
+? landscape|The painter is famous for his ___ paintings of mountains and rivers.|scenery,view,insight
+? scenery|We stopped the car to enjoy the beautiful ___ along the road.|landscape,view
+? scene|The police arrived at the ___ of the accident within minutes.|landscape,vision,insight
+? view|From my window, I have a nice ___ of the sea.|landscape,scene,sight
+? sight|He fainted at the ___ of blood.|landscape,scenery,insight
+? vision|The leader's ___ for the future inspired the whole team.|landscape,scenery,scene
+? insight|The book gave me new ___ into how the human brain works.|landscape,scenery,scene
+## show / display / exhibit / demonstrate / reveal / indicate / manifest|語意相近
+note: show(一般);display(擺出);exhibit(展覽);demonstrate(實際演示);reveal(揭露祕密);indicate(指出、表明);manifest(顯示出,較正式)。
+show|v.|顯示
+display|v.|展示
+exhibit|v.|展覽
+demonstrate|v.|示範、證明
+reveal|v.|揭露
+indicate|v.|指出、顯示
+manifest|v./adj.|顯示;明顯的
+? show|Please ___ me your ticket.|indicate,manifest
+? display|The shop will ___ its new shoes in the front window.|show,exhibit,manifest
+? exhibit|The museum will ___ the paintings of Van Gogh next month.|show,display,demonstrate,manifest
+? demonstrate|The chef will ___ how to make dumplings.|show,display,exhibit
+? reveal|The magazine refused to ___ the name of the writer.|show,indicate,manifest
+? indicate|Dark clouds usually ___ rain.|show,demonstrate,manifest
+? manifest|The disease may not ___ itself until months later.|show,exhibit,demonstrate,indicate
+## silly / foolish / ridiculous / absurd / stupid|語意相近
+note: silly(孩子氣、好笑);foolish(缺乏判斷力的愚蠢);ridiculous(荒謬可笑);absurd(不合理);stupid(笨)。
+silly|adj.|傻氣的
+foolish|adj.|愚蠢的
+ridiculous|adj.|荒謬的
+absurd|adj.|荒謬的
+stupid|adj.|愚笨的
+? silly|The clown made a ___ face, and the children laughed.|ridiculous
+? foolish|It would be ___ to spend all your money on one game.|silly,stupid
+? ridiculous|The price of the tiny cake was ___; it cost two thousand dollars.|absurd
+? absurd|The idea that a cat can drive a car is completely ___.|ridiculous
+? stupid|I felt ___ when I forgot my own phone number.|silly,foolish
+## mistake / error / fault / flaw / defect / blame|語意相近
+note: mistake(日常的錯誤,by mistake);error(正式、技術性的錯誤);fault(該負責的過錯);flaw(小瑕疵);defect(缺陷);blame(責怪)。
+mistake|n.|錯誤
+error|n.|錯誤
+fault|n.|過失;缺點
+flaw|n.|瑕疵
+defect|n.|缺陷
+blame|n.|責備
+? mistake|I'm sorry; I took your umbrella by ___.|defect,blame
+? error|The computer showed an ___ message.|defect
+? fault|It was my ___ that we missed the bus.|mistake,error
+? flaw|There is a small ___ in the diamond.|defect
+? defect|The factory recalled the cars because of a safety ___.|error,flaw
+? blame|Don't put the ___ on me; I didn't do it.|fault,defect
+## require / demand / request / ask / claim / inquire|語意相近
+note: require(規定需要);demand(強硬要求);request(客氣、正式請求);ask(問;要求);claim(主張;索取);inquire(詢問,inquire about)。
+require|v.|需要;要求
+demand|v.|要求
+request|v.|請求
+ask|v.|問;要求
+claim|v.|主張;索取
+inquire|v.|詢問
+? require|This job will ___ at least three years of experience.|demand,claim
+? demand|The workers will ___ higher pay if the company refuses.|require,request,ask
+? request|I would like to ___ permission to leave early.|require,ask
+? ask|May I ___ you a question?|demand,request
+? claim|Some people ___ to have seen a UFO.|request
+? inquire|I'd like to ___ about the price of the room.|request,ask
+## argue / debate / quarrel / dispute / bargain|語意相近
+note: argue(說理爭論);debate(正式辯論);quarrel(吵架);dispute(爭議);bargain(討價還價)。
+argue|v.|爭論
+debate|v.|辯論
+quarrel|n./v.|爭吵
+dispute|n./v.|爭議
+bargain|v./n.|討價還價
+? argue|Don't ___ with me; I know I'm right.|quarrel
+? debate|Our class will ___ whether school uniforms are necessary.|argue,dispute
+? quarrel|The couple had a terrible ___ about money last night.|argue,dispute
+? dispute|The two countries are in a ___ over the island.|argue,quarrel
+? bargain|You can ___ with the seller to get a lower price.|dispute
+## fear / dread / terror / horror / panic|語意相近
+note: fear(一般的恐懼);dread(對未來的懼怕);terror(極度驚恐);horror(驚嚇、反感,to one's horror);panic(慌亂)。
+fear|n./v.|恐懼
+dread|n./v.|懼怕
+terror|n.|驚駭
+horror|n.|恐怖
+panic|n./v.|恐慌
+? fear|She has a great ___ of snakes.|dread,terror
+? dread|He felt a sense of ___ as he waited for the exam results.|fear
+? terror|The children screamed in ___ when the monster appeared.|horror,panic
+? horror|To her ___, she found a snake in her bed.|terror
+? panic|Don't ___! Stay calm and follow me.|horror
+## begin / start / launch / initiate / resume|語意相近
+note: begin 與 start 常通用;start 也可指啟動機器;launch(發射、推出產品);initiate(正式發起);resume(中斷後再開始)。
+begin|v.|開始
+start|v.|開始、啟動
+launch|v.|發射、推出
+initiate|v.|發起、創始
+resume|v.|重新開始、恢復
+? begin|The class will ___ at nine o'clock.|start
+? start|I can't ___ the car; the engine is dead.|initiate
+? launch|The company will ___ a new phone next month.|start
+? initiate|The city plans to ___ a new recycling program.|start,launch
+? resume|Let's ___ the story where we stopped yesterday.|begin,start
+## contain / include / involve / comprise|語意相近
+note: contain(內含);include(包括,不一定全部);involve(涉及、牽涉);comprise(由…組成)。
+contain|v.|包含
+include|v.|包括
+involve|v.|牽涉
+comprise|v.|由…組成
+? contain|This box can ___ at most ten books.
+? include|The price will ___ breakfast and dinner.|comprise
+? involve|Learning a language will ___ a lot of practice.|include
+? comprise|Seven teams ___ the league.|include
+## enough / sufficient / adequate / ample|語意相近
+note: enough(一般,可放形容詞後);sufficient(正式的足夠);adequate(剛好夠用、合格);ample(綽綽有餘)。
+enough|adj.|足夠的
+sufficient|adj.|足夠的
+adequate|adj.|夠用的
+ample|adj.|充裕的
+? enough|He is not tall ___ to touch the ceiling.
+? sufficient|The report didn't offer ___ evidence to prove his guilt.|enough
+? adequate|The hotel was not luxurious, but it was ___ for a short stay.|enough,sufficient
+? ample|The room has ___ space for all of us to sit and stretch our legs.|enough,sufficient
+## protect / defend / guard / shield|語意相近
+note: protect(使免受傷害);defend(抵禦攻擊);guard(看守);shield(遮擋)。
+protect|v.|保護
+defend|v.|防衛
+guard|v.|守衛
+shield|v.|遮蔽、保護
+? protect|Sunscreen can ___ your skin from the sun.|shield
+? defend|The soldiers fought hard to ___ their city from the attack.|protect
+? guard|Two dogs ___ the gate all night.|protect
+? shield|She raised her hand to ___ her eyes from the bright light.|protect
+## suggest / propose / recommend / advise / urge|語意相近
+note: suggest / propose / recommend 後可接 that + S + (should) V;advise sb. to V;urge sb. to V;propose 也有「求婚」的意思。
+suggest|v.|建議
+propose|v.|提議;求婚
+recommend|v.|推薦
+advise|v.|勸告
+urge|v.|力勸
+? suggest|I ___ taking a taxi.|propose,recommend,advise
+? propose|He plans to ___ to his girlfriend at the beach.
+? recommend|Can you ___ a good book for my teenage brother?|suggest,advise
+? advise|The doctor will ___ him to rest for a week.|recommend,urge
+? urge|The mayor will ___ citizens to stay calm.|recommend,advise
+## gain / earn / win / obtain / acquire / attain|語意相近
+note: gain(獲得好處、體重、經驗);earn(靠努力賺);win(贏得比賽、獎項);obtain(正式取得);acquire(逐漸習得);attain(達成目標)。
+gain|v.|獲得
+earn|v.|賺取
+win|v.|贏得
+obtain|v.|取得
+acquire|v.|習得、獲得
+attain|v.|達成
+? gain|Babies ___ weight quickly in the first few months.|acquire
+? earn|He works two jobs to ___ enough money for college.|acquire,attain
+? win|Our school team hopes to ___ the first prize.|acquire,attain
+? obtain|You must ___ a visa before you can enter the country.|acquire,attain
+? acquire|Children ___ language naturally by listening to adults.|obtain,attain
+? attain|She worked hard to ___ her goal of becoming a doctor.|earn
+## separate / divide / part / disconnect / detach|語意相近
+note: separate(使分離);divide(分成幾份);part(分開、離別,part from);disconnect(切斷連接);detach(拆下、使分離)。
+separate|v.|分開
+divide|v.|分成
+part|v./n.|分離;部分
+disconnect|v.|切斷連接
+detach|v.|拆開、使分離
+? separate|The teacher had to ___ the two fighting boys.|part
+? divide|Let's ___ the cake into eight pieces.|separate
+? part|It was hard to ___ from my friends after graduation.|detach
+? disconnect|Please ___ the machine from the power before cleaning it.|separate,detach
+? detach|You can ___ the hood from the jacket if it is too warm.|separate,disconnect
+## ignore / neglect / overlook|語意相近
+note: ignore(刻意不理);neglect(疏忽應做的事);overlook(沒看見;或「眺望」)。
+ignore|v.|忽視
+neglect|v.|疏忽
+overlook|v.|忽略;俯瞰
+? ignore|He pretended to ___ me when we passed in the hall.
+? neglect|Don't ___ your homework just because you want to play.|ignore
+? overlook|Our hotel room can ___ the beautiful lake.
+? overlook|It's easy to ___ small mistakes when you're tired.|ignore
+## ability / capacity / capability / skill / talent / competence|語意相近
+note: ability(一般能力);capacity(容量、潛能);capability(具備的能力);skill(練成的技能);talent(天賦);competence(勝任的能力)。
+ability|n.|能力
+capacity|n.|容量;能力
+capability|n.|能力
+skill|n.|技能
+talent|n.|天分
+competence|n.|稱職、能力
+? ability|She has the ___ to speak five languages.|capability,competence
+? capacity|The stadium has a seating ___ of 50,000.|capability,competence
+? capability|The new missile has the ___ to travel thousands of kilometers.|ability,capacity
+? skill|Typing is a useful ___ for office workers.|ability,talent
+? talent|The little girl shows a great ___ for music.|ability,competence
+? competence|His ___ as a teacher has never been questioned.|ability,capability
+## policy / strategy / tactic|語意相近
+note: policy(組織或政府的方針);strategy(為達成目標的整體策略);tactic(strategy 底下的具體手段,常用複數 tactics)。
+policy|n.|政策、方針
+strategy|n.|策略
+tactic|n.|戰術、手段
+? policy|Our school has a strict ___ against cheating.
+? strategy|The company needs a long-term ___ to grow in Asia.|policy
+? tactic|Delaying the vote was a clever ___ to avoid a defeat.|strategy
+? policy|The government announced a new education ___ to reduce class sizes.
+## real / actual / genuine / authentic / virtual / realistic|語意相近
+note: real(真的);actual(實際的);genuine(真誠的、非偽造的);authentic(原汁原味、可信);virtual(虛擬的);realistic(現實的、務實的)。
+real|adj.|真的
+actual|adj.|實際的
+genuine|adj.|真正的
+authentic|adj.|正宗的
+virtual|adj.|虛擬的
+realistic|adj.|現實的、務實的
+? real|Is this a ___ diamond or a fake one?|genuine
+? actual|The movie is based on an ___ event, not a made-up story.|real,genuine,authentic
+? genuine|He gave me a ___ smile that came from the heart.|real,authentic
+? authentic|This restaurant serves ___ Italian pasta, just like in Rome.|real,genuine
+? virtual|You can take a ___ tour of the museum on its website.|authentic
+? realistic|Setting a ___ goal is better than dreaming of the impossible.|genuine,authentic
+## strange / odd / peculiar / weird / curious / extraordinary|語意相近
+note: strange(陌生、奇怪);odd(不尋常,也指奇數);peculiar(獨特,peculiar to = 特有於);weird(令人毛骨悚然的怪);curious(好奇的);extraordinary(非凡的)。
+strange|adj.|奇怪的;陌生的
+odd|adj.|古怪的;奇數的
+peculiar|adj.|特殊的、古怪的
+weird|adj.|怪異的
+curious|adj.|好奇的;奇怪的
+extraordinary|adj.|非凡的、特別的
+? strange|It's my first day, and I'm in a ___ city.|peculiar,curious
+? odd|Three, five, and seven are ___ numbers.|extraordinary
+? peculiar|This kind of bird is ___ to this island.|curious,extraordinary
+? weird|I had a ___ dream in which I was flying inside a giant fish.|strange,odd,peculiar
+? curious|The ___ kitten looked into every box.|peculiar,extraordinary
+? extraordinary|The little boy showed ___ talent for the piano, and everyone was amazed.|peculiar
+## borrow / lend / loan / lease / rent / mortgage|語意相近
+note: borrow 向人借;lend 借給人;loan(貸款);lease(長期租約);rent(租用);mortgage(抵押貸款)。
+borrow|v.|借入
+lend|v.|借出
+loan|n.|貸款
+lease|n./v.|租賃
+rent|v./n.|租
+mortgage|n.|抵押貸款
+? borrow|May I ___ your pen for a minute?
+? lend|Could you ___ me some money until Friday?|loan,lease
+? loan|He took out a bank ___ to buy a car.|borrow,mortgage
+? lease|The company signed a ten-year ___ for the office building.|borrow,lend
+? rent|We decided to ___ a small apartment near the university.|loan,lease
+? mortgage|They are still paying the ___ on their house after twenty years.|borrow,lend,loan
+## evidence / proof / witness / clue / trace|語意相近
+note: evidence(證據,不可數);proof(證明);witness(證人、目擊者);clue(線索);trace(蹤跡)。
+evidence|n.|證據
+proof|n.|證明
+witness|n.|目擊者
+clue|n.|線索
+trace|n.|痕跡
+? evidence|The detective collected a lot of ___ at the crime scene.|proof
+? proof|Do you have any ___ of your age?|evidence
+? witness|The ___ told the police what she saw.
+? clue|The detective found a ___ that led him to the thief.|evidence,trace
+? trace|The hikers left no ___ of their camp behind.|evidence,clue
+## ancient / antique / primitive / modern / contemporary|語意相近
+note: ancient(遠古的);antique(古董的);primitive(原始的);modern(現代的);contemporary(同時代的、當代的)。
+ancient|adj.|古老的
+antique|adj.|古董的
+primitive|adj.|原始的
+modern|adj.|現代的
+contemporary|adj.|當代的
+? ancient|The ___ Egyptians built the pyramids thousands of years ago.
+? antique|My grandmother collects ___ furniture from the 1800s.|ancient
+? primitive|Early humans used ___ tools made of stone.|ancient
+? modern|The new library has ___ equipment such as computers and tablets.|contemporary
+? contemporary|Picasso and Matisse were ___ artists; they lived at the same time.|modern
+## forbid / prohibit / ban / bar / block|語意相近
+note: forbid sb. to V;prohibit sb. from V-ing;ban(官方禁令);bar(擋在門外);block(阻塞)。
+forbid|v.|禁止
+prohibit|v.|禁止
+ban|v.|禁止
+bar|v.|禁止、阻擋
+block|v.|阻擋
+? forbid|My parents ___ me to stay out after ten.
+? prohibit|The law will ___ people from smoking in restaurants.|forbid,ban
+? ban|The city plans to ___ plastic bags next year.|prohibit
+? bar|Two guards stood at the door to ___ the way.|block
+? block|A fallen tree will ___ the road for hours.|bar
+## mix / blend / combine / stir / mingle|語意相近
+note: mix(泛稱混合,mix up = 弄混);blend(調和成一體,blend in);combine(結合);stir(用工具攪動);mingle(混在人群裡交際)。
+mix|v.|混合
+blend|v.|混合、融合
+combine|v.|結合
+stir|v.|攪拌
+mingle|v.|混雜、交際
+? mix|Don't ___ up the two keys.
+? blend|The new building does not ___ in with the old houses around it.|mix,mingle
+? combine|Let's ___ our efforts to finish the project.|mix
+? stir|Use a spoon to ___ the soup so it doesn't burn.|mix,combine
+? mingle|At the party, the host walked around to ___ with his guests.|mix
+## pretend / fake / imitate / mimic / copy|語意相近
+note: pretend(假裝);fake(偽造的、假的);imitate(模仿);mimic(惟妙惟肖地學);copy(複製、抄襲)。
+pretend|v.|假裝
+fake|adj./n.|偽造的
+imitate|v.|模仿
+mimic|v.|模仿
+copy|v./n.|複製
+? pretend|The boy likes to ___ that he is a superhero.
+? fake|The police found a ___ passport in his bag.
+? imitate|Many children ___ the way their parents talk.|mimic,copy
+? mimic|The parrot can ___ human voices perfectly.|imitate,copy
+? copy|Don't ___ your friend's answers during the test.|imitate
+## increase / expand / extend / enlarge|語意相近
+note: increase(數量增加);expand(範圍擴大);extend(延長、延伸);enlarge(放大尺寸)。
+increase|v.|增加
+expand|v.|擴張
+extend|v.|延伸
+enlarge|v.|放大
+? increase|The price of rice will ___ next month.
+? expand|The company plans to ___ its business to Southeast Asia.|extend
+? extend|Can you ___ the deadline by two days?
+? enlarge|I'd like to ___ this photo to poster size.
+## break / crack / split / burst / shatter / smash|語意相近
+note: break(最泛用);crack(出現裂縫);split(沿長線裂開);burst(爆開);shatter(碎成片);smash(猛力砸碎)。
+break|v.|打破
+crack|v.|裂開
+split|v.|劈開、分裂
+burst|v.|爆裂
+shatter|v.|粉碎
+smash|v.|砸碎
+? break|We should ___ for ten minutes and then continue.
+? crack|The ice began to ___ under his weight.|break,split,shatter
+? split|The thick log will ___ in two if you hit it with an axe.|break,shatter
+? burst|If you blow too much air into the balloon, it will ___.|break,crack,split
+? shatter|The vase will ___ into pieces if it falls on the stone floor.|break,smash
+? smash|Angry fans might ___ the window with a bat.|break,shatter
+## declare / announce / proclaim / claim|語意相近
+note: declare(正式宣告);announce(對外公布);proclaim(公開宣示);claim(聲稱;認領、索取)。
+declare|v.|宣布
+announce|v.|公布
+proclaim|v.|宣告
+claim|v.|聲稱;索取
+? declare|The president will ___ a state of emergency.|announce,proclaim
+? announce|The school will ___ the winners of the contest tomorrow.|declare
+? proclaim|The king stood on the balcony to ___ the beginning of a new era.|declare,announce
+? claim|You can ___ your lost bag at the airport office.
+## judge / evaluate / assess / estimate / rate|語意相近
+note: judge(判斷);evaluate(評價優劣);assess(評定數量、價值);estimate(概算);rate(評等)。
+judge|v.|判斷
+evaluate|v.|評估
+assess|v.|評定
+estimate|v.|估計
+rate|v.|評價
+? judge|Don't ___ a book by its cover.
+? evaluate|Teachers ___ students' work based on clear standards.|judge,assess
+? assess|Engineers will ___ the damage after the earthquake.|evaluate,estimate
+? estimate|I would ___ that the trip will take about three hours.|judge,assess
+? rate|Customers can ___ the hotel from one to five stars.|assess,estimate
+## bother / disturb / interrupt / interfere / annoy / disrupt|語意相近
+note: bother(煩擾);disturb(打擾寧靜);interrupt(打斷);interfere in / with(干預);annoy(使惱怒);disrupt(擾亂、使中斷)。
+bother|v.|打擾
+disturb|v.|打擾
+interrupt|v.|打斷
+interfere|v.|干涉
+annoy|v.|惹惱
+disrupt|v.|擾亂、使中斷
+? bother|Sorry to ___ you, but could you tell me the way to the station?|disturb,interrupt
+? disturb|Please don't ___ the baby; she's finally asleep.|bother
+? interrupt|It is rude to ___ others when they are speaking.|bother,disturb,disrupt
+? interfere|Parents should not ___ in their children's choice of friends.|disrupt
+? annoy|The loud music began to ___ the neighbors.|bother,disturb
+? disrupt|The heavy snow will ___ train services across the country.|disturb,interrupt,interfere
+## envy / jealous / envious|語意相近
+note: envy(羨慕他人所擁有,可當動詞或名詞);jealous(嫉妒,擔心被奪走所愛);envious(羨慕的)。
+envy|n./v.|羨慕;嫉妒
+jealous|adj.|嫉妒的
+envious|adj.|羨慕的
+? envy|I ___ you; you always get good grades.
+? envy|Her success filled me with ___.
+? jealous|She became ___ when her boyfriend talked with another girl.
+? envious|I'm ___ of your long vacation in Europe.|jealous
+## change / alter / shift / switch / convert / transform / modify / vary / revise / amend|語意相近
+note: 改變、修改,對象多半是內容、計畫、文件。change(通用);alter(小幅更改);shift(轉移);switch(切換);convert(轉成另一形態);transform(徹底改觀);modify(調整);vary(變動);revise(修訂文稿、計畫);amend(修正法條、文件)。
+change|v.|改變
+alter|v.|更改
+shift|v.|轉移
+switch|v.|轉換
+convert|v.|轉換
+transform|v.|徹底轉變
+modify|v.|修改
+vary|v.|變化
+revise|v.|修訂
+amend|v.|修正
+? change|I'd like to ___ my clothes before dinner.|shift,switch,transform,vary,amend
+? alter|The tailor will ___ the pants to make them shorter.|change,transform,modify,revise,amend
+? shift|The wind may ___ to the north this evening.|change,switch,transform,modify,vary
+? switch|Please ___ off the lights when you leave the room.|change,modify,vary,revise,amend
+? convert|Please ___ the dollars into Taiwan dollars at the bank.|change,shift,switch,vary,revise,amend
+? transform|The makeover will completely ___ the old town into a modern city.|change,shift,switch,convert,vary,revise,amend
+? modify|The engineer had to ___ the design to make the machine safer.|change,alter,switch,vary,revise,amend
+? vary|Prices ___ from shop to shop.|change,switch,convert,transform,revise,amend
+? revise|The writer decided to ___ his essay before handing it in.|change,alter,transform,modify,vary,amend
+? amend|Congress voted to ___ the constitution.|change,alter,transform,modify,revise
+## harsh / severe / strict / rigid|語意相近
+note: harsh(天氣、批評、處罰的嚴酷);severe(程度嚴重、處分嚴厲);strict(人或規定的嚴格);rigid(不知變通、僵硬)。
+harsh|adj.|嚴酷的
+severe|adj.|嚴重的;嚴厲的
+strict|adj.|嚴格的
+rigid|adj.|僵硬的;死板的
+? harsh|The ___ winter killed many animals.|severe
+? severe|The patient has a ___ headache and needs to see a doctor.
+? strict|Our teacher is very ___ about homework.
+? rigid|The old man is too ___ to accept new ideas.|strict
+## motivate / inspire / encourage / stimulate|語意相近
+note: motivate(給人動機、誘因,如獎金);inspire(激發靈感,inspire sb. with sth.);encourage(給人勇氣、鼓勵);stimulate(刺激、使活躍)。
+motivate|v.|激勵
+inspire|v.|啟發
+encourage|v.|鼓勵
+stimulate|v.|刺激
+? motivate|The company gives a bonus to ___ its workers; the bigger the bonus, the harder they work.|encourage
+? inspire|Great teachers ___ their students with a love of reading.
+? encourage|The coach patted the nervous boy on the shoulder to give him courage and ___ him before the big game.|motivate
+? stimulate|Coffee can ___ the brain and make you feel awake.
+## danger / risk / hazard / peril / threat|語意相近
+note: danger(一般的危險);risk(冒險、風險);hazard(潛在的危害物);peril(嚴重的危險);threat(威脅)。
+danger|n.|危險
+risk|n.|風險
+hazard|n.|危害物
+peril|n.|極大危險
+threat|n.|威脅
+? danger|The children are in ___ because the river is rising.|risk
+? risk|Smoking increases the ___ of lung cancer.|danger
+? hazard|Wet floors are a safety ___ in the kitchen.|danger,risk
+? peril|The explorers faced great ___ as they crossed the frozen sea.|danger,risk
+? threat|The dark clouds are a ___ to our picnic.|danger
+## improve / enhance / upgrade / boost / promote / advance|語意相近
+note: improve(變好);enhance(提高品質);upgrade(升級);boost(推升);promote(提倡、促進;升遷);advance(前進)。
+improve|v.|改善
+enhance|v.|增進
+upgrade|v.|升級
+boost|v.|提升
+promote|v.|促進;晉升
+advance|v.|前進;促進
+? improve|I need to ___ my English before the exam.|enhance,boost
+? enhance|Adding garlic can ___ the flavor of the soup.|improve,boost
+? upgrade|You can ___ your phone's software for free.|promote
+? boost|The new advertisement helped to ___ sales.|improve,enhance,promote
+? promote|The mayor wants to ___ tourism in the city.|enhance,upgrade,boost
+? advance|The troops will ___ toward the city at dawn.
+## weak / fragile / delicate / feeble / frail|語意相近
+note: weak(力量弱);fragile(易碎);delicate(精細易損、需要技巧);feeble(衰弱無力);frail(年老或生病而虛弱)。
+weak|adj.|虛弱的
+fragile|adj.|易碎的
+delicate|adj.|纖細的;精緻的
+feeble|adj.|衰弱的
+frail|adj.|虛弱的、脆弱的
+? weak|Math is my ___ point.
+? fragile|Please put a "___" label on the box of glass cups.|delicate
+? delicate|The surgeon performed a ___ operation on the baby's heart.
+? feeble|The old man gave a ___ cry for help, and his voice was hardly heard.|weak,frail
+? frail|The ___ old woman needs a cane to walk.|weak,feeble
+## tool / instrument / equipment / appliance / utensil / facility / infrastructure|語意相近
+note: tool(手工具);instrument(精密儀器、樂器);equipment(整套設備,不可數);appliance(家電);utensil(廚房或餐具);facility(設施);infrastructure(基礎建設)。
+tool|n.|工具
+instrument|n.|器具;樂器
+equipment|n.|設備(不可數)
+appliance|n.|家電
+utensil|n.|器皿
+facility|n.|設施
+infrastructure|n.|基礎建設
+? tool|A hammer is a useful ___ for building furniture.|instrument,equipment,infrastructure
+? instrument|The violin is a difficult musical ___ to learn.|equipment,infrastructure
+? equipment|The gym has new ___ such as treadmills and bikes.|instrument,facility,infrastructure
+? appliance|A refrigerator is a household electrical ___.|instrument,facility,infrastructure
+? utensil|Chopsticks are a common eating ___ in Asia.|instrument,facility,infrastructure
+? facility|The hospital is a modern ___ with five hundred beds.|instrument,utensil,infrastructure
+? infrastructure|Roads, bridges, and railways are part of a country's ___.|instrument,utensil,facility
+## likely / apt / prone|語意相近
+note: likely to V(可能);apt to V(習慣上容易);apt 也可指「適當的、貼切的」(an apt reply);prone to + N / V-ing(容易受…影響,多指不好的事)。
+likely|adj.|可能的
+apt|adj.|易於…的;適當的
+prone|adj.|易於…的
+? likely|It is not ___ that he will come tonight.
+? apt|That was an ___ reply to the question.
+? prone|Weak people are ___ to catching colds.
+## reduce / decrease / shrink / lessen / diminish|語意相近
+note: reduce(使減少);decrease(量自行減少);shrink(縮水、縮小);lessen(減輕);diminish(逐漸變少)。
+reduce|v.|減少
+decrease|v.|減少
+shrink|v.|縮小
+lessen|v.|減輕
+diminish|v.|縮減
+? reduce|We should ___ the amount of plastic we use.|decrease,lessen
+? decrease|The number of students in the school will ___ next year.|shrink,diminish
+? shrink|My wool sweater will ___ if you wash it in hot water.
+? lessen|Taking medicine can ___ the pain.|reduce
+? diminish|The pain will gradually ___ over time.|decrease,lessen
+## compose / comprise / consist / constitute|語意相近
+note: be composed of = consist of = comprise;constitute = 構成整體的一部分。注意主詞方向:全體 comprises 部分;部分 constitute 全體。
+compose|v.|組成;作曲
+comprise|v.|包含、組成
+consist|v.|由…構成
+constitute|v.|構成
+? compose|The young artist wants to ___ a song for his mother.
+? comprise|The course will ___ ten lessons.
+? consist|A basketball team must ___ of five players.
+? constitute|Women ___ about half of the workforce.|compose
+## force / compel / oblige / urge / prompt|語意相近
+note: force sb. to V(以武力或強大壓力強迫,違背對方意願);compel sb. to V(較正式,因法律、規定或情勢而不得不,不一定用暴力);oblige(責成、使不得不);urge sb. to V(力勸);prompt(促使、引起)。
+force|v.|強迫
+compel|v.|迫使
+oblige|v.|責成
+urge|v.|力勸
+prompt|v.|促使;迅速的
+? force|The thief used a knife to ___ the clerk to open the safe.|compel
+? compel|The law will ___ all drivers to wear a seat belt.|force,oblige
+? oblige|The rules ___ every student to wear a uniform.|force,compel
+? urge|I strongly ___ you to think again before you decide.|force,compel
+? prompt|A sudden noise may ___ the cat to jump.|force,compel
+## praise / applaud / acclaim / admire|語意相近
+note: 稱讚與欽佩。praise(一般稱讚);applaud(公開喝采、鼓掌);acclaim(公開盛讚);admire(內心佩服,不一定說出口)。
+praise|v.|稱讚
+applaud|v.|鼓掌、讚賞
+acclaim|n./v.|盛讚、喝采
+admire|v.|欽佩
+? praise|Parents should ___ children for their efforts, not only for results.|applaud
+? applaud|The audience clapped their hands and stood up to ___ the pianist.
+? acclaim|The film won great ___ from critics around the world.|praise
+? admire|I ___ your courage; I could never do that.
+## vague / ambiguous / obscure / blur|語意相近
+note: vague(不明確);ambiguous(可有兩種以上解讀);obscure(難懂、不出名);blur(模糊)。
+vague|adj.|模糊的
+ambiguous|adj.|含糊的
+obscure|adj.|晦澀的
+blur|n./v.|模糊
+? vague|I have only a ___ memory of my first day at school.
+? ambiguous|The sentence is ___; it can be understood in two different ways.
+? obscure|He is an ___ writer; hardly anyone has heard of his name.
+? blur|Without my glasses, everything is a ___.
+## successive / consecutive|語意相近
+note: 兩字都指「一個接著一個」,文法上常可互換,差別在慣用搭配:consecutive 強調中間沒有間隔,最常見的搭配是 consecutive numbers(連號)、consecutive days / games(連續幾天、幾場);successive 強調依序相繼出現,最常見的是 successive generations / governments(歷代、歷屆)。
+successive|adj.|連續的、接連的
+consecutive|adj.|連續的
+? consecutive|Take the ___ numbers 5, 6, and 7.
+? successive|The company's success was built on the work of ___ generations.
+? consecutive|The team won five ___ games without a single break.
+? successive|The ___ rulers each made the city bigger than the one before.
+## exceed / surpass / excel|語意相近
+note: exceed + 數量/期望(exceed the speed limit);surpass + 人/紀錄(surpass one's rival);excel in / at + N(不接受詞,表示出色)。
+exceed|v.|超過
+surpass|v.|超越、勝過
+excel|v.|擅長、勝過
+? exceed|Drivers must not ___ the speed limit.
+? surpass|Young Tom hopes to ___ his father one day in skill.
+? excel|Some students ___ in sports, while others prefer art.
+? exceed|The cost must not ___ one thousand dollars.

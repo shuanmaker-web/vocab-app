@@ -82,10 +82,20 @@ for ln, raw in enumerate(open(f'{ROOT}/tools/extra/confuse.txt', encoding='utf-8
     if line.startswith('note:'): g['note'] = line[5:].strip(); continue
     if line.startswith('tip:'): g['tip'] = line[4:].strip(); continue
     if line.startswith('hide:'): g['hide'] = line[5:].strip() not in ('', '0'); continue
-    if line.startswith('?'):
+    if line.startswith('?-'):  # retired question: keeps its number (so saved progress ids of the others stay put) but is not built
+        g['qs'].append({'skip': True, 'ln': ln}); continue
+    if line.startswith('??'):  # explicit options:  ?? 答案|句子(含 ___)|選項1,選項2,選項3|說明
+        p = [s.strip() for s in line[2:].split('|')]
+        if len(p) < 3: die(f'confuse.txt:{ln} bad ?? question'); continue
+        g['qs'].append({'kind': 'opts', 'ans': p[0], 'sent': p[1], 'opts': [o.strip() for o in p[2].split(',') if o.strip()], 'zh': p[3] if len(p) > 3 else '', 'ln': ln}); continue
+    if line.startswith('='):  # 三態填空卡:  = 卡名|過去式|過去分詞|-ing|說明
+        p = [s.strip() for s in line[1:].split('|')]
+        if len(p) < 4: die(f'confuse.txt:{ln} bad = card'); continue
+        g['qs'].append({'kind': 'tri', 'title': p[0], 'parts': p[1:4], 'zh': p[4] if len(p) > 4 else '', 'ln': ln}); continue
+    if line.startswith('?'):  # ? 答案|句子|要排除的選項(逗號或空白分隔;片語選項請用逗號)
         p = [s.strip() for s in line[1:].split('|')]
         if len(p) < 2: die(f'confuse.txt:{ln} bad question'); continue
-        g['qs'].append({'ans': p[0], 'sent': p[1], 'excl': p[2].split() if len(p) > 2 and p[2] else [], 'ln': ln}); continue
+        g['qs'].append({'ans': p[0], 'sent': p[1], 'excl': p[2] if len(p) > 2 else '', 'ln': ln}); continue
     p = [s.strip() for s in line.split('|')]
     x = gidx.get(p[0].lower())
     g['members'].append({'w': p[0], 'pos': p[1] if len(p) > 1 else '', 'zh': p[2] if len(p) > 2 else '', 'lv': x['lv'] if x else 0, 'gsat': bool(x)})
@@ -93,14 +103,30 @@ for g in GR:
     ms = [m['w'] for m in g['members']]
     if len(ms) < 2: die(f'{g["name"]}: <2 members')
     for k, q in enumerate(g['qs'], 1):
-        if q['ans'] not in ms: die(f'confuse.txt:{q["ln"]} answer {q["ans"]} not in group'); continue
+        if q.get('skip'): continue
+        base = {'id': f'cf-{g["id"]}-{k}', 'unit': g['id'], 'no': k, 'extra': 'cf', 'note': g['note'], 'tip': g['tip']}
+        if q.get('kind') == 'tri':
+            ans = ' / '.join(q['parts'])
+            CQ.append({**base, 'type': 'tri', 'q': q['title'], 'ans': ans, 'parts': q['parts'], 'pos': '', 'zh': q['zh'], 'full': q['title']}); continue
         if q['sent'].count('___') != 1: die(f'confuse.txt:{q["ln"]} need one ___'); continue
         rnd = random.Random(f'{g["id"]}-{k}')
-        others = [m for m in ms if m != q['ans'] and m not in q['excl']]
+        if q.get('kind') == 'opts':
+            if q['ans'] not in q['opts'] or len(q['opts']) < 2: die(f'confuse.txt:{q["ln"]} answer not in options'); continue
+            opts = q['opts'][:]; rnd.shuffle(opts)
+            CQ.append({**base, 'type': 'mcq', 'q': q['sent'].replace('___', '______'), 'ans': q['ans'], 'pos': '', 'zh': q['zh'], 'full': q['sent'].replace('___', q['ans']), 'opts': opts}); continue
+        if q['ans'] not in ms: die(f'confuse.txt:{q["ln"]} answer {q["ans"]} not in group'); continue
+        ex = q['excl'].strip()
+        if not ex: excl = []
+        elif ',' in ex: excl = [x.strip() for x in ex.split(',') if x.strip()]
+        elif ex in ms: excl = [ex]
+        else: excl = ex.split()
+        bad = [x for x in excl if x not in ms]
+        if bad: die(f'confuse.txt:{q["ln"]} excluded option not in group: {bad}'); continue
+        others = [m for m in ms if m != q['ans'] and m not in excl]
+        if not others: die(f'confuse.txt:{q["ln"]} no distractor left'); continue
         rnd.shuffle(others); opts = [q['ans']] + others[:3]; rnd.shuffle(opts)
         m = next(m for m in g['members'] if m['w'] == q['ans'])
-        CQ.append({'id': f'cf-{g["id"]}-{k}', 'unit': g['id'], 'no': k, 'type': 'mcq', 'extra': 'cf', 'q': q['sent'].replace('___', '______'), 'ans': q['ans'],
-                   'pos': m['pos'], 'zh': m['zh'], 'full': q['sent'].replace('___', q['ans']), 'opts': opts, 'note': g['note'], 'tip': g['tip']})
+        CQ.append({**base, 'type': 'mcq', 'q': q['sent'].replace('___', '______'), 'ans': q['ans'], 'pos': m['pos'], 'zh': m['zh'], 'full': q['sent'].replace('___', q['ans']), 'opts': opts})
     for q in g.pop('qs'): pass
 if err:
     print('\n'.join(err)); sys.exit(1)
