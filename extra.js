@@ -45,7 +45,7 @@ function renderExtraView() {
       <button class="btn ghost block" data-ext="upwrong:${s.id}" ${wrong ? '' : 'disabled'}>只重測錯題(${wrong})</button></div></section></div>`;
   } else if (v === 'xuplearn') {
     const s = e.upgrade.sets.find(x => x.id === S.xid);
-    app.innerHTML = `${xBack('upset:' + s.id)}<h1 style="font-size:1.25rem">學習卡 · ${esc(s.name.split('|')[0])}</h1></div><div class="stack">${s.bases.map(b => `<section class="card"><h2>${esc(b.base)} <span class="muted small">${esc(b.zh)}</span> →</h2>${xSort(b.words).map(w => `<div class="witem"><div class="row between"><b>${esc(w.w)}</b><span class="muted small">${esc(w.zh)}${xTag(w)}</span></div><div class="small">${esc(w.sent).replace(esc(w.w), `<mark class="ans">${esc(w.w)}</mark>`)}</div></div>`).join('')}</section>`).join('')}
+    app.innerHTML = `${xBack('upset:' + s.id).replace('class="topbar"', 'class="topbar xsticky"')}<h1 style="font-size:1.25rem">學習卡 · ${esc(s.name.split('|')[0])}</h1></div><div class="stack">${s.bases.map(b => `<section class="card"><h2>${esc(b.base)} <span class="muted small">${esc(b.zh)}</span> →</h2>${xSort(b.words).map(w => `<div class="witem"><div class="row between"><span class="xwd"><button class="icon-btn xspk" data-speak="${esc(w.w)}" aria-label="發音">🔊</button><b>${esc(w.w)}</b></span><span class="muted small">${esc(w.zh)}${xTag(w)}</span></div><div class="small">${esc(w.sent).replace(esc(w.w), `<mark class="ans">${esc(w.w)}</mark>`)}</div></div>`).join('')}</section>`).join('')}
     <button class="btn block" data-ext="upgo:${s.id}:2">前往 ② 選擇題</button></div>`;
   } else if (v === 'xcfset') {
     const g = e.confuse.groups.find(x => x.id === S.xid), qs = xq('cf', g.id), p = xProg(qs);
@@ -54,6 +54,7 @@ function renderExtraView() {
       <section class="card"><div class="stack" style="gap:10px"><button class="btn block" data-ext="cfgo:${g.id}">開始練習(${qs.length} 題 · 答對 ${p.ok})</button>
       <button class="btn ghost block" data-ext="cfwrong:${g.id}" ${p.wrong ? '' : 'disabled'}>只重測錯題(${p.wrong})</button></div></section></div>`;
   }
+  const bs = document.getElementById('bankswitch'); document.documentElement.style.setProperty('--bsh', (bs ? bs.offsetHeight : 0) + 'px');
   window.scrollTo(0, 0);
 }
 // 一般題隨機,三態填空卡(type 'tri')固定排最後:先選擇題、再填三態

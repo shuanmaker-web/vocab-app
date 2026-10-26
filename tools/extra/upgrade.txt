@@ -9,6 +9,10 @@ gigantic|龐大的|The company built a ___ factory the size of ten football fiel
 huge|巨大的|There was a ___ crowd outside the stadium waiting for the singer.
 immense|無邊無際的|The ___ stadium could hold more than a hundred thousand fans.
 massive|厚重龐大的|A ___ rock rolled down the hill and crushed the fence.
+magnificent|壯觀的|We admired the ___ palace with its golden gates.
+grand|雄偉的|We walked up the ___ staircase to the main hall.
+grandiose|宏偉的|The mayor announced a ___ plan to build a new city in the sea.
+majestic|雄偉的|A ___ eagle spread its wings above the snowy peak.
 > beautiful|美麗
 appealing|吸引人的|The restaurant has an ___ view of the harbor, so tourists love it.
 charming|迷人的|We stayed in a ___ little village with flower-covered cottages.
@@ -16,7 +20,6 @@ enchanting|迷人的、令人陶醉的|The ___ garden at night made us feel as i
 fascinating|極具吸引力的|The museum holds a ___ collection of ancient maps.
 inviting|誘人的|The warm, ___ cabin made us want to stay for the whole winter.
 breathtaking|令人屏息的|From the top of the mountain, the sunrise was truly ___.
-magnificent|壯觀的|We admired the ___ palace with its golden gates.
 spectacular|壯觀的|The fireworks over the river were absolutely ___.
 elaborate|精心製作的|The bride wore an ___ gown decorated with hundreds of tiny pearls.
 exquisite|精緻的|She served tea in ___ porcelain cups painted by hand.
@@ -25,9 +28,6 @@ graceful|優雅的|The ___ dancer moved across the stage like a swan.
 glamorous|耀眼迷人的|The movie star looked ___ in her sparkling red dress.
 gorgeous|燦爛的、極美的|The bride looked ___ in her white wedding dress.
 splendid|燦爛的、輝煌的|The king lived in a ___ palace full of gold and jewels.
-grand|雄偉的|We walked up the ___ staircase to the main hall.
-grandiose|宏偉的|The mayor announced a ___ plan to build a new city in the sea.
-majestic|雄偉的|A ___ eagle spread its wings above the snowy peak.
 impressive|令人印象深刻的|The architect's design for the museum was truly ___.
 imposing|氣勢逼人的|The ___ castle on the cliff looked down on the whole town.
 striking|醒目的|The ___ red bridge stands out against the gray sky.
