@@ -128,6 +128,11 @@ for g in GR:
         m = next(m for m in g['members'] if m['w'] == q['ans'])
         CQ.append({**base, 'type': 'mcq', 'q': q['sent'].replace('___', '______'), 'ans': q['ans'], 'pos': m['pos'], 'zh': m['zh'], 'full': q['sent'].replace('___', q['ans']), 'opts': opts})
     for q in g.pop('qs'): pass
+# 顯示順序:各類型內依成員平均 Level 由低到高(同分比最高 Level)。id 仍依檔案順序,與排序無關,所以作答紀錄不受影響。
+def _lvkey(g):
+    ls = [m['lv'] for m in g['members'] if m['gsat']] or [99]
+    return (sum(ls) / len(ls), max(ls))
+GR.sort(key=_lvkey)
 if err:
     print('\n'.join(err)); sys.exit(1)
 out = {'meta': {'note': '寫作升級 + 易混淆字;由 tools/build_extra.py 自 tools/extra/*.txt 產生', 'upgradeWords': len(ALLW), 'confuseGroups': len(GR)},
