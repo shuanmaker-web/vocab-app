@@ -191,8 +191,18 @@ function fmtIv(ms) {
 
 /* ---------- distractors ---------- */
 function suffix(w) { return w.slice(-3); }
+/* 中文選項太像(同一個釋義、或共用 2 個連續中文字)會讓學生混淆,干擾選項要避開 */
+function zhGrams(zh) {
+  const set = new Set();
+  String(zh).split(/[;；｜|]/).forEach(seg => {
+    const t = seg.replace(/[a-z.\/]+|[()（）…\s]/gi, '');
+    for (let i = 0; i + 1 < t.length; i++) { const g = t.slice(i, i + 2); if (!g.includes('的')) set.add(g); }
+  });
+  return set;
+}
+function zhAlike(a, b) { const ga = zhGrams(a); for (const g of zhGrams(b)) if (ga.has(g)) return true; return false; }
 function distractors(target, bank, field) {
-  const pool = S.words[bank].filter(w => w.id !== target.id && w[field] && w[field] !== target[field]);
+  const pool = S.words[bank].filter(w => w.id !== target.id && w[field] && w[field] !== target[field] && (field !== 'zh' || !zhAlike(w.zh, target.zh)));
   const score = w => (w.pos && w.pos === target.pos ? 2 : 0) + (target.lv && w.lv === target.lv ? 2 : target.lv && Math.abs(w.lv - target.lv) === 1 ? 1 : 0)
     + (target.list && w.list === target.list ? 1 : 0) + (field === 'w' && suffix(w.w) === suffix(target.w) ? 1 : 0) + Math.random() * 1.5;
   const seen = new Set([target[field]]), out = [];
