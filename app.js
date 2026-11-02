@@ -133,7 +133,7 @@ function scopeWords(bank) {
 function countsFor(bank, mode) {
   const type = typeOf(mode, bank), now = Date.now(), words = scopeWords(bank);
   let due = 0, fresh = 0;
-  for (const w of words) { const c = S.cards.get(cardId(bank, w.id, type)); if (!c) fresh++; else if (c.due <= now) due++; }
+  for (const w of words) { const c = S.cards.get(cardId(bank, w.id, type)); if (!c) fresh++; else if (c.due <= now && !c.grad) due++; }
   const used = (S.daily[dayKey()]?.new?.[`${bank}:${type}`]) || 0;
   return { due, fresh, newLeft: Math.max(0, Math.min(fresh, S.settings.newPerDay + (S.daily[dayKey()]?.bonus?.[`${bank}:${type}`] || 0) - used)), total: words.length };
 }
@@ -149,13 +149,18 @@ function buildQueue(bank, mode, practice = false) {
   }
   const gsat = bank === 'gsat', dk = x => dayKey(new Date(x.c.due)); // gsat: due cards go by due day, then the fixed sequence
   const dueSort = gsat ? (a, b) => (dk(a) < dk(b) ? -1 : dk(a) > dk(b) ? 1 : bySeq(a.w, b.w)) : (a, b) => a.c.due - b.c.due;
-  const due = words.map(w => ({ w, c: S.cards.get(cardId(bank, w.id, type)) })).filter(x => x.c && x.c.due <= now).sort(dueSort).map(x => x.w.id);
+  const due = words.map(w => ({ w, c: S.cards.get(cardId(bank, w.id, type)) })).filter(x => x.c && x.c.due <= now && !x.c.grad).sort(dueSort).map(x => x.w.id);
   const { newLeft } = countsFor(bank, mode);
   const freshPool = words.filter(w => !S.cards.has(cardId(bank, w.id, type)));
   // gsat: words already studied in another mode come first (so 選擇題 / 拼字 redo the same batch as 字卡), then the fixed sequence
   const other = new Set(gsat ? freshPool.filter(w => ['recog', 'mcq', 'spell'].some(t => t !== type && S.cards.has(cardId(bank, w.id, t)))).map(w => w.id) : []);
   const fresh = (gsat ? freshPool.slice().sort((a, b) => other.has(b.id) - other.has(a.id) || bySeq(a, b)) : freshPool).slice(0, newLeft).map(w => w.id);
-  return [...due, ...fresh].slice(0, size);
+  // graduated words (answered right every time) no longer come due; a few random ones are mixed into each round instead
+  const base = [...due, ...fresh], pool = words.filter(w => S.cards.get(cardId(bank, w.id, type))?.grad);
+  if (!base.length || !pool.length) return base.slice(0, size);
+  const pick = shuffle(pool).slice(0, Math.min(RANDOM_MIX, pool.length)).map(w => w.id), out = base.slice(0, Math.max(1, size - pick.length));
+  for (const id of pick) out.splice(Math.floor(Math.random() * (out.length + 1)), 0, id);
+  return out;
 }
 
 /* ---------- grading ---------- */
@@ -169,8 +174,12 @@ async function grade(bank, wid, mode, rating, extra = {}) {
   const type = typeOf(mode, bank), id = cardId(bank, wid, type), isNew = !S.cards.has(id);
   let rec = S.cards.get(id) || blankCard(bank, wid, type);
   if (!S.session?.practice) {
-    const next = S.fsrs.next(toFsrsCard(rec), new Date(), rating).card;
-    rec = fromFsrsCard(rec, next); S.cards.set(id, rec); await store.putCard(rec);
+    const next = tuneNext(rec, S.fsrs.next(toFsrsCard(rec), new Date(), rating).card, rating);
+    rec = fromFsrsCard(rec, next);
+    if (rating === 1) { rec.missed = true; rec.grad = false; rec.ok = 0; }
+    else if (rating >= 3 && !rec.missed && !rec.lapses) { rec.ok = (rec.ok || 0) + 1; if (rec.ok >= GRAD_AFTER) rec.grad = true; }
+    else { rec.grad = false; rec.ok = 0; }
+    S.cards.set(id, rec); await store.putCard(rec);
   }
   const key = dayKey(); const d = (S.daily[key] ||= { reviews: 0, correct: 0, new: {} });
   d.reviews++; if (rating >= 3) d.correct++;
@@ -180,10 +189,21 @@ async function grade(bank, wid, mode, rating, extra = {}) {
   noteAnswer(bank, wid, mode, extra.correct === true || (extra.correct === undefined && rating >= 3));
   return rec;
 }
+/* Tuning on top of FSRS (stability etc. stay as FSRS computed them):
+   - answered wrong (rating 1): wait at least LAPSE_MIN_DAYS before the next review (FSRS alone says 1 day)
+   - 'graduated' words (right GRAD_AFTER times in a row, never wrong, never lapsed; card.grad) stop coming due;
+     instead RANDOM_MIX of them are mixed into each round. Answering one wrong sends it back to the normal schedule. */
+const LAPSE_MIN_DAYS = 3, GRAD_AFTER = 2, RANDOM_MIX = 3;
+function tuneNext(rec, card, rating) {
+  if (rating !== 1) return card;
+  const now = new Date(), days = (card.due - now) / DAY;
+  if (days >= LAPSE_MIN_DAYS) return card;
+  return { ...card, due: new Date(now.getTime() + LAPSE_MIN_DAYS * DAY), scheduled_days: LAPSE_MIN_DAYS };
+}
 function previewIntervals(bank, wid) {
   const rec = S.cards.get(cardId(bank, wid, 'recog')) || blankCard(bank, wid, 'recog');
   const r = S.fsrs.repeat(toFsrsCard(rec), new Date());
-  return [1, 2, 3, 4].map(k => fmtIv(+r[k].card.due - Date.now()));
+  return [1, 2, 3, 4].map(k => fmtIv(+tuneNext(rec, r[k].card, k).due - Date.now()));
 }
 function fmtIv(ms) {
   const d = ms / DAY; if (d < 0.5) return '今天'; if (d < 30) return `${Math.max(1, Math.round(d))} 天`; if (d < 365) return `${Math.round(d / 30)} 個月`; return `${(d / 365).toFixed(1)} 年`;
@@ -379,7 +399,7 @@ function renderProgress() {
     if (bankQs('material').length) html += qProgressHtml('material', '練習題本');
     if (mat.length) {
       let learned = 0, mastered = 0, due = 0;
-      for (const w of mat) { const key = 'material:' + w.id, c = S.cards.get(cardId('material', w.id, 'recog')), lrn = isLearned('material', w.id); if (lrn) learned++; if (lrn && S.spellOK?.has(key) && c && c.stability >= 21) mastered++; if (c && c.due <= now) due++; } // mastered ⊆ learned
+      for (const w of mat) { const key = 'material:' + w.id, c = S.cards.get(cardId('material', w.id, 'recog')), lrn = isLearned('material', w.id); if (lrn) learned++; if (lrn && S.spellOK?.has(key) && c && c.stability >= 21) mastered++; if (c && c.due <= now && !c.grad) due++; } // mastered ⊆ learned
       html += `<div class="sec-t" style="margin-top:18px">單字學習</div><div class="stat-grid"><div class="stat pstat"><b>${learned}</b><span>已學 / ${mat.length}</span></div><div class="stat pstat"><b>${mastered}</b><span>已精熟 / ${mat.length}</span></div><div class="stat pstat"><b>${due}</b><span>待複習</span></div></div>
       <div class="pbar" style="margin-top:10px"><i class="g" style="width:${learned / mat.length * 100}%"></i><em>${Math.round(learned / mat.length * 100)}%</em></div><div class="small muted" style="margin-top:6px">已學的單字佔全部 ${mat.length} 個的比例</div>
       <p class="small muted" style="margin-top:6px">已學 = 選擇題與拼字都答過(只用字卡不算);精熟 = 已學 且 拼字答對過 且 記憶穩定度 ≥ 21 天</p>`;
@@ -396,7 +416,7 @@ function renderProgress() {
       const lrn = isLearned(bank, w.id); // mastered is always a subset of learned
       if (lrn) { learned++; g.l++; }
       if (lrn && S.spellOK?.has(key) && cs.some(c => c.stability >= 21)) { mastered++; g.m++; }
-      if (cs.some(c => c.due <= now)) due++;
+      if (cs.some(c => c.due <= now && !c.grad)) due++;
     }
     const exam = bankQs(bank).length ? qProgressHtml(bank, '歷屆試題 · 詞彙題') + '<div class="sec-t" style="margin-top:18px">單字學習</div>' : '';
     html += `<section class="card"><h2>${BANKS[bank].name}</h2>${exam}<div class="stat-grid" style="margin-top:8px">
