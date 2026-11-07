@@ -595,12 +595,14 @@ function renderSummary() {
     <button class="btn block" data-act="again">再來一回</button><button class="btn ghost block" data-act="quit">回首頁</button></div>`;
 }
 
-async function answerCurrent(rating, extra = {}) {
+/* An answer is saved the moment it is given (recordAnswer); 下一題 / advance only moves on, so closing the app on the result screen loses nothing. */
+async function recordAnswer(rating, extra = {}) {
   const s = S.session, w = curWord(); await grade(s.bank, w.id, s.mode, rating, { wid: w.id, ...extra });
   s.results.push({ wid: w.id, rating });
   if (rating === 1 && !s.practice && s.queue.length - s.pos < 40) { const at = Math.min(s.queue.length, s.pos + 4); s.queue.splice(at, 0, w.id); s.total++; } // see it again soon
-  s.pos++; s.revealed = false; s.q = null; s.spellResult = null; s.hint = false; render();
 }
+function advance() { const s = S.session; s.pos++; s.revealed = false; s.q = null; s.spellResult = null; s.spellRec = null; s.hint = false; render(); }
+async function answerCurrent(rating, extra = {}) { await recordAnswer(rating, extra); advance(); }
 
 /* ---------- exercise questions (教材練習題本) ---------- */
 const BLANK_RE = /[A-Za-z]*_{2,}[A-Za-z]*(?:\s*\([A-Za-z]+\))?/;
@@ -773,14 +775,14 @@ document.addEventListener('click', async e => {
   if (t.dataset.rate) return answerCurrent(+t.dataset.rate);
   if (t.dataset.pick !== undefined && s.q && s.q.picked === null) {
     const i = +t.dataset.pick, w = curWord(), correct = s.q.opts[i].id === w.id, ms = Date.now() - s.q.t0;
-    s.q.picked = i; s.q.result = correct; render(); s.q.ms = ms; return;
+    s.q.picked = i; s.q.result = correct; s.q.ms = ms; render(); s.q.rec = recordAnswer(correct ? (ms < 2500 ? 4 : 3) : 1, { ms, correct }); return;
   }
   switch (t.dataset.act) {
     case 'quit': if (!s.results.length || s.pos >= s.queue.length || confirm('要離開嗎?已完成的題目會保留。')) endSession(); break;
     case 'reveal': s.revealed = true; render(); break;
-    case 'next': if (s.mode === 'mcq') { const q = s.q; await answerCurrent(q.result ? (q.ms < 2500 ? 4 : 3) : 1, { ms: q.ms, correct: q.result }); } else if (s.mode === 'spell') { const r = s.spellResult; await answerCurrent(r.kind === 'ok' ? (s.hintUsed ? 2 : 3) : r.kind === 'typo' ? 2 : 1, { answer: r.user, correct: r.kind === 'ok' }); s.hintUsed = false; } break;
+    case 'next': if (s.mode === 'mcq') await s.q?.rec; else if (s.mode === 'spell') { await s.spellRec; s.hintUsed = false; } advance(); break;
     case 'hint': s.hint = true; s.hintUsed = true; { const v = $('#spell-in')?.value; renderSpell(document.querySelector('.topbar').outerHTML, curWord()); if ($('#spell-in')) $('#spell-in').value = v || ''; } break;
-    case 'giveup': s.spellResult = { kind: 'wrong', user: '', best: curWord().w, gaveUp: true }; render(); break;
+    case 'giveup': if (s.spellResult) break; s.spellResult = { kind: 'wrong', user: '', best: curWord().w, gaveUp: true }; s.spellRec = recordAnswer(1, { answer: '', correct: false }); render(); break;
     case 'again': startSession(s.bank, s.mode, s.practice); break;
   }
 });
@@ -792,8 +794,9 @@ document.addEventListener('submit', e => {
     exAnswer(flags.every(Boolean), { answer: user.map(v => v.trim()).join(' / ') }); return; }
   if (e.target.id === 'ex-form') { e.preventDefault(); const v = $('#ex-in').value; if (!v.trim()) return; const s = S.session, q = qById[s.queue[s.pos]]; s.cur.fill = checkFill(v, q.ans); exAnswer(s.cur.fill.kind === 'ok', { answer: v.trim() }); return; }
   if (e.target.id !== 'spell-form') return; e.preventDefault();
-  const s = S.session, v = $('#spell-in').value; if (!v.trim()) return;
-  s.spellResult = checkSpelling(v, curWord()); render();
+  const s = S.session, v = $('#spell-in').value; if (!v.trim() || s.spellResult) return;
+  const r = checkSpelling(v, curWord()); s.spellResult = r;
+  s.spellRec = recordAnswer(r.kind === 'ok' ? (s.hintUsed ? 2 : 3) : r.kind === 'typo' ? 2 : 1, { answer: r.user, correct: r.kind === 'ok' }); render();
 });
 document.addEventListener('keydown', e => {
   const s = S.session; if (!s) return;
