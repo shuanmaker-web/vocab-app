@@ -121,7 +121,8 @@ async function loadQuestions() {
   }
   for (const q of S.questions) qById[q.id] = q;
 }
-const answers = w => String(w.w).split('/').map(s => s.trim()).filter(Boolean);
+/* 'w' is what is shown (美式拼法); optional 'alt' = extra spellings that also count as correct when spelling (e.g. offense / offence). */
+const answers = w => [...String(w.w).split('/'), ...(w.alt ? String(w.alt).split('/') : [])].map(s => s.trim()).filter(Boolean);
 const unitNums = () => [...new Set(S.words.material.map(w => w.unit).filter(n => n != null))].sort((a, b) => a - b);
 function scopeWords(bank) {
   const ws = S.words[bank];
