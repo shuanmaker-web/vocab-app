@@ -158,7 +158,7 @@ function buildQueue(bank, mode, practice = false) {
   const other = new Set(gsat ? freshPool.filter(w => ['recog', 'mcq', 'spell'].some(t => t !== type && S.cards.has(cardId(bank, w.id, t)))).map(w => w.id) : []);
   const fresh = (gsat ? freshPool.slice().sort((a, b) => other.has(b.id) - other.has(a.id) || bySeq(a, b)) : freshPool).slice(0, newLeft).map(w => w.id);
   // graduated words (answered right every time) no longer come due; a few random ones are mixed into each round instead
-  const base = [...due, ...fresh], pool = words.filter(w => S.cards.get(cardId(bank, w.id, type))?.grad);
+  const base = [...due, ...fresh], pool = words.filter(w => { const c = S.cards.get(cardId(bank, w.id, type)); return c?.grad && !c.mixDone; }); // mixDone: already mixed in once and answered right → not mixed in again
   if (!base.length || !pool.length) return base.slice(0, size);
   const pick = shuffle(pool).slice(0, Math.min(RANDOM_MIX, pool.length)).map(w => w.id), out = base.slice(0, Math.max(1, size - pick.length));
   for (const id of pick) out.splice(Math.floor(Math.random() * (out.length + 1)), 0, id);
@@ -176,11 +176,13 @@ async function grade(bank, wid, mode, rating, extra = {}) {
   const type = typeOf(mode, bank), id = cardId(bank, wid, type), isNew = !S.cards.has(id);
   let rec = S.cards.get(id) || blankCard(bank, wid, type);
   if (!S.session?.practice) {
+    const wasGrad = !!rec.grad; // a graduated card never comes due, so answering one means it was a random mix-in
     const next = tuneNext(rec, S.fsrs.next(toFsrsCard(rec), new Date(), rating).card, rating);
     rec = fromFsrsCard(rec, next);
-    if (rating === 1) { rec.missed = true; rec.grad = false; rec.ok = 0; }
+    if (rating === 1) { rec.missed = true; rec.grad = false; rec.ok = 0; rec.mixDone = false; }
     else if (rating >= 3 && !rec.missed && !rec.lapses) { rec.ok = (rec.ok || 0) + 1; if (rec.ok >= GRAD_AFTER) rec.grad = true; }
-    else { rec.grad = false; rec.ok = 0; }
+    else { rec.grad = false; rec.ok = 0; rec.mixDone = false; }
+    if (wasGrad && rating >= 3 && rec.grad) rec.mixDone = true;
     S.cards.set(id, rec); await store.putCard(rec);
   }
   const key = dayKey(); const d = (S.daily[key] ||= { reviews: 0, correct: 0, new: {} });
@@ -195,7 +197,7 @@ async function grade(bank, wid, mode, rating, extra = {}) {
    - answered wrong (rating 1): wait at least LAPSE_MIN_DAYS before the next review (FSRS alone says 1 day)
    - 'graduated' words (right GRAD_AFTER times in a row, never wrong, never lapsed; card.grad) stop coming due;
      instead RANDOM_MIX of them are mixed into each round. Answering one wrong sends it back to the normal schedule. */
-const LAPSE_MIN_DAYS = 3, GRAD_AFTER = 2, RANDOM_MIX = 3;
+const LAPSE_MIN_DAYS = 3, GRAD_AFTER = 2, RANDOM_MIX = 1;
 function tuneNext(rec, card, rating) {
   if (rating !== 1) return card;
   const now = new Date(), days = (card.due - now) / DAY;
