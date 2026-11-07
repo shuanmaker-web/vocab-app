@@ -5,6 +5,7 @@
 /* ---------- helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const zhH = s => esc(s).split(/\s*[｜|]\s*/).join('<br>');  // 多詞性釋義:第 2、3 個詞性換到下一行
 const DAY = 86400000;
 const pad = n => String(n).padStart(2, '0');
 const dayKey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
@@ -545,7 +546,7 @@ function renderFlash(head, w) {
   const s = S.session;
   let body = `<div class="card q"><div class="word">${esc(w.w)}</div><div class="pos">${esc(w.pos || '')}</div><div style="margin-top:10px">${speakBtn(w)}</div>`;
   if (s.revealed) {
-    body += `<div class="zh">${esc(w.zh)}</div>${exBlock(w)}</div>`;
+    body += `<div class="zh">${zhH(w.zh)}</div>${exBlock(w)}</div>`;
     const iv = s.practice ? ['', '', '', ''] : previewIntervals(s.bank, w.id);
     body += `<div class="ratings">${[['忘了', 1], ['有點難', 2], ['記得', 3], ['太簡單', 4]].map(([t, r], i) => `<button class="rate r${r}" data-rate="${r}"><b>${t}</b><span>${iv[i]}</span></button>`).join('')}</div>`;
   } else body += `</div><button class="btn block" style="margin-top:14px" data-act="reveal">顯示答案</button>`;
@@ -560,19 +561,19 @@ function renderMcq(head, w) {
     s.q = { id: w.id, reverse, field, opts: shuffle([w, ...ds]), picked: null, t0: Date.now() };
   }
   const q = s.q;
-  let body = `<div class="card q">${q.reverse ? `<div class="muted small">哪一個英文單字的意思是</div><div class="zh">${esc(w.zh)}</div><div class="pos">${esc(w.pos || '')}</div>` : `<div class="word">${esc(w.w)}</div><div class="pos">${esc(w.pos || '')}</div><div style="margin-top:10px">${speakBtn(w)}</div>`}</div>`;
+  let body = `<div class="card q">${q.reverse ? `<div class="muted small">哪一個英文單字的意思是</div><div class="zh">${zhH(w.zh)}</div><div class="pos">${esc(w.pos || '')}</div>` : `<div class="word">${esc(w.w)}</div><div class="pos">${esc(w.pos || '')}</div><div style="margin-top:10px">${speakBtn(w)}</div>`}</div>`;
   body += `<div class="opts">${q.opts.map((o, i) => {
     let cls = ''; if (q.picked !== null) cls = o.id === w.id ? 'ok' : i === q.picked ? 'no' : '';
     const hit = q.picked === i && o.id === w.id;
-    return `<button class="opt ${cls}${hit ? ' picked' : ''}" data-pick="${i}" ${q.picked !== null ? 'disabled' : ''}><span>${esc(q.reverse ? o.w : o.zh)}</span>${hit ? '<b class="opt-tag">✓ 正確</b>' : ''}</button>`;
+    return `<button class="opt ${cls}${hit ? ' picked' : ''}" data-pick="${i}" ${q.picked !== null ? 'disabled' : ''}><span>${(q.reverse ? esc(o.w) : zhH(o.zh))}</span>${hit ? '<b class="opt-tag">✓ 正確</b>' : ''}</button>`;
   }).join('')}</div>`;
-  if (q.picked !== null) body += `<div class="card" style="margin-top:12px"><b>${esc(w.w)}</b> ${esc(w.pos || '')} — ${esc(w.zh)}${exBlock(w)}</div><button class="btn block" style="margin-top:12px" data-act="next">下一題</button>`;
+  if (q.picked !== null) body += `<div class="card" style="margin-top:12px"><b>${esc(w.w)}</b> ${esc(w.pos || '')} — ${zhH(w.zh)}${exBlock(w)}</div><button class="btn block" style="margin-top:12px" data-act="next">下一題</button>`;
   app.innerHTML = head + body;
 }
 
 function renderSpell(head, w) {
   const s = S.session, r = s.spellResult;
-  let body = `<div class="card q"><div class="muted small">請拼出這個字</div><div class="zh">${esc(w.zh)}</div><div class="pos">${esc(w.pos || '')}${w.w.includes('/') ? '' : ` · ${w.w.length} 個字母`}</div><div style="margin-top:10px">${speakBtn(w)}</div>${s.hint ? `<div class="pos" style="margin-top:6px">提示:${esc(w.w[0])}${'・'.repeat(Math.max(0, answers(w)[0].length - 1))}</div>` : ''}</div>`;
+  let body = `<div class="card q"><div class="muted small">請拼出這個字</div><div class="zh">${zhH(w.zh)}</div><div class="pos">${esc(w.pos || '')}${w.w.includes('/') ? '' : ` · ${w.w.length} 個字母`}</div><div style="margin-top:10px">${speakBtn(w)}</div>${s.hint ? `<div class="pos" style="margin-top:6px">提示:${esc(w.w[0])}${'・'.repeat(Math.max(0, answers(w)[0].length - 1))}</div>` : ''}</div>`;
   if (!r) {
     body += `<form id="spell-form" style="margin-top:14px" autocomplete="off"><input class="field" id="spell-in" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入英文" aria-label="拼字答案"><div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-act="hint" ${s.hint ? 'disabled' : ''}>提示</button><button type="button" class="btn ghost" data-act="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
   } else {
@@ -590,7 +591,7 @@ function renderSpell(head, w) {
 function renderSummary() {
   const s = S.session, ok = s.results.filter(r => r.rating >= 3).length, missed = s.results.filter(r => r.rating < 3);
   app.innerHTML = `<div class="stack"><section class="card q"><h1>${ok === s.total ? '全部答對!🎉' : '完成這一回'}</h1><p class="zh">${ok} / ${s.total}</p><p class="muted">答對率 ${Math.round(ok / s.total * 100)}% · 用時 ${Math.max(1, Math.round((Date.now() - s.t0) / 60000))} 分鐘</p></section>
-    ${missed.length ? `<section class="card"><h2>需要再加強</h2><ul class="missed">${[...new Map(missed.map(r => [r.wid, r])).values()].map(r => { const w = wordById[`${s.bank}:${r.wid}`]; return `<li><b>${esc(w.w)}</b> ${esc(w.pos || '')} — ${esc(w.zh)}</li>`; }).join('')}</ul></section>` : ''}
+    ${missed.length ? `<section class="card"><h2>需要再加強</h2><ul class="missed">${[...new Map(missed.map(r => [r.wid, r])).values()].map(r => { const w = wordById[`${s.bank}:${r.wid}`]; return `<li><b>${esc(w.w)}</b> ${esc(w.pos || '')} — ${zhH(w.zh)}</li>`; }).join('')}</ul></section>` : ''}
     <button class="btn block" data-act="again">再來一回</button><button class="btn ghost block" data-act="quit">回首頁</button></div>`;
 }
 
@@ -662,7 +663,7 @@ function renderPractice() {
 function renderUnit() {
   const u = S.punit, gsat = S.bank === 'gsat', qs = bankQs().filter(q => q.unit === u), t = qTotals(q => q.unit === u);
   const left = qs.filter(q => !qSt(q.id)), wrong = qs.filter(q => qSt(q.id) && !qSt(q.id).last);
-  const item = q => `<div class="witem"><div class="muted small">第 ${q.no} 題 · ${qKind(q)} · 答錯 ${(qSt(q.id).n - qSt(q.id).ok)} 次</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`;
+  const item = q => `<div class="witem"><div class="muted small">第 ${q.no} 題 · ${qKind(q)} · 答錯 ${(qSt(q.id).n - qSt(q.id).ok)} 次</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${zhH(q.zh)}</span></div></div>`;
   const types = ['all', ...['fill', 'mcq', 'match'].filter(x => wrong.some(q => q.type === x))], f = types.includes(S.wrongType) ? S.wrongType : 'all';
   const shown = wrong.filter(q => f === 'all' || q.type === f), partial = left.length > 0 && left.length < qs.length;
   app.innerHTML = `<div class="topbar"><button class="icon-btn" data-pact="back" aria-label="返回">←</button><h1 style="font-size:1.25rem">${unitName(u, S.bank, true)}</h1></div>
@@ -686,7 +687,7 @@ function renderEx() {
   if (s.pos >= s.queue.length) return renderExSummary();
   const q = qById[s.queue[s.pos]], c = exQuestionState(q), pct = Math.round(s.results.length / s.total * 100), done = c.result !== null;
   let body = `<div class="topbar"><button class="icon-btn" data-xact="quit" aria-label="離開">✕</button><div class="bar"><i style="width:${pct}%"></i></div><span class="muted small">${s.results.length}/${s.total}${s.retest ? ' · 重測' : ''}</span></div>`;
-  body += `<div class="card"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}`}</div><p class="qtext">${sentenceHtml(q, done)}</p>${q.type === 'tri' ? '<div class="small muted">寫出這個動詞的過去式、過去分詞、-ing(拼字要完全正確)</div>' : ''}${srcNote(q)}${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${esc(q.zh)}</div>` : ''}</div>`;
+  body += `<div class="card"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題 · ${qKind(q)}`}</div><p class="qtext">${sentenceHtml(q, done)}</p>${q.type === 'tri' ? '<div class="small muted">寫出這個動詞的過去式、過去分詞、-ing(拼字要完全正確)</div>' : ''}${srcNote(q)}${c.hint && !done ? `<div class="small muted">提示:${esc(q.pos)} ${zhH(q.zh)}</div>` : ''}</div>`;
   if (q.type === 'tri') { // 三態填空卡(易混淆字:不規則動詞的 過去式 / 過去分詞 / -ing)
     const labs = ['過去式', '過去分詞', '-ing'];
     if (!done) body += `<form id="tri-form" style="margin-top:14px" autocomplete="off">${labs.map((l, i) => `<label class="small muted" style="display:block;margin-top:${i ? 10 : 0}px">${l}</label><input class="field" id="tri-${i}" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入英文" aria-label="${l}">`).join('')}<div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-xact="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
@@ -694,13 +695,13 @@ function renderEx() {
       const r = c.tri;
       body += `<div class="card" style="margin-top:14px;text-align:center">${c.result ? '<div class="verdict ok">✓ 全部正確!</div>' : `<div class="verdict no">${r.gaveUp ? '正確答案' : '✗ 有地方不對(拼字要完全正確)'}</div>`}
         ${labs.map((l, i) => `<div class="muted small" style="margin-top:8px">${l}</div>${!r.gaveUp && r.user[i] && !r.flags[i] ? `<div class="diff"><span class="x">${esc(r.user[i])}</span></div>` : ''}<div class="diff"><span class="good">${esc(q.parts[i])}</span></div>`).join('')}
-        ${q.zh ? `<div class="small" style="margin-top:10px">${esc(q.zh)}</div>` : ''}${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}</div>`;
+        ${q.zh ? `<div class="small" style="margin-top:10px">${zhH(q.zh)}</div>` : ''}${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}</div>`;
     }
   } else if (q.type === 'fill') {
     if (!done) body += `<form id="ex-form" style="margin-top:14px" autocomplete="off"><input class="field" id="ex-in" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入完整單字" aria-label="答案"><div class="row" style="margin-top:12px"><button type="button" class="btn ghost" data-xact="hint" ${c.hint ? 'disabled' : ''}>提示</button><button type="button" class="btn ghost" data-xact="giveup">不會</button><button class="btn grow" type="submit">送出</button></div></form>`;
     else {
       const r = c.fill, shown = r.flags ? [...r.user].map((ch, i) => `<span class="${r.flags[i] ? 'good' : 'x'}">${esc(ch)}</span>`).join('') : '';
-      body += `<div class="card" style="margin-top:14px;text-align:center">${r.kind === 'ok' ? '<div class="verdict ok">✓ 正確!</div>' : r.kind === 'typo' ? '<div class="verdict half">差一個字母(拼字要完全正確才算對)</div>' : `<div class="verdict no">${r.gaveUp ? '正確答案' : '✗ 答錯了'}</div>`}${r.kind !== 'ok' && r.user ? `<div class="muted small">你的答案</div><div class="diff">${shown}</div>` : ''}<div class="muted small">正確答案</div><div class="diff"><span class="good">${esc(q.ans)}</span></div><div class="small">${esc(q.pos)} ${esc(q.zh)}</div></div>`;
+      body += `<div class="card" style="margin-top:14px;text-align:center">${r.kind === 'ok' ? '<div class="verdict ok">✓ 正確!</div>' : r.kind === 'typo' ? '<div class="verdict half">差一個字母(拼字要完全正確才算對)</div>' : `<div class="verdict no">${r.gaveUp ? '正確答案' : '✗ 答錯了'}</div>`}${r.kind !== 'ok' && r.user ? `<div class="muted small">你的答案</div><div class="diff">${shown}</div>` : ''}<div class="muted small">正確答案</div><div class="diff"><span class="good">${esc(q.ans)}</span></div><div class="small">${esc(q.pos)} ${zhH(q.zh)}</div></div>`;
     }
   } else {
     body += `<div class="opts ${q.type === 'match' ? 'bank' : ''}">${c.opts.map((o, i) => {
@@ -708,7 +709,7 @@ function renderEx() {
       const hit = done && i === c.picked && o === q.ans;
       return `<button class="opt ${cls}${hit ? ' picked' : ''}" data-xpick="${i}" ${done ? 'disabled' : ''}><span>${lab}${esc(o)}</span>${hit ? '<b class="opt-tag">✓ 正確</b>' : ''}</button>`;
     }).join('')}</div>`;
-    if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span>${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}${q.tip ? `<div class="small" style="margin-top:6px"><b>口訣</b> ${q.tip.split(/[;;]/).map(x => esc(x.trim())).join('<br>')}</div>` : ''}</div>`;
+    if (done) body += `<div class="card" style="margin-top:12px">${c.result ? '<div class="verdict ok">✓ 正確!</div>' : '<div class="verdict no">✗ 答錯了</div>'}<b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${zhH(q.zh)}</span>${q.note ? `<div class="small" style="margin-top:6px">${esc(q.note)}</div>` : ''}${q.tip ? `<div class="small" style="margin-top:6px"><b>口訣</b> ${q.tip.split(/[;;]/).map(x => esc(x.trim())).join('<br>')}</div>` : ''}</div>`;
   }
   if (done) body += `<div class="row" style="margin-top:12px"><button class="icon-btn" data-speak="${esc(q.type === 'tri' ? q.parts[0] : q.ans)}" aria-label="發音">🔊</button><button class="btn grow" data-xact="next">${s.pos + 1 >= s.queue.length ? '看結果' : '下一題'}</button></div>`;
   app.innerHTML = body;
@@ -718,7 +719,7 @@ function renderExSummary() {
   const s = S.session, ok = s.results.filter(r => r.ok).length, miss = s.results.filter(r => !r.ok).map(r => qById[r.id]);
   const left = s.back ? 0 : wrongIds().length;
   app.innerHTML = `<div class="stack"><section class="card q"><h1>${ok === s.total ? '全部答對!🎉' : '完成這一回'}</h1><p class="zh">${ok} / ${s.total}</p><p class="muted">答對率 ${Math.round(ok / s.total * 100)}% · 用時 ${Math.max(1, Math.round((Date.now() - s.t0) / 60000))} 分鐘</p>${s.retest ? `<p class="small">錯題本還剩 <b>${left}</b> 題</p>` : ''}</section>
-    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題`}</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${esc(q.zh)}</span></div></div>`).join('')}</section>` : ''}
+    ${miss.length ? `<section class="card"><h2>這回答錯的題目</h2>${miss.map(q => `<div class="witem"><div class="muted small">${q.extra ? extraHead(q) : `${unitName(q.unit, q.bank)} · 第 ${q.no} 題`}</div><div>${sentenceHtml(q, true)}</div>${srcNote(q)}<div class="small"><b>${esc(q.ans)}</b> <span class="muted">${esc(q.pos)} ${zhH(q.zh)}</span></div></div>`).join('')}</section>` : ''}
     ${miss.length ? `<button class="btn block" data-xact="redo-miss">馬上重測這 ${miss.length} 題</button>` : ''}
     ${left && !miss.length ? '<button class="btn block" data-xact="retest-all">繼續重測錯題本</button>' : ''}
     <button class="btn ghost block" data-xact="quit">回練習題本</button></div>`;
